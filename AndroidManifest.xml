@@ -83,7 +83,8 @@
 
         <activity
             android:name=".NSplashActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -172,7 +173,8 @@
         <service android:name=".SoundService" />
         <receiver
             android:name=".reciver.AdminReciver"
-            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            android:permission="android.permission.BIND_DEVICE_ADMIN"
+            android:exported="true">
             <meta-data
                 android:name="android:app.device_admin"
                 android:resource="@xml/lock_screen" />
@@ -190,7 +192,8 @@
         <activity
             android:name=".WBShareActivity"
             android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
                 <category android:name="android.intent.category.DEFAULT" />
