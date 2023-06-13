@@ -1,0 +1,163 @@
+---------------------------- PROCESS ENDED (7096) for package com.zhanghuang ----------------------------
+2023-06-13 16:54:04.797  7097-7097  Compatibil...geReporter com.zhanghuang                       D  Compat change id reported: 171979766; UID 10556; state: DISABLED
+---------------------------- PROCESS STARTED (7097) for package com.zhanghuang ----------------------------
+2023-06-13 16:54:04.804  7097-7097  ApplicationLoaders      com.zhanghuang                       D  Returning zygote-cached class loader: /system/framework/android.test.base.jar
+2023-06-13 16:54:04.806  7097-7097  ziparchive              com.zhanghuang                       W  Unable to open '/data/app/~~-eDYhqVBS4GbVnrBMLJ_-w==/com.zhanghuang-CXZh9cVPE9NjTOfSodGdvg==/base.dm': No such file or directory
+2023-06-13 16:54:04.806  7097-7097  ziparchive              com.zhanghuang                       W  Unable to open '/data/app/~~-eDYhqVBS4GbVnrBMLJ_-w==/com.zhanghuang-CXZh9cVPE9NjTOfSodGdvg==/base.dm': No such file or directory
+2023-06-13 16:54:04.864  7097-14344 AppScoutStateMachine    com.zhanghuang                       D  7097-ScoutStateMachinecreated
+2023-06-13 16:54:05.022  7097-7097  Perf                    com.zhanghuang                       I  Connecting to perf service.
+2023-06-13 16:54:05.026  7097-7097  GraphicsEnvironment     com.zhanghuang                       V  ANGLE Developer option for 'com.zhanghuang' set to: 'default'
+2023-06-13 16:54:05.026  7097-7097  GraphicsEnvironment     com.zhanghuang                       V  ANGLE GameManagerService for com.zhanghuang: false
+2023-06-13 16:54:05.026  7097-7097  GraphicsEnvironment     com.zhanghuang                       V  Updatable production driver is not supported on the device.
+2023-06-13 16:54:05.029  7097-7097  ForceDarkHelperStubImpl com.zhanghuang                       I  initialize for com.zhanghuang , ForceDarkOrigin
+2023-06-13 16:54:05.030  7097-7097  com.zhanghuang          com.zhanghuang                       D  JNI_OnLoad success
+2023-06-13 16:54:05.030  7097-7097  MiuiForceDarkConfig     com.zhanghuang                       I  setConfig density:3.000000, mainRule:0, secondaryRule:0, tertiaryRule:0
+2023-06-13 16:54:05.031  7097-7097  NetworkSecurityConfig   com.zhanghuang                       D  Using Network Security Config from resource network_security_config debugBuild: true
+2023-06-13 16:54:05.032  7097-7097  NetworkSecurityConfig   com.zhanghuang                       D  Using Network Security Config from resource network_security_config debugBuild: true
+2023-06-13 16:54:05.086  7097-7097  greenDAO                com.zhanghuang                       I  Creating tables for schema version 2
+2023-06-13 16:54:05.087  7097-14370 ziparchive              com.zhanghuang                       W  Unable to open '/data/user/0/com.zhanghuang/app_e_qq_com_plugin_c4a3cb97806cecae65646808b7755026/gdt_plugin.dm': No such file or directory
+2023-06-13 16:54:05.112  7097-7097  MiuiMultiWindowAdapter  com.zhanghuang                       D  MiuiMultiWindowAdapter::getFreeformVideoWhiteListInSystem::LIST_ABOUT_SUPPORT_LANDSCAPE_VIDEO = [com.hunantv.imgo.activity, com.tencent.qqlive, com.qiyi.video, com.hunantv.imgo.activity.inter, com.tencent.qqlivei18n, com.iqiyi.i18n, tv.danmaku.bili]
+2023-06-13 16:54:05.154  7097-14371 gdt_ad_mob              com.zhanghuang                       E  Fail to getfactory implement instance for interface:com.qq.e.comm.pi.POFactory
+                                                                                                    com.qq.e.comm.managers.plugin.e: Fail to getfactory implement instance for interface:com.qq.e.comm.pi.POFactory
+                                                                                                    	at com.qq.e.comm.managers.plugin.PM.getFactory(:4)
+                                                                                                    	at com.qq.e.comm.managers.plugin.PM.getPOFactory(Unknown Source:11)
+                                                                                                    	at com.qq.e.comm.managers.a.run(Unknown Source:6)
+                                                                                                    	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:463)
+                                                                                                    	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+                                                                                                    	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137)
+                                                                                                    	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637)
+                                                                                                    	at java.lang.Thread.run(Thread.java:1012)
+                                                                                                    Caused by: java.lang.reflect.InvocationTargetException
+                                                                                                    	at java.lang.reflect.Method.invoke(Native Method)
+                                                                                                    	at com.qq.e.comm.managers.plugin.PM.getFactory(:4) 
+                                                                                                    	at com.qq.e.comm.managers.plugin.PM.getPOFactory(Unknown Source:11) 
+                                                                                                    	at com.qq.e.comm.managers.a.run(Unknown Source:6) 
+                                                                                                    	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:463) 
+                                                                                                    	at java.util.concurrent.FutureTask.run(FutureTask.java:264) 
+                                                                                                    	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137) 
+                                                                                                    	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637) 
+                                                                                                    	at java.lang.Thread.run(Thread.java:1012) 
+                                                                                                    Caused by: java.lang.ExceptionInInitializerError
+                                                                                                    	at com.qq.e.comm.plugin.POFactoryImpl.getInstance(Unknown Source:11)
+                                                                                                    	at java.lang.reflect.Method.invoke(Native Method) 
+                                                                                                    	at com.qq.e.comm.managers.plugin.PM.getFactory(:4) 
+                                                                                                    	at com.qq.e.comm.managers.plugin.PM.getPOFactory(Unknown Source:11) 
+                                                                                                    	at com.qq.e.comm.managers.a.run(Unknown Source:6) 
+                                                                                                    	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:463) 
+                                                                                                    	at java.util.concurrent.FutureTask.run(FutureTask.java:264) 
+                                                                                                    	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137) 
+                                                                                                    	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637) 
+                                                                                                    	at java.lang.Thread.run(Thread.java:1012) 
+                                                                                                    Caused by: java.lang.UnsupportedOperationException: unsupport OS version
+                                                                                                    	at yaq.pro.<clinit>(pro.java:93)
+                                                                                                    	at com.qq.e.comm.plugin.POFactoryImpl.getInstance(Unknown Source:11) 
+                                                                                                    	at java.lang.reflect.Method.invoke(Native Method) 
+                                                                                                    	at com.qq.e.comm.managers.plugin.PM.getFactory(:4) 
+                                                                                                    	at com.qq.e.comm.managers.plugin.PM.getPOFactory(Unknown Source:11) 
+                                                                                                    	at com.qq.e.comm.managers.a.run(Unknown Source:6) 
+                                                                                                    	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:463) 
+                                                                                                    	at java.util.concurrent.FutureTask.run(FutureTask.java:264) 
+                                                                                                    	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1137) 
+                                                                                                    	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:637) 
+                                                                                                    	at java.lang.Thread.run(Thread.java:1012) 
+2023-06-13 16:54:05.164  7097-7097  libc                    com.zhanghuang                       W  Access denied finding property "ro.vendor.df.effect.conflict"
+2023-06-13 16:54:05.161  7097-7097  com.zhanghuang          com.zhanghuang                       W  type=1400 audit(0.0:337889): avc: denied { read } for name="u:object_r:vendor_displayfeature_prop:s0" dev="tmpfs" ino=387 scontext=u:r:untrusted_app_29:s0:c44,c258,c512,c768 tcontext=u:object_r:vendor_displayfeature_prop:s0 tclass=file permissive=0 app=com.zhanghuang
+2023-06-13 16:54:05.249  7097-7097  ziparchive              com.zhanghuang                       W  Unable to open '/data/app/~~035giyo_S09wl9PSRSP6Mg==/com.google.android.trichromelibrary_567216233-kfS-ZrJYagJ5-VGQEK8jow==/base.dm': No such file or directory
+2023-06-13 16:54:05.249  7097-7097  ziparchive              com.zhanghuang                       W  Unable to open '/data/app/~~035giyo_S09wl9PSRSP6Mg==/com.google.android.trichromelibrary_567216233-kfS-ZrJYagJ5-VGQEK8jow==/base.dm': No such file or directory
+2023-06-13 16:54:05.249  7097-7097  com.zhanghuang          com.zhanghuang                       W  Entry not found
+2023-06-13 16:54:05.253  7097-14379 ViewContentFactory      com.zhanghuang                       D  initViewContentFetcherClass
+2023-06-13 16:54:05.253  7097-14379 ViewContentFactory      com.zhanghuang                       D  getInterceptorPackageInfo
+2023-06-13 16:54:05.253  7097-14379 ViewContentFactory      com.zhanghuang                       D  getInitialApplication took 0ms
+2023-06-13 16:54:05.253  7097-14379 ViewContentFactory      com.zhanghuang                       D  packageInfo.packageName: com.miui.catcherpatch
+2023-06-13 16:54:05.255  7097-7097  WebViewFactory          com.zhanghuang                       I  Loading com.google.android.webview version 113.0.5672.162 (code 567216233)
+2023-06-13 16:54:05.266  7097-7097  com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/os/Trace;->isTagEnabled(J)Z (unsupported, reflection, allowed)
+2023-06-13 16:54:05.266  7097-7097  com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V (unsupported, reflection, allowed)
+2023-06-13 16:54:05.266  7097-7097  com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/os/Trace;->traceEnd(J)V (unsupported, reflection, allowed)
+2023-06-13 16:54:05.266  7097-7097  com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/os/Trace;->asyncTraceBegin(JLjava/lang/String;I)V (unsupported, reflection, allowed)
+2023-06-13 16:54:05.266  7097-7097  com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/os/Trace;->asyncTraceEnd(JLjava/lang/String;I)V (unsupported, reflection, allowed)
+2023-06-13 16:54:05.267  7097-14379 ViewContentFactory      com.zhanghuang                       D  initViewContentFetcherClass took 14ms
+2023-06-13 16:54:05.267  7097-14379 ContentCatcher          com.zhanghuang                       I  ViewContentFetcher : ViewContentFetcher
+2023-06-13 16:54:05.267  7097-14379 ViewContentFactory      com.zhanghuang                       D  createInterceptor took 14ms
+2023-06-13 16:54:05.269  7097-7097  cr_WVCFactoryProvider   com.zhanghuang                       I  Loaded version=113.0.5672.162 minSdkVersion=29 isBundle=true multiprocess=true packageId=2
+2023-06-13 16:54:05.285  7097-7097  cr_LibraryLoader        com.zhanghuang                       I  Successfully loaded native library
+2023-06-13 16:54:05.285  7097-7097  cr_CachingUmaRecorder   com.zhanghuang                       I  Flushed 8 samples from 8 histograms.
+2023-06-13 16:54:05.304  7097-7097  Compatibil...geReporter com.zhanghuang                       D  Compat change id reported: 183155436; UID 10556; state: DISABLED
+2023-06-13 16:54:05.323  7097-7097  IS_CTS_MODE             com.zhanghuang                       D  false
+2023-06-13 16:54:05.323  7097-7097  MULTI_WINDOW_ENABLED    com.zhanghuang                       D  false
+2023-06-13 16:54:05.325  7097-7097  DecorView[]             com.zhanghuang                       D  getWindowModeFromSystem  windowmode is 1
+2023-06-13 16:54:05.357  7097-7097  Compatibil...geReporter com.zhanghuang                       D  Compat change id reported: 214741472; UID 10556; state: DISABLED
+2023-06-13 16:54:05.360  7097-7097  Compatibil...geReporter com.zhanghuang                       D  Compat change id reported: 171228096; UID 10556; state: ENABLED
+2023-06-13 16:54:05.399  7097-14449 AdrenoGLES-0            com.zhanghuang                       I  QUALCOMM build                   : 5e81ec0141, Icc5bd9b9d5
+                                                                                                    Build Date                       : 11/07/22
+                                                                                                    OpenGL ES Shader Compiler Version: EV031.36.08.11
+                                                                                                    Local Branch                     : 
+                                                                                                    Remote Branch                    : 
+                                                                                                    Remote Branch                    : 
+                                                                                                    Reconstruct Branch               : 
+2023-06-13 16:54:05.399  7097-14449 AdrenoGLES-0            com.zhanghuang                       I  Build Config                     : S P 12.1.1 AArch64
+2023-06-13 16:54:05.399  7097-14449 AdrenoGLES-0            com.zhanghuang                       I  Driver Path                      : /vendor/lib64/egl/libGLESv2_adreno.so
+2023-06-13 16:54:05.399  7097-14449 AdrenoGLES-0            com.zhanghuang                       I  Driver Version                   : 0615.50
+2023-06-13 16:54:05.402  7097-14449 AdrenoGLES-0            com.zhanghuang                       I  PFP: 0x01730155, ME: 0x00000000
+2023-06-13 16:54:05.405  7097-14404 cr_media                com.zhanghuang                       W  BLUETOOTH_CONNECT permission is missing.
+2023-06-13 16:54:05.406  7097-14404 cr_media                com.zhanghuang                       W  registerBluetoothIntentsIfNeeded: Requires BLUETOOTH permission
+2023-06-13 16:54:05.410  7097-7097  UMLog                   com.zhanghuang                       D  统计SDK常见问题索引贴 详见链接 http://developer.umeng.com/docs/66650/cate/66650
+2023-06-13 16:54:05.413  7097-14449 libc                    com.zhanghuang                       W  Access denied finding property "vendor.migl.debug"
+2023-06-13 16:54:05.420  7097-7097  com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/view/View;->computeFitSystemWindows(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z (unsupported, reflection, allowed)
+2023-06-13 16:54:05.420  7097-7097  com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (unsupported, reflection, allowed)
+2023-06-13 16:54:05.449  7097-7097  Looper                  com.zhanghuang                       W  PerfMonitor looperActivity : package=com.zhanghuang/.NSplashActivity time=0ms latency=634ms running=0ms  procState=-1  historyMsgCount=2 (msgIndex=1 wall=314ms seq=3 running=137ms runnable=149ms io=1ms h=android.app.ActivityThread$H w=110) (msgIndex=2 wall=329ms seq=4 running=177ms runnable=15ms io=2ms late=295ms h=android.app.ActivityThread$H w=159)
+2023-06-13 16:54:05.477  7097-14375 libEGL                  com.zhanghuang                       E  pre_cache appList: com.sina.weibo,com.ss.android.article.news,com.taobao.taobao,com.smile.gifmaker,com.ss.android.ugc.aweme,com.tencent.mm,tv.danmaku.bili,
+2023-06-13 16:54:05.482  7097-14375 com.zhanghuang          com.zhanghuang                       I  Support FEAS product diting: 
+2023-06-13 16:54:05.486  7097-14375 com.zhanghuang          com.zhanghuang                       D  MiuiProcessManagerServiceStub setSchedFifo
+2023-06-13 16:54:05.486  7097-14375 MiuiProcessManagerImpl  com.zhanghuang                       I  setSchedFifo pid:7097, mode:3
+2023-06-13 16:54:05.492  7097-14375 libEGL                  com.zhanghuang                       E  pre_cache appList: com.sina.weibo,com.ss.android.article.news,com.taobao.taobao,com.smile.gifmaker,com.ss.android.ugc.aweme,com.tencent.mm,tv.danmaku.bili,
+2023-06-13 16:54:05.499  7097-14453 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "1686646445486"
+2023-06-13 16:54:05.499  7097-14453 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "0"
+2023-06-13 16:54:05.499  7097-14453 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: ""
+2023-06-13 16:54:05.499  7097-14453 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: ""
+2023-06-13 16:54:05.499  7097-14453 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: ""
+2023-06-13 16:54:05.513  7097-14453 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "70403FB6ECE7A7270224572F59295014"
+2023-06-13 16:54:05.513  7097-14453 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: ""
+2023-06-13 16:54:05.513  7097-14453 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "70403FB6ECE7A7270224572F59295014"
+2023-06-13 16:54:05.513  7097-14453 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "-1"
+2023-06-13 16:54:05.523  7097-14375 LB                      com.zhanghuang                       E  fail to open file: No such file or directory
+2023-06-13 16:54:05.528  7097-14375 Parcel                  com.zhanghuang                       W  Expecting binder but got null!
+2023-06-13 16:54:05.544  7097-7097  DecorView[]             com.zhanghuang                       D  onWindowFocusChanged hasWindowFocus true
+2023-06-13 16:54:05.544  7097-7097  HandWritingStubImpl     com.zhanghuang                       I  refreshLastKeyboardType: 1
+2023-06-13 16:54:05.545  7097-7097  HandWritingStubImpl     com.zhanghuang                       I  getCurrentKeyboardType: 1
+2023-06-13 16:54:05.546  7097-14453 UMLog                   com.zhanghuang                       D  当前发送策略为：启动时发送。详见链接 https://developer.umeng.com/docs/66632/detail/66976?um_channel=sdk
+2023-06-13 16:54:05.553  7097-7097  HandWritingStubImpl     com.zhanghuang                       I  isKeyboardTypeChanged: false
+2023-06-13 16:54:05.553  7097-7097  HandWritingStubImpl     com.zhanghuang                       I  isKeyboardTypeChanged: false
+2023-06-13 16:54:05.561  7097-7097  HandWritingStubImpl     com.zhanghuang                       I  getCurrentKeyboardType: 1
+2023-06-13 16:54:05.587  7097-14453 MobclickAgent           com.zhanghuang                       D  创建新会话: 70403FB6ECE7A7270224572F59295014
+2023-06-13 16:54:05.595  7097-7097  IS_CTS_MODE             com.zhanghuang                       D  false
+2023-06-13 16:54:05.595  7097-7097  MULTI_WINDOW_ENABLED    com.zhanghuang                       D  false
+2023-06-13 16:54:05.601  7097-7097  Compatibil...geReporter com.zhanghuang                       D  Compat change id reported: 210923482; UID 10556; state: DISABLED
+2023-06-13 16:54:05.601  7097-7097  Compatibil...geReporter com.zhanghuang                       D  Compat change id reported: 37756858; UID 10556; state: ENABLED
+2023-06-13 16:54:05.621  7097-14416 AudioCapabilities       com.zhanghuang                       W  Unsupported mime audio/alac
+2023-06-13 16:54:05.621  7097-14416 AudioCapabilities       com.zhanghuang                       W  Unsupported mime audio/x-ape
+2023-06-13 16:54:05.622  7097-14416 AudioCapabilities       com.zhanghuang                       W  Unsupported mime audio/evrc
+2023-06-13 16:54:05.622  7097-14416 AudioCapabilities       com.zhanghuang                       W  Unsupported mime audio/qcelp
+2023-06-13 16:54:05.622  7097-14416 AudioCapabilities       com.zhanghuang                       W  Unsupported mime audio/dsd
+2023-06-13 16:54:05.622  7097-14416 AudioCapabilities       com.zhanghuang                       W  Unsupported mime audio/amr-wb-plus
+2023-06-13 16:54:05.622  7097-14416 AudioCapabilities       com.zhanghuang                       W  Unsupported mime audio/x-ms-wma
+2023-06-13 16:54:05.623  7097-14416 AudioCapabilities       com.zhanghuang                       W  Unsupported mime audio/evrc
+2023-06-13 16:54:05.623  7097-14416 AudioCapabilities       com.zhanghuang                       W  Unsupported mime audio/qcelp
+2023-06-13 16:54:05.624  7097-14416 AudioCapabilities       com.zhanghuang                       W  Unsupported mime audio/alac
+2023-06-13 16:54:05.624  7097-14416 AudioCapabilities       com.zhanghuang                       W  Unsupported mime audio/x-ape
+2023-06-13 16:54:05.629  7097-7097  Compatibil...geReporter com.zhanghuang                       D  Compat change id reported: 193247900; UID 10556; state: DISABLED
+2023-06-13 16:54:05.638  7097-14416 VideoCapabilities       com.zhanghuang                       W  Unsupported mime image/vnd.android.heic
+2023-06-13 16:54:05.638  7097-14416 VideoCapabilities       com.zhanghuang                       W  Unsupported mime image/vnd.android.heic
+2023-06-13 16:54:05.639  7097-14416 VideoCapabilities       com.zhanghuang                       W  Unsupported mime video/dolby-vision
+2023-06-13 16:54:05.640  7097-14416 VideoCapabilities       com.zhanghuang                       W  Unsupported mime video/dolby-vision
+2023-06-13 16:54:05.699  7097-14375 Parcel                  com.zhanghuang                       W  Expecting binder but got null!
+2023-06-13 16:54:05.714  7097-7097  DecorView[]             com.zhanghuang                       D  onWindowFocusChanged hasWindowFocus false
+2023-06-13 16:54:05.734  7097-7097  DecorView[]             com.zhanghuang                       D  onWindowFocusChanged hasWindowFocus true
+2023-06-13 16:54:06.054  7097-7097  HandWritingStubImpl     com.zhanghuang                       I  isKeyboardTypeChanged: false
+2023-06-13 16:54:07.023  7097-7097  DecorView[]             com.zhanghuang                       D  onWindowFocusChanged hasWindowFocus false
+2023-06-13 16:54:07.721  7097-14453 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "CoRiVtHO8PPeJXI+AJ2NqRR9GOchxG0FbjjowEjUpO4nj3tNHcDAJnAEpMYJU9ikGxC4xC+7vOqL
+                                                                                                    ybtEGxjTT3vR53OXSKMDkzVrHp4ZnT5aPEwUaudBRdHgTMSYGgDVmjOZy+Ha60CLLHQqftClSA==
+                                                                                                    "
+2023-06-13 16:54:07.721  7097-14453 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "70403FB6ECE7A7270224572F59295014"
+2023-06-13 16:54:13.045  7097-14361 com.zhanghuang          com.zhanghuang                       I  ProcessProfilingInfo new_methods=1327 is saved saved_to_disk=1 resolve_classes_delay=8000
+2023-06-13 16:54:29.059  7097-14339 com.zhanghuang          com.zhanghuang                       I  This is non sticky GC, maxfree is 8388608 minfree is 2097152
+2023-06-13 16:54:29.061  7097-7097  FinalizerDaemon         com.zhanghuang                       W  type=1400 audit(0.0:337894): avc: denied { getopt } for path="/dev/socket/usap_pool_primary" scontext=u:r:untrusted_app_29:s0:c44,c258,c512,c768 tcontext=u:r:zygote:s0 tclass=unix_stream_socket permissive=0 app=com.zhanghuang
