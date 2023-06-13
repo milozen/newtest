@@ -1,636 +1,265 @@
-Windows PowerShell
-版权所有 (C) Microsoft Corporation。保留所有权利。
-
-尝试新的跨平台 PowerShell https://aka.ms/pscore6
-
-PS D:\project\test2> ./gradlew app:dependencies
-
-Welcome to Gradle 8.0!
-
-For more details see https://docs.gradle.org/8.0/release-notes.html
-
-Starting a Gradle Daemon, 4 stopped Daemons could not be reused, use --status for details
-
-FAILURE: Build failed with an exception.
-
-* What went wrong:
-A problem occurred configuring root project 'test2'.
-> Could not resolve all files for configuration ':classpath'.
-   > Could not resolve com.android.tools.build:gradle:8.0.2.
-     Required by:
-         project : > com.android.application:com.android.application.gradle.plugin:8.0.2
-         project : > com.android.library:com.android.library.gradle.plugin:8.0.2
-      > No matching variant of com.android.tools.build:gradle:8.0.2 was found. The consumer was configured to find a library for use during runtime, compatible with Java 8, packaged as a jar, and its dependencies declared externally
-, as well as attribute 'org.gradle.plugin.api-version' with value '8.0' but:
-          - Variant 'apiElements' capability com.android.tools.build:gradle:8.0.2 declares a library, packaged as a jar, and its dependencies declared externally:
-              - Incompatible because this component declares a component for use during compile-time, compatible with Java 11 and the consumer needed a component for use during runtime, compatible with Java 8
-              - Other compatible attribute:
-                  - Doesn't say anything about org.gradle.plugin.api-version (required '8.0')
-          - Variant 'javadocElements' capability com.android.tools.build:gradle:8.0.2 declares a component for use during runtime, and its dependencies declared externally:
-              - Incompatible because this component declares documentation and the consumer needed a library
-              - Other compatible attributes:
-                  - Doesn't say anything about its target Java version (required compatibility with Java 8)
-                  - Doesn't say anything about its elements (required them packaged as a jar)
-                  - Doesn't say anything about its elements (required them packaged as a jar)
-                  - Doesn't say anything about org.gradle.plugin.api-version (required '8.0')
-
-* Try:
-> Run with --stacktrace option to get the stack trace.
-> Run with --info or --debug option to get more log output.
-> Run with --scan to get full insights.
-
-* Get more help at https://help.gradle.org
-
-BUILD FAILED in 3s
-PS D:\project\test2> ./gradlew app:dependencies --stacktrace
-
-FAILURE: Build failed with an exception.
-
-* What went wrong:
-A problem occurred configuring root project 'test2'.
-> Could not resolve all files for configuration ':classpath'.
-   > Could not resolve com.android.tools.build:gradle:8.0.2.
-     Required by:
-         project : > com.android.application:com.android.application.gradle.plugin:8.0.2
-         project : > com.android.library:com.android.library.gradle.plugin:8.0.2
-      > No matching variant of com.android.tools.build:gradle:8.0.2 was found. The consumer was configured to find a library for use during runtime, compatible with Java 8, packaged as a jar, and its dependencies declared externally
-, as well as attribute 'org.gradle.plugin.api-version' with value '8.0' but:
-          - Variant 'apiElements' capability com.android.tools.build:gradle:8.0.2 declares a library, packaged as a jar, and its dependencies declared externally:
-              - Incompatible because this component declares a component for use during compile-time, compatible with Java 11 and the consumer needed a component for use during runtime, compatible with Java 8
-              - Other compatible attribute:
-                  - Doesn't say anything about org.gradle.plugin.api-version (required '8.0')
-          - Variant 'javadocElements' capability com.android.tools.build:gradle:8.0.2 declares a component for use during runtime, and its dependencies declared externally:
-              - Incompatible because this component declares documentation and the consumer needed a library
-              - Other compatible attributes:
-                  - Doesn't say anything about its target Java version (required compatibility with Java 8)
-                  - Doesn't say anything about its elements (required them packaged as a jar)
-                  - Doesn't say anything about org.gradle.plugin.api-version (required '8.0')
-          - Variant 'runtimeElements' capability com.android.tools.build:gradle:8.0.2 declares a library for use during runtime, packaged as a jar, and its dependencies declared externally:
-              - Incompatible because this component declares a component, compatible with Java 11 and the consumer needed a component, compatible with Java 8
-              - Other compatible attribute:
-                  - Doesn't say anything about org.gradle.plugin.api-version (required '8.0')
-          - Variant 'sourcesElements' capability com.android.tools.build:gradle:8.0.2 declares a component for use during runtime, and its dependencies declared externally:
-              - Incompatible because this component declares documentation and the consumer needed a library
-              - Other compatible attributes:
-                  - Doesn't say anything about its target Java version (required compatibility with Java 8)
-                  - Doesn't say anything about its elements (required them packaged as a jar)
-                  - Doesn't say anything about org.gradle.plugin.api-version (required '8.0')
-
-* Try:
-> Run with --info or --debug option to get more log output.
-> Run with --scan to get full insights.
-
-* Exception is:
-org.gradle.api.ProjectConfigurationException: A problem occurred configuring root project 'test2'.
-        at org.gradle.configuration.project.LifecycleProjectEvaluator.wrapException(LifecycleProjectEvaluator.java:84)
-        at org.gradle.configuration.project.LifecycleProjectEvaluator.addConfigurationFailure(LifecycleProjectEvaluator.java:77)
-        at org.gradle.configuration.project.LifecycleProjectEvaluator.access$400(LifecycleProjectEvaluator.java:55)
-        at org.gradle.configuration.project.LifecycleProjectEvaluator$EvaluateProject.lambda$run$0(LifecycleProjectEvaluator.java:111)
-        at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.lambda$applyToMutableState$0(DefaultProjectStateRegistry.java:388)
-        at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.lambda$fromMutableState$1(DefaultProjectStateRegistry.java:411)
-        at org.gradle.internal.work.DefaultWorkerLeaseService.withReplacedLocks(DefaultWorkerLeaseService.java:345)
-        at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.fromMutableState(DefaultProjectStateRegistry.java:411)
-        at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.applyToMutableState(DefaultProjectStateRegistry.java:387)
-        at org.gradle.configuration.project.LifecycleProjectEvaluator$EvaluateProject.run(LifecycleProjectEvaluator.java:100)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:47)
-        at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:68)
-        at org.gradle.configuration.project.LifecycleProjectEvaluator.evaluate(LifecycleProjectEvaluator.java:72)
-        at org.gradle.api.internal.project.DefaultProject.evaluate(DefaultProject.java:792)
-        at org.gradle.api.internal.project.DefaultProject.evaluate(DefaultProject.java:156)
-        at org.gradle.api.internal.project.ProjectLifecycleController.lambda$ensureSelfConfigured$2(ProjectLifecycleController.java:84)
-        at org.gradle.internal.model.StateTransitionController.lambda$doTransition$13(StateTransitionController.java:247)
-        at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:258)
-        at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:246)
-        at org.gradle.internal.model.StateTransitionController.lambda$maybeTransitionIfNotCurrentlyTransitioning$10(StateTransitionController.java:207)
-        at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:34)
-        at org.gradle.internal.model.StateTransitionController.maybeTransitionIfNotCurrentlyTransitioning(StateTransitionController.java:203)
-        at org.gradle.api.internal.project.ProjectLifecycleController.ensureSelfConfigured(ProjectLifecycleController.java:84)
-        at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.ensureConfigured(DefaultProjectStateRegistry.java:362)
-        at org.gradle.execution.TaskPathProjectEvaluator.configure(TaskPathProjectEvaluator.java:33)
-        at org.gradle.execution.TaskPathProjectEvaluator.configureHierarchy(TaskPathProjectEvaluator.java:47)
-        at org.gradle.configuration.DefaultProjectsPreparer.prepareProjects(DefaultProjectsPreparer.java:42)
-        at org.gradle.configuration.BuildTreePreparingProjectsPreparer.prepareProjects(BuildTreePreparingProjectsPreparer.java:64)
-        at org.gradle.configuration.BuildOperationFiringProjectsPreparer$ConfigureBuild.run(BuildOperationFiringProjectsPreparer.java:52)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:47)
-        at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:68)
-        at org.gradle.configuration.BuildOperationFiringProjectsPreparer.prepareProjects(BuildOperationFiringProjectsPreparer.java:40)
-        at org.gradle.initialization.VintageBuildModelController.lambda$prepareProjects$2(VintageBuildModelController.java:84)
-        at org.gradle.internal.model.StateTransitionController.lambda$doTransition$13(StateTransitionController.java:247)
-        at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:258)
-        at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:246)
-        at org.gradle.internal.model.StateTransitionController.lambda$transitionIfNotPreviously$11(StateTransitionController.java:221)
-        at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:34)
-        at org.gradle.internal.model.StateTransitionController.transitionIfNotPreviously(StateTransitionController.java:217)
-        at org.gradle.initialization.VintageBuildModelController.prepareProjects(VintageBuildModelController.java:84)
-        at org.gradle.initialization.VintageBuildModelController.prepareToScheduleTasks(VintageBuildModelController.java:71)
-        at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$prepareToScheduleTasks$3(DefaultBuildLifecycleController.java:134)
-        at org.gradle.internal.model.StateTransitionController.lambda$doTransition$13(StateTransitionController.java:247)
-        at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:258)
-        at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:246)
-        at org.gradle.internal.model.StateTransitionController.lambda$maybeTransition$9(StateTransitionController.java:198)
-        at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:34)
-        at org.gradle.internal.model.StateTransitionController.maybeTransition(StateTransitionController.java:194)
-        at org.gradle.internal.build.DefaultBuildLifecycleController.prepareToScheduleTasks(DefaultBuildLifecycleController.java:132)
-        at org.gradle.internal.buildtree.DefaultBuildTreeWorkPreparer.scheduleRequestedTasks(DefaultBuildTreeWorkPreparer.java:36)
-        at org.gradle.configurationcache.VintageBuildTreeWorkController$scheduleAndRunRequestedTasks$1.apply(VintageBuildTreeWorkController.kt:36)
-        at org.gradle.configurationcache.VintageBuildTreeWorkController$scheduleAndRunRequestedTasks$1.apply(VintageBuildTreeWorkController.kt:35)
-        at org.gradle.composite.internal.DefaultIncludedBuildTaskGraph.withNewWorkGraph(DefaultIncludedBuildTaskGraph.java:109)
-        at org.gradle.configurationcache.VintageBuildTreeWorkController.scheduleAndRunRequestedTasks(VintageBuildTreeWorkController.kt:35)
-        at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.lambda$scheduleAndRunTasks$1(DefaultBuildTreeLifecycleController.java:68)
-        at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.lambda$runBuild$4(DefaultBuildTreeLifecycleController.java:98)
-        at org.gradle.internal.model.StateTransitionController.lambda$transition$6(StateTransitionController.java:177)
-        at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:258)
-        at org.gradle.internal.model.StateTransitionController.lambda$transition$7(StateTransitionController.java:177)
-        at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)
-        at org.gradle.internal.model.StateTransitionController.transition(StateTransitionController.java:177)
-        at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.runBuild(DefaultBuildTreeLifecycleController.java:95)
-        at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.scheduleAndRunTasks(DefaultBuildTreeLifecycleController.java:68)
-        at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.scheduleAndRunTasks(DefaultBuildTreeLifecycleController.java:63)
-        at org.gradle.tooling.internal.provider.ExecuteBuildActionRunner.run(ExecuteBuildActionRunner.java:31)
-        at org.gradle.launcher.exec.ChainingBuildActionRunner.run(ChainingBuildActionRunner.java:35)
-        at org.gradle.internal.buildtree.ProblemReportingBuildActionRunner.run(ProblemReportingBuildActionRunner.java:49)
-        at org.gradle.launcher.exec.BuildOutcomeReportingBuildActionRunner.run(BuildOutcomeReportingBuildActionRunner.java:65)
-        at org.gradle.tooling.internal.provider.FileSystemWatchingBuildActionRunner.run(FileSystemWatchingBuildActionRunner.java:140)
-        at org.gradle.launcher.exec.BuildCompletionNotifyingBuildActionRunner.run(BuildCompletionNotifyingBuildActionRunner.java:41)
-        at org.gradle.launcher.exec.RootBuildLifecycleBuildActionExecutor.lambda$execute$0(RootBuildLifecycleBuildActionExecutor.java:40)
-        at org.gradle.composite.internal.DefaultRootBuildState.run(DefaultRootBuildState.java:122)
-        at org.gradle.launcher.exec.RootBuildLifecycleBuildActionExecutor.execute(RootBuildLifecycleBuildActionExecutor.java:40)
-        at org.gradle.internal.buildtree.DefaultBuildTreeContext.execute(DefaultBuildTreeContext.java:40)
-        at org.gradle.launcher.exec.BuildTreeLifecycleBuildActionExecutor.lambda$execute$0(BuildTreeLifecycleBuildActionExecutor.java:65)
-        at org.gradle.internal.buildtree.BuildTreeState.run(BuildTreeState.java:53)
-        at org.gradle.launcher.exec.BuildTreeLifecycleBuildActionExecutor.execute(BuildTreeLifecycleBuildActionExecutor.java:65)
-        at org.gradle.launcher.exec.RunAsBuildOperationBuildActionExecutor$3.call(RunAsBuildOperationBuildActionExecutor.java:61)
-        at org.gradle.launcher.exec.RunAsBuildOperationBuildActionExecutor$3.call(RunAsBuildOperationBuildActionExecutor.java:57)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
-        at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
-        at org.gradle.launcher.exec.RunAsBuildOperationBuildActionExecutor.execute(RunAsBuildOperationBuildActionExecutor.java:57)
-        at org.gradle.launcher.exec.RunAsWorkerThreadBuildActionExecutor.lambda$execute$0(RunAsWorkerThreadBuildActionExecutor.java:36)
-        at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:249)
-        at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:109)
-        at org.gradle.launcher.exec.RunAsWorkerThreadBuildActionExecutor.execute(RunAsWorkerThreadBuildActionExecutor.java:36)
-        at org.gradle.tooling.internal.provider.continuous.ContinuousBuildActionExecutor.execute(ContinuousBuildActionExecutor.java:110)
-        at org.gradle.tooling.internal.provider.SubscribableBuildActionExecutor.execute(SubscribableBuildActionExecutor.java:64)
-        at org.gradle.internal.session.DefaultBuildSessionContext.execute(DefaultBuildSessionContext.java:46)
-        at org.gradle.tooling.internal.provider.BuildSessionLifecycleBuildActionExecuter$ActionImpl.apply(BuildSessionLifecycleBuildActionExecuter.java:100)
-        at org.gradle.tooling.internal.provider.BuildSessionLifecycleBuildActionExecuter$ActionImpl.apply(BuildSessionLifecycleBuildActionExecuter.java:88)
-        at org.gradle.internal.session.BuildSessionState.run(BuildSessionState.java:69)
-        at org.gradle.tooling.internal.provider.BuildSessionLifecycleBuildActionExecuter.execute(BuildSessionLifecycleBuildActionExecuter.java:62)
-        at org.gradle.tooling.internal.provider.BuildSessionLifecycleBuildActionExecuter.execute(BuildSessionLifecycleBuildActionExecuter.java:41)
-        at org.gradle.tooling.internal.provider.StartParamsValidatingActionExecuter.execute(StartParamsValidatingActionExecuter.java:63)
-        at org.gradle.tooling.internal.provider.StartParamsValidatingActionExecuter.execute(StartParamsValidatingActionExecuter.java:31)
-        at org.gradle.tooling.internal.provider.SessionFailureReportingActionExecuter.execute(SessionFailureReportingActionExecuter.java:50)
-        at org.gradle.tooling.internal.provider.SessionFailureReportingActionExecuter.execute(SessionFailureReportingActionExecuter.java:38)
-        at org.gradle.tooling.internal.provider.SetupLoggingActionExecuter.execute(SetupLoggingActionExecuter.java:47)
-        at org.gradle.tooling.internal.provider.SetupLoggingActionExecuter.execute(SetupLoggingActionExecuter.java:31)
-        at org.gradle.launcher.daemon.server.exec.ExecuteBuild.doBuild(ExecuteBuild.java:65)
-        at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
-        at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-        at org.gradle.launcher.daemon.server.exec.WatchForDisconnection.execute(WatchForDisconnection.java:39)
-        at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-        at org.gradle.launcher.daemon.server.exec.ResetDeprecationLogger.execute(ResetDeprecationLogger.java:29)
-        at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-        at org.gradle.launcher.daemon.server.exec.RequestStopIfSingleUsedDaemon.execute(RequestStopIfSingleUsedDaemon.java:35)
-        at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-        at org.gradle.launcher.daemon.server.exec.ForwardClientInput$2.create(ForwardClientInput.java:78)
-        at org.gradle.launcher.daemon.server.exec.ForwardClientInput$2.create(ForwardClientInput.java:75)
-        at org.gradle.util.internal.Swapper.swap(Swapper.java:38)
-        at org.gradle.launcher.daemon.server.exec.ForwardClientInput.execute(ForwardClientInput.java:75)
-        at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-        at org.gradle.launcher.daemon.server.exec.LogAndCheckHealth.execute(LogAndCheckHealth.java:64)
-        at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-        at org.gradle.launcher.daemon.server.exec.LogToClient.doBuild(LogToClient.java:63)
-        at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
-        at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-        at org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment.doBuild(EstablishBuildEnvironment.java:84)
-        at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
-        at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-        at org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy$1.run(StartBuildOrRespondWithBusy.java:52)
-        at org.gradle.launcher.daemon.server.DaemonStateCoordinator$1.run(DaemonStateCoordinator.java:297)
-        at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
-        at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:49)
-Caused by: org.gradle.api.internal.artifacts.ivyservice.DefaultLenientConfiguration$ArtifactResolveException: Could not resolve all files for configuration ':classpath'.
-        at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.mapFailure(DefaultConfiguration.java:1595)
-        at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.access$3900(DefaultConfiguration.java:166)
-        at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$DefaultResolutionHost.mapFailure(DefaultConfiguration.java:2278)
-        at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$DefaultResolutionHost.rethrowFailure(DefaultConfiguration.java:2283)
-        at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$ConfigurationFileCollection.visitContents(DefaultConfiguration.java:1563)
-        at org.gradle.api.internal.file.AbstractFileCollection.getFiles(AbstractFileCollection.java:130)
-        at org.gradle.api.internal.file.AbstractFileCollection.iterator(AbstractFileCollection.java:171)
-        at org.gradle.internal.classpath.DefaultClassPath.of(DefaultClassPath.java:56)
-        at org.gradle.api.internal.initialization.DefaultScriptClassPathResolver.resolveClassPath(DefaultScriptClassPathResolver.java:86)
-        at org.gradle.api.internal.initialization.DefaultScriptHandler.getInstrumentedScriptClassPath(DefaultScriptHandler.java:91)
-        at org.gradle.plugin.use.internal.DefaultPluginRequestApplicator.defineScriptHandlerClassScope(DefaultPluginRequestApplicator.java:176)
-        at org.gradle.plugin.use.internal.DefaultPluginRequestApplicator.applyPlugins(DefaultPluginRequestApplicator.java:141)
-        at org.gradle.configuration.DefaultScriptPluginFactory$ScriptPluginImpl.apply(DefaultScriptPluginFactory.java:117)
-        at org.gradle.configuration.BuildOperationScriptPlugin$1.run(BuildOperationScriptPlugin.java:65)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:47)
-        at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:68)
-        at org.gradle.configuration.BuildOperationScriptPlugin.lambda$apply$0(BuildOperationScriptPlugin.java:62)
-        at org.gradle.configuration.internal.DefaultUserCodeApplicationContext.apply(DefaultUserCodeApplicationContext.java:44)
-        at org.gradle.configuration.BuildOperationScriptPlugin.apply(BuildOperationScriptPlugin.java:62)
-        at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.lambda$applyToMutableState$0(DefaultProjectStateRegistry.java:388)
-        at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.fromMutableState(DefaultProjectStateRegistry.java:406)
-        at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.applyToMutableState(DefaultProjectStateRegistry.java:387)
-        at org.gradle.configuration.project.BuildScriptProcessor.execute(BuildScriptProcessor.java:42)
-        at org.gradle.configuration.project.BuildScriptProcessor.execute(BuildScriptProcessor.java:26)
-        at org.gradle.configuration.project.ConfigureActionsProjectEvaluator.evaluate(ConfigureActionsProjectEvaluator.java:35)
-        at org.gradle.configuration.project.LifecycleProjectEvaluator$EvaluateProject.lambda$run$0(LifecycleProjectEvaluator.java:109)
-        at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.lambda$applyToMutableState$0(DefaultProjectStateRegistry.java:388)
-        at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.lambda$fromMutableState$1(DefaultProjectStateRegistry.java:411)
-        at org.gradle.internal.work.DefaultWorkerLeaseService.withReplacedLocks(DefaultWorkerLeaseService.java:345)
-        at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.fromMutableState(DefaultProjectStateRegistry.java:411)
-        at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.applyToMutableState(DefaultProjectStateRegistry.java:387)
-        at org.gradle.configuration.project.LifecycleProjectEvaluator$EvaluateProject.run(LifecycleProjectEvaluator.java:100)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:47)
-        at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:68)
-        at org.gradle.configuration.project.LifecycleProjectEvaluator.evaluate(LifecycleProjectEvaluator.java:72)
-        at org.gradle.api.internal.project.DefaultProject.evaluate(DefaultProject.java:792)
-        at org.gradle.api.internal.project.DefaultProject.evaluate(DefaultProject.java:156)
-        at org.gradle.api.internal.project.ProjectLifecycleController.lambda$ensureSelfConfigured$2(ProjectLifecycleController.java:84)
-        at org.gradle.internal.model.StateTransitionController.lambda$doTransition$13(StateTransitionController.java:247)
-        at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:258)
-        at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:246)
-        at org.gradle.internal.model.StateTransitionController.lambda$maybeTransitionIfNotCurrentlyTransitioning$10(StateTransitionController.java:207)
-        at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:34)
-        at org.gradle.internal.model.StateTransitionController.maybeTransitionIfNotCurrentlyTransitioning(StateTransitionController.java:203)
-        at org.gradle.api.internal.project.ProjectLifecycleController.ensureSelfConfigured(ProjectLifecycleController.java:84)
-        at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.ensureConfigured(DefaultProjectStateRegistry.java:362)
-        at org.gradle.execution.TaskPathProjectEvaluator.configure(TaskPathProjectEvaluator.java:33)
-        at org.gradle.execution.TaskPathProjectEvaluator.configureHierarchy(TaskPathProjectEvaluator.java:47)
-        at org.gradle.configuration.DefaultProjectsPreparer.prepareProjects(DefaultProjectsPreparer.java:42)
-        at org.gradle.configuration.BuildTreePreparingProjectsPreparer.prepareProjects(BuildTreePreparingProjectsPreparer.java:64)
-        at org.gradle.configuration.BuildOperationFiringProjectsPreparer$ConfigureBuild.run(BuildOperationFiringProjectsPreparer.java:52)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:47)
-        at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:68)
-        at org.gradle.configuration.BuildOperationFiringProjectsPreparer.prepareProjects(BuildOperationFiringProjectsPreparer.java:40)
-        at org.gradle.initialization.VintageBuildModelController.lambda$prepareProjects$2(VintageBuildModelController.java:84)
-        at org.gradle.internal.model.StateTransitionController.lambda$doTransition$13(StateTransitionController.java:247)
-        at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:258)
-        at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:246)
-        at org.gradle.internal.model.StateTransitionController.lambda$transitionIfNotPreviously$11(StateTransitionController.java:221)
-        at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:34)
-        at org.gradle.internal.model.StateTransitionController.transitionIfNotPreviously(StateTransitionController.java:217)
-        at org.gradle.initialization.VintageBuildModelController.prepareProjects(VintageBuildModelController.java:84)
-        at org.gradle.initialization.VintageBuildModelController.prepareToScheduleTasks(VintageBuildModelController.java:71)
-        at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$prepareToScheduleTasks$3(DefaultBuildLifecycleController.java:134)
-        at org.gradle.internal.model.StateTransitionController.lambda$doTransition$13(StateTransitionController.java:247)
-        at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:258)
-        at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:246)
-        at org.gradle.internal.model.StateTransitionController.lambda$maybeTransition$9(StateTransitionController.java:198)
-        at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:34)
-        at org.gradle.internal.model.StateTransitionController.maybeTransition(StateTransitionController.java:194)
-        at org.gradle.internal.build.DefaultBuildLifecycleController.prepareToScheduleTasks(DefaultBuildLifecycleController.java:132)
-        at org.gradle.internal.buildtree.DefaultBuildTreeWorkPreparer.scheduleRequestedTasks(DefaultBuildTreeWorkPreparer.java:36)
-        at org.gradle.configurationcache.VintageBuildTreeWorkController$scheduleAndRunRequestedTasks$1.apply(VintageBuildTreeWorkController.kt:36)
-        at org.gradle.configurationcache.VintageBuildTreeWorkController$scheduleAndRunRequestedTasks$1.apply(VintageBuildTreeWorkController.kt:35)
-        at org.gradle.composite.internal.DefaultIncludedBuildTaskGraph.withNewWorkGraph(DefaultIncludedBuildTaskGraph.java:109)
-        at org.gradle.configurationcache.VintageBuildTreeWorkController.scheduleAndRunRequestedTasks(VintageBuildTreeWorkController.kt:35)
-        at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.lambda$scheduleAndRunTasks$1(DefaultBuildTreeLifecycleController.java:68)
-        at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.lambda$runBuild$4(DefaultBuildTreeLifecycleController.java:98)
-        at org.gradle.internal.model.StateTransitionController.lambda$transition$6(StateTransitionController.java:177)
-        at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:258)
-        at org.gradle.internal.model.StateTransitionController.lambda$transition$7(StateTransitionController.java:177)
-        at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)
-        at org.gradle.internal.model.StateTransitionController.transition(StateTransitionController.java:177)
-        at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.runBuild(DefaultBuildTreeLifecycleController.java:95)
-        at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.scheduleAndRunTasks(DefaultBuildTreeLifecycleController.java:68)
-        at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.scheduleAndRunTasks(DefaultBuildTreeLifecycleController.java:63)
-        at org.gradle.tooling.internal.provider.ExecuteBuildActionRunner.run(ExecuteBuildActionRunner.java:31)
-        at org.gradle.launcher.exec.ChainingBuildActionRunner.run(ChainingBuildActionRunner.java:35)
-        at org.gradle.internal.buildtree.ProblemReportingBuildActionRunner.run(ProblemReportingBuildActionRunner.java:49)
-        at org.gradle.launcher.exec.BuildOutcomeReportingBuildActionRunner.run(BuildOutcomeReportingBuildActionRunner.java:65)
-        at org.gradle.tooling.internal.provider.FileSystemWatchingBuildActionRunner.run(FileSystemWatchingBuildActionRunner.java:140)
-        at org.gradle.launcher.exec.BuildCompletionNotifyingBuildActionRunner.run(BuildCompletionNotifyingBuildActionRunner.java:41)
-        at org.gradle.launcher.exec.RootBuildLifecycleBuildActionExecutor.lambda$execute$0(RootBuildLifecycleBuildActionExecutor.java:40)
-        at org.gradle.composite.internal.DefaultRootBuildState.run(DefaultRootBuildState.java:122)
-        at org.gradle.launcher.exec.RootBuildLifecycleBuildActionExecutor.execute(RootBuildLifecycleBuildActionExecutor.java:40)
-        at org.gradle.internal.buildtree.DefaultBuildTreeContext.execute(DefaultBuildTreeContext.java:40)
-        at org.gradle.launcher.exec.BuildTreeLifecycleBuildActionExecutor.lambda$execute$0(BuildTreeLifecycleBuildActionExecutor.java:65)
-        at org.gradle.internal.buildtree.BuildTreeState.run(BuildTreeState.java:53)
-        at org.gradle.launcher.exec.BuildTreeLifecycleBuildActionExecutor.execute(BuildTreeLifecycleBuildActionExecutor.java:65)
-        at org.gradle.launcher.exec.RunAsBuildOperationBuildActionExecutor$3.call(RunAsBuildOperationBuildActionExecutor.java:61)
-        at org.gradle.launcher.exec.RunAsBuildOperationBuildActionExecutor$3.call(RunAsBuildOperationBuildActionExecutor.java:57)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
-        at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
-        at org.gradle.launcher.exec.RunAsBuildOperationBuildActionExecutor.execute(RunAsBuildOperationBuildActionExecutor.java:57)
-        at org.gradle.launcher.exec.RunAsWorkerThreadBuildActionExecutor.lambda$execute$0(RunAsWorkerThreadBuildActionExecutor.java:36)
-        at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:249)
-        at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:109)
-        at org.gradle.launcher.exec.RunAsWorkerThreadBuildActionExecutor.execute(RunAsWorkerThreadBuildActionExecutor.java:36)
-        at org.gradle.tooling.internal.provider.continuous.ContinuousBuildActionExecutor.execute(ContinuousBuildActionExecutor.java:110)
-        at org.gradle.tooling.internal.provider.SubscribableBuildActionExecutor.execute(SubscribableBuildActionExecutor.java:64)
-        at org.gradle.internal.session.DefaultBuildSessionContext.execute(DefaultBuildSessionContext.java:46)
-        at org.gradle.tooling.internal.provider.BuildSessionLifecycleBuildActionExecuter$ActionImpl.apply(BuildSessionLifecycleBuildActionExecuter.java:100)
-        at org.gradle.tooling.internal.provider.BuildSessionLifecycleBuildActionExecuter$ActionImpl.apply(BuildSessionLifecycleBuildActionExecuter.java:88)
-        at org.gradle.internal.session.BuildSessionState.run(BuildSessionState.java:69)
-        at org.gradle.tooling.internal.provider.BuildSessionLifecycleBuildActionExecuter.execute(BuildSessionLifecycleBuildActionExecuter.java:62)
-        at org.gradle.tooling.internal.provider.BuildSessionLifecycleBuildActionExecuter.execute(BuildSessionLifecycleBuildActionExecuter.java:41)
-        at org.gradle.tooling.internal.provider.StartParamsValidatingActionExecuter.execute(StartParamsValidatingActionExecuter.java:63)
-        at org.gradle.tooling.internal.provider.StartParamsValidatingActionExecuter.execute(StartParamsValidatingActionExecuter.java:31)
-        at org.gradle.tooling.internal.provider.SessionFailureReportingActionExecuter.execute(SessionFailureReportingActionExecuter.java:50)
-        at org.gradle.tooling.internal.provider.SessionFailureReportingActionExecuter.execute(SessionFailureReportingActionExecuter.java:38)
-        at org.gradle.tooling.internal.provider.SetupLoggingActionExecuter.execute(SetupLoggingActionExecuter.java:47)
-        at org.gradle.tooling.internal.provider.SetupLoggingActionExecuter.execute(SetupLoggingActionExecuter.java:31)
-        at org.gradle.launcher.daemon.server.exec.ExecuteBuild.doBuild(ExecuteBuild.java:65)
-        at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
-        at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-        at org.gradle.launcher.daemon.server.exec.WatchForDisconnection.execute(WatchForDisconnection.java:39)
-        at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-        at org.gradle.launcher.daemon.server.exec.ResetDeprecationLogger.execute(ResetDeprecationLogger.java:29)
-        at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-        at org.gradle.launcher.daemon.server.exec.RequestStopIfSingleUsedDaemon.execute(RequestStopIfSingleUsedDaemon.java:35)
-        at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-        at org.gradle.launcher.daemon.server.exec.ForwardClientInput$2.create(ForwardClientInput.java:78)
-        at org.gradle.launcher.daemon.server.exec.ForwardClientInput$2.create(ForwardClientInput.java:75)
-        at org.gradle.util.internal.Swapper.swap(Swapper.java:38)
-        at org.gradle.launcher.daemon.server.exec.ForwardClientInput.execute(ForwardClientInput.java:75)
-        at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-        at org.gradle.launcher.daemon.server.exec.LogAndCheckHealth.execute(LogAndCheckHealth.java:64)
-        at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-        at org.gradle.launcher.daemon.server.exec.LogToClient.doBuild(LogToClient.java:63)
-        at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
-        at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-        at org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment.doBuild(EstablishBuildEnvironment.java:84)
-        at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
-        at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-        at org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy$1.run(StartBuildOrRespondWithBusy.java:52)
-        at org.gradle.launcher.daemon.server.DaemonStateCoordinator$1.run(DaemonStateCoordinator.java:297)
-        at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
-        at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:49)
-Caused by: org.gradle.internal.resolve.ModuleVersionResolveException: Could not resolve com.android.tools.build:gradle:8.0.2.
-Required by:
-    project : > com.android.application:com.android.application.gradle.plugin:8.0.2
-    project : > com.android.library:com.android.library.gradle.plugin:8.0.2
-Caused by: org.gradle.internal.component.NoMatchingConfigurationSelectionException: No matching variant of com.android.tools.build:gradle:8.0.2 was found. The consumer was configured to find a library for use during runtime, compati
-ble with Java 8, packaged as a jar, and its dependencies declared externally, as well as attribute 'org.gradle.plugin.api-version' with value '8.0' but:
-  - Variant 'apiElements' capability com.android.tools.build:gradle:8.0.2 declares a library, packaged as a jar, and its dependencies declared externally:
-      - Incompatible because this component declares a component for use during compile-time, compatible with Java 11 and the consumer needed a component for use during runtime, compatible with Java 8
-      - Other compatible attribute:
-          - Doesn't say anything about org.gradle.plugin.api-version (required '8.0')
-  - Variant 'javadocElements' capability com.android.tools.build:gradle:8.0.2 declares a component for use during runtime, and its dependencies declared externally:
-      - Incompatible because this component declares documentation and the consumer needed a library
-      - Other compatible attributes:
-          - Doesn't say anything about its target Java version (required compatibility with Java 8)
-          - Doesn't say anything about its elements (required them packaged as a jar)
-          - Doesn't say anything about org.gradle.plugin.api-version (required '8.0')
-  - Variant 'runtimeElements' capability com.android.tools.build:gradle:8.0.2 declares a library for use during runtime, packaged as a jar, and its dependencies declared externally:
-      - Incompatible because this component declares a component, compatible with Java 11 and the consumer needed a component, compatible with Java 8
-      - Other compatible attribute:
-          - Doesn't say anything about org.gradle.plugin.api-version (required '8.0')
-  - Variant 'sourcesElements' capability com.android.tools.build:gradle:8.0.2 declares a component for use during runtime, and its dependencies declared externally:
-      - Incompatible because this component declares documentation and the consumer needed a library
-      - Other compatible attributes:
-          - Doesn't say anything about its target Java version (required compatibility with Java 8)
-          - Doesn't say anything about its elements (required them packaged as a jar)
-          - Doesn't say anything about org.gradle.plugin.api-version (required '8.0')
-        at org.gradle.internal.component.model.AttributeConfigurationSelector.selectVariantsUsingAttributeMatching(AttributeConfigurationSelector.java:113)
-        at org.gradle.internal.component.model.AttributeConfigurationSelector.selectVariantsUsingAttributeMatching(AttributeConfigurationSelector.java:51)
-        at org.gradle.internal.component.external.model.ConfigurationBoundExternalDependencyMetadata.selectVariants(ConfigurationBoundExternalDependencyMetadata.java:110)
-        at org.gradle.api.internal.artifacts.ivyservice.resolveengine.graph.builder.EdgeState.calculateTargetConfigurations(EdgeState.java:267)
-        at org.gradle.api.internal.artifacts.ivyservice.resolveengine.graph.builder.EdgeState.attachToTargetConfigurations(EdgeState.java:152)
-        at org.gradle.api.internal.artifacts.ivyservice.resolveengine.graph.builder.DependencyGraphBuilder.attachToTargetRevisionsSerially(DependencyGraphBuilder.java:371)
-        at org.gradle.api.internal.artifacts.ivyservice.resolveengine.graph.builder.DependencyGraphBuilder.resolveEdges(DependencyGraphBuilder.java:254)
-        at org.gradle.api.internal.artifacts.ivyservice.resolveengine.graph.builder.DependencyGraphBuilder.traverseGraph(DependencyGraphBuilder.java:191)
-        at org.gradle.api.internal.artifacts.ivyservice.resolveengine.graph.builder.DependencyGraphBuilder.resolve(DependencyGraphBuilder.java:151)
-        at org.gradle.api.internal.artifacts.ivyservice.resolveengine.DefaultArtifactDependencyResolver.resolve(DefaultArtifactDependencyResolver.java:144)
-        at org.gradle.api.internal.artifacts.ivyservice.DefaultConfigurationResolver.resolveGraph(DefaultConfigurationResolver.java:195)
-        at org.gradle.api.internal.artifacts.ivyservice.ShortCircuitEmptyConfigurationResolver.resolveGraph(ShortCircuitEmptyConfigurationResolver.java:85)
-        at org.gradle.api.internal.artifacts.ivyservice.ErrorHandlingConfigurationResolver.resolveGraph(ErrorHandlingConfigurationResolver.java:76)
-        at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$1.call(DefaultConfiguration.java:669)
-        at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$1.call(DefaultConfiguration.java:660)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
-        at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
-        at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.resolveGraphIfRequired(DefaultConfiguration.java:660)
-        at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.lambda$resolveExclusively$4(DefaultConfiguration.java:640)
-        at org.gradle.api.internal.project.DefaultProjectStateRegistry$CalculatedModelValueImpl.update(DefaultProjectStateRegistry.java:486)
-        at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.resolveExclusively(DefaultConfiguration.java:637)
-        at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.resolveToStateOrLater(DefaultConfiguration.java:624)
-        at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration.access$1900(DefaultConfiguration.java:166)
-        at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$SelectedArtifactsProvider.getValue(DefaultConfiguration.java:1505)
-        at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$SelectedArtifactsProvider.getValue(DefaultConfiguration.java:1495)
-        at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$ConfigurationFileCollection.getSelectedArtifacts(DefaultConfiguration.java:1574)
-        at org.gradle.api.internal.artifacts.configurations.DefaultConfiguration$ConfigurationFileCollection.visitContents(DefaultConfiguration.java:1561)
-        at org.gradle.api.internal.file.AbstractFileCollection.getFiles(AbstractFileCollection.java:130)
-        at org.gradle.api.internal.file.AbstractFileCollection.iterator(AbstractFileCollection.java:171)
-        at org.gradle.internal.classpath.DefaultClassPath.of(DefaultClassPath.java:56)
-        at org.gradle.api.internal.initialization.DefaultScriptClassPathResolver.resolveClassPath(DefaultScriptClassPathResolver.java:86)
-        at org.gradle.api.internal.initialization.DefaultScriptHandler.getInstrumentedScriptClassPath(DefaultScriptHandler.java:91)
-        at org.gradle.plugin.use.internal.DefaultPluginRequestApplicator.defineScriptHandlerClassScope(DefaultPluginRequestApplicator.java:176)
-        at org.gradle.plugin.use.internal.DefaultPluginRequestApplicator.applyPlugins(DefaultPluginRequestApplicator.java:141)
-        at org.gradle.configuration.DefaultScriptPluginFactory$ScriptPluginImpl.apply(DefaultScriptPluginFactory.java:117)
-        at org.gradle.configuration.BuildOperationScriptPlugin$1.run(BuildOperationScriptPlugin.java:65)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:47)
-        at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:68)
-        at org.gradle.configuration.BuildOperationScriptPlugin.lambda$apply$0(BuildOperationScriptPlugin.java:62)
-        at org.gradle.configuration.internal.DefaultUserCodeApplicationContext.apply(DefaultUserCodeApplicationContext.java:44)
-        at org.gradle.configuration.BuildOperationScriptPlugin.apply(BuildOperationScriptPlugin.java:62)
-        at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.lambda$applyToMutableState$0(DefaultProjectStateRegistry.java:388)
-        at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.fromMutableState(DefaultProjectStateRegistry.java:406)
-        at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.applyToMutableState(DefaultProjectStateRegistry.java:387)
-        at org.gradle.configuration.project.BuildScriptProcessor.execute(BuildScriptProcessor.java:42)
-        at org.gradle.configuration.project.BuildScriptProcessor.execute(BuildScriptProcessor.java:26)
-        at org.gradle.configuration.project.ConfigureActionsProjectEvaluator.evaluate(ConfigureActionsProjectEvaluator.java:35)
-        at org.gradle.configuration.project.LifecycleProjectEvaluator$EvaluateProject.lambda$run$0(LifecycleProjectEvaluator.java:109)
-        at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.lambda$applyToMutableState$0(DefaultProjectStateRegistry.java:388)
-        at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.lambda$fromMutableState$1(DefaultProjectStateRegistry.java:411)
-        at org.gradle.internal.work.DefaultWorkerLeaseService.withReplacedLocks(DefaultWorkerLeaseService.java:345)
-        at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.fromMutableState(DefaultProjectStateRegistry.java:411)
-        at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.applyToMutableState(DefaultProjectStateRegistry.java:387)
-        at org.gradle.configuration.project.LifecycleProjectEvaluator$EvaluateProject.run(LifecycleProjectEvaluator.java:100)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:47)
-        at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:68)
-        at org.gradle.configuration.project.LifecycleProjectEvaluator.evaluate(LifecycleProjectEvaluator.java:72)
-        at org.gradle.api.internal.project.DefaultProject.evaluate(DefaultProject.java:792)
-        at org.gradle.api.internal.project.DefaultProject.evaluate(DefaultProject.java:156)
-        at org.gradle.api.internal.project.ProjectLifecycleController.lambda$ensureSelfConfigured$2(ProjectLifecycleController.java:84)
-        at org.gradle.internal.model.StateTransitionController.lambda$doTransition$13(StateTransitionController.java:247)
-        at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:258)
-        at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:246)
-        at org.gradle.internal.model.StateTransitionController.lambda$maybeTransitionIfNotCurrentlyTransitioning$10(StateTransitionController.java:207)
-        at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:34)
-        at org.gradle.internal.model.StateTransitionController.maybeTransitionIfNotCurrentlyTransitioning(StateTransitionController.java:203)
-        at org.gradle.api.internal.project.ProjectLifecycleController.ensureSelfConfigured(ProjectLifecycleController.java:84)
-        at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.ensureConfigured(DefaultProjectStateRegistry.java:362)
-        at org.gradle.execution.TaskPathProjectEvaluator.configure(TaskPathProjectEvaluator.java:33)
-        at org.gradle.execution.TaskPathProjectEvaluator.configureHierarchy(TaskPathProjectEvaluator.java:47)
-        at org.gradle.configuration.DefaultProjectsPreparer.prepareProjects(DefaultProjectsPreparer.java:42)
-        at org.gradle.configuration.BuildTreePreparingProjectsPreparer.prepareProjects(BuildTreePreparingProjectsPreparer.java:64)
-        at org.gradle.configuration.BuildOperationFiringProjectsPreparer$ConfigureBuild.run(BuildOperationFiringProjectsPreparer.java:52)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:47)
-        at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:68)
-        at org.gradle.configuration.BuildOperationFiringProjectsPreparer.prepareProjects(BuildOperationFiringProjectsPreparer.java:40)
-        at org.gradle.initialization.VintageBuildModelController.lambda$prepareProjects$2(VintageBuildModelController.java:84)
-        at org.gradle.internal.model.StateTransitionController.lambda$doTransition$13(StateTransitionController.java:247)
-        at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:258)
-        at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:246)
-        at org.gradle.internal.model.StateTransitionController.lambda$transitionIfNotPreviously$11(StateTransitionController.java:221)
-        at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:34)
-        at org.gradle.internal.model.StateTransitionController.transitionIfNotPreviously(StateTransitionController.java:217)
-        at org.gradle.initialization.VintageBuildModelController.prepareProjects(VintageBuildModelController.java:84)
-        at org.gradle.initialization.VintageBuildModelController.prepareToScheduleTasks(VintageBuildModelController.java:71)
-        at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$prepareToScheduleTasks$3(DefaultBuildLifecycleController.java:134)
-        at org.gradle.internal.model.StateTransitionController.lambda$doTransition$13(StateTransitionController.java:247)
-        at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:258)
-        at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:246)
-        at org.gradle.internal.model.StateTransitionController.lambda$maybeTransition$9(StateTransitionController.java:198)
-        at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:34)
-        at org.gradle.internal.model.StateTransitionController.maybeTransition(StateTransitionController.java:194)
-        at org.gradle.internal.build.DefaultBuildLifecycleController.prepareToScheduleTasks(DefaultBuildLifecycleController.java:132)
-        at org.gradle.internal.buildtree.DefaultBuildTreeWorkPreparer.scheduleRequestedTasks(DefaultBuildTreeWorkPreparer.java:36)
-        at org.gradle.configurationcache.VintageBuildTreeWorkController$scheduleAndRunRequestedTasks$1.apply(VintageBuildTreeWorkController.kt:36)
-        at org.gradle.configurationcache.VintageBuildTreeWorkController$scheduleAndRunRequestedTasks$1.apply(VintageBuildTreeWorkController.kt:35)
-        at org.gradle.composite.internal.DefaultIncludedBuildTaskGraph.withNewWorkGraph(DefaultIncludedBuildTaskGraph.java:109)
-        at org.gradle.configurationcache.VintageBuildTreeWorkController.scheduleAndRunRequestedTasks(VintageBuildTreeWorkController.kt:35)
-        at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.lambda$scheduleAndRunTasks$1(DefaultBuildTreeLifecycleController.java:68)
-        at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.lambda$runBuild$4(DefaultBuildTreeLifecycleController.java:98)
-        at org.gradle.internal.model.StateTransitionController.lambda$transition$6(StateTransitionController.java:177)
-        at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:258)
-        at org.gradle.internal.model.StateTransitionController.lambda$transition$7(StateTransitionController.java:177)
-        at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)
-        at org.gradle.internal.model.StateTransitionController.transition(StateTransitionController.java:177)
-        at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.runBuild(DefaultBuildTreeLifecycleController.java:95)
-        at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.scheduleAndRunTasks(DefaultBuildTreeLifecycleController.java:68)
-        at org.gradle.internal.buildtree.DefaultBuildTreeLifecycleController.scheduleAndRunTasks(DefaultBuildTreeLifecycleController.java:63)
-        at org.gradle.tooling.internal.provider.ExecuteBuildActionRunner.run(ExecuteBuildActionRunner.java:31)
-        at org.gradle.launcher.exec.ChainingBuildActionRunner.run(ChainingBuildActionRunner.java:35)
-        at org.gradle.internal.buildtree.ProblemReportingBuildActionRunner.run(ProblemReportingBuildActionRunner.java:49)
-        at org.gradle.launcher.exec.BuildOutcomeReportingBuildActionRunner.run(BuildOutcomeReportingBuildActionRunner.java:65)
-        at org.gradle.tooling.internal.provider.FileSystemWatchingBuildActionRunner.run(FileSystemWatchingBuildActionRunner.java:140)
-        at org.gradle.launcher.exec.BuildCompletionNotifyingBuildActionRunner.run(BuildCompletionNotifyingBuildActionRunner.java:41)
-        at org.gradle.launcher.exec.RootBuildLifecycleBuildActionExecutor.lambda$execute$0(RootBuildLifecycleBuildActionExecutor.java:40)
-        at org.gradle.composite.internal.DefaultRootBuildState.run(DefaultRootBuildState.java:122)
-        at org.gradle.launcher.exec.RootBuildLifecycleBuildActionExecutor.execute(RootBuildLifecycleBuildActionExecutor.java:40)
-        at org.gradle.internal.buildtree.DefaultBuildTreeContext.execute(DefaultBuildTreeContext.java:40)
-        at org.gradle.launcher.exec.BuildTreeLifecycleBuildActionExecutor.lambda$execute$0(BuildTreeLifecycleBuildActionExecutor.java:65)
-        at org.gradle.internal.buildtree.BuildTreeState.run(BuildTreeState.java:53)
-        at org.gradle.launcher.exec.BuildTreeLifecycleBuildActionExecutor.execute(BuildTreeLifecycleBuildActionExecutor.java:65)
-        at org.gradle.launcher.exec.RunAsBuildOperationBuildActionExecutor$3.call(RunAsBuildOperationBuildActionExecutor.java:61)
-        at org.gradle.launcher.exec.RunAsBuildOperationBuildActionExecutor$3.call(RunAsBuildOperationBuildActionExecutor.java:57)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
-        at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
-        at org.gradle.launcher.exec.RunAsBuildOperationBuildActionExecutor.execute(RunAsBuildOperationBuildActionExecutor.java:57)
-        at org.gradle.launcher.exec.RunAsWorkerThreadBuildActionExecutor.lambda$execute$0(RunAsWorkerThreadBuildActionExecutor.java:36)
-        at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:249)
-        at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:109)
-        at org.gradle.launcher.exec.RunAsWorkerThreadBuildActionExecutor.execute(RunAsWorkerThreadBuildActionExecutor.java:36)
-        at org.gradle.tooling.internal.provider.continuous.ContinuousBuildActionExecutor.execute(ContinuousBuildActionExecutor.java:110)
-        at org.gradle.tooling.internal.provider.SubscribableBuildActionExecutor.execute(SubscribableBuildActionExecutor.java:64)
-        at org.gradle.internal.session.DefaultBuildSessionContext.execute(DefaultBuildSessionContext.java:46)
-        at org.gradle.tooling.internal.provider.BuildSessionLifecycleBuildActionExecuter$ActionImpl.apply(BuildSessionLifecycleBuildActionExecuter.java:100)
-        at org.gradle.tooling.internal.provider.BuildSessionLifecycleBuildActionExecuter$ActionImpl.apply(BuildSessionLifecycleBuildActionExecuter.java:88)
-        at org.gradle.internal.session.BuildSessionState.run(BuildSessionState.java:69)
-        at org.gradle.tooling.internal.provider.BuildSessionLifecycleBuildActionExecuter.execute(BuildSessionLifecycleBuildActionExecuter.java:62)
-        at org.gradle.tooling.internal.provider.BuildSessionLifecycleBuildActionExecuter.execute(BuildSessionLifecycleBuildActionExecuter.java:41)
-        at org.gradle.tooling.internal.provider.StartParamsValidatingActionExecuter.execute(StartParamsValidatingActionExecuter.java:63)
-        at org.gradle.tooling.internal.provider.StartParamsValidatingActionExecuter.execute(StartParamsValidatingActionExecuter.java:31)
-        at org.gradle.tooling.internal.provider.SessionFailureReportingActionExecuter.execute(SessionFailureReportingActionExecuter.java:50)
-        at org.gradle.tooling.internal.provider.SessionFailureReportingActionExecuter.execute(SessionFailureReportingActionExecuter.java:38)
-        at org.gradle.tooling.internal.provider.SetupLoggingActionExecuter.execute(SetupLoggingActionExecuter.java:47)
-        at org.gradle.tooling.internal.provider.SetupLoggingActionExecuter.execute(SetupLoggingActionExecuter.java:31)
-        at org.gradle.launcher.daemon.server.exec.ExecuteBuild.doBuild(ExecuteBuild.java:65)
-        at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
-        at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-        at org.gradle.launcher.daemon.server.exec.WatchForDisconnection.execute(WatchForDisconnection.java:39)
-        at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-        at org.gradle.launcher.daemon.server.exec.ResetDeprecationLogger.execute(ResetDeprecationLogger.java:29)
-        at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-        at org.gradle.launcher.daemon.server.exec.RequestStopIfSingleUsedDaemon.execute(RequestStopIfSingleUsedDaemon.java:35)
-        at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-        at org.gradle.launcher.daemon.server.exec.ForwardClientInput$2.create(ForwardClientInput.java:78)
-        at org.gradle.launcher.daemon.server.exec.ForwardClientInput$2.create(ForwardClientInput.java:75)
-        at org.gradle.util.internal.Swapper.swap(Swapper.java:38)
-        at org.gradle.launcher.daemon.server.exec.ForwardClientInput.execute(ForwardClientInput.java:75)
-        at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-        at org.gradle.launcher.daemon.server.exec.LogAndCheckHealth.execute(LogAndCheckHealth.java:64)
-        at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-        at org.gradle.launcher.daemon.server.exec.LogToClient.doBuild(LogToClient.java:63)
-        at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
-        at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-        at org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment.doBuild(EstablishBuildEnvironment.java:84)
-        at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
-        at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
-        at org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy$1.run(StartBuildOrRespondWithBusy.java:52)
-        at org.gradle.launcher.daemon.server.DaemonStateCoordinator$1.run(DaemonStateCoordinator.java:297)
-        at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
-        at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:49)
-
-
-* Get more help at https://help.gradle.org
-
-BUILD FAILED in 704ms
-PS D:\project\test2> 
-
-
-
+2023-06-13 21:14:52.859 17156-17156 IS_CTS_MODE             com.zhanghuang                       D  false
+2023-06-13 21:14:52.860 17156-17156 MULTI_WINDOW_ENABLED    com.zhanghuang                       D  false
+2023-06-13 21:14:52.864 17156-17156 AndroidRuntime          com.zhanghuang                       D  Shutting down VM
+2023-06-13 21:14:52.868 17156-17156 AndroidRuntime          com.zhanghuang                       E  FATAL EXCEPTION: main
+                                                                                                    Process: com.zhanghuang, PID: 17156
+                                                                                                    java.lang.NullPointerException: Attempt to invoke virtual method 'void android.widget.Button.setOnClickListener(android.view.View$OnClickListener)' on a null object reference
+                                                                                                    	at com.zhanghuang.fragments.MemberFragment.clearCache(MemberFragment.java:201)
+                                                                                                    	at com.zhanghuang.fragments.MemberFragment_ViewBinding$5.doClick(MemberFragment_ViewBinding.java:82)
+                                                                                                    	at butterknife.internal.DebouncingOnClickListener.onClick(DebouncingOnClickListener.java:22)
+                                                                                                    	at android.view.View.performClick(View.java:7544)
+                                                                                                    	at android.view.View.performClickInternal(View.java:7521)
+                                                                                                    	at android.view.View.-$$Nest$mperformClickInternal(Unknown Source:0)
+                                                                                                    	at android.view.View$PerformClick.run(View.java:29555)
+                                                                                                    	at android.os.Handler.handleCallback(Handler.java:942)
+                                                                                                    	at android.os.Handler.dispatchMessage(Handler.java:99)
+                                                                                                    	at android.os.Looper.loopOnce(Looper.java:210)
+                                                                                                    	at android.os.Looper.loop(Looper.java:299)
+                                                                                                    	at android.app.ActivityThread.main(ActivityThread.java:8252)
+                                                                                                    	at java.lang.reflect.Method.invoke(Native Method)
+                                                                                                    	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:559)
+                                                                                                    	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:954)
+2023-06-13 21:14:52.868 17156-17156 com.zhanghuang          com.zhanghuang                       W  type=1400 audit(0.0:346543): avc: denied { search } for name="miuilog" dev="dm-43" ino=395 scontext=u:r:untrusted_app_30:s0:c50,c258,c512,c768 tcontext=u:object_r:data_log_file:s0 tclass=dir permissive=0 app=com.zhanghuang
+2023-06-13 21:14:52.870 17156-17156 OOMEventManagerFK       com.zhanghuang                       W  Failed to mkdir /data/miuilog/stability/memleak/heapdump/
+2023-06-13 21:14:52.868 17156-17156 com.zhanghuang          com.zhanghuang                       W  type=1400 audit(0.0:346544): avc: denied { search } for name="miuilog" dev="dm-43" ino=395 scontext=u:r:untrusted_app_30:s0:c50,c258,c512,c768 tcontext=u:object_r:data_log_file:s0 tclass=dir permissive=0 app=com.zhanghuang
+2023-06-13 21:14:52.868 17156-17156 com.zhanghuang          com.zhanghuang                       W  type=1400 audit(0.0:346545): avc: denied { search } for name="miuilog" dev="dm-43" ino=395 scontext=u:r:untrusted_app_30:s0:c50,c258,c512,c768 tcontext=u:object_r:data_log_file:s0 tclass=dir permissive=0 app=com.zhanghuang
+2023-06-13 21:14:52.868 17156-17156 com.zhanghuang          com.zhanghuang                       W  type=1400 audit(0.0:346546): avc: denied { search } for name="miuilog" dev="dm-43" ino=395 scontext=u:r:untrusted_app_30:s0:c50,c258,c512,c768 tcontext=u:object_r:data_log_file:s0 tclass=dir permissive=0 app=com.zhanghuang
+2023-06-13 21:14:52.872 17156-17156 DEBUG                   com.zhanghuang                       E  encryptLog: false, zipCrashLog: false
+2023-06-13 21:14:52.872 17156-17156 DEBUG                   com.zhanghuang                       E  begin to generate java report
+2023-06-13 21:14:52.874 17156-17156 DEBUG                   com.zhanghuang                       E  *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+2023-06-13 21:14:52.874 17156-17156 DEBUG                   com.zhanghuang                       E  Basic Information: 'pid: 17156/tid: 17156/time: 20230613211452'
+2023-06-13 21:14:52.874 17156-17156 DEBUG                   com.zhanghuang                       E  Cpu Information: 'abi: arm64-v8a,armeabi-v7a,armeabi/processor: -/hardware: qcom'
+2023-06-13 21:14:52.874 17156-17156 DEBUG                   com.zhanghuang                       E  Mobile Information: 'model: 22081212C/version: 13/sdk: 33'
+2023-06-13 21:14:52.874 17156-17156 DEBUG                   com.zhanghuang                       E  Build fingerprint: 'Redmi/diting/diting:13/TKQ1.220829.002/V14.0.8.0.TLFCNXM:user/release-keys'
+2023-06-13 21:14:52.874 17156-17156 DEBUG                   com.zhanghuang                       E  Runtime Information: 'start: 20230613211430/maxheap: 536870912/primaryabi: arm64-v8a/ground: fg'
+2023-06-13 21:14:52.874 17156-17156 DEBUG                   com.zhanghuang                       E  Application Information: 'version: 2.0.8/subversion: release/buildseq: dd08815c/versioncode: 11'
+2023-06-13 21:14:52.874 17156-17156 DEBUG                   com.zhanghuang                       E  CrashSDK Information: 'version: 3.2.0.4/nativeseq: 210105150455/javaseq: 210105150455/arch: arm64-v8a/target: release'
+2023-06-13 21:14:52.875 17156-17156 DEBUG                   com.zhanghuang                       E  Report Name: 58eb2d094544cb15d2001334_2.0.8_dd08815c_22081212C_13_168666207030654376_20230613211452_fg_java.log
+2023-06-13 21:14:52.875 17156-17156 DEBUG                   com.zhanghuang                       E  UUID: 96ced43a-0938-4011-923f-b686341247bc
+2023-06-13 21:14:52.875 17156-17156 DEBUG                   com.zhanghuang                       E  Log Type: java
+2023-06-13 21:14:52.875 17156-17156 DEBUG                   com.zhanghuang                       E  Activity: com.zhanghuang/.MainActivity
+2023-06-13 21:14:52.875 17156-17156 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+2023-06-13 21:14:52.875 17156-17156 DEBUG                   com.zhanghuang                       E  um_app_key: 58eb2d094544cb15d2001334
+2023-06-13 21:14:52.875 17156-17156 DEBUG                   com.zhanghuang                       E  um_app_channel: Umeng
+2023-06-13 21:14:52.875 17156-17156 DEBUG                   com.zhanghuang                       E  um_os: android
+2023-06-13 21:14:52.875 17156-17156 DEBUG                   com.zhanghuang                       E  um_crash_sdk_version: 1.2.0
+2023-06-13 21:14:52.875 17156-17156 DEBUG                   com.zhanghuang                       E  um_umid_header: 3d9a5e688a8260520651132368dd2ec9od
+2023-06-13 21:14:52.875 17156-17156 DEBUG                   com.zhanghuang                       E  um_app_carrier: 中国移动
+2023-06-13 21:14:52.875 17156-17156 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+2023-06-13 21:14:52.875 17156-17156 DEBUG                   com.zhanghuang                       E  Process Name: 'com.zhanghuang'
+2023-06-13 21:14:52.875 17156-17156 DEBUG                   com.zhanghuang                       E  Thread Name: 'main'
+2023-06-13 21:14:52.875 17156-17156 DEBUG                   com.zhanghuang                       E  Back traces starts.
+2023-06-13 21:14:52.875 17156-17156 com.zhanghuang          com.zhanghuang                       W  Accessing hidden field Ljava/lang/Throwable;->detailMessage:Ljava/lang/String; (unsupported, reflection, allowed)
+2023-06-13 21:14:52.876 17156-17156 DEBUG                   com.zhanghuang                       E  java.lang.NullPointerException: Attempt to invoke virtual method 'void android.widget.Button.setOnClickListener(android.view.View$OnClickListener)' on a null object reference
+2023-06-13 21:14:52.876 17156-17156 DEBUG                   com.zhanghuang                       E  	at com.zhanghuang.fragments.MemberFragment.clearCache(MemberFragment.java:201)
+2023-06-13 21:14:52.876 17156-17156 DEBUG                   com.zhanghuang                       E  	at com.zhanghuang.fragments.MemberFragment_ViewBinding$5.doClick(MemberFragment_ViewBinding.java:82)
+2023-06-13 21:14:52.876 17156-17156 DEBUG                   com.zhanghuang                       E  	at butterknife.internal.DebouncingOnClickListener.onClick(DebouncingOnClickListener.java:22)
+2023-06-13 21:14:52.876 17156-17156 DEBUG                   com.zhanghuang                       E  	at android.view.View.performClick(View.java:7544)
+2023-06-13 21:14:52.876 17156-17156 DEBUG                   com.zhanghuang                       E  	at android.view.View.performClickInternal(View.java:7521)
+2023-06-13 21:14:52.876 17156-17156 DEBUG                   com.zhanghuang                       E  	at android.view.View.-$$Nest$mperformClickInternal(Unknown Source:0)
+2023-06-13 21:14:52.876 17156-17156 DEBUG                   com.zhanghuang                       E  	at android.view.View$PerformClick.run(View.java:29555)
+2023-06-13 21:14:52.876 17156-17156 DEBUG                   com.zhanghuang                       E  	at android.os.Handler.handleCallback(Handler.java:942)
+2023-06-13 21:14:52.876 17156-17156 DEBUG                   com.zhanghuang                       E  	at android.os.Handler.dispatchMessage(Handler.java:99)
+2023-06-13 21:14:52.876 17156-17156 DEBUG                   com.zhanghuang                       E  	at android.os.Looper.loopOnce(Looper.java:210)
+2023-06-13 21:14:52.876 17156-17156 DEBUG                   com.zhanghuang                       E  	at android.os.Looper.loop(Looper.java:299)
+2023-06-13 21:14:52.876 17156-17156 DEBUG                   com.zhanghuang                       E  	at android.app.ActivityThread.main(ActivityThread.java:8252)
+2023-06-13 21:14:52.876 17156-17156 DEBUG                   com.zhanghuang                       E  	at java.lang.reflect.Method.invoke(Native Method)
+2023-06-13 21:14:52.876 17156-17156 DEBUG                   com.zhanghuang                       E  	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:559)
+2023-06-13 21:14:52.876 17156-17156 DEBUG                   com.zhanghuang                       E  	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:954)
+2023-06-13 21:14:52.877 17156-17156 DEBUG                   com.zhanghuang                       E  Back traces ends.
+2023-06-13 21:14:52.877 17156-17156 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+2023-06-13 21:14:52.877 17156-17156 DEBUG                   com.zhanghuang                       E  meminfo:
+2023-06-13 21:14:52.877 17156-17156 DEBUG                   com.zhanghuang                       E  MemTotal:        7358568 kB
+                                                                                                    MemFree:          270024 kB
+                                                                                                    MemAvailable:    1752416 kB
+                                                                                                    Buffers:            1440 kB
+                                                                                                    Cached:          1368856 kB
+                                                                                                    SwapCached:        19384 kB
+                                                                                                    Active:          1120000 kB
+                                                                                                    Inactive:        1515656 kB
+                                                                                                    Active(anon):     597792 kB
+                                                                                                    Inactive(anon):   885948 kB
+                                                                                                    Active(file):     522208 kB
+                                                                                                    Inactive(file):   629708 kB
+                                                                                                    Unevictable:      194480 kB
+                                                                                                    Mlocked:          193248 kB
+                                                                                                    SwapTotal:       6291452 kB
+                                                                                                    SwapFree:        2845148 kB
+                                                                                                    Dirty:              2464 kB
+                                                                                                    Writeback:             0 kB
+                                                                                                    AnonPages:       1453784 kB
+                                                                                                    Mapped:           838728 kB
+                                                                                                    Shmem:             27208 kB
+                                                                                                    KReclaimable:     494028 kB
+                                                                                                    Slab:             659860 kB
+                                                                                                    SReclaimable:     187340 kB
+                                                                                                    SUnreclaim:       472520 kB
+                                                                                                    KernelStack:      106432 kB
+                                                                                                    ShadowCallStack:   26648 kB
+                                                                                                    PageTables:       168212 kB
+                                                                                                    NFS_Unstable:          0 kB
+                                                                                                    Bounce:                0 kB
+                                                                                                    WritebackTmp:          0 kB
+                                                                                                    CommitLimit:     9970736 kB
+                                                                                                    Committed_AS:   163693476 kB
+                                                                                                    VmallocTotal:   262930368 kB
+                                                                                                    VmallocUsed:      275048 kB
+                                                                                                    VmallocChunk:          0 kB
+                                                                                                    Percpu:      
+2023-06-13 21:14:52.877 17156-17156 DEBUG                   com.zhanghuang                       E       12544 kB
+                                                                                                    AnonHugePages:         0 kB
+                                                                                                    ShmemHugePages:        0 kB
+                                                                                                    ShmemPmdMapped:        0 kB
+                                                                                                    FileHugePages:      4096 kB
+                                                                                                    FilePmdMapped:      4096 kB
+                                                                                                    CmaTotal:         499712 kB
+                                                                                                    CmaFree:             120 kB
+2023-06-13 21:14:52.877 17156-17156 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+2023-06-13 21:14:52.877 17156-17156 DEBUG                   com.zhanghuang                       E  status:
+2023-06-13 21:14:52.877 17156-17156 DEBUG                   com.zhanghuang                       E  Name:	com.zhanghuang
+                                                                                                    Umask:	0077
+                                                                                                    State:	R (running)
+                                                                                                    Tgid:	17156
+                                                                                                    Ngid:	0
+                                                                                                    Pid:	17156
+                                                                                                    PPid:	1162
+                                                                                                    TracerPid:	0
+                                                                                                    Uid:	10562	10562	10562	10562
+                                                                                                    Gid:	10562	10562	10562	10562
+                                                                                                    FDSize:	256
+                                                                                                    Groups:	3003 9997 20562 50562 99909997 
+                                                                                                    VmPeak:	 8069900 kB
+                                                                                                    VmSize:	 7945604 kB
+                                                                                                    VmLck:	       0 kB
+                                                                                                    VmPin:	       0 kB
+                                                                                                    VmHWM:	  218184 kB
+                                                                                                    VmRSS:	  203312 kB
+                                                                                                    RssAnon:	   82536 kB
+                                                                                                    RssFile:	  118488 kB
+                                                                                                    RssShmem:	    2288 kB
+                                                                                                    VmData:	 1902832 kB
+                                                                                                    VmStk:	    8192 kB
+                                                                                                    VmExe:	       8 kB
+                                                                                                    VmLib:	  169184 kB
+                                                                                                    VmPTE:	    1424 kB
+                                                                                                    VmSwap:	   21188 kB
+                                                                                                    CoreDumping:	0
+                                                                                                    THP_enabled:	1
+                                                                                                    Threads:	63
+                                                                                                    SigQ:	0/26600
+                                                                                                    SigPnd:	0000000000000000
+                                                                                                    ShdPnd:	0000000000000000
+                                                                                                    SigBlk:	0000000080001200
+                                                                                                    SigIgn:	0000000000000001
+                                                                                                    SigCgt:	0000006e4000dcfe
+                                                                                                    CapInh:	0000000000000000
+                                                                                                    CapPrm:	0000000000000000
+                                                                                                    CapEff:	0000000000000000
+                                                                                                    CapBnd:	0000000000000000
+                                                                                                    CapAmb:	0000000000000000
+                                                                                                    NoNewPrivs:	0
+                                                                                                    Seccomp:	2
+                                                                                                    Seccomp_filters:	1
+                                                                                                    Speculation_Store_Bypass:	thread vulnerable
+                                                                                                    Cpus_allowed:	5f
+                                                                                                    Cpus_allowed_list:	0-4,6
+                                                                                                    Mems_allowed:	1
+                                                                                                    Mems_allowed_list:	0
+                                                                                                    voluntary_ctxt_switches:	686
+                                                                                                    nonvolun
+2023-06-13 21:14:52.877 17156-17156 DEBUG                   com.zhanghuang                       E  ary_ctxt_switches:	379
+2023-06-13 21:14:52.877 17156-17156 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+2023-06-13 21:14:52.878 17156-17156 DEBUG                   com.zhanghuang                       E  memory info:
+                                                                                                    JavaMax:    524288 kB
+                                                                                                    JavaTotal:  12295 kB
+                                                                                                    JavaFree:   4640 kB
+                                                                                                    NativeHeap: 54172 kB
+                                                                                                    NativeAllocated: 46232 kB
+                                                                                                    NativeFree: 7939 kB
+                                                                                                    availMem:   1638880 kB
+                                                                                                    threshold:  221184 kB
+                                                                                                    lowMemory:  false
+2023-06-13 21:14:52.878 17156-17156 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+2023-06-13 21:14:52.878 17156-17156 DEBUG                   com.zhanghuang                       E  recent status:
+2023-06-13 21:14:52.878 17156-17156 DEBUG                   com.zhanghuang                       E  last version: '2.0.8/release/dd08815c'
+2023-06-13 21:14:52.878 17156-17156 DEBUG                   com.zhanghuang                       E  dumping all threads: false
+2023-06-13 21:14:52.878 17156-17156 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+2023-06-13 21:14:52.878 17156-17156 DEBUG                   com.zhanghuang                       E  logcat:
+2023-06-13 21:14:52.934 17156-17156 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+2023-06-13 21:14:52.934 17156-17156 DEBUG                   com.zhanghuang                       E  battery info:
+2023-06-13 21:14:52.934 17156-17156 DEBUG                   com.zhanghuang                       E  level: 79
+                                                                                                    scale: 100
+                                                                                                    health: 2 (Good)
+                                                                                                    pluged: 2 (USB port)
+                                                                                                    status: 2 (Charging)
+                                                                                                    voltage: 4139
+                                                                                                    temperature: 335
+                                                                                                    technology: Li-poly
+                                                                                                    battery low: false
+2023-06-13 21:14:52.934 17156-17156 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+2023-06-13 21:14:52.934 17156-17156 DEBUG                   com.zhanghuang                       E  disk info:
+2023-06-13 21:14:52.935 17156-17156 DEBUG                   com.zhanghuang                       E  /data/data/com.zhanghuang:
+2023-06-13 21:14:52.935 17156-17156 DEBUG                   com.zhanghuang                       E    total:      234462188 kB
+2023-06-13 21:14:52.935 17156-17156 DEBUG                   com.zhanghuang                       E    available:  78369540 kB
+2023-06-13 21:14:52.935 17156-17156 DEBUG                   com.zhanghuang                       E    free:       78500612 kB
+2023-06-13 21:14:52.935 17156-17156 DEBUG                   com.zhanghuang                       E    block size: 4096 B
+2023-06-13 21:14:52.935 17156-17156 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+2023-06-13 21:14:52.935 17156-17156 DEBUG                   com.zhanghuang                       E  device status:
+2023-06-13 21:14:52.935 17156-17156 DEBUG                   com.zhanghuang                       E  has root: false
+2023-06-13 21:14:52.935 17156-17156 DEBUG                   com.zhanghuang                       E  build tags: release-keys
+2023-06-13 21:14:52.936 17156-17156 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+2023-06-13 21:14:52.936 17156-17156 DEBUG                   com.zhanghuang                       E  opened file count: 218, write limit: 900.
+2023-06-13 21:14:52.937 17156-17156 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+2023-06-13 21:14:52.937 17156-17156 DEBUG                   com.zhanghuang                       E  um_umid
+2023-06-13 21:14:52.937 17156-17156 DEBUG                   com.zhanghuang                       E  3d9a5e688a8260520651132368dd2ec9od
+2023-06-13 21:14:52.937 17156-17156 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+2023-06-13 21:14:52.937 17156-17156 DEBUG                   com.zhanghuang                       E  um_action_log
+2023-06-13 21:14:52.938 17156-17156 UMCrash                 com.zhanghuang                       I  page json is {"source":0,"action_name":"page_view","action_parameter":[{"name":"NSplashActivity-1686662070527"},{"name":"MainActivity-1686662070651"},{"name":"MainActivity-1686662074106"}]}
+2023-06-13 21:14:52.938 17156-17156 DEBUG                   com.zhanghuang                       E  {"source":0,"action_name":"page_view","action_parameter":[{"name":"NSplashActivity-1686662070527"},{"name":"MainActivity-1686662070651"},{"name":"MainActivity-1686662074106"}]}
+2023-06-13 21:14:52.938 17156-17156 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+2023-06-13 21:14:52.938 17156-17156 DEBUG                   com.zhanghuang                       E  Full: 67065 bytes, write: 67065 bytes, limit: 1048576 bytes, reject: 0 bytes.
+2023-06-13 21:14:52.938 17156-17156 DEBUG                   com.zhanghuang                       E  log end: 20230613211452
+2023-06-13 21:14:52.940 17156-17156 DEBUG                   com.zhanghuang                       E  generate java report finished
+2023-06-13 21:14:52.940 17156-13072 crashsdk                com.zhanghuang                       I  crashsdk uploading logs
+2023-06-13 21:14:52.942 17156-13072 crashsdk                com.zhanghuang                       D  Uploading to https://errlog.umeng.com/upload
+2023-06-13 21:14:52.948 17156-13072 TrafficStats            com.zhanghuang                       D  tagSocket(100) with statsTag=0xffffffff, statsUid=-1
+2023-06-13 21:14:53.236 17156-13072 crashsdk                com.zhanghuang                       I  Response code: 200
+2023-06-13 21:14:53.239 17156-13072 crashsdk                com.zhanghuang                       I  Log upload response: ????????????????succeed??
+2023-06-13 21:14:53.239 17156-13072 crashsdk                com.zhanghuang                       E  Uploaded log: 58eb2d094544cb15d2001334_2.0.8_dd08815c_22081212C_13_168666207030654376_20230613211452_fg_java.log.gz
+2023-06-13 21:14:53.251 17156-17156 TrafficStats            com.zhanghuang                       D  tagSocket(101) with statsTag=0xffffffff, statsUid=-1
+2023-06-13 21:14:53.408 17156-17156 crashsdk                com.zhanghuang                       I  Call java default handler: true
+2023-06-13 21:14:53.409 17156-17156 UMLog                   com.zhanghuang                       E  ┌───────────────────问题─────────────────────────────────────────────────────────────────────────────
+2023-06-13 21:14:53.409 17156-17156 UMLog                   com.zhanghuang                       E  │     对于页面站桩记录，onPageStart和onPageEnd调用对的参数不一致。
+2023-06-13 21:14:53.409 17156-17156 UMLog                   com.zhanghuang                       E  ├───────────────────解决方案─────────────────────────────────────────────────────────────────────────────
+2023-06-13 21:14:53.409 17156-17156 UMLog                   com.zhanghuang                       E  │     对于同一个页面，请先调用onPageStart，再调用onPageEnd。详见链接 https://developer.umeng.com/docs/66632/detail/66975?um_channel=sdk
+2023-06-13 21:14:53.409 17156-17156 UMLog                   com.zhanghuang                       E  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2023-06-13 21:14:53.420 17156-17156 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "
+2023-06-13 21:14:53.420 17156-17156 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "6EDEF828B4B4CF2DCC207C63CDBBAD20"
+2023-06-13 21:14:53.422 17156-17156 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "
+2023-06-13 21:14:53.422 17156-17156 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "6EDEF828B4B4CF2DCC207C63CDBBAD20"
+2023-06-13 21:14:53.453 17156-17156 Process                 com.zhanghuang                       I  Process is going to kill itself!
+                                                                                                    java.lang.Exception
+                                                                                                    	at android.os.Process.killProcess(Process.java:1344)
+                                                                                                    	at com.android.internal.os.RuntimeInit$KillApplicationHandler.uncaughtException(RuntimeInit.java:181)
+                                                                                                    	at com.umeng.analytics.pro.p.uncaughtException(CrashHandler.java:37)
+                                                                                                    	at com.uc.crashsdk.e.a(ProGuard:3999)
+                                                                                                    	at com.uc.crashsdk.e.uncaughtException(ProGuard:3813)
+                                                                                                    	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:1073)
+                                                                                                    	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:1068)
+                                                                                                    	at java.lang.Thread.dispatchUncaughtException(Thread.java:2306)
+2023-06-13 21:14:53.454 17156-17156 crashsdk                com.zhanghuang                       I  android_os_Process_sendSignal. PID: 17156 SIG: 9
+2023-06-13 21:14:53.454 17156-17156 crashsdk                com.zhanghuang                       I  onKillProcess. SIG: 9
+2023-06-13 21:14:53.455 17156-17156 crashsdk                com.zhanghuang                       I  Kill PID: 17156 (com.zhanghuang) by pid: 17156 (com.zhanghuang) tid: 17156 (main)
+                                                                                                    SIG: 9, fg: true, exiting: false, main process: true, time: 20230613211453
+                                                                                                    State in disk: 'f'
+                                                                                                      at android.os.Process.sendSignal(Native Method)
+                                                                                                      at android.os.Process.killProcess(Process.java:1347)
+                                                                                                      at com.android.internal.os.RuntimeInit$KillApplicationHandler.uncaughtException(RuntimeInit.java:181)
+                                                                                                      at com.umeng.analytics.pro.p.uncaughtException(CrashHandler.java:37)
+                                                                                                      at com.uc.crashsdk.e.a(ProGuard:3999)
+                                                                                                      at com.uc.crashsdk.e.uncaughtException(ProGuard:3813)
+                                                                                                      at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:1073)
+                                                                                                      at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:1068)
+                                                                                                      at java.lang.Thread.dispatchUncaughtException(Thread.java:2306)
+2023-06-13 21:14:53.455 17156-17156 Process                 com.zhanghuang                       I  Sending signal. PID: 17156 SIG: 9
+---------------------------- PROCESS ENDED (17156) for package com.zhanghuang ----------------------------
