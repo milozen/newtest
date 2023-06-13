@@ -195,7 +195,9 @@
             android:exported="true"
             android:screenOrientation="portrait" />
 
-        <service android:name=".SoundService" />
+        <service
+            android:name=".SoundService"
+            android:exported="false" />
         <receiver
             android:name=".reciver.AdminReciver"
             android:permission="android.permission.BIND_DEVICE_ADMIN"
@@ -262,12 +264,16 @@
 <!--            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />-->
 
 
-        <service android:name=".service.CountService" />
+        <service
+            android:exported="false"
+            android:name=".service.CountService" />
         <service
             android:name=".service.CountKeepService"
+            android:exported="false"
             android:process=":remoteprocess" />
         <service
             android:name=".service.JobHandleService"
+            android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
 
