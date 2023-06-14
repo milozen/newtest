@@ -64,7 +64,7 @@
 <!--            android:value="Umeng"></meta-data>-->
 
         <provider
-            android:name="android.support.v4.content.FileProvider"
+            android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
             android:exported="false"
             android:grantUriPermissions="true">
@@ -84,94 +84,96 @@
 
         <activity
             android:name=".NSplashActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="unspecified"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".Login"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".RegistActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".UserInfoActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".EditNickActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".ZxInfoActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".AddRecordActivityNew"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".UploadRecordActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".AdInfoActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".FavActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".EditPassActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".ForgetPassActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".ActivitiesActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".ActivitiesLandActivity"
             android:screenOrientation="landscape" />
         <activity
             android:name=".EditRecordActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="unspecified"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".SexBirthEditActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".GuildsActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".IntroAppActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".BindShowActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".BindChoiceActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".BindSendCodeActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".BindPassActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".AddRecordSetActivityNew"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".CustomPlanActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
         <activity
             android:name=".ViewPicActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="unspecified" />
 
         <service android:name=".SoundService" />
+
         <receiver
             android:name=".reciver.AdminReciver"
             android:permission="android.permission.BIND_DEVICE_ADMIN"
@@ -188,18 +190,20 @@
             android:name=".wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
-            android:screenOrientation="portrait"
+            android:screenOrientation="unspecified"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
         <activity
             android:name=".WBShareActivity"
             android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="portrait"
+            android:screenOrientation="unspecified"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
 <!--        <activity-->
 <!--            android:name="com.umeng.qq.tencent.AuthActivity"-->
 <!--            android:launchMode="singleTask"-->
@@ -228,7 +232,8 @@
         
         <activity
             android:name="com.qq.e.ads.PortraitADActivity"
-            android:screenOrientation="portrait"
+            tools:replace="android:screenOrientation"
+            android:screenOrientation="unspecified"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
 <!--        <activity-->
 <!--            android:name="com.qq.e.ads.LandscapeADActivity"-->
