@@ -1,13 +1,18 @@
 package com.zhanghuang.fragments;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.SystemClock;
+
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +34,7 @@ import com.zhanghuang.modes.User;
 import com.zhanghuang.net.RequestData;
 import com.zhanghuang.netinterface.BaseInterface;
 import com.zhanghuang.util.AndroidUtil;
+import com.zhanghuang.util.AppUpdate;
 import com.zhanghuang.util.Constants;
 import com.zhanghuang.view.MainHeadUint;
 import com.zhanghuang.ItemSpace;
@@ -37,6 +43,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import lombok.NonNull;
 
 /**
  * Created by yuanlei on 2017/3/14.
@@ -89,6 +96,18 @@ public class HomeFragment extends BaseMainFragment implements SwipeRefreshLayout
     @Override
     public void onResume() {
         super.onResume();
+        
+        //检查升级，检查标志位
+        if (MainApplication._pref.getBoolean(Constants.PREF_ISLOGIN, false)) {
+            boolean hasCheckedUpdate = MainApplication._pref.getBoolean(Constants.PREF_HAS_CHECKED_UPDATE, false);
+            if (!hasCheckedUpdate) {
+                checkUpdate();
+                SharedPreferences.Editor editor = MainApplication._pref.edit();
+                editor.putBoolean(Constants.PREF_HAS_CHECKED_UPDATE, true);
+                editor.apply();
+            }
+        }
+        
         if (!MainApplication._pref.getBoolean(Constants.PREF_ISLOGIN, false)) {
             if (mainHeadUint != null) {
                 mainHeadUint.setUser(null);
@@ -104,20 +123,30 @@ public class HomeFragment extends BaseMainFragment implements SwipeRefreshLayout
         }
         start = 0;
         articleList.clear();
-//        long savedTime = MainApplication._pref.getLong(Constants.PREF_MAIN_REQUEST_TIME, 0);
-//        if (SystemClock.elapsedRealtime() - savedTime > 3*60*60*1000){
-//            if (AndroidUtil.checkNet(getContext())){
-//                getActivles();
-//            }else{
-//                getActivitiesFromDb();
-//            }
-//        }else{
-//            getActivitiesFromDb();
-//        }
+
         if (AndroidUtil.checkNet(getContext())) {
             getArticles();
         } else {
             getActivitiesFromDb();
+        }
+    }
+
+    private void checkUpdate() {
+        int per = ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        if (PackageManager.PERMISSION_GRANTED != per) {
+            //申请读sd卡权限
+            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    1000);
+        } else {
+            AppUpdate.getInstance().checkAppVer(getActivity(), results);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 1000) {
+            checkUpdate();
         }
     }
 
@@ -154,7 +183,7 @@ public class HomeFragment extends BaseMainFragment implements SwipeRefreshLayout
             startActivity(in);
         });
         recyclerView.setAdapter(adapter);
-        recyclerView.addItemDecoration(new ItemSpace(10f,8f,10f,false));
+        recyclerView.addItemDecoration(new ItemSpace(10f, 8f, 10f, false));
         adapter.addHeaderView(mainHeadUint);
     }
 
@@ -225,7 +254,7 @@ public class HomeFragment extends BaseMainFragment implements SwipeRefreshLayout
         public void response(boolean success, BaseMode result, String message, String err) {
             MainApplication._pref.edit().putLong(Constants.PREF_MAIN_REQUEST_TIME, SystemClock.elapsedRealtime()).apply();
             if (success) {
-                if(!(result instanceof ArticlesMode)){  //TODO  此处为临时解决办法，需网络请求大改后再处理
+                if (!(result instanceof ArticlesMode)) {  //TODO  此处为临时解决办法，需网络请求大改后再处理
                     return;
                 }
                 ArticlesMode am = (ArticlesMode) result;
@@ -264,4 +293,12 @@ public class HomeFragment extends BaseMainFragment implements SwipeRefreshLayout
             }
         }
     };
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        SharedPreferences.Editor editor = MainApplication._pref.edit();
+        editor.putBoolean(Constants.PREF_HAS_CHECKED_UPDATE, false);
+        editor.apply();
+    }
 }
