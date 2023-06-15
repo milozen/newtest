@@ -20,6 +20,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -38,6 +39,7 @@ import com.qq.e.ads.splash.SplashAD;
 import com.qq.e.ads.splash.SplashADListener;
 import com.qq.e.ads.splash.SplashADZoomOutListener;
 import com.qq.e.comm.listeners.ADRewardListener;
+import com.qq.e.comm.managers.GDTAdSdk;
 import com.qq.e.comm.util.AdError;
 import com.tencent.tauth.Tencent;
 import com.umeng.commonsdk.UMConfigure;
@@ -131,7 +133,8 @@ public class NSplashActivity extends BaseActivity implements SplashADZoomOutList
             } else {
                 next();
             }
-        } else {
+        }
+        else {
             //隐私协议授权弹窗
 //            dialog();
             showPrivacy();
@@ -545,25 +548,29 @@ public class NSplashActivity extends BaseActivity implements SplashADZoomOutList
 
     private void alertWebview(String url) {
         AlertDialog webviewDialoger = new AlertDialog.Builder(this)
-            .setNegativeButton( "取消",  (dialog, which) -> {
-                dialog.dismiss();
-                UMConfigure.submitPolicyGrantResult(getApplicationContext(), false);
-                //不同意隐私协议，退出app
-                android.os.Process.killProcess(android.os.Process.myPid());
-            })
-            .setPositiveButton("确定", (dialog, which) -> {
-                sharedPreferencesHelper.put("uminit", "1");
-                UMConfigure.submitPolicyGrantResult(getApplicationContext(), true);
-                /*** 友盟sdk正式初始化*/
-                UmInitConfig umInitConfig = new UmInitConfig();
-                umInitConfig.UMinit(getApplicationContext());
-                //QQ官方sdk授权
-                Tencent.setIsPermissionGranted(true);
-                //关闭弹窗
-                dialog.dismiss();
-                next();
-            })
-            .create();
+                .setNegativeButton( "不同意", (dialog, which) -> {
+                    dialog.dismiss();
+                    UMConfigure.submitPolicyGrantResult(getApplicationContext(), false);
+                    // 不同意隐私协议，结束当前Activity
+                    finish();
+                })
+                .setPositiveButton("同意并使用", (dialog, which) -> {
+                    sharedPreferencesHelper.put("uminit", "1");
+                    UMConfigure.submitPolicyGrantResult(getApplicationContext(), true);
+                    /*** 友盟sdk正式初始化*/
+                    UmInitConfig umInitConfig = new UmInitConfig();
+                    umInitConfig.UMinit(getApplicationContext());
+                    //QQ官方sdk授权
+                    Tencent.setIsPermissionGranted(true);
+                    //广告初始化
+                    GDTAdSdk.init(this, "1203042382");
+                    //关闭弹窗
+                    dialog.dismiss();
+                    next();
+                })
+                .setCancelable(false)  // 防止用户在对话框外部点击时关闭对话框
+                .create();
+
         WebView mwebView = new WebView(this);
         this.alterShowed = false;
         mwebView.loadUrl(url);
@@ -576,9 +583,29 @@ public class NSplashActivity extends BaseActivity implements SplashADZoomOutList
                     webviewDialoger.show();
                     webviewDialoger.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.BLUE);
                     webviewDialoger.getButton(DialogInterface.BUTTON_NEGATIVE).setTextColor(Color.BLACK);
+
+                    // 设置AlertDialog的大小
+                    Window window = webviewDialoger.getWindow();
+                    if (window != null) {
+                        DisplayMetrics displayMetrics = new DisplayMetrics();
+                        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+                        int width = (int) (displayMetrics.widthPixels * 0.9);
+                        int height = (int) (displayMetrics.heightPixels * 0.75);
+                        window.setLayout(width, height);
+                    }
                 }
             }
         });
+
+        webviewDialoger.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                // 当对话框消失时，停止WebView的加载并销毁WebView
+                mwebView.stopLoading();
+                mwebView.destroy();
+            }
+        });
+
         webviewDialoger.setView(mwebView);
     }
 
