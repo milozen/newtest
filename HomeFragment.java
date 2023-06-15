@@ -31,6 +31,7 @@ import com.zhanghuang.modes.ArticlesMode;
 import com.zhanghuang.modes.BaseMode;
 import com.zhanghuang.modes.StisticsInfo;
 import com.zhanghuang.modes.User;
+import com.zhanghuang.modes.VsnMode;
 import com.zhanghuang.net.RequestData;
 import com.zhanghuang.netinterface.BaseInterface;
 import com.zhanghuang.util.AndroidUtil;
@@ -101,7 +102,7 @@ public class HomeFragment extends BaseMainFragment implements SwipeRefreshLayout
         if (MainApplication._pref.getBoolean(Constants.PREF_ISLOGIN, false)) {
             boolean hasCheckedUpdate = MainApplication._pref.getBoolean(Constants.PREF_HAS_CHECKED_UPDATE, false);
             if (!hasCheckedUpdate) {
-                checkUpdate();
+                checkVersion();
                 SharedPreferences.Editor editor = MainApplication._pref.edit();
                 editor.putBoolean(Constants.PREF_HAS_CHECKED_UPDATE, true);
                 editor.apply();
@@ -131,14 +132,25 @@ public class HomeFragment extends BaseMainFragment implements SwipeRefreshLayout
         }
     }
 
-    private void checkUpdate() {
+    private void checkVersion() {
         int per = ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE);
         if (PackageManager.PERMISSION_GRANTED != per) {
             //申请读sd卡权限
             ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
                     1000);
         } else {
-            AppUpdate.getInstance().checkAppVer(getActivity(), results);
+            AppUpdate.getInstance().checkAppVer(getActivity(), new AppUpdate.CheckVerInterface() {
+                @Override
+                public void response(boolean success, VsnMode result, String message, String err) {
+                    if (success) {
+                        if (result != null) {
+                            if (result.getVsnCode() > AndroidUtil.getAppVersionCode(getActivity())) {
+                                AppUpdate.getInstance().showUpdateDialog(getActivity(), result);
+                            }
+                        }
+                    }
+                }
+            });
         }
     }
 
@@ -146,7 +158,7 @@ public class HomeFragment extends BaseMainFragment implements SwipeRefreshLayout
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 1000) {
-            checkUpdate();
+            checkVersion();
         }
     }
 
