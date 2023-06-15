@@ -6,6 +6,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -91,10 +92,17 @@ public class MainActivity extends BaseActivity {
         rd = new RequestData(this);
         rd.fetchCfg((success, result, message, err) -> {
         });
+        
+        //检查版本更新
         rd.getVersion((success, result, message, err) -> {
             if (result instanceof VsnMode) {
                 results = (VsnMode) result;
-                checkUpdate();
+                // 检查用户是否已经登录
+                boolean isLogin = MainApplication._pref.getBoolean(Constants.PREF_ISLOGIN, false);
+                Log.i("TAG", "isLogin:  " + isLogin);
+                if (isLogin) {
+                    checkUpdate();
+                };
             }
         });
     }
