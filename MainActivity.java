@@ -92,8 +92,6 @@ public class MainActivity extends BaseActivity {
         rd = new RequestData(this);
         rd.fetchCfg((success, result, message, err) -> {
         });
-        
-        //检查版本更新
         rd.getVersion((success, result, message, err) -> {
             if (result instanceof VsnMode) {
                 results = (VsnMode) result;
