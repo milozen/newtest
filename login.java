@@ -285,17 +285,11 @@ public class Login extends BaseActivity {
                        alterShowed = true;
                        builder.show();
                    }
-
                }
            });
-//        builder.setNegativeButton( "取消", null );
         builder.setView( mwebView );
         builder.setPositiveButton("确定", (dialog, which) -> {
             dialog.dismiss();
         });
-//        builder.setNegativeButton("拒绝", (dialog, which) -> {
-//            dialog.dismiss();
-//            android.os.Process.killProcess(android.os.Process.myPid());
-//        });
     }
 }
