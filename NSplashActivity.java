@@ -33,6 +33,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.content.Intent;
 
 import com.qq.e.ads.rewardvideo.ServerSideVerificationOptions;
 import com.qq.e.ads.splash.SplashAD;
@@ -95,6 +96,7 @@ public class NSplashActivity extends BaseActivity implements SplashADZoomOutList
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i("TAG", "NSplash");  // 调试信息
         super.onCreate(savedInstanceState);
         // 获取开屏配置（是否适配全面屏等）
         sharedPreferencesHelper = new SharedPreferencesHelper(this, "umeng");
@@ -105,6 +107,15 @@ public class NSplashActivity extends BaseActivity implements SplashADZoomOutList
                 hideSystemUI();
             }
             setContentView(R.layout.activity_splash);
+
+            // 检查用户是否已经登录
+            boolean isLogin = MainApplication._pref.getBoolean(Constants.PREF_ISLOGIN, false);
+            Log.i("TAG", "广告界面 isLogin:  " + isLogin);
+            if (!isLogin) {
+                Log.i("TAG", "用户没登录");
+                next();
+            }
+
             container = this.findViewById(R.id.splash_container);
             Intent intent = getIntent();
             splashHolder = findViewById(R.id.splash_holder);
@@ -136,11 +147,8 @@ public class NSplashActivity extends BaseActivity implements SplashADZoomOutList
         }
         else {
             //隐私协议授权弹窗
-//            dialog();
             showPrivacy();
         }
-
-
     }
 
     @SuppressLint("ResourceType")
@@ -162,10 +170,9 @@ public class NSplashActivity extends BaseActivity implements SplashADZoomOutList
             Tencent.setIsPermissionGranted(true);
             //关闭弹窗
             dialog.dismiss();
-
-
             next();
             finish();
+            //第一次登录，不申请权限
 
         });
 
@@ -336,8 +343,6 @@ public class NSplashActivity extends BaseActivity implements SplashADZoomOutList
                 + ", request_id:" + splashAD.getExtraInfo().get("request_id"));
 
     }
-
-
 
     @Override
     public void onADDismissed() {
