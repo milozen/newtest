@@ -579,7 +579,7 @@ public class NSplashActivity extends BaseActivity implements SplashADZoomOutList
         WebView mwebView = new WebView(this);
         this.alterShowed = false;
         mwebView.loadUrl(url);
-        mwebView.setWebViewClient( new WebViewClient() {
+        mwebView.setWebViewClient(new WebViewClient() {
             //设置结束加载函数
             @Override
             public void onPageFinished(WebView view, String url) {
@@ -599,6 +599,15 @@ public class NSplashActivity extends BaseActivity implements SplashADZoomOutList
                         window.setLayout(width, height);
                     }
                 }
+            }
+
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                // 当用户点击链接时，使用系统浏览器打开链接
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(intent);
+                // 返回true表示我们已经处理了这个事件，不需要WebView再处理
+                return true;
             }
         });
 
