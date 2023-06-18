@@ -1,262 +1,101 @@
-2023-06-16 11:44:36.405 13955-18668 com.zhanghuang          com.zhanghuang                       I  ProcessProfilingInfo new_methods=1200 is saved saved_to_disk=1 resolve_classes_delay=8000
-2023-06-16 11:44:38.954 13955-18608 com.zhanghuang          com.zhanghuang                       I  This is non sticky GC, maxfree is 8388608 minfree is 2097152
-2023-06-16 11:44:38.952 13955-13955 FinalizerDaemon         com.zhanghuang                       W  type=1400 audit(0.0:49599): avc: denied { getopt } for path="/dev/socket/usap_pool_primary" scontext=u:r:untrusted_app_30:s0:c81,c258,c512,c768 tcontext=u:r:zygote:s0 tclass=unix_stream_socket permissive=0 app=com.zhanghuang
-2023-06-16 11:44:39.120 13955-13955 UMConfigure             com.zhanghuang                       I  common version is 9.6.1
-2023-06-16 11:44:39.120 13955-13955 UMConfigure             com.zhanghuang                       I  common type is 0
-2023-06-16 11:44:39.126 13955-13955 UMConfigure             com.zhanghuang                       I  current appkey is 58eb2d094544cb15d2001334, last appkey is null
-2023-06-16 11:44:39.129 13955-13955 UMConfigure             com.zhanghuang                       I  channel is Umeng
-2023-06-16 11:44:39.129 13955-13955 UMLog                   com.zhanghuang                       D  统计SDK常见问题索引贴 详见链接 http://developer.umeng.com/docs/66650/cate/66650
-2023-06-16 11:44:39.129 13955-13955 UMLog                   com.zhanghuang                       I  统计SDK初始化成功
-2023-06-16 11:44:39.131 13955-18779 UMLog                   com.zhanghuang                       D  当前发送策略为：启动时发送。详见链接 https://developer.umeng.com/docs/66632/detail/66976?um_channel=sdk
-2023-06-16 11:44:39.142 13955-13955 priviteSocial           com.zhanghuang                       E  欢迎使用友盟社会化分享业务!
-2023-06-16 11:44:39.142 13955-18927 UMLog_Social            com.zhanghuang                       E  您使用的SDK版本为：7.3.2
-2023-06-16 11:44:39.142 13955-13955 UMLog                   com.zhanghuang                       I  Share AppKey设置成功
-2023-06-16 11:44:39.143 13955-18928 UMCrash                 com.zhanghuang                       I  get common. apm ctr flag is 0
-2023-06-16 11:44:39.145 13955-13955 UMCrash                 com.zhanghuang                       I  int apm. flag is 0
-2023-06-16 11:44:39.145 13955-13955 UMCrash                 com.zhanghuang                       I  int apm. hitWlState is 0
-2023-06-16 11:44:39.148 13955-18779 MobclickAgent           com.zhanghuang                       D  本次启动会话:{"sessions":[{"id":"D08EC55FC8D9BBA564E97244311738E2","start_time":"1686887069078"}]}
-2023-06-16 11:44:39.148 13955-13955 UMCrash                 com.zhanghuang                       I  enable : java is true, native is true, anr is true
-2023-06-16 11:44:39.148 13955-13955 UMCrash                 com.zhanghuang                       I  crash rate domain is https://errnewlog.umeng.com
-2023-06-16 11:44:39.149 13955-13955 com.zhanghuang          com.zhanghuang                       W  Accessing hidden field Landroid/content/pm/ApplicationInfo;->primaryCpuAbi:Ljava/lang/String; (unsupported, reflection, allowed)
-2023-06-16 11:44:39.149 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "D08EC55FC8D9BBA564E97244311738E2"
-2023-06-16 11:44:39.151 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "D08EC55FC8D9BBA564E97244311738E2"
-2023-06-16 11:44:39.151 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: ""
-2023-06-16 11:44:39.152 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "D08EC55FC8D9BBA564E97244311738E2"
-2023-06-16 11:44:39.152 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "-1"
-2023-06-16 11:44:39.152 13955-18779 UMLog                   com.zhanghuang                       D  当前发送策略为：启动时发送。详见链接 https://developer.umeng.com/docs/66632/detail/66976?um_channel=sdk
-2023-06-16 11:44:39.152 13955-18779 MobclickAgent           com.zhanghuang                       D  数据发送策略 : ReportAtLaunch
-2023-06-16 11:44:39.152 13955-18779 UMLog                   com.zhanghuang                       D  当前发送策略为：启动时发送。详见链接 https://developer.umeng.com/docs/66632/detail/66976?um_channel=sdk
-2023-06-16 11:44:39.161 13955-18779 UMLog                   com.zhanghuang                       D  当前发送策略为：启动时发送。详见链接 https://developer.umeng.com/docs/66632/detail/66976?um_channel=sdk
-2023-06-16 11:44:39.161 13955-18936 crashsdk                com.zhanghuang                       I  version unique build id: 66c24874
-2023-06-16 11:44:39.162 13955-18936 crashsdk                com.zhanghuang                       I  Is new version ('' -> '2.0.8/release/66c24874'), deleting old stats data!
-2023-06-16 11:44:39.162 13955-13955 crashsdk                com.zhanghuang                       W  Set: Unknown key 38
-2023-06-16 11:44:39.162 13955-13955 crashsdk                com.zhanghuang                       W  Set: Unknown key 39
-2023-06-16 11:44:39.160 13955-13955 com.zhanghuang          com.zhanghuang                       W  type=1400 audit(0.0:49600): avc: denied { read } for name="version" dev="proc" ino=4026532016 scontext=u:r:untrusted_app_30:s0:c81,c258,c512,c768 tcontext=u:object_r:proc_version:s0 tclass=file permissive=0 app=com.zhanghuang
-2023-06-16 11:44:39.163 13955-18937 crashsdk                com.zhanghuang                       D  Native log stat thread 18937 setup, waiting
-2023-06-16 11:44:39.164 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "D08EC55FC8D9BBA564E97244311738E2"
-2023-06-16 11:44:39.164 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: ""
-2023-06-16 11:44:39.164 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "D08EC55FC8D9BBA564E97244311738E2"
-2023-06-16 11:44:39.164 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "-1"
-2023-06-16 11:44:39.165 13955-18779 UMLog                   com.zhanghuang                       D  当前发送策略为：启动时发送。详见链接 https://developer.umeng.com/docs/66632/detail/66976?um_channel=sdk
-2023-06-16 11:44:39.165 13955-18779 MobclickAgent           com.zhanghuang                       D  数据发送策略 : ReportAtLaunch
-2023-06-16 11:44:39.165 13955-18779 UMLog                   com.zhanghuang                       D  当前发送策略为：启动时发送。详见链接 https://developer.umeng.com/docs/66632/detail/66976?um_channel=sdk
-2023-06-16 11:44:39.165 13955-13955 crashsdk                com.zhanghuang                       I  Catcher mask: 5000, 20480
-2023-06-16 11:44:39.165 13955-13955 crashsdk                com.zhanghuang                       I  Catcher thread 18595
-2023-06-16 11:44:39.165 13955-13955 crashsdk                com.zhanghuang                       D  Register ANR handler ...
-2023-06-16 11:44:39.165 13955-13955 crashsdk                com.zhanghuang                       I  begin hack android.os.Process
-2023-06-16 11:44:39.165 13955-13955 crashsdk                com.zhanghuang                       I  end hack android.os.Process
-2023-06-16 11:44:39.165 13955-13955 crashsdk                com.zhanghuang                       I  LibcMalloc detail: disabled.
-2023-06-16 11:44:39.175 13955-18939 com.zhanghuang          com.zhanghuang                       E  Invalid ID 0x00000000.
-2023-06-16 11:44:39.175 13955-18928 com.zhanghuang          com.zhanghuang                       E  Invalid ID 0x00000000.
-2023-06-16 11:44:39.176 13955-18940 ballack                 com.zhanghuang                       E  initGlobalInfo called once.
-2023-06-16 11:44:39.177 13955-13955 UMCrash                 com.zhanghuang                       I  begin register common callback.  key is umid.
-2023-06-16 11:44:39.177 13955-13955 UMCrash                 com.zhanghuang                       I  inner config : net rate is -1
-2023-06-16 11:44:39.177 13955-13955 UMCrash                 com.zhanghuang                       I  inner config : nativeH5Rate is -1
-2023-06-16 11:44:39.177 13955-13955 UMCrash                 com.zhanghuang                       I  inner config : page rate is -1
-2023-06-16 11:44:39.177 13955-13955 UMCrash                 com.zhanghuang                       I  inner config : power rate is -1
-2023-06-16 11:44:39.177 13955-13955 UMLog                   com.zhanghuang                       I  APM SDK初始化成功
-2023-06-16 11:44:39.178 13955-18939 Matrix.AnrTracer        com.zhanghuang                       I  anrTrace, final mAnrBeatTime:400, mAnrBeatRate:400
-2023-06-16 11:44:39.179 13955-18941 LaunchConfigManager     com.zhanghuang                       D  random check in
-2023-06-16 11:44:39.181 13955-18940 efs.send_log            com.zhanghuang                       W  tryFileLock start! 
-2023-06-16 11:44:39.182 13955-13955 HandWritingStubImpl     com.zhanghuang                       I  isKeyboardTypeChanged: false
-2023-06-16 11:44:39.184 13955-18940 efs.config              com.zhanghuang                       I  delete old config is false
-2023-06-16 11:44:39.185 13955-18940 efs.config              com.zhanghuang                       I  current config to same.
-2023-06-16 11:44:39.185 13955-18947 efs.send_log            com.zhanghuang                       W  tryFileLock sendlock sucess! processname: com.zhanghuang
-2023-06-16 11:44:39.185 13955-18675 OpenGLRenderer          com.zhanghuang                       D  endAllActiveAnimators on 0xb4000077c0693b00 (RippleDrawable) with handle 0xb4000077c0506980
-2023-06-16 11:44:39.196 13955-18941 LaunchTrace             com.zhanghuang                       I  begin sendLaunchCache
-2023-06-16 11:44:39.201 13955-18945 ziparchive              com.zhanghuang                       W  Unable to open '/data/user/0/com.zhanghuang/app_e_qq_com_plugin_c4a3cb97806cecae65646808b7755026/gdt_plugin.dm': No such file or directory
-2023-06-16 11:44:39.213 13955-13955 com.zhanghuang          com.zhanghuang                       W  Accessing hidden field Landroid/app/Application;->mLoadedApk:Landroid/app/LoadedApk; (unsupported, reflection, allowed)
-2023-06-16 11:44:39.213 13955-13955 com.zhanghuang          com.zhanghuang                       W  Accessing hidden field Landroid/app/LoadedApk;->mActivityThread:Landroid/app/ActivityThread; (unsupported, reflection, allowed)
-2023-06-16 11:44:39.213 13955-13955 com.zhanghuang          com.zhanghuang                       W  Accessing hidden field Landroid/app/ActivityThread;->mActivities:Landroid/util/ArrayMap; (unsupported, reflection, allowed)
-2023-06-16 11:44:39.213 13955-13955 com.zhanghuang          com.zhanghuang                       W  Accessing hidden field Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity; (unsupported, reflection, allowed)
-2023-06-16 11:44:39.213 13955-13955 com.zhanghuang          com.zhanghuang                       W  Accessing hidden field Landroid/app/ActivityThread$ActivityClientRecord;->paused:Z (unsupported, reflection, allowed)
-2023-06-16 11:44:39.213 13955-13955 com.zhanghuang          com.zhanghuang                       W  Accessing hidden field Landroid/app/ActivityThread$ActivityClientRecord;->stopped:Z (unsupported, reflection, allowed)
-2023-06-16 11:44:39.214 13955-13955 crashsdk                com.zhanghuang                       I  Unexp log not enabled, skip update unexp info!
-2023-06-16 11:44:39.215 13955-18928 efs.info.manager        com.zhanghuang                       W  network change: wifi
-2023-06-16 11:44:39.218 13955-13955 HandWritingStubImpl     com.zhanghuang                       I  isKeyboardTypeChanged: false
-2023-06-16 11:44:39.231 13955-13955 DecorView[]             com.zhanghuang                       D  onWindowFocusChanged hasWindowFocus true
-2023-06-16 11:44:39.231 13955-13955 HandWritingStubImpl     com.zhanghuang                       I  isKeyboardTypeChanged: false
-2023-06-16 11:44:39.231 13955-13955 HandWritingStubImpl     com.zhanghuang                       I  refreshLastKeyboardType: 1
-2023-06-16 11:44:39.231 13955-13955 HandWritingStubImpl     com.zhanghuang                       I  getCurrentKeyboardType: 1
-2023-06-16 11:44:39.232 13955-18780 TrafficStats            com.zhanghuang                       D  tagSocket(147) with statsTag=0xffffffff, statsUid=-1
-2023-06-16 11:44:39.234 13955-13955 MiuiMultiWindowAdapter  com.zhanghuang                       D  MiuiMultiWindowAdapter::getFreeformVideoWhiteListInSystem::LIST_ABOUT_SUPPORT_LANDSCAPE_VIDEO = [com.hunantv.imgo.activity, com.tencent.qqlive, com.qiyi.video, com.hunantv.imgo.activity.inter, com.tencent.qqlivei18n, com.iqiyi.i18n, tv.danmaku.bili]
-2023-06-16 11:44:39.240 13955-18679 ViewContentFactory      com.zhanghuang                       D  initViewContentFetcherClass
-2023-06-16 11:44:39.240 13955-18679 ContentCatcher          com.zhanghuang                       I  ViewContentFetcher : ViewContentFetcher
-2023-06-16 11:44:39.240 13955-18679 ViewContentFactory      com.zhanghuang                       D  createInterceptor took 0ms
-2023-06-16 11:44:39.241 13955-13955 IS_CTS_MODE             com.zhanghuang                       D  false
-2023-06-16 11:44:39.241 13955-13955 MULTI_WINDOW_ENABLED    com.zhanghuang                       D  false
-2023-06-16 11:44:39.242 13955-13955 DecorView[]             com.zhanghuang                       D  getWindowModeFromSystem  windowmode is 1
-2023-06-16 11:44:39.244 13955-18779 UMLog                   com.zhanghuang                       I  基础组件库完整性自检通过。
-2023-06-16 11:44:39.246 13955-18946 com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/app/ActivityThread;->currentActivityThread()Landroid/app/ActivityThread; (unsupported, reflection, allowed)
-2023-06-16 11:44:39.246 13955-18946 com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/app/ActivityThread;->getApplication()Landroid/app/Application; (unsupported, reflection, allowed)
-2023-06-16 11:44:39.246 13955-18946 com.zhanghuang          com.zhanghuang                       W  Accessing hidden field Ldalvik/system/BaseDexClassLoader;->pathList:Ldalvik/system/DexPathList; (unsupported, reflection, allowed)
-2023-06-16 11:44:39.246 13955-18946 com.zhanghuang          com.zhanghuang                       W  Accessing hidden field Ldalvik/system/DexPathList;->dexElements:[Ldalvik/system/DexPathList$Element; (unsupported, reflection, allowed)
-2023-06-16 11:44:39.250 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "CoRiVtHO8PPeJXI+AJ2NqRR9GOchxG0FbjjowEjUpO4nj3tNHcDAJnAEpMYJU9iknsgxjeaz5zkH
-                                                                                                    LxGIVh/JGRLqK1wj9NOWnsAVNvP5BuN2yf2/OZvG3eO1V/Z1Kf5hs42+qMnU9hIp87Z+2Se2/Q==
-                                                                                                    "
-2023-06-16 11:44:39.250 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "D08EC55FC8D9BBA564E97244311738E2"
-2023-06-16 11:44:39.267 13955-18946 com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Ljava/lang/Runtime;->nativeLoad(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/String; (unsupported, reflection, allowed)
-2023-06-16 11:44:39.264 13955-13955 pool-12-thread-         com.zhanghuang                       W  type=1400 audit(0.0:49601): avc: granted { execute } for path="/data/data/com.zhanghuang/app_e_qq_com_plugin_c4a3cb97806cecae65646808b7755026/libyaqpro.bcd860b4.so" dev="dm-43" ino=1119634 scontext=u:r:untrusted_app_30:s0:c81,c258,c512,c768 tcontext=u:object_r:app_data_file:s0:c81,c258,c512,c768 tclass=file app=com.zhanghuang
-2023-06-16 11:44:39.268 13955-13955 pool-12-thread-         com.zhanghuang                       W  type=1400 audit(0.0:49602): avc: granted { execute } for path="/data/data/com.zhanghuang/app_e_qq_com_plugin_c4a3cb97806cecae65646808b7755026/libyaqbasic.bcd860b4.so" dev="dm-43" ino=1119526 scontext=u:r:untrusted_app_30:s0:c81,c258,c512,c768 tcontext=u:object_r:app_data_file:s0:c81,c258,c512,c768 tclass=file app=com.zhanghuang
-2023-06-16 11:44:39.268 13955-13955 pool-12-thread-         com.zhanghuang                       W  type=1400 audit(0.0:49603): avc: granted { execute } for path="/data/data/com.zhanghuang/app_e_qq_com_plugin_c4a3cb97806cecae65646808b7755026/libMMANDKSignature.bcd860b4.so" dev="dm-43" ino=1119640 scontext=u:r:untrusted_app_30:s0:c81,c258,c512,c768 tcontext=u:object_r:app_data_file:s0:c81,c258,c512,c768 tclass=file app=com.zhanghuang
-2023-06-16 11:44:39.268 13955-13955 pool-12-thread-         com.zhanghuang                       W  type=1400 audit(0.0:49604): avc: granted { execute } for path="/data/data/com.zhanghuang/app_e_qq_com_plugin_c4a3cb97806cecae65646808b7755026/libturingau.bcd860b4.so" dev="dm-43" ino=1119447 scontext=u:r:untrusted_app_30:s0:c81,c258,c512,c768 tcontext=u:object_r:app_data_file:s0:c81,c258,c512,c768 tclass=file app=com.zhanghuang
-2023-06-16 11:44:39.271 13955-18946 TuringFdNative          com.zhanghuang                       I  TuringFD v77 (8D2466BF3FB8AA9C, au, 150176e, rfr, compiled 2023_03_27_10_52_51) success 
-2023-06-16 11:44:39.274 13955-18608 com.zhanghuang          com.zhanghuang                       I  This is sticky GC, maxfree is 8388608 minfree is 2097152
-2023-06-16 11:44:39.283 13955-13955 MicroMsg.P....WXFactory com.zhanghuang                       D  createWXAPI, appId = wx5846c59e6f1304a9, checkSignature = true
-2023-06-16 11:44:39.283 13955-13955 MicroMsg.P....WXFactory com.zhanghuang                       D  createWXAPI, appId = wx5846c59e6f1304a9, checkSignature = true, launchMode = 2
-2023-06-16 11:44:39.285 13955-13955 MicroMsg.S...ApiImplV10 com.zhanghuang                       D  <init>, appId = wx5846c59e6f1304a9, checkSignature = true, launchMode = 2
-2023-06-16 11:44:39.286 13955-13955 MicroMsg.S...sgImplComm com.zhanghuang                       D  check signature:308202eb30820254a00302010202044d36f7a4300d06092a864886f70d01010505003081b9310b300906035504061302383631123010060355040813094775616e67646f6e673111300f060355040713085368656e7a68656e31353033060355040a132c54656e63656e7420546563686e6f6c6f6779285368656e7a68656e2920436f6d70616e79204c696d69746564313a3038060355040b133154656e63656e74204775616e677a686f7520526573656172636820616e6420446576656c6f706d656e742043656e7465723110300e0603550403130754656e63656e74301e170d3131303131393134333933325a170d3431303131313134333933325a3081b9310b300906035504061302383631123010060355040813094775616e67646f6e673111300f060355040713085368656e7a68656e31353033060355040a132c54656e63656e7420546563686e6f6c6f6779285368656e7a68656e2920436f6d70616e79204c696d69746564313a3038060355040b133154656e63656e74204775616e677a686f7520526573656172636820616e6420446576656c6f706d656e742043656e7465723110300e0603550403130754656e63656e7430819f300d06092a864886f70d010101050003818d0030818902818100c05f34b231b083fb1323670bfbe7bdab40c0c0a6efc87ef2072a1ff0d60cc67c8edb0d0847f210bea6cbfaa241be70c86daf56be08b723c859e52428a064555d80db448cdcacc1aea2501eba06f8bad12a4fa49d85cacd7abeb68945a5cb5e061629b52e3254c373550ee4e40cb7c8ae6f7a8151ccd8df582d446f39ae0c5e930203010001300d06092a864886f70d0101050500038181009c8d9d7f2f908c42081b4c764c377109a8b2c70582422125ce545842d5f520aea69550b6bd8bfd94e987b75a3077eb04ad341f481aac266e89d3864456e69fba13df018acdc168b9a19dfd7ad9d9cc6f6ace57c746515f71234df3a053e33ba93ece5cd0fc15f3e389a3f365588a9fcb439e069d3629cd7732a13fff7b891499
-2023-06-16 11:44:39.286 13955-13955 MicroMsg.S...sgImplComm com.zhanghuang                       D  pass
-2023-06-16 11:44:39.286 13955-13955 MicroMsg.S...ApiImplV10 com.zhanghuang                       D  registerApp, appId = wx5846c59e6f1304a9
-2023-06-16 11:44:39.286 13955-13955 MicroMsg.S...ApiImplV10 com.zhanghuang                       D  registerApp, appId = wx5846c59e6f1304a9
-2023-06-16 11:44:39.286 13955-13955 MicroMsg.S...ApiImplV10 com.zhanghuang                       D  register app com.zhanghuang
-2023-06-16 11:44:39.287 13955-13955 MicroMsg.SDK.MMessage   com.zhanghuang                       D  send mm message, intent=Intent { act=com.tencent.mm.plugin.openapi.Intent.ACTION_HANDLE_APP_REGISTER (has extras) }, perm=com.tencent.mm.permission.MM_MESSAGE
-2023-06-16 11:44:39.289 13955-13955 crashsdk                com.zhanghuang                       I  Unexp log not enabled, skip update unexp info!
-2023-06-16 11:44:39.289 13955-18946 TuringFdJava            com.zhanghuang                       I  TuringFD v77 (8D2466BF3FB8AA9C, au, 150176e, rfr;rs, wup;105498, compiled 2023_03_27_10_52_51) [url(https://tdid.m.qq.com?mc=2);c(0)]
-2023-06-16 11:44:39.292 13955-18966 TrafficStats            com.zhanghuang                       D  tagSocket(233) with statsTag=0xafbd824b, statsUid=-1
-2023-06-16 11:44:39.294 13955-13955 DecorView[]             com.zhanghuang                       D  getWindowModeFromSystem  windowmode is 1
-2023-06-16 11:44:39.294 13955-13955 DecorView[]             com.zhanghuang                       D  updateDecorCaptionStatus windowMode is 1
-2023-06-16 11:44:39.298 13955-13955 HandWritingStubImpl     com.zhanghuang                       I  isKeyboardTypeChanged: false
-2023-06-16 11:44:39.299 13955-13955 HandWritingStubImpl     com.zhanghuang                       I  isKeyboardTypeChanged: false
-2023-06-16 11:44:39.300 13955-18779 MobclickAgent           com.zhanghuang                       D  延续上一个会话: D08EC55FC8D9BBA564E97244311738E2
-2023-06-16 11:44:39.304 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "D08EC55FC8D9BBA564E97244311738E2"
-2023-06-16 11:44:39.304 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: ""
-2023-06-16 11:44:39.305 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "D08EC55FC8D9BBA564E97244311738E2"
-2023-06-16 11:44:39.305 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "-1"
-2023-06-16 11:44:39.306 13955-18779 UMLog                   com.zhanghuang                       D  当前发送策略为：启动时发送。详见链接 https://developer.umeng.com/docs/66632/detail/66976?um_channel=sdk
-2023-06-16 11:44:39.316 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "
-2023-06-16 11:44:39.316 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "D08EC55FC8D9BBA564E97244311738E2"
-2023-06-16 11:44:39.321 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "07rzky+FWsfGroVRqsmgzpN9iaVukFW4zivWCxnjoa1526t9MJCLzS43RN+Z4k0LXSzsIIoqAG7Q
-                                                                                                    4eH4chCOnm6FmTBaSB7JLFzQ5PwrUIo=
-                                                                                                    "
-2023-06-16 11:44:39.321 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "D08EC55FC8D9BBA564E97244311738E2"
-2023-06-16 11:44:39.328 13955-18976 TrafficStats            com.zhanghuang                       D  tagSocket(237) with statsTag=0xffffffff, statsUid=-1
-2023-06-16 11:44:39.329 13955-18977 TrafficStats            com.zhanghuang                       D  tagSocket(238) with statsTag=0xffffffff, statsUid=-1
-2023-06-16 11:44:39.346 13955-18988 com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/webkit/WebViewFactory;->getWebViewContextAndSetProvider()Landroid/content/Context; (unsupported, reflection, allowed)
-2023-06-16 11:44:39.365 13955-18969 TrafficStats            com.zhanghuang                       D  tagSocket(241) with statsTag=0xafbd824b, statsUid=-1
-2023-06-16 11:44:39.395 13955-18675 Parcel                  com.zhanghuang                       W  Expecting binder but got null!
-2023-06-16 11:44:39.396 13955-13955 DecorView[]             com.zhanghuang                       D  onWindowFocusChanged hasWindowFocus false
-2023-06-16 11:44:39.397 13955-18988 TrafficStats            com.zhanghuang                       D  tagSocket(288) with statsTag=0xffffffff, statsUid=-1
-2023-06-16 11:44:39.399 13955-18983 TrafficStats            com.zhanghuang                       D  tagSocket(147) with statsTag=0xffffffff, statsUid=-1
-2023-06-16 11:44:39.400 13955-13955 MiuiMultiWindowAdapter  com.zhanghuang                       D  MiuiMultiWindowAdapter::getFreeformVideoWhiteListInSystem::LIST_ABOUT_SUPPORT_LANDSCAPE_VIDEO = [com.hunantv.imgo.activity, com.tencent.qqlive, com.qiyi.video, com.hunantv.imgo.activity.inter, com.tencent.qqlivei18n, com.iqiyi.i18n, tv.danmaku.bili]
-2023-06-16 11:44:39.406 13955-19000 IdProviderImpl          com.zhanghuang                       D  getOAID from com.zhanghuang
-2023-06-16 11:44:39.407 13955-18679 ViewContentFactory      com.zhanghuang                       D  initViewContentFetcherClass
-2023-06-16 11:44:39.407 13955-18679 ContentCatcher          com.zhanghuang                       I  ViewContentFetcher : ViewContentFetcher
-2023-06-16 11:44:39.407 13955-18679 ViewContentFactory      com.zhanghuang                       D  createInterceptor took 0ms
-2023-06-16 11:44:39.408 13955-13955 IS_CTS_MODE             com.zhanghuang                       D  false
-2023-06-16 11:44:39.408 13955-13955 MULTI_WINDOW_ENABLED    com.zhanghuang                       D  false
-2023-06-16 11:44:39.410 13955-13955 DecorView[]             com.zhanghuang                       D  getWindowModeFromSystem  windowmode is 1
-2023-06-16 11:44:39.431 13955-13955 HandWritingStubImpl     com.zhanghuang                       I  isKeyboardTypeChanged: false
-2023-06-16 11:44:39.434 13955-13955 HandWritingStubImpl     com.zhanghuang                       I  isKeyboardTypeChanged: false
-2023-06-16 11:44:39.442 13955-18608 com.zhanghuang          com.zhanghuang                       I  This is non sticky GC, maxfree is 8388608 minfree is 2097152
-2023-06-16 11:44:39.453 13955-13955 crashsdk                com.zhanghuang                       I  Unexp log not enabled, skip update unexp info!
-2023-06-16 11:44:39.457 13955-13955 DecorView[]             com.zhanghuang                       D  getWindowModeFromSystem  windowmode is 1
-2023-06-16 11:44:39.457 13955-13955 DecorView[]             com.zhanghuang                       D  updateDecorCaptionStatus windowMode is 1
-2023-06-16 11:44:39.458 13955-18779 MobclickAgent           com.zhanghuang                       D  延续上一个会话: D08EC55FC8D9BBA564E97244311738E2
-2023-06-16 11:44:39.460 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "D08EC55FC8D9BBA564E97244311738E2"
-2023-06-16 11:44:39.460 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: ""
-2023-06-16 11:44:39.460 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "D08EC55FC8D9BBA564E97244311738E2"
-2023-06-16 11:44:39.460 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "-1"
-2023-06-16 11:44:39.460 13955-18779 UMLog                   com.zhanghuang                       D  当前发送策略为：启动时发送。详见链接 https://developer.umeng.com/docs/66632/detail/66976?um_channel=sdk
-2023-06-16 11:44:39.488 13955-13955 GDT_LOAD_AD_THR         com.zhanghuang                       W  type=1400 audit(0.0:49605): avc: denied { read } for name="module" dev="sysfs" ino=49394 scontext=u:r:untrusted_app_30:s0:c81,c258,c512,c768 tcontext=u:object_r:sysfs:s0 tclass=dir permissive=0 app=com.zhanghuang
-2023-06-16 11:44:39.495 13955-19007 TrafficStats            com.zhanghuang                       D  tagSocket(253) with statsTag=0xffffffff, statsUid=-1
-2023-06-16 11:44:39.524 13955-18675 Parcel                  com.zhanghuang                       W  Expecting binder but got null!
-2023-06-16 11:44:39.524 13955-18779 UMLog                   com.zhanghuang                       I  统计SDK版本号: 9.6.1
-2023-06-16 11:44:39.524 13955-18779 UMLog                   com.zhanghuang                       I  ZID SDK版本号: 1.8.0
-2023-06-16 11:44:39.526 13955-18779 UMLog                   com.zhanghuang                       I  APM SDK版本号: 1.9.2
-2023-06-16 11:44:39.527 13955-18779 MobclickAgent           com.zhanghuang                       I  module init:aszioc
-2023-06-16 11:44:39.533 13955-13955 Compatibil...geReporter com.zhanghuang                       D  Compat change id reported: 163400105; UID 10593; state: DISABLED
-2023-06-16 11:44:39.546 13955-13955 AssistStructure         com.zhanghuang                       I  Flattened final assist data: 2576 bytes, containing 1 windows, 13 views
-2023-06-16 11:44:39.552 13955-18779 com.zhanghuang          com.zhanghuang                       E  Invalid ID 0x00000000.
-2023-06-16 11:44:39.572 13955-18983 D105498                 com.zhanghuang                       E  s:57,v:8
-2023-06-16 11:44:39.588 13955-18967 TrafficStats            com.zhanghuang                       D  tagSocket(248) with statsTag=0xafbd824b, statsUid=-1
-2023-06-16 11:44:39.590 13955-18965 TrafficStats            com.zhanghuang                       D  tagSocket(332) with statsTag=0xafbd824b, statsUid=-1
-2023-06-16 11:44:39.592 13955-13955 DecorView[]             com.zhanghuang                       D  onWindowFocusChanged hasWindowFocus true
-2023-06-16 11:44:39.592 13955-13955 HandWritingStubImpl     com.zhanghuang                       I  refreshLastKeyboardType: 1
-2023-06-16 11:44:39.592 13955-13955 HandWritingStubImpl     com.zhanghuang                       I  getCurrentKeyboardType: 1
-2023-06-16 11:44:39.592 13955-18983 Settings                com.zhanghuang                       W  Setting adb_enabled has moved from android.provider.Settings.Secure to android.provider.Settings.Global.
-2023-06-16 11:44:39.594 13955-18983 Settings                com.zhanghuang                       W  Setting development_settings_enabled has moved from android.provider.Settings.Secure to android.provider.Settings.Global.
-2023-06-16 11:44:39.594 13955-19025 TrafficStats            com.zhanghuang                       D  tagSocket(312) with statsTag=0xffffffff, statsUid=-1
-2023-06-16 11:44:39.610 13955-13955 HandWritingStubImpl     com.zhanghuang                       I  isKeyboardTypeChanged: false
-2023-06-16 11:44:39.611 13955-13955 HandWritingStubImpl     com.zhanghuang                       I  isKeyboardTypeChanged: false
-2023-06-16 11:44:39.634 13955-18966 TrafficStats            com.zhanghuang                       D  tagSocket(340) with statsTag=0xafbd824b, statsUid=-1
-2023-06-16 11:44:39.651 13955-18608 com.zhanghuang          com.zhanghuang                       I  This is sticky GC, maxfree is 8388608 minfree is 2097152
-2023-06-16 11:44:39.662 13955-19055 IdProviderImpl          com.zhanghuang                       D  getOAID from com.zhanghuang
-2023-06-16 11:44:39.665 13955-18983 PowerProfile            com.zhanghuang                       W  screen.on is deprecated! Use screen.on.display0 instead.
-2023-06-16 11:44:39.665 13955-18983 PowerProfile            com.zhanghuang                       W  screen.full is deprecated! Use screen.full.display0 instead.
-2023-06-16 11:44:39.665 13955-18983 ModemPowerProfile       com.zhanghuang                       W  getAverageBatteryDrainMaH called with unexpected key: 0x0, drain:0,RAT:DEFAULT
-2023-06-16 11:44:39.665 13955-18983 ModemPowerProfile       com.zhanghuang                       W  getAverageBatteryDrainMaH called with unexpected key: 0x10000000, drain:IDLE,RAT:DEFAULT
-2023-06-16 11:44:39.665 13955-18983 ModemPowerProfile       com.zhanghuang                       W  getAverageBatteryDrainMaH called with unexpected key: 0x20000000, drain:RX,RAT:DEFAULT
-2023-06-16 11:44:39.665 13955-18983 ModemPowerProfile       com.zhanghuang                       W  getAverageBatteryDrainMaH called with unexpected key: 0x30000000, drain:TX,level:UNKNOWN(0x0)RAT:DEFAULT
-2023-06-16 11:44:39.665 13955-18983 ModemPowerProfile       com.zhanghuang                       W  getAverageBatteryDrainMaH called with unexpected key: 0x31000000, drain:TX,level:UNKNOWN(0x1000000)RAT:DEFAULT
-2023-06-16 11:44:39.665 13955-18983 ModemPowerProfile       com.zhanghuang                       W  getAverageBatteryDrainMaH called with unexpected key: 0x32000000, drain:TX,level:UNKNOWN(0x2000000)RAT:DEFAULT
-2023-06-16 11:44:39.665 13955-18983 ModemPowerProfile       com.zhanghuang                       W  getAverageBatteryDrainMaH called with unexpected key: 0x33000000, drain:TX,level:UNKNOWN(0x3000000)RAT:DEFAULT
-2023-06-16 11:44:39.665 13955-18983 ModemPowerProfile       com.zhanghuang                       W  getAverageBatteryDrainMaH called with unexpected key: 0x34000000, drain:TX,level:UNKNOWN(0x4000000)RAT:DEFAULT
-2023-06-16 11:44:39.673 13955-19017 com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/os/Build;->getString(Ljava/lang/String;)Ljava/lang/String; (unsupported, reflection, allowed)
-2023-06-16 11:44:39.684 13955-19017 TrafficStats            com.zhanghuang                       D  tagSocket(147) with statsTag=0xffffffff, statsUid=-1
-2023-06-16 11:44:39.692 13955-18779 UMLog                   com.zhanghuang                       D  当前发送策略为：启动时发送。详见链接 https://developer.umeng.com/docs/66632/detail/66976?um_channel=sdk
-2023-06-16 11:44:39.692 13955-18780 TrafficStats            com.zhanghuang                       D  tagSocket(309) with statsTag=0xffffffff, statsUid=-1
-2023-06-16 11:44:39.698 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "D08EC55FC8D9BBA564E97244311738E2"
-2023-06-16 11:44:39.698 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: ""
-2023-06-16 11:44:39.698 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "D08EC55FC8D9BBA564E97244311738E2"
-2023-06-16 11:44:39.698 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "-1"
-2023-06-16 11:44:39.698 13955-18779 UMLog                   com.zhanghuang                       D  当前发送策略为：启动时发送。详见链接 https://developer.umeng.com/docs/66632/detail/66976?um_channel=sdk
-2023-06-16 11:44:39.698 13955-18779 MobclickAgent           com.zhanghuang                       D  数据发送策略 : ReportAtLaunch
-2023-06-16 11:44:39.698 13955-18779 UMLog                   com.zhanghuang                       D  当前发送策略为：启动时发送。详见链接 https://developer.umeng.com/docs/66632/detail/66976?um_channel=sdk
-2023-06-16 11:44:39.724 13955-19060 TrafficStats            com.zhanghuang                       D  tagSocket(307) with statsTag=0xffffffff, statsUid=-1
-2023-06-16 11:44:39.739 13955-18608 com.zhanghuang          com.zhanghuang                       I  This is non sticky GC, maxfree is 8388608 minfree is 2097152
-2023-06-16 11:44:39.791 13955-18983 libc                    com.zhanghuang                       W  Access denied finding property "ro.runtime.firstboot"
-2023-06-16 11:44:39.797 13955-19066 TrafficStats            com.zhanghuang                       D  tagSocket(234) with statsTag=0xffffffff, statsUid=-1
-2023-06-16 11:44:39.807 13955-18983 TrafficStats            com.zhanghuang                       D  tagSocket(236) with statsTag=0xffffffff, statsUid=-1
-2023-06-16 11:44:39.837 13955-18780 UMCrash                 com.zhanghuang                       I  common callback.  key is umid; value is 3d9a5e688a8260520651132368dd2ec9od
-2023-06-16 11:44:39.838 13955-18780 LaunchTrace             com.zhanghuang                       I  begin sendLaunchCache
-2023-06-16 11:44:39.838 13955-18780 MobclickAgent           com.zhanghuang                       D  本次启动数据: 发送成功!
-2023-06-16 11:44:39.902 13955-13955 MainHeadUint            com.zhanghuang                       I  onADReceive, ECPM: -1, ECPMLevel: , adNetWorkName: , testExtraInfo:-1, request_id:fzcovgihr75pm01
-2023-06-16 11:44:39.959 13955-13955 HandWritingStubImpl     com.zhanghuang                       I  isKeyboardTypeChanged: false
-2023-06-16 11:44:42.623 13955-13955 DecorView[]             com.zhanghuang                       D  onWindowFocusChanged hasWindowFocus false
-2023-06-16 11:44:43.296 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "
-2023-06-16 11:44:43.296 13955-18779 SQLiteLog               com.zhanghuang                       W  (28) double-quoted string literal: "D08EC55FC8D9BBA564E97244311738E2"
-2023-06-16 11:44:44.216 13955-18940 efs.config              com.zhanghuang                       D  app=58eb2d094544cb15d2001334&cver=-1&os=android&sd=ZPuKLVlG5Jiaq4B9SEqdFw&sver=-1&tm=1686887084&um_sdk_ver=1.9.2&ver=2.0.8&wl_dd=z0x3hwsB-QQ67xQyr8vaW4_jUr31F2o1I8gJKV9MlLd-Jq8Y3LnXyOG12Du1uhaF&sign=be102f7c704f2954bfddf142ef952876
-2023-06-16 11:44:44.216 13955-18940 efs.px.api              com.zhanghuang                       I  get config from server, url is https://errnewlog.umeng.com/apm_cc
-2023-06-16 11:44:44.226 13955-18940 TrafficStats            com.zhanghuang                       D  tagSocket(78) with statsTag=0xffffffff, statsUid=-1
-2023-06-16 11:44:44.413 13955-18608 com.zhanghuang          com.zhanghuang                       I  This is sticky GC, maxfree is 8388608 minfree is 2097152
-2023-06-16 11:44:44.440 13955-18940 efs.config              com.zhanghuang                       I  config request succ, config is:
-                                                                                                     {"msg":"成功","code":0,"cip":"127.0.0.1","config":{"common":{"updateInteval":480,"gate_way_https":true},"app_configs":[{"conditions":[{"val":"0.0.0.0","opc":">=","fld":"ver"}],"actions":[{"opt":"apm_mem_state","set":0},{"opt":"apm_oom_state","set":0},{"opt":"apm_native_h5perf_sampling_rate","set":5},{"opt":"apm_memperf_collect_interval","set":5},{"opt":"apm_netperf_sampling_rate","set":5},{"opt":"apm_patrace_switch_rate","set":5},{"opt":"record_accumulation_time","set":60,"lt":"memperf"},{"opt":"apm_memperf_sampling_rate","set":0},{"opt":"apm_crash_user_upload_type","set":1},{"opt":"apm_memperf_collect_max_period_sec","set":600},{"opt":"apm_net_state","set":0},{"opt":"apm_startperf_sampling_rate","set":5},{"opt":"apm_crash_user_max_count","set":20},{"opt":"apm_oom_sampling_rate","set":5},{"opt":"apm_native_h5_state","set":0}]}]},"stm":1686887084,"cver":1651209273}
-2023-06-16 11:44:44.440 13955-18940 efs.config              com.zhanghuang                       I  from server. efs config is {"msg":"成功","code":0,"cip":"127.0.0.1","config":{"common":{"updateInteval":480,"gate_way_https":true},"app_configs":[{"conditions":[{"val":"0.0.0.0","opc":">=","fld":"ver"}],"actions":[{"opt":"apm_mem_state","set":0},{"opt":"apm_oom_state","set":0},{"opt":"apm_native_h5perf_sampling_rate","set":5},{"opt":"apm_memperf_collect_interval","set":5},{"opt":"apm_netperf_sampling_rate","set":5},{"opt":"apm_patrace_switch_rate","set":5},{"opt":"record_accumulation_time","set":60,"lt":"memperf"},{"opt":"apm_memperf_sampling_rate","set":0},{"opt":"apm_crash_user_upload_type","set":1},{"opt":"apm_memperf_collect_max_period_sec","set":600},{"opt":"apm_net_state","set":0},{"opt":"apm_startperf_sampling_rate","set":5},{"opt":"apm_crash_user_max_count","set":20},{"opt":"apm_oom_sampling_rate","set":5},{"opt":"apm_native_h5_state","set":0}]}]},"stm":1686887084,"cver":1651209273}
-2023-06-16 11:44:44.443 13955-18940 efs.config              com.zhanghuang                       I  current config version (-1) is older than another (1651209273)
-2023-06-16 11:44:44.444 13955-13955 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_startperf_sampling_rate ## value is 5
-2023-06-16 11:44:44.449 13955-13955 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_patrace_switch_rate ## value is 5
-2023-06-16 11:44:44.449 13955-13955 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_net_state ## value is 0
-2023-06-16 11:44:44.449 13955-13955 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_native_h5_state ## value is 0
-2023-06-16 11:44:44.449 13955-13955 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_crash_user_max_count ## value is 20
-2023-06-16 11:44:44.450 13955-13955 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_crash_user_upload_type ## value is 1
-2023-06-16 11:44:44.450 13955-13955 efs.config              com.zhanghuang                       I  callback netRate is 0
-2023-06-16 11:44:44.451 13955-13955 efs.config              com.zhanghuang                       I  callback nativeH5Rate is 0
-2023-06-16 11:44:44.453 13955-13955 efs.config              com.zhanghuang                       I  callback crashMaxUserCount is 20
-2023-06-16 11:44:44.454 13955-13955 efs.config              com.zhanghuang                       I  callback uploadType is 1
-2023-06-16 11:44:44.455 13955-13955 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_memperf_sampling_rate ## value is 0
-2023-06-16 11:44:44.456 13955-13955 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_memperf_collect_interval ## value is 5
-2023-06-16 11:44:44.456 13955-13955 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_memperf_collect_max_period_sec ## value is 600
-2023-06-16 11:44:44.506 13955-18779 IdProviderImpl          com.zhanghuang                       D  getOAID from com.zhanghuang
-2023-06-16 11:44:44.546 13955-19146 TrafficStats            com.zhanghuang                       D  tagSocket(193) with statsTag=0xffffffff, statsUid=-1
-2023-06-16 11:44:44.575 13955-18780 TrafficStats            com.zhanghuang                       D  tagSocket(211) with statsTag=0xffffffff, statsUid=-1
-2023-06-16 11:44:45.025 13955-18608 com.zhanghuang          com.zhanghuang                       I  This is non sticky GC, maxfree is 8388608 minfree is 2097152
-2023-06-16 11:44:45.127 13955-18674 com.zhanghuang          com.zhanghuang                       I  This is non sticky GC, maxfree is 8388608 minfree is 2097152
-2023-06-16 11:44:45.127 13955-18674 com.zhanghuang          com.zhanghuang                       I  Explicit concurrent copying GC freed 33614(1692KB) AllocSpace objects, 2(104KB) LOS objects, 24% free, 8095KB/10MB, paused 207us,86us total 71.756ms
-2023-06-16 11:44:45.854 13955-19151 BpBinder                com.zhanghuang                       W  PerfMonitor binderTransact :  time=785ms interface=com.tencent.soter.soterserver.ISoterService code=1
-2023-06-16 11:44:45.982 13955-18608 com.zhanghuang          com.zhanghuang                       I  This is sticky GC, maxfree is 8388608 minfree is 2097152
-2023-06-16 11:44:46.021 13955-19154 Settings                com.zhanghuang                       W  Setting adb_enabled has moved from android.provider.Settings.Secure to android.provider.Settings.Global.
-2023-06-16 11:44:46.021 13955-19154 Settings                com.zhanghuang                       W  Setting development_settings_enabled has moved from android.provider.Settings.Secure to android.provider.Settings.Global.
-2023-06-16 11:44:46.024 13955-13955 TuringRiskThrea         com.zhanghuang                       W  type=1400 audit(0.0:49752): avc: denied { read } for name="tcp" dev="proc" ino=4026532037 scontext=u:r:untrusted_app_30:s0:c81,c258,c512,c768 tcontext=u:object_r:proc_net_tcp_udp:s0 tclass=file permissive=0 app=com.zhanghuang
-2023-06-16 11:44:46.024 13955-13955 TuringRiskThrea         com.zhanghuang                       W  type=1400 audit(0.0:49753): avc: denied { read } for name="tcp6" dev="proc" ino=4026532098 scontext=u:r:untrusted_app_30:s0:c81,c258,c512,c768 tcontext=u:object_r:proc_net_tcp_udp:s0 tclass=file permissive=0 app=com.zhanghuang
-2023-06-16 11:44:46.072 13955-19154 com.zhanghuang          com.zhanghuang                       W  Accessing hidden field Landroid/app/ApplicationPackageManager;->mPM:Landroid/content/pm/IPackageManager; (unsupported, reflection, allowed)
-2023-06-16 11:44:46.076 13955-13955 TuringRiskThrea         com.zhanghuang                       W  type=1400 audit(0.0:49754): avc: denied { read } for name="bootstrap" dev="dm-9" ino=19168643 scontext=u:r:untrusted_app_30:s0:c81,c258,c512,c768 tcontext=u:object_r:system_bootstrap_lib_file:s0 tclass=dir permissive=0 app=com.zhanghuang
-2023-06-16 11:44:46.076 13955-13955 TuringRiskThrea         com.zhanghuang                       W  type=1400 audit(0.0:49755): avc: denied { read } for name="bootstrap" dev="dm-9" ino=16587490 scontext=u:r:untrusted_app_30:s0:c81,c258,c512,c768 tcontext=u:object_r:system_bootstrap_lib_file:s0 tclass=dir permissive=0 app=com.zhanghuang
-2023-06-16 11:44:46.080 13955-13955 TuringRiskThrea         com.zhanghuang                       W  type=1400 audit(0.0:49756): avc: denied { read } for name="version" dev="proc" ino=4026532016 scontext=u:r:untrusted_app_30:s0:c81,c258,c512,c768 tcontext=u:object_r:proc_version:s0 tclass=file permissive=0 app=com.zhanghuang
-2023-06-16 11:44:46.084 13955-13955 TuringRiskThrea         com.zhanghuang                       W  type=1400 audit(0.0:49757): avc: denied { read } for name="u:object_r:firstboot_prop:s0" dev="tmpfs" ino=212 scontext=u:r:untrusted_app_30:s0:c81,c258,c512,c768 tcontext=u:object_r:firstboot_prop:s0 tclass=file permissive=0 app=com.zhanghuang
-2023-06-16 11:44:46.086 13955-19154 libc                    com.zhanghuang                       W  Access denied finding property "ro.runtime.firstboot"
-2023-06-16 11:44:46.104 13955-19154 com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/view/Display;->getOwnerUid()I (max-target-o, JNI, denied)
-2023-06-16 11:44:46.124 13955-19154 TrafficStats            com.zhanghuang                       D  tagSocket(218) with statsTag=0xffffffff, statsUid=-1
-2023-06-16 11:44:46.133 13955-18608 com.zhanghuang          com.zhanghuang                       I  This is non sticky GC, maxfree is 8388608 minfree is 2097152
-2023-06-16 11:44:48.399 13955-18608 com.zhanghuang          com.zhanghuang                       I  This is non sticky GC, maxfree is 8388608 minfree is 2097152
-2023-06-16 11:44:54.232 13955-18936 crashsdk                com.zhanghuang                       I  crashsdk uploading logs
+WARNING: Logcat was not cleared on the device itself because 'logcat -c' timed out.
+2023-06-18 12:08:37.025 26501-26574 HostConnection          com.example.testurl                  D  glGetError exceeded.
+2023-06-18 12:08:38.170 26501-26574 HostConnection          com.example.testurl                  D  glGetError exceeded.
+2023-06-18 12:08:38.920 26501-26574 HostConnection          com.example.testurl                  D  glGetError exceeded.
+---------------------------- PROCESS STARTED (26757) for package com.example.testurl ----------------------------
+2023-06-18 12:08:43.523 26757-26757 example.testur          com.example.testurl                  W  Accessing hidden field Landroid/os/Trace;->TRACE_TAG_APP:J (light greylist, reflection)
+2023-06-18 12:08:43.523 26757-26757 example.testur          com.example.testurl                  W  Accessing hidden method Landroid/os/Trace;->isTagEnabled(J)Z (light greylist, reflection)
+2023-06-18 12:08:43.565 26757-26757 AppCompatDelegate       com.example.testurl                  D  Checking for metadata for AppLocalesMetadataHolderService : Service not found
+2023-06-18 12:08:43.576 26757-26757 example.testur          com.example.testurl                  W  Accessing hidden field Landroid/graphics/Insets;->left:I (light greylist, linking)
+2023-06-18 12:08:43.576 26757-26757 example.testur          com.example.testurl                  W  Accessing hidden field Landroid/graphics/Insets;->top:I (light greylist, linking)
+2023-06-18 12:08:43.576 26757-26757 example.testur          com.example.testurl                  W  Accessing hidden field Landroid/graphics/Insets;->right:I (light greylist, linking)
+2023-06-18 12:08:43.576 26757-26757 example.testur          com.example.testurl                  W  Accessing hidden field Landroid/graphics/Insets;->bottom:I (light greylist, linking)
+2023-06-18 12:08:43.597 26757-26757 example.testur          com.example.testurl                  W  Accessing hidden method Landroid/view/View;->computeFitSystemWindows(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z (light greylist, reflection)
+2023-06-18 12:08:43.598 26757-26757 example.testur          com.example.testurl                  W  Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (light greylist, reflection)
+2023-06-18 12:08:43.603 26757-26757 WebViewFactory          com.example.testurl                  I  Loading com.android.webview version 91.0.4472.114 (code 447211456)
+2023-06-18 12:08:43.608 26757-26757 example.testur          com.example.testurl                  I  The ClassLoaderContext is a special shared library.
+2023-06-18 12:08:43.628 26757-26757 example.testur          com.example.testurl                  W  Accessing hidden method Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V (light greylist, reflection)
+2023-06-18 12:08:43.628 26757-26757 example.testur          com.example.testurl                  W  Accessing hidden method Landroid/os/Trace;->traceEnd(J)V (light greylist, reflection)
+2023-06-18 12:08:43.628 26757-26757 example.testur          com.example.testurl                  W  Accessing hidden method Landroid/os/Trace;->asyncTraceBegin(JLjava/lang/String;I)V (light greylist, reflection)
+2023-06-18 12:08:43.628 26757-26757 example.testur          com.example.testurl                  W  Accessing hidden method Landroid/os/Trace;->asyncTraceEnd(JLjava/lang/String;I)V (light greylist, reflection)
+2023-06-18 12:08:43.655 26757-26757 cr_LibraryLoader        com.example.testurl                  I  Loaded native library version number "91.0.4472.114"
+2023-06-18 12:08:43.655 26757-26757 example.testur          com.example.testurl                  W  Accessing hidden field Ljava/util/Collections$SynchronizedCollection;->mutex:Ljava/lang/Object; (dark greylist, reflection)
+2023-06-18 12:08:43.655 26757-26757 example.testur          com.example.testurl                  W  Accessing hidden field Ljava/util/Collections$SynchronizedCollection;->c:Ljava/util/Collection; (light greylist, reflection)
+2023-06-18 12:08:43.655 26757-26757 example.testur          com.example.testurl                  W  Accessing hidden method Ljava/util/Collections$SynchronizedSet;-><init>(Ljava/util/Set;Ljava/lang/Object;)V (dark greylist, reflection)
+2023-06-18 12:08:43.655 26757-26757 example.testur          com.example.testurl                  W  Accessing hidden method Ljava/util/Collections$SynchronizedCollection;-><init>(Ljava/util/Collection;Ljava/lang/Object;)V (dark greylist, reflection)
+2023-06-18 12:08:43.657 26757-26757 cr_CachingUmaRecorder   com.example.testurl                  I  Flushed 6 samples from 6 histograms.
+2023-06-18 12:08:43.670 26757-26788 example.testur          com.example.testurl                  W  Accessing hidden method Landroid/content/Context;->bindServiceAsUser(Landroid/content/Intent;Landroid/content/ServiceConnection;ILandroid/os/Handler;Landroid/os/UserHandle;)Z (light greylist, reflection)
+2023-06-18 12:08:43.758 26757-26810 example.testur          com.example.testurl                  W  Accessing hidden method Landroid/media/AudioManager;->getOutputLatency(I)I (light greylist, reflection)
+2023-06-18 12:08:43.764 26757-26810 cr_media                com.example.testurl                  W  Requires BLUETOOTH permission
+2023-06-18 12:08:43.769 26757-26822 HostConnection          com.example.testurl                  I  HostConnection::HostConnection: pid=26757, tid=26822, this=0x7fff688474e0
+2023-06-18 12:08:43.777 26757-26822 <no-tag>                com.example.testurl                  I  fastpipe: Connect success
+2023-06-18 12:08:43.779 26757-26822 HostConnection          com.example.testurl                  D  HostRPC::connect sucess: app=com.example.testurl, pid=26757, tid=26822, this=0x7fff6885cf40
+2023-06-18 12:08:43.780 26757-26822 HostConnection          com.example.testurl                  D  queryAndSetGLESMaxVersion select gles-version: 3.1 hostGLVersion:46 process:com.example.testurl
+2023-06-18 12:08:43.781 26757-26822 <no-tag>                com.example.testurl                  I  fastpipe: Connect success
+2023-06-18 12:08:43.783 26757-26822 HostConnection          com.example.testurl                  D  recv ProcessPuidReply name=com.example.testurl puid=60 g_u64CapsFlag=1d
+2023-06-18 12:08:43.787 26757-26822 ConfigStore             com.example.testurl                  I  android::hardware::configstore::V1_0::ISurfaceFlingerConfigs::hasWideColorDisplay retrieved: 0
+2023-06-18 12:08:43.787 26757-26822 ConfigStore             com.example.testurl                  I  android::hardware::configstore::V1_0::ISurfaceFlingerConfigs::hasHDRDisplay retrieved: 0
+2023-06-18 12:08:43.802 26757-26757 OpenGLRenderer          com.example.testurl                  D  Skia GL Pipeline
+2023-06-18 12:08:43.815 26757-26822 EGL_adreno              com.example.testurl                  I  eglCreateContext request GLES major-version=2
+2023-06-18 12:08:43.815 26757-26822 EGL_adreno              com.example.testurl                  I  eglCreateContext request GLES minor-version=0
+2023-06-18 12:08:43.816 26757-26822 EGL_adreno              com.example.testurl                  D  eglCreateContext: 0x7fff6a35ea60: maj 3 min 1 rcv 4
+2023-06-18 12:08:43.817 26757-26822 EGL_adreno              com.example.testurl                  D  eglMakeCurrent: 0x7fff6a35ea60: ver 3 1 (tinfo 0x7fff727d0da0)
+2023-06-18 12:08:43.824 26757-26822 HostConnection          com.example.testurl                  D  ExtendedRCEncoderContext GL_VERSION return OpenGL ES 3.1
+2023-06-18 12:08:43.830 26757-26822 GLESv2_enc              com.example.testurl                  W  no support GL_NUM_PROGRAM_BINARY_FORMATS
+2023-06-18 12:08:43.845 26757-26822 EGL_adreno              com.example.testurl                  I  eglCreateContext request GLES major-version=3
+2023-06-18 12:08:43.845 26757-26822 EGL_adreno              com.example.testurl                  I  eglCreateContext request GLES minor-version=0
+2023-06-18 12:08:43.847 26757-26822 EGL_adreno              com.example.testurl                  D  eglCreateContext: 0x7fff6a35ea60: maj 3 min 0 rcv 3
+2023-06-18 12:08:43.848 26757-26822 EGL_adreno              com.example.testurl                  D  eglMakeCurrent: 0x7fff6a35ea60: ver 3 0 (tinfo 0x7fff727d0da0)
+2023-06-18 12:08:43.852 26757-26822 HostConnection          com.example.testurl                  D  ExtendedRCEncoderContext GL_VERSION return OpenGL ES 3.1
+2023-06-18 12:08:43.854 26757-26834 OpenGLRenderer          com.example.testurl                  I  Initialized EGL, version 1.4
+2023-06-18 12:08:43.854 26757-26834 OpenGLRenderer          com.example.testurl                  D  Swap behavior 1
+2023-06-18 12:08:43.854 26757-26834 HostConnection          com.example.testurl                  I  HostConnection::HostConnection: pid=26757, tid=26834, this=0x7fff6bc3f840
+2023-06-18 12:08:43.855 26757-26834 <no-tag>                com.example.testurl                  I  fastpipe: Connect success
+2023-06-18 12:08:43.855 26757-26834 HostConnection          com.example.testurl                  D  HostRPC::connect sucess: app=com.example.testurl, pid=26757, tid=26834, this=0x7fff6bd3b440
+2023-06-18 12:08:43.856 26757-26834 HostConnection          com.example.testurl                  D  queryAndSetGLESMaxVersion select gles-version: 3.1 hostGLVersion:46 process:com.example.testurl
+2023-06-18 12:08:43.856 26757-26834 EGL_adreno              com.example.testurl                  I  eglCreateContext request GLES major-version=2
+2023-06-18 12:08:43.860 26757-26834 EGL_adreno              com.example.testurl                  D  eglCreateContext: 0x7fff6bc6bae0: maj 3 min 1 rcv 4
+2023-06-18 12:08:43.862 26757-26822 eglCodecCommon          com.example.testurl                  E  glUtilsParamSize: unknow param 0x000088ef
+2023-06-18 12:08:43.882 26757-26834 EGL_adreno              com.example.testurl                  D  eglMakeCurrent: 0x7fff6bc6bae0: ver 3 1 (tinfo 0x7fff6bcc2400)
+2023-06-18 12:08:43.884 26757-26822 GLESv2_enc              com.example.testurl                  W  no support GL_NUM_PROGRAM_BINARY_FORMATS
+2023-06-18 12:08:43.885 26757-26834 HostConnection          com.example.testurl                  D  ExtendedRCEncoderContext GL_VERSION return OpenGL ES 3.1
+2023-06-18 12:08:43.886 26757-26834 eglCodecCommon          com.example.testurl                  E  glUtilsParamSize: unknow param 0x00008c29
+2023-06-18 12:08:43.886 26757-26834 GLESv2_enc              com.example.testurl                  W  no support GL_NUM_PROGRAM_BINARY_FORMATS
+2023-06-18 12:08:43.887 26757-26822 eglCodecCommon          com.example.testurl                  E  glUtilsParamSize: unknow param 0x000088ef
+2023-06-18 12:08:43.889 26757-26822 eglCodecCommon          com.example.testurl                  E  glUtilsParamSize: unknow param 0x000088ef
+2023-06-18 12:08:43.894 26757-26834 vndksupport             com.example.testurl                  D  Loading /vendor/lib64/hw/android.hardware.graphics.mapper@2.0-impl.so from current namespace instead of sphal namespace.
+2023-06-18 12:08:43.895 26757-26834 vndksupport             com.example.testurl                  D  Loading /vendor/lib64/hw/gralloc.default.so from current namespace instead of sphal namespace.
+2023-06-18 12:08:43.896 26757-26822 eglCodecCommon          com.example.testurl                  E  glUtilsParamSize: unknow param 0x000088ef
+2023-06-18 12:08:43.901 26757-26822 eglCodecCommon          com.example.testurl                  E  glUtilsParamSize: unknow param 0x000088ef
+2023-06-18 12:08:43.902 26757-26834 EGL_adreno              com.example.testurl                  E  tid 26834: eglSurfaceAttrib(1338): error 0x3009 (EGL_BAD_MATCH)
+2023-06-18 12:08:43.902 26757-26834 OpenGLRenderer          com.example.testurl                  W  Failed to set EGL_SWAP_BEHAVIOR on surface 0x7fff6bd1d380, error=EGL_BAD_MATCH
+2023-06-18 12:08:43.907 26757-26822 eglCodecCommon          com.example.testurl                  E  glUtilsParamSize: unknow param 0x000088ef
+2023-06-18 12:08:43.921 26757-26834 EGL_adreno              com.example.testurl                  D  eglMakeCurrent: 0x7fff6bc6bae0: ver 3 1 (tinfo 0x7fff6bcc2400)
+2023-06-18 12:08:43.938 26757-26834 eglCodecCommon          com.example.testurl                  E  glUtilsParamSize: unknow param 0x000088ef
+2023-06-18 12:08:43.943 26757-26834 GLESv2_enc              com.example.testurl                  W  no support GL_NUM_PROGRAM_BINARY_FORMATS
+2023-06-18 12:08:43.944 26757-26834 eglCodecCommon          com.example.testurl                  E  glUtilsParamSize: unknow param 0x000088ef
+2023-06-18 12:08:43.946 26757-26834 eglCodecCommon          com.example.testurl                  E  glUtilsParamSize: unknow param 0x000088ef
+2023-06-18 12:08:44.225 26757-26757 chromium                com.example.testurl                  I  [INFO:CONSOLE(1177)] "Uncaught TypeError: Cannot read property 'getItem' of null", source: https://mp.weixin.qq.com/s/sIU_8mIsbXzxaWov_Wto4w (1177)
+2023-06-18 12:08:44.230 26757-26757 chromium                com.example.testurl                  I  [INFO:CONSOLE(2138)] "Uncaught TypeError: Cannot read property 'getItem' of null", source: https://mp.weixin.qq.com/s/sIU_8mIsbXzxaWov_Wto4w (2138)
+2023-06-18 12:08:44.237 26757-26757 chromium                com.example.testurl                  I  [INFO:CONSOLE(3497)] "tingIsShow, tingHeardCnt  ", source: https://mp.weixin.qq.com/s/sIU_8mIsbXzxaWov_Wto4w (3497)
+2023-06-18 12:08:44.240 26757-26757 chromium                com.example.testurl                  I  [INFO:CONSOLE(3648)] "Uncaught TypeError: Cannot read property 'getItem' of null", source: https://mp.weixin.qq.com/s/sIU_8mIsbXzxaWov_Wto4w (3648)
+2023-06-18 12:08:44.242 26757-26796 NetworkSecurityConfig   com.example.testurl                  D  No Network Security Config specified, using platform default
+2023-06-18 12:08:44.290 26757-26757 chromium                com.example.testurl                  I  [INFO:CONSOLE(1)] "support wcslplayer false", source: https://res.wx.qq.com/mmbizappmsg/zh_CN/htmledition/js/assets/controller.liyd6xrl6f5daa1d.js (1)
+2023-06-18 12:08:44.302 26757-26757 example.testur          com.example.testurl                  W  Accessing hidden method Landroid/os/Trace;->traceCounter(JLjava/lang/String;I)V (light greylist, reflection)
+2023-06-18 12:08:44.304 26757-26757 chromium                com.example.testurl                  I  [INFO:CONSOLE(11)] "[图文信息] 三元组: MzUyMDAyMzgwMA== 2247483652 1", source: https://res.wx.qq.com/mmbizappmsg/zh_CN/htmledition/js/assets/appmsg.liyd6xrlcf5a4a22.js (11)
+2023-06-18 12:08:44.304 26757-26757 chromium                com.example.testurl                  I  [INFO:CONSOLE(11)] "[用户信息] 设备信息: 是否安卓 true 是否IOS undefined 是否秒开场景 undefined 系统版本 9 用户uin 0 是否小程序内打开 false", source: https://res.wx.qq.com/mmbizappmsg/zh_CN/htmledition/js/assets/appmsg.liyd6xrlcf5a4a22.js (11)
+2023-06-18 12:08:44.306 26757-26757 chromium                com.example.testurl                  I  [INFO:CONSOLE(1)] "wx config web compt result wxOpen [object Object]", source: https://res.wx.qq.com/mmbizappmsg/zh_CN/htmledition/js/assets/comm_utils.liyd6xrldd7c4e4d.js (1)
+2023-06-18 12:08:44.311 26757-26757 chromium                com.example.testurl                  I  [INFO:CONSOLE(1)] "[(评论、点赞、赞赏) 发送请求]:  Sun Jun 18 2023 12:08:44 GMT+0800 (中国标准时间)", source: https://res.wx.qq.com/mmbizappmsg/zh_CN/htmledition/js/assets/appmsgext.liyd6xrle66e083e.js (1)
+2023-06-18 12:08:44.320 26757-26757 chromium                com.example.testurl                  I  [INFO:CONSOLE(1)] "author_cancel 0", source: https://res.wx.qq.com/mmbizappmsg/zh_CN/htmledition/js/assets/intersection-observer.liyd6xrl5fe44b23.js (1)
+2023-06-18 12:08:44.360 26757-26757 chromium                com.example.testurl                  I  [INFO:CONSOLE(1)] "[广告发送请求] 是否拉取广告 0", source: https://res.wx.qq.com/mmbizappmsg/zh_CN/htmledition/js/assets/wxwork_hidden.liyd6xrl24d08d4a.js (1)
+2023-06-18 12:08:44.360 26757-26757 chromium                com.example.testurl                  I  [INFO:CONSOLE(1)] "[强制广告] 是否强制去掉广告 0", source: https://res.wx.qq.com/mmbizappmsg/zh_CN/htmledition/js/assets/wxwork_hidden.liyd6xrl24d08d4a.js (1)
+2023-06-18 12:08:44.368 26757-26757 chromium                com.example.testurl                  I  [INFO:CONSOLE(1)] "author_cancel 0", source: https://res.wx.qq.com/mmbizappmsg/zh_CN/htmledition/js/assets/intersection-observer.liyd6xrl5fe44b23.js (1)
+2023-06-18 12:08:44.388 26757-26757 chromium                com.example.testurl                  I  [INFO:CONSOLE(1)] "[广告响应请求] [object Object]", source: https://res.wx.qq.com/mmbizappmsg/zh_CN/htmledition/js/assets/wxwork_hidden.liyd6xrl24d08d4a.js (1)
+2023-06-18 12:08:44.396 26757-26757 chromium                com.example.testurl                  I  [INFO:CONSOLE(0)] "Mixed Content: The page at 'https://mp.weixin.qq.com/s/sIU_8mIsbXzxaWov_Wto4w' was loaded over HTTPS, but requested an insecure image 'http://mmbiz.qpic.cn/mmbiz_png/dglbrHv1YdCBialodvpDG4ib45UDRVibJ1V1aC06eicEJUqXgiarhJvEprOcEB9JACy145cGOpZWNQJy3zCat9PgRkw/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1'. This request has been blocked; the content must be served over HTTPS.", source: https://mp.weixin.qq.com/s/sIU_8mIsbXzxaWov_Wto4w (0)
+2023-06-18 12:08:44.396 26757-26757 chromium                com.example.testurl                  I  [INFO:CONSOLE(0)] "Mixed Content: The page at 'https://mp.weixin.qq.com/s/sIU_8mIsbXzxaWov_Wto4w' was loaded over HTTPS, but requested an insecure image 'http://mmbiz.qpic.cn/mmbiz_png/dglbrHv1YdCBialodvpDG4ib45UDRVibJ1V8icMg5WgnZp830FFXMH0OCfOoQ8iaGKKBDVLX3UZBicyBeohe9wICgQ5w/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1'. This request has been blocked; the content must be served over HTTPS.", source: https://mp.weixin.qq.com/s/sIU_8mIsbXzxaWov_Wto4w (0)
+2023-06-18 12:08:44.420 26757-26757 chromium                com.example.testurl                  I  [INFO:CONSOLE(0)] "Mixed Content: The page at 'https://mp.weixin.qq.com/s/sIU_8mIsbXzxaWov_Wto4w' was loaded over HTTPS, but requested an insecure image 'http://mp.weixin.qq.com/mp/jsreport?key=10&content=https%3A%2F%2Fmmbiz.qpic.cn%2Fmmbiz_png%2FdglbrHv1YdCBialodvpDG4ib45UDRVibJ1V1aC06eicEJUqXgiarhJvEprOcEB9JACy145cGOpZWNQJy3zCat9PgRkw%2F640%3Fwx_fmt%3Dpng%26wxfrom%3D5%26wx_lazy%3D1%26wx_co%3D1%26retryload%3D1[]&r=0.2830091947226321'. This request has been blocked; the content must be served over HTTPS.", source: https://mp.weixin.qq.com/s/sIU_8mIsbXzxaWov_Wto4w (0)
+2023-06-18 12:08:44.420 26757-26757 chromium                com.example.testurl                  I  [INFO:CONSOLE(0)] "Mixed Content: The page at 'https://mp.weixin.qq.com/s/sIU_8mIsbXzxaWov_Wto4w' was loaded over HTTPS, but requested an insecure image 'http://mp.weixin.qq.com/mp/jsreport?key=10&content=https%3A%2F%2Fmmbiz.qpic.cn%2Fmmbiz_png%2FdglbrHv1YdCBialodvpDG4ib45UDRVibJ1V8icMg5WgnZp830FFXMH0OCfOoQ8iaGKKBDVLX3UZBicyBeohe9wICgQ5w%2F640%3Fwx_fmt%3Dpng%26wxfrom%3D5%26wx_lazy%3D1%26wx_co%3D1%26retryload%3D1[]&r=0.04592075981715138'. This request has been blocked; the content must be served over HTTPS.", source: https://mp.weixin.qq.com/s/sIU_8mIsbXzxaWov_Wto4w (0)
+2023-06-18 12:08:44.420 26757-26757 chromium                com.example.testurl                  I  [INFO:CONSOLE(1)] "[(评论、点赞、赞赏) 响应请求]:  Sun Jun 18 2023 12:08:44 GMT+0800 (中国标准时间) [object Object]", source: https://res.wx.qq.com/mmbizappmsg/zh_CN/htmledition/js/assets/appmsgext.liyd6xrle66e083e.js (1)
+2023-06-18 12:08:44.420 26757-26757 chromium                com.example.testurl                  I  [INFO:CONSOLE(1)] "window.ext_complete_success: true", source: https://res.wx.qq.com/mmbizappmsg/zh_CN/htmledition/js/assets/appmsg.liyd6xrlcf5a4a22.js (1)
+2023-06-18 12:08:44.442 26757-26757 chromium                com.example.testurl                  I  [INFO:CONSOLE(21)] "segmentlist:  [object Object]", source: https://res.wx.qq.com/mmbizappmsg/zh_CN/htmledition/js/assets/wxwork_hidden.liyd6xrl24d08d4a.js (21)
+2023-06-18 12:08:45.377 26757-26757 Chrome_InProcGp         com.example.testurl                  I  type=1400 audit(0.0:3715): avc: denied { ioctl } for path="/dev/fastpipe" dev="tmpfs" ino=5182 ioctlcmd=6867 scontext=u:r:untrusted_app:s0:c52,c256,c512,c768 tcontext=u:object_r:device:s0 tclass=chr_file permissive=1
