@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.zhanghuang">
 
-
     <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
@@ -15,23 +14,21 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
+    <uses-permission
+        android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
-
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-
-    <!--<uses-permission android:name="android.permission.DEVICE_POWER"/>-->
-    <!--<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>-->
 
     <queries>
         <package android:name="com.tencent.mm" />
@@ -43,25 +40,20 @@
         <package android:name="com.eg.android.AlipayGphone" />
         <package android:name="com.instagram.android" />
     </queries>
-
     <application
         android:name=".MainApplication"
         android:allowBackup="true"
-        tools:replace="android:allowBackup"
         android:icon="@mipmap/logo"
         android:label="@string/app_name"
-        android:supportsRtl="true"
         android:largeHeap="true"
-        android:usesCleartextTraffic="true"
         android:networkSecurityConfig="@xml/network_security_config"
-        android:theme="@style/AppTheme">
-        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
-<!--        <meta-data-->
-<!--            android:name="UMENG_APPKEY"-->
-<!--            android:value="58eb2d094544cb15d2001334"></meta-data>-->
-<!--        <meta-data-->
-<!--            android:name="UMENG_CHANNEL"-->
-<!--            android:value="Umeng"></meta-data>-->
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup">
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -82,10 +74,63 @@
                 android:resource="@xml/gdt_file_path" />
         </provider>
 
+
+        <service
+            android:name="com.qq.e.comm.DownloadService"
+            android:exported="false" />
+
+        <activity
+            android:name="com.qq.e.ads.ADActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:multiprocess="true" />
+
+        <activity
+            android:name="com.qq.e.ads.PortraitADActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:multiprocess="true"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.qq.e.ads.LandscapeADActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:multiprocess="true"
+            android:screenOrientation="sensorLandscape" />
+
+        <activity
+            android:name="com.qq.e.ads.RewardvideoPortraitADActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:multiprocess="true"
+            android:theme="@android:style/Theme.Light.NoTitleBar">
+            <meta-data
+                android:name="android.notch_support"
+                android:value="true" />
+        </activity>
+
+        <activity
+            android:name="com.qq.e.ads.RewardvideoLandscapeADActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:multiprocess="true"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Light.NoTitleBar">
+            <meta-data
+                android:name="android.notch_support"
+                android:value="true" />
+        </activity>
+
+        <activity
+            android:name="com.qq.e.ads.DialogActivity"
+            android:multiprocess="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+
+
+        <service
+            android:name="com.qq.e.comm.DownloadService"
+            android:exported="false" />
+
         <activity
             android:name=".NSplashActivity"
-            android:screenOrientation="portrait"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -176,8 +221,8 @@
 
         <receiver
             android:name=".reciver.AdminReciver"
-            android:permission="android.permission.BIND_DEVICE_ADMIN"
-            android:exported="true">
+            android:exported="true"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
             <meta-data
                 android:name="android:app.device_admin"
                 android:resource="@xml/lock_screen" />
@@ -196,29 +241,13 @@
         <activity
             android:name=".WBShareActivity"
             android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="portrait"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
-<!--        <activity-->
-<!--            android:name="com.umeng.qq.tencent.AuthActivity"-->
-<!--            android:launchMode="singleTask"-->
-<!--            android:noHistory="true">-->
-
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.VIEW" />-->
-
-<!--                <category android:name="android.intent.category.DEFAULT" />-->
-<!--                <category android:name="android.intent.category.BROWSABLE" />-->
-
-<!--                <data android:scheme="tencent100424468" />-->
-<!--                <data android:scheme="58eb2d094544cb15d2001334" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
 
         <activity
             android:name="com.umeng.socialize.editorpage.ShareActivity"
@@ -228,17 +257,7 @@
         <activity
             android:name=".wxapi.WXPayEntryActivity"
             android:exported="true"
-            android:launchMode="singleTop"/>
-        
-        <activity
-            android:name="com.qq.e.ads.PortraitADActivity"
-            android:screenOrientation="portrait"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
-<!--        <activity-->
-<!--            android:name="com.qq.e.ads.LandscapeADActivity"-->
-<!--            android:screenOrientation="landscape"-->
-<!--            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />-->
-
+            android:launchMode="singleTop" />
 
         <service android:name=".service.CountService" />
         <service
@@ -247,6 +266,6 @@
         <service
             android:name=".service.JobHandleService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
-    </application>
 
+    </application>
 </manifest>
