@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/member_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginLeft="0dp"
+        fresco:cardCornerRadius="0dp"
+        fresco:cardElevation="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:background="@color/cellColor"
+            android:orientation="vertical">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/member_view_avatar"
+                android:layout_width="68dp"
+                android:layout_height="68dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="22dp"
+                fresco:placeholderImage="@mipmap/icon_unlogin_avator"
+                fresco:roundAsCircle="true" />
+
+            <TextView
+                android:id="@+id/user_nick"
+                style="@style/BigTextBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/member_view_avatar"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="12dp"
+                android:layout_toRightOf="@id/member_view_avatar"
+                android:text="坚持站桩收获健康" />
+
+            <TextView
+                android:id="@+id/member_view_level_text"
+                style="@style/LittleTextGray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/user_nick"
+                android:layout_below="@id/user_nick"
+                android:layout_marginTop="13dp"
+                android:text="初入桩" />
+
+            <TextView
+                style="@style/LittleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/user_nick"
+                android:layout_marginLeft="9dp"
+                android:layout_toRightOf="@id/user_nick"
+                android:text="编辑个人资料"
+                android:textColor="@color/indicatorColor" />
+
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:src="@mipmap/next_button_icon" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="7dp"
+        fresco:cardCornerRadius="0dp"
+        fresco:cardElevation="2dp">
+
+        <LinearLayout
+            android:id="@+id/vip_info_container"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="@color/cellColor"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="21dp"
+            android:paddingRight="21dp">
+
+            <TextView
+                android:id="@+id/vip_info_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/tipTextColor"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/vip_info_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="17dp"
+                android:drawableRight="@mipmap/next_button_icon"
+                android:gravity="center"
+                android:textColor="@color/text_gray"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        fresco:cardCornerRadius="2dp"
+        fresco:cardElevation="2dp"
+        fresco:contentPaddingBottom="15dp"
+        fresco:contentPaddingTop="21dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/cellColor"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/member_view_fav_container"
+                style="@style/LittleText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1"
+                android:drawablePadding="6dp"
+                android:gravity="center_horizontal"
+                android:drawableTop="@mipmap/icon_login_collect"
+                android:text="收藏"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/member_view_bind_container"
+                style="@style/LittleText"
+                android:gravity="center_horizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="6dp"
+                android:drawableTop="@mipmap/icon_login_bind"
+                android:text="账号绑定"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/member_view_clear_cache_container"
+                style="@style/LittleText"
+                android:gravity="center_horizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="6dp"
+                android:drawableTop="@mipmap/icon_login_clear_cache"
+                android:text="注销账号"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/member_view_intro_app_container"
+                style="@style/LittleText"
+                android:gravity="center_horizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="6dp"
+                android:drawableTop="@mipmap/icon_login_app_recommend"
+                android:text="联系客服"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="21dp"
+        fresco:cardCornerRadius="2dp"
+        fresco:cardElevation="2dp">
+
+        <Button
+            android:id="@+id/member_view_exit_text"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:background="@color/bg_bottom_bar_unselected_color"
+            android:text="退出登录"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="-10dp"
+            android:src="@mipmap/icon_yun" />
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
