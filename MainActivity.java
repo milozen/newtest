@@ -10,12 +10,15 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
+
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.widget.FrameLayout;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.tencent.mm.opensdk.constants.ConstantsAPI;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
@@ -99,20 +102,26 @@ public class MainActivity extends BaseActivity {
                 boolean isLogin = MainApplication._pref.getBoolean(Constants.PREF_ISLOGIN, false);
                 Log.i("TAG", "isLogin:  " + isLogin);
                 if (isLogin) {
-                    checkUpdate();
-                };
+                    checkUpdate(false);
+                }
+                ;
             }
         });
     }
 
     private VsnMode results;
 
-    private void checkUpdate() {
+    private void checkUpdate(boolean requestPermission) {
         int per = ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
         if (PackageManager.PERMISSION_GRANTED != per) {
-            //申请读sd卡权限
-            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                    1000);
+            if (requestPermission) {
+                // Request the permission
+                ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        1000);
+            } else {
+                // The permission is denied, continue the next step
+                Toast.makeText(this, "缺少存储权限，APP无法正常升级或工作", Toast.LENGTH_LONG).show();
+            }
         } else {
             AppUpdate.getInstance().checkAppVer(MainActivity.this, results);
         }
@@ -122,7 +131,7 @@ public class MainActivity extends BaseActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 1000) {
-            checkUpdate();
+            checkUpdate(false);
         }
     }
 
@@ -152,8 +161,6 @@ public class MainActivity extends BaseActivity {
     }
 
 
-
-
     @Override
     public String getPageName() {
         return MainActivity.class.getSimpleName();
@@ -165,6 +172,7 @@ public class MainActivity extends BaseActivity {
         MobclickAgent.onPageStart(getPageName());
 
     }
+
     @Override
     public void onPause() {
         super.onPause();
