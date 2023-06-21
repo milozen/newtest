@@ -236,6 +236,14 @@ public class NSplashActivity extends BaseActivity implements SplashADZoomOutList
         }
     }
 
+    private boolean hasAllPermissionsGranted(int[] grantResults) {
+        for (int grantResult : grantResults) {
+            if (grantResult == PackageManager.PERMISSION_DENIED) {
+                return false;
+            }
+        }
+        return true;
+    }
 
     private void showPermissionExplanationDialog(List<String> lackedPermission) {
         // Show a toast to explain why the permissions are needed
@@ -249,34 +257,12 @@ public class NSplashActivity extends BaseActivity implements SplashADZoomOutList
     private void goToRestrictedMode() {
         // Show a toast to explain why the app is in restricted mode
         Toast.makeText(this, "缺少存储权限，APP无法正常升级或工作", Toast.LENGTH_LONG).show();
+        // Then go to the main activity or other parts of your app that can work without the permissions
+        // ...
     }
 
 
-    private boolean hasAllPermissionsGranted(int[] grantResults) {
-        for (int grantResult : grantResults) {
-            if (grantResult == PackageManager.PERMISSION_DENIED) {
-                return false;
-            }
-        }
-        return true;
-    }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == 1024 && hasAllPermissionsGranted(grantResults)) {
-            fetchSplashAD(this, container, getPosId(), this);
-        } else {
-            ToastUtil.l("应用缺少必要的权限！请点击\"权限\"，打开所需要的权限。");
-            try {
-                Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-                intent.setData(Uri.parse("package:" + getPackageName()));
-                startActivity(intent);
-            } catch (Exception e) {
-            }
-            finish();
-        }
-    }
 
     /**
      * 拉取开屏广告，开屏广告的构造方法有3种，详细说明请参考开发者文档。
