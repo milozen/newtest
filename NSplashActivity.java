@@ -34,6 +34,7 @@ import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.content.Intent;
+import android.widget.Toast;
 
 import com.qq.e.ads.rewardvideo.ServerSideVerificationOptions;
 import com.qq.e.ads.splash.SplashAD;
@@ -218,9 +219,6 @@ public class NSplashActivity extends BaseActivity implements SplashADZoomOutList
         if (!(checkSelfPermission(Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED)) {
             lackedPermission.add(Manifest.permission.READ_PHONE_STATE);
         }
-
-        // 检查读写存储权限开始
-        // 快手SDK所需相关权限，存储权限，此处配置作用于流量分配功能，关于流量分配，详情请咨询运营;如果您的APP不需要快手SDK的流量分配功能，则无需申请SD卡权限
         if (!(checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)) {
             lackedPermission.add(Manifest.permission.READ_EXTERNAL_STORAGE);
         }
@@ -230,17 +228,29 @@ public class NSplashActivity extends BaseActivity implements SplashADZoomOutList
         if (!(checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED)) {
             lackedPermission.add(Manifest.permission.ACCESS_COARSE_LOCATION);
         }
-        // 检查读写存储权限结束
-        // 如果需要的权限都已经有了，那么直接调用SDK
         if (lackedPermission.size() == 0) {
             fetchSplashAD(this, container, getPosId(), this);
         } else {
-            // 否则，建议请求所缺少的权限，在onRequestPermissionsResult中再看是否获得权限
-            String[] requestPermissions = new String[lackedPermission.size()];
-            lackedPermission.toArray(requestPermissions);
-            requestPermissions(requestPermissions, 1024);
+            // Show a dialog to explain why the permissions are needed before requesting the permissions
+            showPermissionExplanationDialog(lackedPermission);
         }
     }
+
+
+    private void showPermissionExplanationDialog(List<String> lackedPermission) {
+        // Show a toast to explain why the permissions are needed
+        Toast.makeText(this, "缺少存储权限，APP无法正常升级或工作", Toast.LENGTH_LONG).show();
+        // After showing the toast, request the permissions
+        String[] permissionArray = new String[lackedPermission.size()];
+        lackedPermission.toArray(permissionArray);
+        requestPermissions(permissionArray, 1024);
+    }
+
+    private void goToRestrictedMode() {
+        // Show a toast to explain why the app is in restricted mode
+        Toast.makeText(this, "缺少存储权限，APP无法正常升级或工作", Toast.LENGTH_LONG).show();
+    }
+
 
     private boolean hasAllPermissionsGranted(int[] grantResults) {
         for (int grantResult : grantResults) {
