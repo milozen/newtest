@@ -120,6 +120,11 @@ public class Login extends BaseActivity {
 
     @OnClick(R.id.login_wx_image)
     public void wxClick(){
+        if (!checkBox.isChecked()) {
+            // 如果用户没有勾选隐私协议，显示一个Toast提示，并返回
+            Toast.makeText(Login.this,"请阅读《用户协议》和《隐私政策》后勾选同意",Toast.LENGTH_SHORT).show();
+            return;
+        }
         UMShareAPI.get(this).getPlatformInfo(Login.this,SHARE_MEDIA.WEIXIN,umAuthListener);
     }
 
@@ -259,13 +264,12 @@ public class Login extends BaseActivity {
 
     @OnClick(R.id.login_btn_privacy)
     public void showPrivacy() {
-        //String url = "file:///android_asset/privacy.html";
-        String url = "file:///android_asset/inside.html";
+        String url = "https://www.zhanzhuang.com.cn/privacy.html";
         alertWebview(url);
     }
     @OnClick(R.id.login_btn_user)
     public void showAgreement() {
-        String url = "file:///android_asset/eula.htm";
+        String url = "https://www.zhanzhuang.com.cn/eula.htm";
         alertWebview(url);
     }
     private void alertWebview(String url) {
