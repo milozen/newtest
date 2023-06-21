@@ -195,11 +195,11 @@
             android:id="@+id/member_view_exit_text"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
-            android:layout_height="47dp"
+            android:layout_height="50dp"
             android:background="@color/bg_bottom_bar_unselected_color"
             android:text="退出登录"
             android:textColor="@color/white"
-            android:textSize="14sp" />
+            android:textSize="15sp" />
 
         <ImageView
             android:layout_width="wrap_content"
