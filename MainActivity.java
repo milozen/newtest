@@ -10,10 +10,8 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
-
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.widget.FrameLayout;
@@ -73,11 +71,12 @@ public class MainActivity extends BaseActivity {
 
 //        DeviceUtil.getDeviceInfo(this);
 
-        if (BuildConfig.DEBUG) {
+//        if (BuildConfig.DEBUG) {
+//
+//            String mac = DeviceUtil.getLocalMacAddressFromWifiInfo(this);
+//            Log.i("MAC", mac);
+//        }
 
-            String mac = DeviceUtil.getLocalMacAddressFromWifiInfo(this);
-            Log.i("MAC", mac);
-        }
         activity = this;
         regToWx();
     }
@@ -103,8 +102,7 @@ public class MainActivity extends BaseActivity {
                 Log.i("TAG", "isLogin:  " + isLogin);
                 if (isLogin) {
                     checkUpdate(false);
-                }
-                ;
+                };
             }
         });
     }
@@ -161,6 +159,8 @@ public class MainActivity extends BaseActivity {
     }
 
 
+
+
     @Override
     public String getPageName() {
         return MainActivity.class.getSimpleName();
@@ -172,7 +172,6 @@ public class MainActivity extends BaseActivity {
         MobclickAgent.onPageStart(getPageName());
 
     }
-
     @Override
     public void onPause() {
         super.onPause();
@@ -192,7 +191,10 @@ public class MainActivity extends BaseActivity {
     @OnClick({R.id.fl_start})
     public void onClick() {
         if (MainApplication._pref.getBoolean(Constants.PREF_ISLOGIN, false)) {
-            Intent in = new Intent(MainActivity.this, AddRecordActivityNew.class);
+            //新的站桩
+            //Intent in = new Intent(MainActivity.this, AddRecordActivityNew.class);
+            // 判断是否是VIP,是则进入站桩界面，不是则进入 DonateActivity
+            Intent in = new Intent(MainActivity.this, DonateActivity.class);
             startActivity(in);
         } else {
             Intent in = new Intent(MainActivity.this, Login.class);
