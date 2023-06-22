@@ -75,6 +75,7 @@ public class MemberFragment extends BaseMainFragment {
 
 
     private RequestData rd;
+    private boolean alterShowed;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -153,9 +154,6 @@ public class MemberFragment extends BaseMainFragment {
         }
         productActivity.show();
     }
-
-
-
 
     @OnClick(R.id.member_view_fav_container)
     public void toFavView() {
@@ -243,7 +241,34 @@ public class MemberFragment extends BaseMainFragment {
         startActivity(in);
     }
 
-    //@OnClick(R.id.privacy_policy_button)
+    //隐私协议按钮
+    @OnClick(R.id.privacy_policy_button)
+    public void showAgreement() {
+        String url = "https://www.zhanzhuang.com.cn/privacy.html";
+        alertWebview(url);
+    }
+
+    // 添加alertWebview方法
+    public void alertWebview(String url) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        WebView mwebView = new WebView(getContext());
+        this.alterShowed = false;
+        mwebView.loadUrl(url);
+        mwebView.setWebViewClient(new WebViewClient() {
+            //设置结束加载函数
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                if (!alterShowed) {
+                    alterShowed = true;
+                    builder.show();
+                }
+            }
+        });
+        builder.setView(mwebView);
+        builder.setPositiveButton("确定", (dialog, which) -> {
+            dialog.dismiss();
+        });
+    }
 
     @OnClick(R.id.member_view_exit_text)
     public void exit() {
