@@ -21,6 +21,10 @@ import com.zhanghuang.util.DLog;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Map;
 
 public class DonateActivity extends AppCompatActivity implements RewardVideoADListener {
@@ -161,8 +165,30 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
     @Override
     public void onReward(Map<String, Object> map) {
         // 视频播放完成，且达到奖励条件时的回调
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String vipExpireStr = MainApplication._pref.getString(Constants.PREF_ZZ_VIP_EXP_STR, "-");
+        Date vipExpireDate = null;
+        try {
+            vipExpireDate = sdf.parse(vipExpireStr);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Calendar c = Calendar.getInstance();
+        // 如果VIP已经过期，从当前时间开始增加
+        if (vipExpireDate.before(new Date())) {
+            c.setTime(new Date());
+        } else {
+            c.setTime(vipExpireDate);
+        }
+        c.add(Calendar.DATE, 1);  // number of days to add
+        vipExpireDate = c.getTime();  // vipExpireDate is now +1 day
+        vipExpireStr = sdf.format(vipExpireDate);
+        MainApplication._pref.edit().putString(Constants.PREF_ZZ_VIP_EXP_STR, vipExpireStr).apply();
 
+        // 发布UpdateUserEvent事件
+        EventBus.getDefault().post(new UpdateUserEvent());
     }
+
 
     @Override
     public void onADClick() {
