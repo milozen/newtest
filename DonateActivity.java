@@ -8,7 +8,11 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.zhanghuang.events.UpdateUserEvent;
 import com.zhanghuang.util.Constants;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 public class DonateActivity extends AppCompatActivity {
 
@@ -27,6 +31,9 @@ public class DonateActivity extends AppCompatActivity {
         btnSupportAuthorAds = findViewById(R.id.btn_support_author_ads);
         btnSupportAuthorLater = findViewById(R.id.btn_support_author_later);
 
+        // 在 onCreate 方法中注册 EventBus
+        EventBus.getDefault().register(this);
+
         btnSupportAuthorMembership.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,20 +50,9 @@ public class DonateActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // TODO: Play the ad
                 // After the ad is played, increase the VIP by one day
-                SharedPreferences prefs = getSharedPreferences(Constants.PREF_NAME, MODE_PRIVATE);
-                SharedPreferences.Editor editor = prefs.edit();
-                editor.putInt(Constants.PREF_ZZ_IS_VIP, 1);  // Set the user as VIP
-                long vipExpTime = prefs.getLong(Constants.PREF_ZZ_VIP_EXP_TIME, 0);
-                vipExpTime += 24 * 60 * 60 * 1000;  // Increase the VIP expiration time by one day
-                editor.putLong(Constants.PREF_ZZ_VIP_EXP_TIME, vipExpTime);
-                editor.apply();
-                //进入站桩计时
-                Intent in = new Intent(DonateActivity.this, AddRecordActivityNew.class);
-                startActivity(in);
-                finish();
+
             }
         });
-
 
         btnSupportAuthorLater.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,5 +63,20 @@ public class DonateActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    // 在 onDestroy 方法中取消注册 EventBus
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
+
+    // 添加处理 UpdateUserEvent 的方法
+    @Subscribe
+    public void onUpdateUserEvent(UpdateUserEvent event) {
+        Intent in = new Intent(DonateActivity.this, AddRecordActivityNew.class);
+        startActivity(in);
+        finish();
     }
 }
