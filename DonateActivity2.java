@@ -48,6 +48,7 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
         //广告
         mRewardVideoAD = getRewardVideoAD();
         mIsLoadSuccess = false;
+        loadAd();  // 预先加载广告
 
         btnSupportAuthorMembership.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,7 +117,7 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
         return rvad;
     }
 
-    protected void loadAd(){
+    protected void loadAd() {
         // 1. 初始化激励视频广告
         mRewardVideoAD = getRewardVideoAD();
         mIsLoadSuccess = false;
@@ -137,6 +138,7 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
     @Override
     public void onADLoad() {
         // 广告加载成功的回调
+        mIsLoadSuccess = true;
     }
 
     @Override
@@ -156,13 +158,9 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
 
     @Override
     public void onReward(Map<String, Object> map) {
-        
-    }
+        // 视频播放完成，且达到奖励条件时的回调
 
-//    @Override
-//    public void onReward() {
-//        // 视频播放完成，且达到奖励条件时的回调
-//    }
+    }
 
     @Override
     public void onADClick() {
@@ -178,7 +176,7 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
     public void onADClose() {
         // 广告页面关闭的回调
     }
-    
+
     @Override
     public void onError(AdError adError) {
         // 广告流程出错时的回调
