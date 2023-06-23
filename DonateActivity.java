@@ -1,11 +1,14 @@
 package com.zhanghuang;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.zhanghuang.util.Constants;
 
 public class DonateActivity extends AppCompatActivity {
 
@@ -38,10 +41,22 @@ public class DonateActivity extends AppCompatActivity {
         btnSupportAuthorAds.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO: Handle ads support
-                // 播放广告后，增加一天VIP
+                // TODO: Play the ad
+                // After the ad is played, increase the VIP by one day
+                SharedPreferences prefs = getSharedPreferences(Constants.PREF_NAME, MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putInt(Constants.PREF_ZZ_IS_VIP, 1);  // Set the user as VIP
+                long vipExpTime = prefs.getLong(Constants.PREF_ZZ_VIP_EXP_TIME, 0);
+                vipExpTime += 24 * 60 * 60 * 1000;  // Increase the VIP expiration time by one day
+                editor.putLong(Constants.PREF_ZZ_VIP_EXP_TIME, vipExpTime);
+                editor.apply();
+                //进入站桩计时
+                Intent in = new Intent(DonateActivity.this, AddRecordActivityNew.class);
+                startActivity(in);
+                finish();
             }
         });
+
 
         btnSupportAuthorLater.setOnClickListener(new View.OnClickListener() {
             @Override
