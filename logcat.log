@@ -1,545 +1,406 @@
-2023-06-23 14:52:55.189 26901-26901 ActivityThread          com.zhanghuang                       W  handleWindowVisibility: no activity for token android.os.BinderProxy@62533b
-2023-06-23 14:52:55.236 26901-26901 WebViewFactory          com.zhanghuang                       I  Loading com.android.webview version 91.0.4472.114 (code 447211456)
-2023-06-23 14:52:55.239 26901-26901 com.zhanghuang          com.zhanghuang                       I  The ClassLoaderContext is a special shared library.
-2023-06-23 14:52:55.240 26901-26901 libnb                   com.zhanghuang                       V  enter native_bridge2_isCompatibleWith 3
-2023-06-23 14:52:55.240 26901-26901 libnb                   com.zhanghuang                       V  enter native_bridge3_isPathSupported /system/product/app/webview/lib/x86_64:/system/product/app/webview/webview.apk!/lib/x86_64:/system/lib64:/system/vendor/lib64
-2023-06-23 14:52:55.319 26901-26901 com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/os/Trace;->isTagEnabled(J)Z (light greylist, reflection)
-2023-06-23 14:52:55.319 26901-26901 com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/os/Trace;->traceBegin(JLjava/lang/String;)V (light greylist, reflection)
-2023-06-23 14:52:55.320 26901-26901 com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/os/Trace;->traceEnd(J)V (light greylist, reflection)
-2023-06-23 14:52:55.320 26901-26901 com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/os/Trace;->asyncTraceBegin(JLjava/lang/String;I)V (light greylist, reflection)
-2023-06-23 14:52:55.320 26901-26901 com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/os/Trace;->asyncTraceEnd(JLjava/lang/String;I)V (light greylist, reflection)
-2023-06-23 14:52:55.337 26901-26901 cr_LibraryLoader        com.zhanghuang                       I  Loaded native library version number "91.0.4472.114"
-2023-06-23 14:52:55.337 26901-26901 com.zhanghuang          com.zhanghuang                       W  Accessing hidden field Ljava/util/Collections$SynchronizedCollection;->mutex:Ljava/lang/Object; (dark greylist, reflection)
-2023-06-23 14:52:55.337 26901-26901 com.zhanghuang          com.zhanghuang                       W  Accessing hidden field Ljava/util/Collections$SynchronizedCollection;->c:Ljava/util/Collection; (light greylist, reflection)
-2023-06-23 14:52:55.337 26901-26901 com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Ljava/util/Collections$SynchronizedSet;-><init>(Ljava/util/Set;Ljava/lang/Object;)V (dark greylist, reflection)
-2023-06-23 14:52:55.337 26901-26901 com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Ljava/util/Collections$SynchronizedCollection;-><init>(Ljava/util/Collection;Ljava/lang/Object;)V (dark greylist, reflection)
-2023-06-23 14:52:55.339 26901-26901 cr_CachingUmaRecorder   com.zhanghuang                       I  Flushed 6 samples from 6 histograms.
-2023-06-23 14:52:55.364 26901-27178 com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/content/Context;->bindServiceAsUser(Landroid/content/Intent;Landroid/content/ServiceConnection;ILandroid/os/Handler;Landroid/os/UserHandle;)Z (light greylist, reflection)
-2023-06-23 14:52:55.505 26901-26901 crashsdk                com.zhanghuang                       I  Unexp log not enabled, skip update unexp info!
-2023-06-23 14:52:55.514 26901-26938 MobclickAgent           com.zhanghuang                       D  延续上一个会话: 4F4A02775A4A030DEFE34B7F789E36CD
-2023-06-23 14:52:55.518 26901-26938 UMLog                   com.zhanghuang                       D  当前发送策略为：启动时发送。详见链接 https://developer.umeng.com/docs/66632/detail/66976?um_channel=sdk
-2023-06-23 14:52:55.533 26901-27169 MediaPlayer             com.zhanghuang                       V  resetDrmState:  mDrmInfo=null mDrmProvisioningThread=null mPrepareDrmInProgress=false mActiveDrmScheme=false
-2023-06-23 14:52:55.533 26901-27169 MediaPlayer             com.zhanghuang                       V  cleanDrmObj: mDrmObj=null mDrmSessionId=null
-2023-06-23 14:52:55.533 26901-27169 MediaHTTPService        com.zhanghuang                       V  MediaHTTPService(android.media.MediaHTTPService@5482e1d): Cookies: null
-2023-06-23 14:52:55.541 26901-26921 MediaHTTPService        com.zhanghuang                       V  makeHTTPConnection: CookieManager created: java.net.CookieManager@9130e60
-2023-06-23 14:52:55.541 26901-26921 MediaHTTPService        com.zhanghuang                       V  makeHTTPConnection(android.media.MediaHTTPService@5482e1d): cookieHandler: java.net.CookieManager@9130e60 Cookies: null
-2023-06-23 14:52:55.547 26901-27212 RenderScri...Adaptation com.zhanghuang                       D  IRenderScriptDevice::getService()
-2023-06-23 14:52:55.551 26901-27171 b                       com.zhanghuang                       I   Set state to RUNNING,cost 0
-2023-06-23 14:52:55.552 26901-27212 RenderScri...Adaptation com.zhanghuang                       D  IRenderScriptDevice::getService() returned 0x0
-2023-06-23 14:52:55.552 26901-27212 RenderScri...Adaptation com.zhanghuang                       D  Using Fallback Path.
-2023-06-23 14:52:55.592 26901-27212 <no-tag>                com.zhanghuang                       D  Successfully queried cache dir: /data/user_de/0/com.zhanghuang/code_cache
-2023-06-23 14:52:55.592 26901-27212 RenderScript            com.zhanghuang                       D  Setting cache dir: /data/user_de/0/com.zhanghuang/code_cache
-2023-06-23 14:52:55.593 26901-27212 RenderScript            com.zhanghuang                       V  User-backed allocation failed stride requirement, falling back to separate allocation
-2023-06-23 14:52:55.593 26901-27212 RenderScript            com.zhanghuang                       V  User-backed allocation failed stride requirement, falling back to separate allocation
-2023-06-23 14:52:55.625 26901-26978 EGL_adreno              com.zhanghuang                       E  tid 26978: eglSurfaceAttrib(1338): error 0x3009 (EGL_BAD_MATCH)
-2023-06-23 14:52:55.625 26901-26978 OpenGLRenderer          com.zhanghuang                       W  Failed to set EGL_SWAP_BEHAVIOR on surface 0x7fff599a4780, error=EGL_BAD_MATCH
-2023-06-23 14:52:55.638 26901-26978 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6bd169c0: ver 3 1 (tinfo 0x7fff6bd38cc0)
-2023-06-23 14:52:55.697 26901-27199 com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/media/AudioManager;->getOutputLatency(I)I (light greylist, reflection)
-2023-06-23 14:52:55.704 26901-27228 HostConnection          com.zhanghuang                       I  HostConnection::HostConnection: pid=26901, tid=27228, this=0x7fff57a91d60
-2023-06-23 14:52:55.704 26901-27199 cr_media                com.zhanghuang                       W  Requires BLUETOOTH permission
-2023-06-23 14:52:55.705 26901-27228 <no-tag>                com.zhanghuang                       I  fastpipe: Connect success
-2023-06-23 14:52:55.705 26901-27228 HostConnection          com.zhanghuang                       D  HostRPC::connect sucess: app=com.zhanghuang, pid=26901, tid=27228, this=0x7fff508a7840
-2023-06-23 14:52:55.705 26901-27228 HostConnection          com.zhanghuang                       D  queryAndSetGLESMaxVersion select gles-version: 3.1 hostGLVersion:46 process:com.zhanghuang
-2023-06-23 14:52:55.734 26901-27228 EGL_adreno              com.zhanghuang                       I  eglCreateContext request GLES major-version=2
-2023-06-23 14:52:55.734 26901-27228 EGL_adreno              com.zhanghuang                       I  eglCreateContext request GLES minor-version=0
-2023-06-23 14:52:55.736 26901-27228 EGL_adreno              com.zhanghuang                       D  eglCreateContext: 0x7fff6bd15340: maj 3 min 1 rcv 4
-2023-06-23 14:52:55.736 26901-27228 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6bd15340: ver 3 1 (tinfo 0x7fff51758080)
-2023-06-23 14:52:55.741 26901-27228 HostConnection          com.zhanghuang                       D  ExtendedRCEncoderContext GL_VERSION return OpenGL ES 3.1
-2023-06-23 14:52:55.752 26901-27228 GLESv2_enc              com.zhanghuang                       W  no support GL_NUM_PROGRAM_BINARY_FORMATS
-2023-06-23 14:52:55.786 26901-27228 EGL_adreno              com.zhanghuang                       I  eglCreateContext request GLES major-version=3
-2023-06-23 14:52:55.786 26901-27228 EGL_adreno              com.zhanghuang                       I  eglCreateContext request GLES minor-version=0
-2023-06-23 14:52:55.787 26901-27228 EGL_adreno              com.zhanghuang                       D  eglCreateContext: 0x7fff6bd15340: maj 3 min 0 rcv 3
-2023-06-23 14:52:55.788 26901-27228 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6bd15340: ver 3 0 (tinfo 0x7fff51758080)
-2023-06-23 14:52:55.790 26901-27228 HostConnection          com.zhanghuang                       D  ExtendedRCEncoderContext GL_VERSION return OpenGL ES 3.1
-2023-06-23 14:52:55.803 26901-27228 eglCodecCommon          com.zhanghuang                       E  glUtilsParamSize: unknow param 0x000088ef
-2023-06-23 14:52:55.806 26901-27228 GLESv2_enc              com.zhanghuang                       W  no support GL_NUM_PROGRAM_BINARY_FORMATS
-2023-06-23 14:52:55.814 26901-27228 eglCodecCommon          com.zhanghuang                       E  glUtilsParamSize: unknow param 0x000088ef
-2023-06-23 14:52:55.821 26901-27228 chatty                  com.zhanghuang                       I  uid=10051(com.zhanghuang) Chrome_InProcGp identical 2 lines
-2023-06-23 14:52:55.823 26901-27228 eglCodecCommon          com.zhanghuang                       E  glUtilsParamSize: unknow param 0x000088ef
-2023-06-23 14:52:55.856 26901-26901 chromium                com.zhanghuang                       I  [INFO:CONSOLE(1)] "ReferenceError: bridge is not defined", source:  (1)
-2023-06-23 14:52:55.861 26901-27228 eglCodecCommon          com.zhanghuang                       E  glUtilsParamSize: unknow param 0x000088ef
-2023-06-23 14:52:55.861 26901-26901 chromium                com.zhanghuang                       I  [INFO:CONSOLE(1)] "ReferenceError: bridge is not defined", source:  (1)
-2023-06-23 14:52:58.788 26901-26921 MediaPlayerNative       com.zhanghuang                       W  info/warning (3, 0)
-2023-06-23 14:52:58.789 26901-26915 MapperHal               com.zhanghuang                       W  buffer descriptor with invalid usage bits 0x2000
-2023-06-23 14:52:58.794 26901-26915 HostConnection          com.zhanghuang                       I  HostConnection::HostConnection: pid=26901, tid=26915, this=0x7fff6bc49000
-2023-06-23 14:52:58.795 26901-26915 <no-tag>                com.zhanghuang                       I  fastpipe: Connect success
-2023-06-23 14:52:58.795 26901-26915 HostConnection          com.zhanghuang                       D  HostRPC::connect sucess: app=com.zhanghuang, pid=26901, tid=26915, this=0x7fff51743d00
-2023-06-23 14:52:58.796 26901-26915 HostConnection          com.zhanghuang                       D  queryAndSetGLESMaxVersion select gles-version: 3.1 hostGLVersion:46 process:com.zhanghuang
-2023-06-23 14:52:58.888 26901-26915 MapperHal               com.zhanghuang                       W  buffer descriptor with invalid usage bits 0x2000
-2023-06-23 14:52:58.908 26901-26915 MapperHal               com.zhanghuang                       W  buffer descriptor with invalid usage bits 0x2000
-2023-06-23 14:52:58.998 26901-26914 HostConnection          com.zhanghuang                       I  HostConnection::HostConnection: pid=26901, tid=26914, this=0x7fff57ac61e0
-2023-06-23 14:52:58.999 26901-26914 <no-tag>                com.zhanghuang                       I  fastpipe: Connect success
-2023-06-23 14:52:58.999 26901-26914 HostConnection          com.zhanghuang                       D  HostRPC::connect sucess: app=com.zhanghuang, pid=26901, tid=26914, this=0x7fff6892ac00
-2023-06-23 14:52:59.000 26901-26914 HostConnection          com.zhanghuang                       D  queryAndSetGLESMaxVersion select gles-version: 3.1 hostGLVersion:46 process:com.zhanghuang
-2023-06-23 14:53:15.651 26901-26901 RenderThread            com.zhanghuang                       I  type=1400 audit(0.0:12088): avc: denied { ioctl } for path="/dev/fastpipe" dev="tmpfs" ino=5182 ioctlcmd=6867 scontext=u:r:untrusted_app:s0:c51,c256,c512,c768 tcontext=u:object_r:device:s0 tclass=chr_file permissive=1
-2023-06-23 14:53:21.337 26901-26901 MainHeadUint            com.zhanghuang                       I  onADReceive, ECPM: -1, ECPMLevel: , adNetWorkName: , testExtraInfo:-1, request_id:k4u7gz4sgarga01
-2023-06-23 14:53:21.357 26901-26901 gdt_ad_mob              com.zhanghuang                       E  ADEvent 参数为空,type:109
-2023-06-23 14:53:28.226 26901-26901 System.err              com.zhanghuang                       W  java.text.ParseException: Unparseable date: ""
-2023-06-23 14:53:28.226 26901-26901 System.err              com.zhanghuang                       W  	at java.text.DateFormat.parse(DateFormat.java:362)
-2023-06-23 14:53:28.226 26901-26901 System.err              com.zhanghuang                       W  	at com.zhanghuang.DonateActivity.onReward(DonateActivity.java:172)
-2023-06-23 14:53:28.226 26901-26901 System.err              com.zhanghuang                       W  	at com.qq.e.ads.rewardvideo.RewardVideoAD$ADListenerAdapter.onADEvent(Unknown Source:83)
-2023-06-23 14:53:28.226 26901-26901 System.err              com.zhanghuang                       W  	at com.qq.e.comm.plugin.rewardvideo.c$f.a(A:3)
-2023-06-23 14:53:28.226 26901-26901 System.err              com.zhanghuang                       W  	at com.qq.e.comm.plugin.rewardvideo.c$f.b(A:1)
-2023-06-23 14:53:28.226 26901-26901 System.err              com.zhanghuang                       W  	at com.qq.e.comm.plugin.f.d.a(A:2)
-2023-06-23 14:53:28.226 26901-26901 System.err              com.zhanghuang                       W  	at com.qq.e.comm.plugin.f.c.a(A:10)
-2023-06-23 14:53:28.226 26901-26901 System.err              com.zhanghuang                       W  	at com.qq.e.comm.plugin.f.c.b(A:2)
-2023-06-23 14:53:28.226 26901-26901 System.err              com.zhanghuang                       W  	at com.qq.e.comm.plugin.fs.f.a$s.a(A:16)
-2023-06-23 14:53:28.226 26901-26901 System.err              com.zhanghuang                       W  	at com.qq.e.comm.plugin.fs.f.a$s.b(A:1)
-2023-06-23 14:53:28.226 26901-26901 System.err              com.zhanghuang                       W  	at com.qq.e.comm.plugin.f.d.a(A:2)
-2023-06-23 14:53:28.227 26901-26901 System.err              com.zhanghuang                       W  	at com.qq.e.comm.plugin.f.c.a(A:10)
-2023-06-23 14:53:28.227 26901-26901 System.err              com.zhanghuang                       W  	at com.qq.e.comm.plugin.f.c.b(A:2)
-2023-06-23 14:53:28.227 26901-26901 System.err              com.zhanghuang                       W  	at com.qq.e.comm.plugin.fs.h.c.b$e.a(A:1)
-2023-06-23 14:53:28.227 26901-26901 System.err              com.zhanghuang                       W  	at com.qq.e.comm.plugin.util.U0.c.a(A:11)
-2023-06-23 14:53:28.227 26901-26901 System.err              com.zhanghuang                       W  	at com.qq.e.comm.plugin.fs.h.c.b.a(A:24)
-2023-06-23 14:53:28.227 26901-26901 System.err              com.zhanghuang                       W  	at com.qq.e.comm.plugin.fs.h.d.c$b.a(A:28)
-2023-06-23 14:53:28.227 26901-26901 System.err              com.zhanghuang                       W  	at com.qq.e.comm.plugin.util.A0$a.handleMessage(A:11)
-2023-06-23 14:53:28.227 26901-26901 System.err              com.zhanghuang                       W  	at android.os.Handler.dispatchMessage(Handler.java:106)
-2023-06-23 14:53:28.227 26901-26901 System.err              com.zhanghuang                       W  	at android.os.Looper.loop(Looper.java:193)
-2023-06-23 14:53:28.227 26901-26901 System.err              com.zhanghuang                       W  	at android.app.ActivityThread.main(ActivityThread.java:6825)
-2023-06-23 14:53:28.227 26901-26901 System.err              com.zhanghuang                       W  	at java.lang.reflect.Method.invoke(Native Method)
-2023-06-23 14:53:28.227 26901-26901 System.err              com.zhanghuang                       W  	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:493)
-2023-06-23 14:53:28.227 26901-26901 System.err              com.zhanghuang                       W  	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:860)
-2023-06-23 14:53:28.228 26901-26901 AndroidRuntime          com.zhanghuang                       D  Shutting down VM
-2023-06-23 14:53:28.230 26901-26901 AndroidRuntime          com.zhanghuang                       E  FATAL EXCEPTION: main
-                                                                                                    Process: com.zhanghuang, PID: 26901
-                                                                                                    java.lang.NullPointerException: Attempt to invoke virtual method 'boolean java.util.Date.before(java.util.Date)' on a null object reference
-                                                                                                    	at com.zhanghuang.DonateActivity.onReward(DonateActivity.java:178)
-                                                                                                    	at com.qq.e.ads.rewardvideo.RewardVideoAD$ADListenerAdapter.onADEvent(Unknown Source:83)
-                                                                                                    	at com.qq.e.comm.plugin.rewardvideo.c$f.a(A:3)
-                                                                                                    	at com.qq.e.comm.plugin.rewardvideo.c$f.b(A:1)
-                                                                                                    	at com.qq.e.comm.plugin.f.d.a(A:2)
-                                                                                                    	at com.qq.e.comm.plugin.f.c.a(A:10)
-                                                                                                    	at com.qq.e.comm.plugin.f.c.b(A:2)
-                                                                                                    	at com.qq.e.comm.plugin.fs.f.a$s.a(A:16)
-                                                                                                    	at com.qq.e.comm.plugin.fs.f.a$s.b(A:1)
-                                                                                                    	at com.qq.e.comm.plugin.f.d.a(A:2)
-                                                                                                    	at com.qq.e.comm.plugin.f.c.a(A:10)
-                                                                                                    	at com.qq.e.comm.plugin.f.c.b(A:2)
-                                                                                                    	at com.qq.e.comm.plugin.fs.h.c.b$e.a(A:1)
-                                                                                                    	at com.qq.e.comm.plugin.util.U0.c.a(A:11)
-                                                                                                    	at com.qq.e.comm.plugin.fs.h.c.b.a(A:24)
-                                                                                                    	at com.qq.e.comm.plugin.fs.h.d.c$b.a(A:28)
-                                                                                                    	at com.qq.e.comm.plugin.util.A0$a.handleMessage(A:11)
-                                                                                                    	at android.os.Handler.dispatchMessage(Handler.java:106)
+2023-06-24 15:04:39.887 11399-11440 UMLog                   com.zhanghuang                       I  当前设备不支持获取OAID
+2023-06-24 15:04:39.912 11399-11440 UMLog                   com.zhanghuang                       I  统计SDK版本号: 9.6.1
+2023-06-24 15:04:39.912 11399-11440 UMLog                   com.zhanghuang                       I  ZID SDK版本号: 1.8.0
+2023-06-24 15:04:39.913 11399-11440 UMLog                   com.zhanghuang                       I  APM SDK版本号: 1.9.2
+2023-06-24 15:04:39.913 11399-11440 MobclickAgent           com.zhanghuang                       I  module init:aszioc
+2023-06-24 15:04:39.919 11399-11440 com.zhanghuang          com.zhanghuang                       E  Invalid ID 0x00000000.
+2023-06-24 15:04:39.919 11399-11455 efs.config              com.zhanghuang                       D  app=58eb2d094544cb15d2001334&cver=1651209273&os=android&sd=tHU5wpT_qJD5icr7Lxq3vg&sver=1651209273&tm=1687590279&um_sdk_ver=1.9.2&ver=2.0.8&wl_dd=2FpPPPSNmPui5vxS4v1UP7scA-oVWgkB9bn7AE0Dm-dDaZDj3GpDRMdvmAepA90d&sign=d70fdef5609da3d794bbdcb05f8e4b11
+2023-06-24 15:04:39.919 11399-11455 efs.px.api              com.zhanghuang                       I  get config from server, url is https://errnewlog.umeng.com/apm_cc
+2023-06-24 15:04:40.030 11399-11455 efs.config              com.zhanghuang                       I  config request succ, config is:
+                                                                                                     {"msg":"成功","code":0,"cip":"127.0.0.1","config":{"common":{"updateInteval":480,"gate_way_https":true},"app_configs":[{"conditions":[{"val":"0.0.0.0","opc":">=","fld":"ver"}],"actions":[{"opt":"apm_mem_state","set":0},{"opt":"apm_oom_state","set":0},{"opt":"apm_native_h5perf_sampling_rate","set":5},{"opt":"apm_memperf_collect_interval","set":5},{"opt":"apm_netperf_sampling_rate","set":5},{"opt":"apm_patrace_switch_rate","set":5},{"opt":"record_accumulation_time","set":60,"lt":"memperf"},{"opt":"apm_memperf_sampling_rate","set":0},{"opt":"apm_crash_user_upload_type","set":1},{"opt":"apm_memperf_collect_max_period_sec","set":600},{"opt":"apm_net_state","set":0},{"opt":"apm_startperf_sampling_rate","set":5},{"opt":"apm_crash_user_max_count","set":20},{"opt":"apm_oom_sampling_rate","set":5},{"opt":"apm_native_h5_state","set":0}]}]},"stm":1687590278,"cver":1651209273}
+2023-06-24 15:04:40.030 11399-11455 efs.config              com.zhanghuang                       I  from server. efs config is {"msg":"成功","code":0,"cip":"127.0.0.1","config":{"common":{"updateInteval":480,"gate_way_https":true},"app_configs":[{"conditions":[{"val":"0.0.0.0","opc":">=","fld":"ver"}],"actions":[{"opt":"apm_mem_state","set":0},{"opt":"apm_oom_state","set":0},{"opt":"apm_native_h5perf_sampling_rate","set":5},{"opt":"apm_memperf_collect_interval","set":5},{"opt":"apm_netperf_sampling_rate","set":5},{"opt":"apm_patrace_switch_rate","set":5},{"opt":"record_accumulation_time","set":60,"lt":"memperf"},{"opt":"apm_memperf_sampling_rate","set":0},{"opt":"apm_crash_user_upload_type","set":1},{"opt":"apm_memperf_collect_max_period_sec","set":600},{"opt":"apm_net_state","set":0},{"opt":"apm_startperf_sampling_rate","set":5},{"opt":"apm_crash_user_max_count","set":20},{"opt":"apm_oom_sampling_rate","set":5},{"opt":"apm_native_h5_state","set":0}]}]},"stm":1687590278,"cver":1651209273}
+2023-06-24 15:04:40.795 11399-11399 ActivityThread          com.zhanghuang                       W  handleWindowVisibility: no activity for token android.os.BinderProxy@b44d999
+2023-06-24 15:04:40.817 11399-11399 INFO                    com.zhanghuang                       I  User showId: 10000017
+2023-06-24 15:04:40.820 11399-11399 crashsdk                com.zhanghuang                       I  Unexp log not enabled, skip update unexp info!
+2023-06-24 15:04:40.826 11399-11440 MobclickAgent           com.zhanghuang                       D  延续上一个会话: BF17E35FBE5945241829D2DD6156C904
+2023-06-24 15:04:40.830 11399-11440 UMLog                   com.zhanghuang                       D  当前发送策略为：启动时发送。详见链接 https://developer.umeng.com/docs/66632/detail/66976?um_channel=sdk
+2023-06-24 15:04:40.874 11399-11479 EGL_adreno              com.zhanghuang                       E  tid 11479: eglSurfaceAttrib(1338): error 0x3009 (EGL_BAD_MATCH)
+2023-06-24 15:04:40.874 11399-11479 OpenGLRenderer          com.zhanghuang                       W  Failed to set EGL_SWAP_BEHAVIOR on surface 0x7fff59aec780, error=EGL_BAD_MATCH
+2023-06-24 15:04:40.893 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:04:49.853 11399-11452 crashsdk                com.zhanghuang                       I  crashsdk uploading logs
+2023-06-24 15:17:47.070 11399-11399 ActivityThread          com.zhanghuang                       W  handleWindowVisibility: no activity for token android.os.BinderProxy@e151521
+2023-06-24 15:17:47.115 11399-11399 crashsdk                com.zhanghuang                       I  Unexp log not enabled, skip update unexp info!
+2023-06-24 15:17:47.121 11399-11440 MobclickAgent           com.zhanghuang                       D  延续上一个会话: BF17E35FBE5945241829D2DD6156C904
+2023-06-24 15:17:47.125 11399-11440 UMLog                   com.zhanghuang                       D  当前发送策略为：启动时发送。详见链接 https://developer.umeng.com/docs/66632/detail/66976?um_channel=sdk
+2023-06-24 15:17:47.127 11399-11399 Count                   com.zhanghuang                       I  绑定了服务
+2023-06-24 15:17:47.157 11399-11479 EGL_adreno              com.zhanghuang                       E  tid 11479: eglSurfaceAttrib(1338): error 0x3009 (EGL_BAD_MATCH)
+2023-06-24 15:17:47.157 11399-11479 OpenGLRenderer          com.zhanghuang                       W  Failed to set EGL_SWAP_BEHAVIOR on surface 0x7fff4e344480, error=EGL_BAD_MATCH
+2023-06-24 15:17:47.173 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:17:48.044 11399-11399 crashsdk                com.zhanghuang                       I  Unexp log not enabled, skip update unexp info!
+2023-06-24 15:17:48.045 11399-11399 UMLog                   com.zhanghuang                       E  ┌───────────────────问题─────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:17:48.045 11399-11399 UMLog                   com.zhanghuang                       E  │     对于页面推荐，请确保先依序成对调用onPageStart，onPageEnd接口，再调用onPageStart接口对其它页面进行统计。
+2023-06-24 15:17:48.045 11399-11399 UMLog                   com.zhanghuang                       E  ├───────────────────解决方案─────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:17:48.045 11399-11399 UMLog                   com.zhanghuang                       E  │     对于任意一个页面，必须依序成对调用onPageStart以及onPageEnd，不能有遗漏。详见链接 https://developer.umeng.com/docs/66632/detail/66975?um_channel=sdk
+2023-06-24 15:17:48.045 11399-11399 UMLog                   com.zhanghuang                       E  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:17:48.045 11399-11399 UMLog                   com.zhanghuang                       E  ┌───────────────────问题─────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:17:48.045 11399-11399 UMLog                   com.zhanghuang                       E  │     对于页面MainActivity，请确保先依序成对调用onPageStart，onPageEnd接口，再调用onPageStart接口对其它页面进行统计。
+2023-06-24 15:17:48.045 11399-11399 UMLog                   com.zhanghuang                       E  ├───────────────────解决方案─────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:17:48.045 11399-11399 UMLog                   com.zhanghuang                       E  │     对于任意一个页面，必须依序成对调用onPageStart以及onPageEnd，不能有遗漏。详见链接 https://developer.umeng.com/docs/66632/detail/66975?um_channel=sdk
+2023-06-24 15:17:48.045 11399-11399 UMLog                   com.zhanghuang                       E  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:17:48.046 11399-11399 UMLog                   com.zhanghuang                       E  ┌───────────────────问题─────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:17:48.046 11399-11399 UMLog                   com.zhanghuang                       E  │     对于页面推荐，请确保先依序成对调用onPageStart，onPageEnd接口，再调用onPageStart接口对其它页面进行统计。
+2023-06-24 15:17:48.046 11399-11399 UMLog                   com.zhanghuang                       E  ├───────────────────解决方案─────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:17:48.046 11399-11399 UMLog                   com.zhanghuang                       E  │     对于任意一个页面，必须依序成对调用onPageStart以及onPageEnd，不能有遗漏。详见链接 https://developer.umeng.com/docs/66632/detail/66975?um_channel=sdk
+2023-06-24 15:17:48.046 11399-11399 UMLog                   com.zhanghuang                       E  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:17:48.057 11399-11440 MobclickAgent           com.zhanghuang                       D  延续上一个会话: BF17E35FBE5945241829D2DD6156C904
+2023-06-24 15:17:48.058 11399-11440 UMLog                   com.zhanghuang                       D  当前发送策略为：启动时发送。详见链接 https://developer.umeng.com/docs/66632/detail/66976?um_channel=sdk
+2023-06-24 15:17:48.085 11399-11479 EGL_adreno              com.zhanghuang                       E  tid 11479: eglSurfaceAttrib(1338): error 0x3009 (EGL_BAD_MATCH)
+2023-06-24 15:17:48.085 11399-11479 OpenGLRenderer          com.zhanghuang                       W  Failed to set EGL_SWAP_BEHAVIOR on surface 0x7fff59aec780, error=EGL_BAD_MATCH
+2023-06-24 15:17:48.111 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:17:49.169 11399-11399 UMLog                   com.zhanghuang                       E  ┌───────────────────问题─────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:17:49.169 11399-11399 UMLog                   com.zhanghuang                       E  │     对于页面推荐，onPageStart和onPageEnd调用对的参数不一致。
+2023-06-24 15:17:49.169 11399-11399 UMLog                   com.zhanghuang                       E  ├───────────────────解决方案─────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:17:49.169 11399-11399 UMLog                   com.zhanghuang                       E  │     对于同一个页面，请先调用onPageStart，再调用onPageEnd。详见链接 https://developer.umeng.com/docs/66632/detail/66975?um_channel=sdk
+2023-06-24 15:17:49.169 11399-11399 UMLog                   com.zhanghuang                       E  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:17:49.169 11399-11399 UMLog                   com.zhanghuang                       E  ┌───────────────────问题─────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:17:49.169 11399-11399 UMLog                   com.zhanghuang                       E  │     对于页面专栏，onPageStart和onPageEnd调用对的参数不一致。
+2023-06-24 15:17:49.169 11399-11399 UMLog                   com.zhanghuang                       E  ├───────────────────解决方案─────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:17:49.169 11399-11399 UMLog                   com.zhanghuang                       E  │     对于同一个页面，请先调用onPageStart，再调用onPageEnd。详见链接 https://developer.umeng.com/docs/66632/detail/66975?um_channel=sdk
+2023-06-24 15:17:49.169 11399-11399 UMLog                   com.zhanghuang                       E  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:17:49.169 11399-11399 UMLog                   com.zhanghuang                       E  ┌───────────────────问题─────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:17:49.169 11399-11399 UMLog                   com.zhanghuang                       E  │     对于页面MainActivity，onPageStart和onPageEnd调用对的参数不一致。
+2023-06-24 15:17:49.169 11399-11399 UMLog                   com.zhanghuang                       E  ├───────────────────解决方案─────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:17:49.169 11399-11399 UMLog                   com.zhanghuang                       E  │     对于同一个页面，请先调用onPageStart，再调用onPageEnd。详见链接 https://developer.umeng.com/docs/66632/detail/66975?um_channel=sdk
+2023-06-24 15:17:49.169 11399-11399 UMLog                   com.zhanghuang                       E  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:17:49.174 11399-11399 ActivityThread          com.zhanghuang                       W  handleWindowVisibility: no activity for token android.os.BinderProxy@73a27bf
+2023-06-24 15:17:49.190 11399-11399 INFO                    com.zhanghuang                       I  User showId: 10000017
+2023-06-24 15:17:49.192 11399-11399 crashsdk                com.zhanghuang                       I  Unexp log not enabled, skip update unexp info!
+2023-06-24 15:17:49.197 11399-11440 MobclickAgent           com.zhanghuang                       D  延续上一个会话: BF17E35FBE5945241829D2DD6156C904
+2023-06-24 15:17:49.199 11399-11440 UMLog                   com.zhanghuang                       D  当前发送策略为：启动时发送。详见链接 https://developer.umeng.com/docs/66632/detail/66976?um_channel=sdk
+2023-06-24 15:17:49.241 11399-11479 EGL_adreno              com.zhanghuang                       E  tid 11479: eglSurfaceAttrib(1338): error 0x3009 (EGL_BAD_MATCH)
+2023-06-24 15:17:49.241 11399-11479 OpenGLRenderer          com.zhanghuang                       W  Failed to set EGL_SWAP_BEHAVIOR on surface 0x7fff51268b80, error=EGL_BAD_MATCH
+2023-06-24 15:17:49.262 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:17:50.348 11399-11399 MicroMsg.P....WXFactory com.zhanghuang                       D  createWXAPI, appId = wx5846c59e6f1304a9, checkSignature = false
+2023-06-24 15:17:50.348 11399-11399 MicroMsg.P....WXFactory com.zhanghuang                       D  createWXAPI, appId = wx5846c59e6f1304a9, checkSignature = false, launchMode = 2
+2023-06-24 15:17:50.348 11399-11399 MicroMsg.S...ApiImplV10 com.zhanghuang                       D  <init>, appId = wx5846c59e6f1304a9, checkSignature = false, launchMode = 2
+2023-06-24 15:17:50.368 11399-11479 EGL_adreno              com.zhanghuang                       E  tid 11479: eglSurfaceAttrib(1338): error 0x3009 (EGL_BAD_MATCH)
+2023-06-24 15:17:50.368 11399-11479 OpenGLRenderer          com.zhanghuang                       W  Failed to set EGL_SWAP_BEHAVIOR on surface 0x7fff68ae8380, error=EGL_BAD_MATCH
+2023-06-24 15:17:50.479 11399-11479 EGL_adreno              com.zhanghuang                       E  tid 11479: eglSurfaceAttrib(1338): error 0x3009 (EGL_BAD_MATCH)
+2023-06-24 15:17:50.479 11399-11479 OpenGLRenderer          com.zhanghuang                       W  Failed to set EGL_SWAP_BEHAVIOR on surface 0x7fff68ae8380, error=EGL_BAD_MATCH
+2023-06-24 15:17:50.479 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:17:51.662 11399-11399 ProductActivity         com.zhanghuang                       I  onItemClick:: id: 0
+2023-06-24 15:17:51.662 11399-11399 ProductActivity         com.zhanghuang                       I  onItemClick:: position: 0
+2023-06-24 15:17:51.706 11399-11479 EGL_adreno              com.zhanghuang                       E  tid 11479: eglSurfaceAttrib(1338): error 0x3009 (EGL_BAD_MATCH)
+2023-06-24 15:17:51.706 11399-11479 OpenGLRenderer          com.zhanghuang                       W  Failed to set EGL_SWAP_BEHAVIOR on surface 0x7fff4e2acb00, error=EGL_BAD_MATCH
+2023-06-24 15:17:51.729 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:17:52.107 11399-11399 ProductActivity         com.zhanghuang                       I  BaseMode(status=false, message=null, err=null)
+2023-06-24 15:17:52.108 11399-11399 MicroMsg.S...sgImplComm com.zhanghuang                       D  ignore wechat app signature validation
+2023-06-24 15:17:52.108 11399-11399 MicroMsg.S...ApiImplV10 com.zhanghuang                       I  sendReq, req type = 5
+2023-06-24 15:17:52.122 11399-11399 MicroMsg.S...ApiImplV10 com.zhanghuang                       D  pay, set wxappPayEntryClassname = com.tencent.mm.plugin.base.stub.WXPayEntryActivity
+2023-06-24 15:17:52.130 11399-11399 MicroMsg.S...ApiImplV10 com.zhanghuang                       I  getTokenFromWX token is wx5846c59e6f1304a9-123166903-4302509726044-159
+2023-06-24 15:17:52.134 11399-11399 MicroMsg.S...MessageAct com.zhanghuang                       D  send, targetPkgName = com.tencent.mm, targetClassName = com.tencent.mm.plugin.base.stub.WXPayEntryActivity, launchMode = 2
+2023-06-24 15:17:52.148 11399-11399 MicroMsg.S...MessageAct com.zhanghuang                       D  send mm message, intent=Intent { flg=0x18000000 cmp=com.tencent.mm/.plugin.base.stub.WXPayEntryActivity (has extras) }
+2023-06-24 15:17:52.398 11399-11435 com.zhanghuang          com.zhanghuang                       I  Explicit concurrent copying GC freed 45164(2MB) AllocSpace objects, 20(848KB) LOS objects, 49% free, 4MB/9MB, paused 20us total 43.905ms
+2023-06-24 15:17:52.822 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:17:52.831 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:17:52.856 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:17:52.859 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:17:52.891 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:17:52.894 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:17:52.926 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:17:52.929 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:17:52.960 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:17:52.962 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:17:52.993 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:17:52.996 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:17:53.028 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:17:53.031 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:17:53.062 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:17:53.068 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:17:53.096 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:17:53.100 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:18:04.267 11399-11399 ActivityThread          com.zhanghuang                       W  handleWindowVisibility: no activity for token android.os.BinderProxy@a81ebf3
+2023-06-24 15:18:04.316 11399-11399 MicroMsg.P....WXFactory com.zhanghuang                       D  createWXAPI, appId = wx5846c59e6f1304a9, checkSignature = true
+2023-06-24 15:18:04.316 11399-11399 MicroMsg.P....WXFactory com.zhanghuang                       D  createWXAPI, appId = wx5846c59e6f1304a9, checkSignature = true, launchMode = 2
+2023-06-24 15:18:04.316 11399-11399 MicroMsg.S...ApiImplV10 com.zhanghuang                       D  <init>, appId = wx5846c59e6f1304a9, checkSignature = true, launchMode = 2
+2023-06-24 15:18:04.320 11399-11399 MicroMsg.S...ApiImplV10 com.zhanghuang                       I  handleIntent, cmd = 5
+2023-06-24 15:18:04.321 11399-11399 WXPayEntryActivity      com.zhanghuang                       D  onPayFinish, errCode = 0
+2023-06-24 15:18:04.321 11399-11399 ProductActivity         com.zhanghuang                       I  pay result: true
+2023-06-24 15:18:04.369 11399-11399 crashsdk                com.zhanghuang                       I  Unexp log not enabled, skip update unexp info!
+2023-06-24 15:18:04.385 11399-11440 MobclickAgent           com.zhanghuang                       D  延续上一个会话: BF17E35FBE5945241829D2DD6156C904
+2023-06-24 15:18:04.389 11399-11440 UMLog                   com.zhanghuang                       D  当前发送策略为：启动时发送。详见链接 https://developer.umeng.com/docs/66632/detail/66976?um_channel=sdk
+2023-06-24 15:18:04.448 11399-11479 EGL_adreno              com.zhanghuang                       E  tid 11479: eglSurfaceAttrib(1338): error 0x3009 (EGL_BAD_MATCH)
+2023-06-24 15:18:04.448 11399-11479 OpenGLRenderer          com.zhanghuang                       W  Failed to set EGL_SWAP_BEHAVIOR on surface 0x7fff51268b80, error=EGL_BAD_MATCH
+2023-06-24 15:18:04.449 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:18:04.489 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:18:04.492 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:18:04.516 11399-11479 EGL_adreno              com.zhanghuang                       E  tid 11479: eglSurfaceAttrib(1338): error 0x3009 (EGL_BAD_MATCH)
+2023-06-24 15:18:04.516 11399-11479 OpenGLRenderer          com.zhanghuang                       W  Failed to set EGL_SWAP_BEHAVIOR on surface 0x7fff4e2acb00, error=EGL_BAD_MATCH
+2023-06-24 15:18:04.522 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:18:04.548 11399-11479 EGL_adreno              com.zhanghuang                       E  tid 11479: eglSurfaceAttrib(1338): error 0x3009 (EGL_BAD_MATCH)
+2023-06-24 15:18:04.548 11399-11479 OpenGLRenderer          com.zhanghuang                       W  Failed to set EGL_SWAP_BEHAVIOR on surface 0x7fff68ae8380, error=EGL_BAD_MATCH
+2023-06-24 15:18:04.548 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:18:04.577 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:18:05.717 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:18:05.732 11399-11399 ProductActivity         com.zhanghuang                       I  支付成功
+2023-06-24 15:18:05.735 11399-11399 ProductActivity         com.zhanghuang                       I  一个月会员 :: 6496989e2c4a55692e980a85
+2023-06-24 15:18:05.748 11399-11399 PayResultActivity       com.zhanghuang                       I  pay success
+2023-06-24 15:18:05.788 11399-11479 EGL_adreno              com.zhanghuang                       E  tid 11479: eglSurfaceAttrib(1338): error 0x3009 (EGL_BAD_MATCH)
+2023-06-24 15:18:05.788 11399-11479 OpenGLRenderer          com.zhanghuang                       W  Failed to set EGL_SWAP_BEHAVIOR on surface 0x7fff68ae8380, error=EGL_BAD_MATCH
+2023-06-24 15:18:05.803 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:18:05.812 11399-11399 ActivityThread          com.zhanghuang                       W  handleWindowVisibility: no activity for token android.os.BinderProxy@92684a4
+2023-06-24 15:18:05.855 11399-11399 crashsdk                com.zhanghuang                       I  Unexp log not enabled, skip update unexp info!
+2023-06-24 15:18:05.860 11399-11440 MobclickAgent           com.zhanghuang                       D  延续上一个会话: BF17E35FBE5945241829D2DD6156C904
+2023-06-24 15:18:05.862 11399-11440 UMLog                   com.zhanghuang                       D  当前发送策略为：启动时发送。详见链接 https://developer.umeng.com/docs/66632/detail/66976?um_channel=sdk
+2023-06-24 15:18:05.875 11399-11399 Count                   com.zhanghuang                       I  绑定了服务
+2023-06-24 15:18:05.896 11399-11479 EGL_adreno              com.zhanghuang                       E  tid 11479: eglSurfaceAttrib(1338): error 0x3009 (EGL_BAD_MATCH)
+2023-06-24 15:18:05.896 11399-11479 OpenGLRenderer          com.zhanghuang                       W  Failed to set EGL_SWAP_BEHAVIOR on surface 0x7fff59834f80, error=EGL_BAD_MATCH
+2023-06-24 15:18:05.910 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:18:06.089 11399-11399 WindowManager           com.zhanghuang                       E  
+                                                                                                    android.view.WindowLeaked: Activity com.zhanghuang.DonateActivity has leaked window DecorView@f242aed[DonateActivity] that was originally added here
+                                                                                                    	at android.view.ViewRootImpl.<init>(ViewRootImpl.java:511)
+                                                                                                    	at android.view.WindowManagerGlobal.addView(WindowManagerGlobal.java:346)
+                                                                                                    	at android.view.WindowManagerImpl.addView(WindowManagerImpl.java:93)
+                                                                                                    	at android.app.Dialog.show(Dialog.java:329)
+                                                                                                    	at com.zhanghuang.DonateActivity$1.onClick(DonateActivity.java:76)
+                                                                                                    	at android.view.View.performClick(View.java:6599)
+                                                                                                    	at android.view.View.performClickInternal(View.java:6576)
+                                                                                                    	at android.view.View.access$3100(View.java:780)
+                                                                                                    	at android.view.View$PerformClick.run(View.java:25899)
+                                                                                                    	at android.os.Handler.handleCallback(Handler.java:873)
+                                                                                                    	at android.os.Handler.dispatchMessage(Handler.java:99)
                                                                                                     	at android.os.Looper.loop(Looper.java:193)
                                                                                                     	at android.app.ActivityThread.main(ActivityThread.java:6825)
                                                                                                     	at java.lang.reflect.Method.invoke(Native Method)
                                                                                                     	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:493)
                                                                                                     	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:860)
-2023-06-23 14:53:28.237 26901-26901 DEBUG                   com.zhanghuang                       E  encryptLog: false, zipCrashLog: false
-2023-06-23 14:53:28.237 26901-26901 DEBUG                   com.zhanghuang                       E  begin to generate java report
-2023-06-23 14:53:28.241 26901-26901 DEBUG                   com.zhanghuang                       E  *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
-2023-06-23 14:53:28.241 26901-26901 DEBUG                   com.zhanghuang                       E  Basic Information: 'pid: 26901/tid: 26901/time: 20230623145328'
-2023-06-23 14:53:28.243 26901-26901 DEBUG                   com.zhanghuang                       E  Cpu Information: 'abi: x86_64,x86,arm64-v8a,armeabi-v7a,armeabi/processor: -/hardware: qcom'
-2023-06-23 14:53:28.243 26901-26901 DEBUG                   com.zhanghuang                       E  Mobile Information: 'model: HD1900/version: 9/sdk: 28'
-2023-06-23 14:53:28.244 26901-26901 DEBUG                   com.zhanghuang                       E  Build fingerprint: 'Android/graceltexx/gracelte:9/PQ3A.190705.06091305/G9700FXXU1APFO:user/release-keys'
-2023-06-23 14:53:28.244 26901-26901 DEBUG                   com.zhanghuang                       E  Runtime Information: 'start: 20230623145215/maxheap: 402653184/primaryabi: x86_64/ground: fg'
-2023-06-23 14:53:28.245 26901-26901 DEBUG                   com.zhanghuang                       E  Application Information: 'version: 2.0.8/subversion: release/buildseq: 42c03024/versioncode: 11'
-2023-06-23 14:53:28.245 26901-26901 DEBUG                   com.zhanghuang                       E  CrashSDK Information: 'version: 3.3.2.2/nativeseq: 0/javaseq: 211215141717/arch: /target: release'
-2023-06-23 14:53:28.245 26901-26901 DEBUG                   com.zhanghuang                       E  Report Name: 58eb2d094544cb15d2001334_2.0.8_42c03024_HD1900_9_168750320823736011_20230623145328_fg_java.log
-2023-06-23 14:53:28.245 26901-26901 DEBUG                   com.zhanghuang                       E  UUID: 4f33f649-b628-4a67-bbb2-5283766cbabd
-2023-06-23 14:53:28.245 26901-26901 DEBUG                   com.zhanghuang                       E  Log Type: java
-2023-06-23 14:53:28.246 26901-26901 DEBUG                   com.zhanghuang                       E  Activity: (none)
-2023-06-23 14:53:28.246 26901-26901 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-2023-06-23 14:53:28.246 26901-26901 DEBUG                   com.zhanghuang                       E  um_app_key: 58eb2d094544cb15d2001334
-2023-06-23 14:53:28.246 26901-26901 DEBUG                   com.zhanghuang                       E  um_app_channel: Umeng
-2023-06-23 14:53:28.246 26901-26901 DEBUG                   com.zhanghuang                       E  um_os: android
-2023-06-23 14:53:28.246 26901-26901 DEBUG                   com.zhanghuang                       E  um_crash_sdk_version: 1.9.2
-2023-06-23 14:53:28.246 26901-26901 DEBUG                   com.zhanghuang                       E  um_umid_header: ai0c5fd84bc66881154f73679f7abb98ce
-2023-06-23 14:53:28.246 26901-26901 DEBUG                   com.zhanghuang                       E  um_app_carrier: 
-2023-06-23 14:53:28.246 26901-26901 DEBUG                   com.zhanghuang                       E  um_network_type: 0
-2023-06-23 14:53:28.246 26901-26901 DEBUG                   com.zhanghuang                       E  others_OS: Android
-2023-06-23 14:53:28.246 26901-26901 DEBUG                   com.zhanghuang                       E  um_access: wifi
-2023-06-23 14:53:28.246 26901-26901 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-2023-06-23 14:53:28.246 26901-26901 DEBUG                   com.zhanghuang                       E  Process Name: 'com.zhanghuang'
-2023-06-23 14:53:28.246 26901-26901 DEBUG                   com.zhanghuang                       E  Thread Name: 'main'
-2023-06-23 14:53:28.246 26901-26901 DEBUG                   com.zhanghuang                       E  Back traces starts.
-2023-06-23 14:53:28.246 26901-26901 com.zhanghuang          com.zhanghuang                       W  Accessing hidden field Ljava/lang/Throwable;->detailMessage:Ljava/lang/String; (light greylist, reflection)
-2023-06-23 14:53:28.246 26901-26901 DEBUG                   com.zhanghuang                       E  java.lang.NullPointerException: Attempt to invoke virtual method 'boolean java.util.Date.before(java.util.Date)' on a null object reference
-2023-06-23 14:53:28.247 26901-26901 DEBUG                   com.zhanghuang                       E  	at com.zhanghuang.DonateActivity.onReward(DonateActivity.java:178)
-2023-06-23 14:53:28.247 26901-26901 DEBUG                   com.zhanghuang                       E  	at com.qq.e.ads.rewardvideo.RewardVideoAD$ADListenerAdapter.onADEvent(Unknown Source:83)
-2023-06-23 14:53:28.247 26901-26901 DEBUG                   com.zhanghuang                       E  	at com.qq.e.comm.plugin.rewardvideo.c$f.a(A:3)
-2023-06-23 14:53:28.247 26901-26901 DEBUG                   com.zhanghuang                       E  	at com.qq.e.comm.plugin.rewardvideo.c$f.b(A:1)
-2023-06-23 14:53:28.247 26901-26901 DEBUG                   com.zhanghuang                       E  	at com.qq.e.comm.plugin.f.d.a(A:2)
-2023-06-23 14:53:28.247 26901-26901 DEBUG                   com.zhanghuang                       E  	at com.qq.e.comm.plugin.f.c.a(A:10)
-2023-06-23 14:53:28.247 26901-26901 DEBUG                   com.zhanghuang                       E  	at com.qq.e.comm.plugin.f.c.b(A:2)
-2023-06-23 14:53:28.247 26901-26901 DEBUG                   com.zhanghuang                       E  	at com.qq.e.comm.plugin.fs.f.a$s.a(A:16)
-2023-06-23 14:53:28.247 26901-26901 DEBUG                   com.zhanghuang                       E  	at com.qq.e.comm.plugin.fs.f.a$s.b(A:1)
-2023-06-23 14:53:28.247 26901-26901 DEBUG                   com.zhanghuang                       E  	at com.qq.e.comm.plugin.f.d.a(A:2)
-2023-06-23 14:53:28.247 26901-26901 DEBUG                   com.zhanghuang                       E  	at com.qq.e.comm.plugin.f.c.a(A:10)
-2023-06-23 14:53:28.247 26901-26901 DEBUG                   com.zhanghuang                       E  	at com.qq.e.comm.plugin.f.c.b(A:2)
-2023-06-23 14:53:28.247 26901-26901 DEBUG                   com.zhanghuang                       E  	at com.qq.e.comm.plugin.fs.h.c.b$e.a(A:1)
-2023-06-23 14:53:28.247 26901-26901 DEBUG                   com.zhanghuang                       E  	at com.qq.e.comm.plugin.util.U0.c.a(A:11)
-2023-06-23 14:53:28.248 26901-26901 DEBUG                   com.zhanghuang                       E  	at com.qq.e.comm.plugin.fs.h.c.b.a(A:24)
-2023-06-23 14:53:28.248 26901-26901 DEBUG                   com.zhanghuang                       E  	at com.qq.e.comm.plugin.fs.h.d.c$b.a(A:28)
-2023-06-23 14:53:28.248 26901-26901 DEBUG                   com.zhanghuang                       E  	at com.qq.e.comm.plugin.util.A0$a.handleMessage(A:11)
-2023-06-23 14:53:28.248 26901-26901 DEBUG                   com.zhanghuang                       E  	at android.os.Handler.dispatchMessage(Handler.java:106)
-2023-06-23 14:53:28.248 26901-26901 DEBUG                   com.zhanghuang                       E  	at android.os.Looper.loop(Looper.java:193)
-2023-06-23 14:53:28.248 26901-26901 DEBUG                   com.zhanghuang                       E  	at android.app.ActivityThread.main(ActivityThread.java:6825)
-2023-06-23 14:53:28.248 26901-26901 DEBUG                   com.zhanghuang                       E  	at java.lang.reflect.Method.invoke(Native Method)
-2023-06-23 14:53:28.248 26901-26901 DEBUG                   com.zhanghuang                       E  	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:493)
-2023-06-23 14:53:28.248 26901-26901 DEBUG                   com.zhanghuang                       E  	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:860)
-2023-06-23 14:53:28.248 26901-26901 DEBUG                   com.zhanghuang                       E  Back traces ends.
-2023-06-23 14:53:28.248 26901-26901 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-2023-06-23 14:53:28.248 26901-26901 DEBUG                   com.zhanghuang                       E  meminfo:
-2023-06-23 14:53:28.248 26901-26901 DEBUG                   com.zhanghuang                       E  MemTotal:        4040992 kB
-                                                                                                    MemFree:         2685576 kB
-                                                                                                    MemAvailable:    2946364 kB
-                                                                                                    Buffers:             780 kB
-                                                                                                    Cached:           325536 kB
-                                                                                                    SwapCached:            0 kB
-                                                                                                    Active:          1056880 kB
-                                                                                                    Inactive:         156872 kB
-                                                                                                    Active(anon):     890660 kB
-                                                                                                    Inactive(anon):    16480 kB
-                                                                                                    Active(file):     166220 kB
-                                                                                                    Inactive(file):   140392 kB
-                                                                                                    Unevictable:        3304 kB
-                                                                                                    Mlocked:            3304 kB
-                                                                                                    SwapTotal:             0 kB
-                                                                                                    SwapFree:              0 kB
-                                                                                                    Dirty:                44 kB
-                                                                                                    Writeback:             0 kB
-                                                                                                    AnonPages:        890756 kB
-                                                                                                    Mapped:           267696 kB
-                                                                                                    Shmem:             16928 kB
-                                                                                                    Slab:              78420 kB
-                                                                                                    SReclaimable:      29100 kB
-                                                                                                    SUnreclaim:        49320 kB
-                                                                                                    KernelStack:       19120 kB
-                                                                                                    PageTables:        27908 kB
-                                                                                                    NFS_Unstable:          0 kB
-                                                                                                    Bounce:                0 kB
-                                                                                                    WritebackTmp:          0 kB
-                                                                                                    CommitLimit:     2020496 kB
-                                                                                                    Committed_AS:   25278592 kB
-                                                                                                    VmallocTotal:   34359738367 kB
-                                                                                                    VmallocUsed:           0 kB
-                                                                                                    VmallocChunk:          0 kB
-                                                                                                    CmaTotal:              0 kB
-                                                                                                    CmaFree:               0 kB
-                                                                                                    HugePages_Tot
-2023-06-23 14:53:28.248 26901-26901 DEBUG                   com.zhanghuang                       E  al:       0
-                                                                                                    HugePages_Free:        0
-                                                                                                    HugePages_Rsvd:        0
-                                                                                                    HugePages_Surp:        0
-                                                                                                    Hugepagesize:       2048 kB
-                                                                                                    DirectMap4k:       81856 kB
-                                                                                                    DirectMap2M:     4112384 kB
-2023-06-23 14:53:28.248 26901-26901 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-2023-06-23 14:53:28.249 26901-26901 DEBUG                   com.zhanghuang                       E  status:
-2023-06-23 14:53:28.249 26901-26901 DEBUG                   com.zhanghuang                       E  Name:	com.zhanghuang
-                                                                                                    State:	R (running)
-                                                                                                    Tgid:	26901
-                                                                                                    Ngid:	0
-                                                                                                    Pid:	26901
-                                                                                                    PPid:	1399
-                                                                                                    TracerPid:	0
-                                                                                                    Uid:	10051	10051	10051	10051
-                                                                                                    Gid:	10051	10051	10051	10051
-                                                                                                    FDSize:	256
-                                                                                                    Groups:	3003 9997 20051 50051 
-                                                                                                    NStgid:	26901
-                                                                                                    NSpid:	26901
-                                                                                                    NSpgid:	1399
-                                                                                                    NSsid:	0
-                                                                                                    VmPeak:	37666740 kB
-                                                                                                    VmSize:	37657864 kB
-                                                                                                    VmLck:	       0 kB
-                                                                                                    VmPin:	       0 kB
-                                                                                                    VmHWM:	  226500 kB
-                                                                                                    VmRSS:	  205520 kB
-                                                                                                    VmData:	36205552 kB
-                                                                                                    VmStk:	    8192 kB
-                                                                                                    VmExe:	      20 kB
-                                                                                                    VmLib:	  204668 kB
-                                                                                                    VmPTE:	    1476 kB
-                                                                                                    VmPMD:	      28 kB
-                                                                                                    VmSwap:	       0 kB
-                                                                                                    HugetlbPages:	       0 kB
-                                                                                                    Threads:	104
-                                                                                                    SigQ:	0/15776
-                                                                                                    SigPnd:	0000000000000000
-                                                                                                    ShdPnd:	0000000000000000
-                                                                                                    SigBlk:	0000000000001204
-                                                                                                    SigIgn:	0000000000000001
-                                                                                                    SigCgt:	40000006400084f8
-                                                                                                    CapInh:	0000000000000000
-                                                                                                    CapPrm:	0000000000000000
-                                                                                                    CapEff:	0000000000000000
-                                                                                                    CapBnd:	0000000000000000
-                                                                                                    CapAmb:	0000000000000000
-                                                                                                    Seccomp:	0
+2023-06-24 15:18:06.090 11399-11399 WindowManager           com.zhanghuang                       E  
+                                                                                                    android.view.WindowLeaked: Activity com.zhanghuang.DonateActivity has leaked window DecorView@f7e43b3[DonateActivity] that was originally added here
+                                                                                                    	at android.view.ViewRootImpl.<init>(ViewRootImpl.java:511)
+                                                                                                    	at android.view.WindowManagerGlobal.addView(WindowManagerGlobal.java:346)
+                                                                                                    	at android.view.WindowManagerImpl.addView(WindowManagerImpl.java:93)
+                                                                                                    	at android.app.Dialog.show(Dialog.java:329)
+                                                                                                    	at com.zhanghuang.wxapi.PayResultActivity.show(PayResultActivity.java:61)
+                                                                                                    	at com.zhanghuang.ProductActivity.showPayResult(ProductActivity.java:155)
+                                                                                                    	at com.zhanghuang.ProductActivity.lambda$onPayResult$3$ProductActivity(ProductActivity.java:113)
+                                                                                                    	at com.zhanghuang.-$$Lambda$ProductActivity$s09v9zcFUgMIRD64GgAOopHtJF0.response(Unknown Source:2)
+                                                                                                    	at com.zhanghuang.net.RequestData.lambda$httpPost$1$RequestData(RequestData.java:91)
+                                                                                                    	at com.zhanghuang.net.-$$Lambda$RequestData$s3PmDmOLGJfjEwtRMUFyaGqE23Y.response(Unknown Source:6)
+                                                                                                    	at com.zhanghuang.net.AppRequest.deliverResponse(AppRequest.java:55)
+                                                                                                    	at com.zhanghuang.net.AppRequest.deliverResponse(AppRequest.java:22)
+                                                                                                    	at com.android.volley.ExecutorDelivery$ResponseDeliveryRunnable.run(ExecutorDelivery.java:99)
+                                                                                                    	at android.os.Handler.handleCallback(Handler.java:873)
+                                                                                                    	at android.os.Handler.dispatchMessage(Handler.java:99)
+                                                                                                    	at android.os.Looper.loop(Looper.java:193)
+                                                                                                    	at android.app.ActivityThread.main(ActivityThread.java:6825)
+                                                                                                    	at java.lang.reflect.Method.invoke(Native Method)
+                                                                                                    	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:493)
+                                                                                                    	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:860)
+2023-06-24 15:18:06.862 11399-11399 countdown               com.zhanghuang                       I  countDownValue:  30
+2023-06-24 15:18:07.863 11399-11399 countdown               com.zhanghuang                       I  countDownValue:  29
+2023-06-24 15:18:08.864 11399-11399 countdown               com.zhanghuang                       I  countDownValue:  28
+2023-06-24 15:18:09.582 11399-11435 com.zhanghuang          com.zhanghuang                       I  Explicit concurrent copying GC freed 15931(1040KB) AllocSpace objects, 6(312KB) LOS objects, 50% free, 4MB/9MB, paused 29us total 16.122ms
+2023-06-24 15:18:09.782 11399-11399 crashsdk                com.zhanghuang                       I  Unexp log not enabled, skip update unexp info!
+2023-06-24 15:18:09.783 11399-11399 UMLog                   com.zhanghuang                       E  ┌───────────────────问题─────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:18:09.783 11399-11399 UMLog                   com.zhanghuang                       E  │     对于页面推荐，请确保先依序成对调用onPageStart，onPageEnd接口，再调用onPageStart接口对其它页面进行统计。
+2023-06-24 15:18:09.783 11399-11399 UMLog                   com.zhanghuang                       E  ├───────────────────解决方案─────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:18:09.783 11399-11399 UMLog                   com.zhanghuang                       E  │     对于任意一个页面，必须依序成对调用onPageStart以及onPageEnd，不能有遗漏。详见链接 https://developer.umeng.com/docs/66632/detail/66975?um_channel=sdk
+2023-06-24 15:18:09.783 11399-11399 UMLog                   com.zhanghuang                       E  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:18:09.784 11399-11399 UMLog                   com.zhanghuang                       E  ┌───────────────────问题─────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:18:09.784 11399-11399 UMLog                   com.zhanghuang                       E  │     对于页面MainActivity，请确保先依序成对调用onPageStart，onPageEnd接口，再调用onPageStart接口对其它页面进行统计。
+2023-06-24 15:18:09.784 11399-11399 UMLog                   com.zhanghuang                       E  ├───────────────────解决方案─────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:18:09.784 11399-11399 UMLog                   com.zhanghuang                       E  │     对于任意一个页面，必须依序成对调用onPageStart以及onPageEnd，不能有遗漏。详见链接 https://developer.umeng.com/docs/66632/detail/66975?um_channel=sdk
+2023-06-24 15:18:09.784 11399-11399 UMLog                   com.zhanghuang                       E  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:18:09.785 11399-11399 UMLog                   com.zhanghuang                       E  ┌───────────────────问题─────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:18:09.785 11399-11399 UMLog                   com.zhanghuang                       E  │     对于页面推荐，请确保先依序成对调用onPageStart，onPageEnd接口，再调用onPageStart接口对其它页面进行统计。
+2023-06-24 15:18:09.785 11399-11399 UMLog                   com.zhanghuang                       E  ├───────────────────解决方案─────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:18:09.785 11399-11399 UMLog                   com.zhanghuang                       E  │     对于任意一个页面，必须依序成对调用onPageStart以及onPageEnd，不能有遗漏。详见链接 https://developer.umeng.com/docs/66632/detail/66975?um_channel=sdk
+2023-06-24 15:18:09.785 11399-11399 UMLog                   com.zhanghuang                       E  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:18:09.795 11399-11440 MobclickAgent           com.zhanghuang                       D  延续上一个会话: BF17E35FBE5945241829D2DD6156C904
+2023-06-24 15:18:09.797 11399-11440 UMLog                   com.zhanghuang                       D  当前发送策略为：启动时发送。详见链接 https://developer.umeng.com/docs/66632/detail/66976?um_channel=sdk
+2023-06-24 15:18:09.836 11399-11479 EGL_adreno              com.zhanghuang                       E  tid 11479: eglSurfaceAttrib(1338): error 0x3009 (EGL_BAD_MATCH)
+2023-06-24 15:18:09.836 11399-11479 OpenGLRenderer          com.zhanghuang                       W  Failed to set EGL_SWAP_BEHAVIOR on surface 0x7fff4e2acb00, error=EGL_BAD_MATCH
+2023-06-24 15:18:09.877 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:18:09.920 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:18:09.935 11399-11479 EGL_adreno              com.zhanghuang                       E  tid 11479: eglSurfaceAttrib(1338): error 0x3009 (EGL_BAD_MATCH)
+2023-06-24 15:18:09.936 11399-11479 OpenGLRenderer          com.zhanghuang                       W  Failed to set EGL_SWAP_BEHAVIOR on surface 0x7fff4e2acb00, error=EGL_BAD_MATCH
+2023-06-24 15:18:09.936 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:18:11.140 11399-11435 com.zhanghuang          com.zhanghuang                       I  Explicit concurrent copying GC freed 10788(652KB) AllocSpace objects, 6(312KB) LOS objects, 49% free, 4MB/8MB, paused 90us total 18.693ms
+2023-06-24 15:18:11.250 11399-11435 LeakCanary              com.zhanghuang                       D  WRITE_EXTERNAL_STORAGE permission not granted
+2023-06-24 15:18:11.253 11399-11399 System.err              com.zhanghuang                       W  java.lang.Exception: Toast callstack! strTip=
+2023-06-24 15:18:11.253 11399-11399 System.err              com.zhanghuang                       W  	at android.widget.Toast.show(Toast.java:143)
+2023-06-24 15:18:11.253 11399-11399 System.err              com.zhanghuang                       W  	at com.squareup.leakcanary.AndroidHeapDumper$1.run(AndroidHeapDumper.java:80)
+2023-06-24 15:18:11.253 11399-11399 System.err              com.zhanghuang                       W  	at android.os.Handler.handleCallback(Handler.java:873)
+2023-06-24 15:18:11.253 11399-11399 System.err              com.zhanghuang                       W  	at android.os.Handler.dispatchMessage(Handler.java:99)
+2023-06-24 15:18:11.253 11399-11399 System.err              com.zhanghuang                       W  	at android.os.Looper.loop(Looper.java:193)
+2023-06-24 15:18:11.253 11399-11399 System.err              com.zhanghuang                       W  	at android.app.ActivityThread.main(ActivityThread.java:6825)
+2023-06-24 15:18:11.253 11399-11399 System.err              com.zhanghuang                       W  	at java.lang.reflect.Method.invoke(Native Method)
+2023-06-24 15:18:11.253 11399-11399 System.err              com.zhanghuang                       W  	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:493)
+2023-06-24 15:18:11.253 11399-11399 System.err              com.zhanghuang                       W  	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:860)
+2023-06-24 15:18:11.291 11399-11479 EGL_adreno              com.zhanghuang                       E  tid 11479: eglSurfaceAttrib(1338): error 0x3009 (EGL_BAD_MATCH)
+2023-06-24 15:18:11.291 11399-11479 OpenGLRenderer          com.zhanghuang                       W  Failed to set EGL_SWAP_BEHAVIOR on surface 0x7fff6a537400, error=EGL_BAD_MATCH
+2023-06-24 15:18:11.315 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:18:11.320 11399-11435 com.zhanghuang          com.zhanghuang                       I  hprof: heap dump "/data/user/0/com.zhanghuang/files/leakcanary/3385af66-1a66-4d16-a8cb-711362149ad9_pending.hprof" starting...
+2023-06-24 15:18:12.289 11399-11435 com.zhanghuang          com.zhanghuang                       I  hprof: heap dump completed (25MB) in 969.242ms objects 397288 objects with stack traces 0
+2023-06-24 15:18:12.345 11399-11399 UMLog                   com.zhanghuang                       E  ┌───────────────────问题─────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:18:12.345 11399-11399 UMLog                   com.zhanghuang                       E  │     对于页面专栏，请确保先依序成对调用onPageStart，onPageEnd接口，再调用onPageStart接口对其它页面进行统计。
+2023-06-24 15:18:12.345 11399-11399 UMLog                   com.zhanghuang                       E  ├───────────────────解决方案─────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:18:12.345 11399-11399 UMLog                   com.zhanghuang                       E  │     对于任意一个页面，必须依序成对调用onPageStart以及onPageEnd，不能有遗漏。详见链接 https://developer.umeng.com/docs/66632/detail/66975?um_channel=sdk
+2023-06-24 15:18:12.345 11399-11399 UMLog                   com.zhanghuang                       E  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:18:12.360 11399-11399 UMLog                   com.zhanghuang                       E  ┌───────────────────问题─────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:18:12.360 11399-11399 UMLog                   com.zhanghuang                       E  │     对于页面更多，请确保先依序成对调用onPageStart，onPageEnd接口，再调用onPageStart接口对其它页面进行统计。
+2023-06-24 15:18:12.360 11399-11399 UMLog                   com.zhanghuang                       E  ├───────────────────解决方案─────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:18:12.360 11399-11399 UMLog                   com.zhanghuang                       E  │     对于任意一个页面，必须依序成对调用onPageStart以及onPageEnd，不能有遗漏。详见链接 https://developer.umeng.com/docs/66632/detail/66975?um_channel=sdk
+2023-06-24 15:18:12.360 11399-11399 UMLog                   com.zhanghuang                       E  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2023-06-24 15:18:12.361 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+---------------------------- PROCESS STARTED (12806) for package com.zhanghuang ----------------------------
+2023-06-24 15:18:12.424 12806-12806 uang:leakcanar          com.zhanghuang                       I  The ClassLoaderContext is a special shared library.
+2023-06-24 15:18:12.428 11399-11479 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6a4f6800: ver 3 1 (tinfo 0x7fff68b6dfa0)
+2023-06-24 15:18:12.680 11399-11399 RenderThread            com.zhanghuang                       I  type=1400 audit(0.0:1361): avc: denied { ioctl } for path="/dev/fastpipe" dev="tmpfs" ino=4859 ioctlcmd=6867 scontext=u:r:untrusted_app:s0:c51,c256,c512,c768 tcontext=u:object_r:device:s0 tclass=chr_file permissive=1
+2023-06-24 15:18:12.738 12806-12806 uang:leakcanar          com.zhanghuang                       W  Accessing hidden method Landroid/content/ContextWrapper;->getDisplay()Landroid/view/Display; (light greylist, linking)
+2023-06-24 15:18:12.749 12806-12806 UMConfigure             com.zhanghuang                       I  common version is 9.6.1
+2023-06-24 15:18:12.749 12806-12806 UMConfigure             com.zhanghuang                       I  common type is 0
+2023-06-24 15:18:12.756 12806-12806 UMConfigure             com.zhanghuang                       I  current appkey is 58eb2d094544cb15d2001334, last appkey is 58eb2d094544cb15d2001334
+2023-06-24 15:18:12.757 12806-12806 UMConfigure             com.zhanghuang                       I  channel is Umeng
+2023-06-24 15:18:12.761 12806-12806 UMLog                   com.zhanghuang                       I  统计SDK初始化成功
+2023-06-24 15:18:12.773 12806-12806 priviteSocial           com.zhanghuang                       E  欢迎使用友盟社会化分享业务!
+2023-06-24 15:18:12.774 12806-12806 UMLog                   com.zhanghuang                       I  Share AppKey设置成功
+2023-06-24 15:18:12.775 12806-12838 UMCrash                 com.zhanghuang                       I  get common. apm ctr flag is 0
+2023-06-24 15:18:12.780 12806-12806 UMCrash                 com.zhanghuang                       I  int apm. flag is 0
+2023-06-24 15:18:12.781 12806-12806 UMCrash                 com.zhanghuang                       I  int apm. hitWlState is 0
+2023-06-24 15:18:12.784 12806-12806 UMCrash                 com.zhanghuang                       I  enable : java is true, native is true, anr is true
+2023-06-24 15:18:12.784 12806-12806 UMCrash                 com.zhanghuang                       I  crash rate domain is https://errnewlog.umeng.com
+2023-06-24 15:18:12.787 12806-12806 uang:leakcanar          com.zhanghuang                       W  Accessing hidden field Landroid/content/pm/ApplicationInfo;->primaryCpuAbi:Ljava/lang/String; (light greylist, reflection)
+2023-06-24 15:18:12.813 12806-12846 crashsdk                com.zhanghuang                       I  version unique build id: 42c03024
+2023-06-24 15:18:12.813 12806-12806 System.err              com.zhanghuang                       W  java.lang.UnsatisfiedLinkError: dalvik.system.PathClassLoader[DexPathList[[zip file "/system/framework/org.apache.http.legacy.boot.jar", zip file "/data/app/com.zhanghuang-tI_ZYdXn6NhUBZVi2Mf-NQ==/base.apk"],nativeLibraryDirectories=[/data/app/com.zhanghuang-tI_ZYdXn6NhUBZVi2Mf-NQ==/lib/x86_64, /data/app/com.zhanghuang-tI_ZYdXn6NhUBZVi2Mf-NQ==/base.apk!/lib/x86_64, /system/lib64, /system/vendor/lib64]]] couldn't find "libcrashsdk.so"
+2023-06-24 15:18:12.814 12806-12806 System.err              com.zhanghuang                       W  	at java.lang.Runtime.loadLibrary0(Runtime.java:1028)
+2023-06-24 15:18:12.814 12806-12806 System.err              com.zhanghuang                       W  	at java.lang.System.loadLibrary(System.java:1675)
+2023-06-24 15:18:12.814 12806-12806 System.err              com.zhanghuang                       W  	at com.uc.crashsdk.e.e(ProGuard:4233)
+2023-06-24 15:18:12.814 12806-12806 System.err              com.zhanghuang                       W  	at com.uc.crashsdk.export.CrashApi.createInstanceEx(ProGuard:87)
+2023-06-24 15:18:12.814 12806-12806 System.err              com.zhanghuang                       W  	at com.umeng.umcrash.UMCrash.init(UMCrash.java:789)
+2023-06-24 15:18:12.814 12806-12806 System.err              com.zhanghuang                       W  	at java.lang.reflect.Method.invoke(Native Method)
+2023-06-24 15:18:12.814 12806-12806 System.err              com.zhanghuang                       W  	at com.umeng.commonsdk.UMConfigure.init(UMConfigure.java:763)
+2023-06-24 15:18:12.814 12806-12806 System.err              com.zhanghuang                       W  	at com.zhanghuang.UmInitConfig.UMinit(UmInitConfig.java:19)
+2023-06-24 15:18:12.814 12806-12806 System.err              com.zhanghuang                       W  	at com.zhanghuang.MainApplication.onCreate(MainApplication.java:86)
+2023-06-24 15:18:12.814 12806-12806 System.err              com.zhanghuang                       W  	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1154)
+2023-06-24 15:18:12.814 12806-12806 System.err              com.zhanghuang                       W  	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:6021)
+2023-06-24 15:18:12.814 12806-12806 System.err              com.zhanghuang                       W  	at android.app.ActivityThread.access$1100(ActivityThread.java:207)
+2023-06-24 15:18:12.814 12806-12806 System.err              com.zhanghuang                       W  	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1663)
+2023-06-24 15:18:12.814 12806-12806 System.err              com.zhanghuang                       W  	at android.os.Handler.dispatchMessage(Handler.java:106)
+2023-06-24 15:18:12.814 12806-12806 System.err              com.zhanghuang                       W  	at android.os.Looper.loop(Looper.java:193)
+2023-06-24 15:18:12.814 12806-12806 System.err              com.zhanghuang                       W  	at android.app.ActivityThread.main(ActivityThread.java:6825)
+2023-06-24 15:18:12.818 12806-12806 System.err              com.zhanghuang                       W  	at java.lang.reflect.Method.invoke(Native Method)
+2023-06-24 15:18:12.818 12806-12806 System.err              com.zhanghuang                       W  	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:493)
+2023-06-24 15:18:12.818 12806-12806 System.err              com.zhanghuang                       W  	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:860)
+2023-06-24 15:18:12.818 12806-12806 crashsdk                com.zhanghuang                       E  load libcrashsdk.so failed!
+2023-06-24 15:18:12.824 12806-12848 uang:leakcanar          com.zhanghuang                       E  Invalid ID 0x00000000.
+2023-06-24 15:18:12.826 12806-12848 uang:leakcanar          com.zhanghuang                       E  Invalid ID 0x00000000.
+2023-06-24 15:18:12.827 12806-12849 ballack                 com.zhanghuang                       E  initGlobalInfo called once.
+2023-06-24 15:18:12.828 12806-12806 LaunchManager           com.zhanghuang                       E  Non main process !
+2023-06-24 15:18:12.830 12806-12806 UMCrash                 com.zhanghuang                       I  inner config : net rate is 0
+2023-06-24 15:18:12.830 12806-12806 UMCrash                 com.zhanghuang                       I  inner config : net close.
+2023-06-24 15:18:12.830 12806-12806 UMCrash                 com.zhanghuang                       I  inner config : nativeH5Rate is 0
+2023-06-24 15:18:12.830 12806-12806 UMCrash                 com.zhanghuang                       I  inner config : h5 close.
+2023-06-24 15:18:12.830 12806-12806 UMCrash                 com.zhanghuang                       I  inner config : page rate is -1
+2023-06-24 15:18:12.830 12806-12806 UMCrash                 com.zhanghuang                       I  inner config : power rate is -1
+2023-06-24 15:18:12.830 12806-12806 UMLog                   com.zhanghuang                       I  APM SDK初始化成功
+2023-06-24 15:18:12.833 12806-12848 WpkPaConfig             com.zhanghuang                       D   check in allready
+2023-06-24 15:18:12.835 12806-12806 MobclickAgent           com.zhanghuang                       E  setCatchUncaughtExceptions can not be called in child process
+2023-06-24 15:18:12.836 12806-12848 Matrix.AnrTracer        com.zhanghuang                       I  anrTrace, final mAnrBeatTime:400, mAnrBeatRate:400
+2023-06-24 15:18:12.840 12806-12849 efs.send_log            com.zhanghuang                       W  tryFileLock start! 
+2023-06-24 15:18:12.844 12806-12851 System.err              com.zhanghuang                       W  android.content.pm.PackageManager$NameNotFoundException: com.heytap.openid
+2023-06-24 15:18:12.844 12806-12851 System.err              com.zhanghuang                       W  	at android.app.ApplicationPackageManager.getPackageInfoAsUser(ApplicationPackageManager.java:181)
+2023-06-24 15:18:12.844 12806-12851 System.err              com.zhanghuang                       W  	at android.app.ApplicationPackageManager.getPackageInfo(ApplicationPackageManager.java:152)
+2023-06-24 15:18:12.844 12806-12851 System.err              com.zhanghuang                       W  	at org.repackage.a.a.a.a.c.a(OpenIDHelper.java:1)
+2023-06-24 15:18:12.845 12806-12851 System.err              com.zhanghuang                       W  	at org.repackage.com.heytap.openid.sdk.OpenIDSDK.a(OpenIDSDK.java:2)
+2023-06-24 15:18:12.845 12806-12851 System.err              com.zhanghuang                       W  	at com.umeng.analytics.pro.bb.a(OppoDeviceIdSupplier.java:26)
+2023-06-24 15:18:12.845 12806-12851 System.err              com.zhanghuang                       W  	at com.umeng.analytics.pro.au.a(OpenDeviceId.java:31)
+2023-06-24 15:18:12.845 12806-12851 System.err              com.zhanghuang                       W  	at com.umeng.commonsdk.internal.c$2.run(UMInternalDataProtocol.java:297)
+2023-06-24 15:18:12.845 12806-12851 System.err              com.zhanghuang                       W  	at java.lang.Thread.run(Thread.java:764)
+2023-06-24 15:18:12.845 12806-12851 UMLog                   com.zhanghuang                       I  当前设备不支持获取OAID
+2023-06-24 15:18:12.847 12806-12850 UMLog                   com.zhanghuang                       I  当前设备不支持获取OAID
+2023-06-24 15:18:12.848 12806-12849 efs.config              com.zhanghuang                       I  delete old config is false
+2023-06-24 15:18:12.852 12806-12849 efs.config              com.zhanghuang                       I  current config version (-1) is older than another (1651209273)
+2023-06-24 15:18:12.852 12806-12849 efs.config              com.zhanghuang                       I  load config from storage and notify observer
+2023-06-24 15:18:12.854 12806-12806 uang:leakcanar          com.zhanghuang                       W  Accessing hidden field Landroid/app/Application;->mLoadedApk:Landroid/app/LoadedApk; (light greylist, reflection)
+2023-06-24 15:18:12.854 12806-12806 uang:leakcanar          com.zhanghuang                       W  Accessing hidden field Landroid/app/LoadedApk;->mActivityThread:Landroid/app/ActivityThread; (light greylist, reflection)
+2023-06-24 15:18:12.854 12806-12806 uang:leakcanar          com.zhanghuang                       W  Accessing hidden field Landroid/app/ActivityThread;->mActivities:Landroid/util/ArrayMap; (light greylist, reflection)
+2023-06-24 15:18:12.854 12806-12806 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_memperf_sampling_rate ## value is 0
+2023-06-24 15:18:12.855 12806-12806 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_memperf_collect_interval ## value is 5
+2023-06-24 15:18:12.855 12806-12806 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_memperf_collect_max_period_sec ## value is 600
+2023-06-24 15:18:12.855 12806-12806 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_patrace_switch_rate ## value is 5
+2023-06-24 15:18:12.855 12806-12838 efs.info.manager        com.zhanghuang                       W  network change: wifi
+2023-06-24 15:18:12.856 12806-12806 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_net_state ## value is 0
+2023-06-24 15:18:12.856 12806-12806 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_native_h5_state ## value is 0
+2023-06-24 15:18:12.856 12806-12806 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_crash_user_max_count ## value is 20
+2023-06-24 15:18:12.856 12806-12806 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_crash_user_upload_type ## value is 1
+2023-06-24 15:18:12.856 12806-12806 efs.config              com.zhanghuang                       I  callback netRate is 0
+2023-06-24 15:18:12.856 12806-12806 efs.config              com.zhanghuang                       I  callback nativeH5Rate is 0
+2023-06-24 15:18:12.856 12806-12806 efs.config              com.zhanghuang                       I  callback crashMaxUserCount is 20
+2023-06-24 15:18:12.857 12806-12806 efs.config              com.zhanghuang                       I  callback uploadType is 1
+2023-06-24 15:18:12.893 12806-12857 uang:leakcanar          com.zhanghuang                       I  The ClassLoaderContext is a special shared library.
+2023-06-24 15:18:12.902 11399-12862 LeakCanary              com.zhanghuang                       D  In com.zhanghuang:2.0.8:11.
+                                                                                                    * FAILURE in 1.5.1 1be44b3:java.lang.NoClassDefFoundError: Failed resolution of: Lcom/squareup/haha/perflib/io/MemoryMappedFileBuffer;
+                                                                                                    	at com.squareup.leakcanary.HeapAnalyzer.checkForLeak(HeapAnalyzer.java:111)
+                                                                                                    	at com.squareup.leakcanary.internal.HeapAnalyzerService.onHandleIntent(HeapAnalyzerService.java:58)
+                                                                                                    	at android.app.IntentService$ServiceHandler.handleMessage(IntentService.java:76)
+                                                                                                    	at android.os.Handler.dispatchMessage(Handler.java:106)
+                                                                                                    	at android.os.Looper.loop(Looper.java:193)
+                                                                                                    	at android.os.HandlerThread.run(HandlerThread.java:65)
+                                                                                                    Caused by: java.lang.ClassNotFoundException: Didn't find class "com.squareup.haha.perflib.io.MemoryMappedFileBuffer" on path: DexPathList[[zip file "/system/framework/org.apache.http.legacy.boot.jar", zip file "/data/app/com.zhanghuang-tI_ZYdXn6NhUBZVi2Mf-NQ==/base.apk"],nativeLibraryDirectories=[/data/app/com.zhanghuang-tI_ZYdXn6NhUBZVi2Mf-NQ==/lib/x86_64, /data/app/com.zhanghuang-tI_ZYdXn6NhUBZVi2Mf-NQ==/base.apk!/lib/x86_64, /system/lib64, /system/vendor/lib64]]
+                                                                                                    	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java:134)
+                                                                                                    	at java.lang.ClassLoader.loadClass(ClassLoader.java:379)
+                                                                                                    	at java.lang.ClassLoader.loadClass(ClassLoader.java:312)
+                                                                                                    	at com.squareup.leakcanary.HeapAnalyzer.checkForLeak(HeapAnalyzer.java:111) 
+                                                                                                    	at com.squareup.leakcanary.internal.HeapAnalyzerService.onHandleIntent(HeapAnalyzerService.java:58) 
+                                                                                                    	at android.app.IntentService$ServiceHandler.handleMessage(IntentService.java:76) 
+                                                                                                    	at android.os.Handler.dispatchMessage(Handler.java:106) 
+                                                                                                    	at android.os.Looper.loop(Looper.java:193) 
+                                                                                                    	at android.os.HandlerThread.run(HandlerThread.java:65) 
                                                                                                     
-                                                                                                    Speculation_Store_Bypass:	vulnerable
-                                                                                                    Cpus_allowed:	f
-                                                                                                    Cpus_allowed_list:	0-3
-                                                                                                    voluntary_ctxt_switches:	11346
-                                                                                                    nonvoluntary_ctxt_switches:	2718
-2023-06-23 14:53:28.249 26901-26901 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-2023-06-23 14:53:28.254 26901-26901 DEBUG                   com.zhanghuang                       E  memory info:
-                                                                                                    JavaMax:    393216 kB
-                                                                                                    JavaTotal:  11722 kB
-                                                                                                    JavaFree:   848 kB
-                                                                                                    NativeHeap: 51200 kB
-                                                                                                    NativeAllocated: 45733 kB
-                                                                                                    NativeFree: 5466 kB
-                                                                                                    availMem:   3011300 kB
-                                                                                                    threshold:  221184 kB
-                                                                                                    lowMemory:  false
-2023-06-23 14:53:28.254 26901-26901 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-2023-06-23 14:53:28.254 26901-26901 DEBUG                   com.zhanghuang                       E  recent status:
-2023-06-23 14:53:28.254 26901-26901 DEBUG                   com.zhanghuang                       E  last version: '2.0.8/release/42c03024'
-2023-06-23 14:53:28.255 26901-26901 DEBUG                   com.zhanghuang                       E  dumping all threads: false
-2023-06-23 14:53:28.255 26901-26901 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-2023-06-23 14:53:28.255 26901-26901 DEBUG                   com.zhanghuang                       E  logcat:
-2023-06-23 14:53:28.275 26901-26974 HostConnection          com.zhanghuang                       I  HostConnection::HostConnection: pid=26901, tid=26974, this=0x7fff68969560
-2023-06-23 14:53:28.277 26901-26974 <no-tag>                com.zhanghuang                       I  fastpipe: Connect success
-2023-06-23 14:53:28.277 26901-26974 HostConnection          com.zhanghuang                       D  HostRPC::connect sucess: app=com.zhanghuang, pid=26901, tid=26974, this=0x7fff59817900
-2023-06-23 14:53:28.271 26901-26901 Binder:26901_4          com.zhanghuang                       I  type=1400 audit(0.0:12090): avc: denied { read write } for name="fastpipe" dev="tmpfs" ino=5182 scontext=u:r:untrusted_app:s0:c51,c256,c512,c768 tcontext=u:object_r:device:s0 tclass=chr_file permissive=1
-2023-06-23 14:53:28.278 26901-26974 HostConnection          com.zhanghuang                       D  queryAndSetGLESMaxVersion select gles-version: 3.1 hostGLVersion:46 process:com.zhanghuang
-2023-06-23 14:53:28.283 26901-26901 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-2023-06-23 14:53:28.283 26901-26901 DEBUG                   com.zhanghuang                       E  battery info:
-2023-06-23 14:53:28.283 26901-26901 DEBUG                   com.zhanghuang                       E  level: 100
-                                                                                                    scale: 100
-                                                                                                    health: 2 (Good)
-                                                                                                    pluged: 1 (AC charger)
-                                                                                                    status: 2 (Charging)
-                                                                                                    voltage: 3650
-                                                                                                    temperature: 322
-                                                                                                    technology: Li-ion
-                                                                                                    battery low: false
-2023-06-23 14:53:28.284 26901-26901 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-2023-06-23 14:53:28.284 26901-26901 DEBUG                   com.zhanghuang                       E  disk info:
-2023-06-23 14:53:28.284 26901-26901 DEBUG                   com.zhanghuang                       E  /data/data/com.zhanghuang:
-2023-06-23 14:53:28.284 26901-26901 DEBUG                   com.zhanghuang                       E    total:      19720876 kB
-2023-06-23 14:53:28.284 26901-26901 DEBUG                   com.zhanghuang                       E    available:  17019552 kB
-2023-06-23 14:53:28.284 26901-26901 DEBUG                   com.zhanghuang                       E    free:       18010452 kB
-2023-06-23 14:53:28.284 26901-26901 DEBUG                   com.zhanghuang                       E    block size: 4096 B
-2023-06-23 14:53:28.284 26901-26901 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-2023-06-23 14:53:28.284 26901-26901 DEBUG                   com.zhanghuang                       E  device status:
-2023-06-23 14:53:28.285 26901-26901 DEBUG                   com.zhanghuang                       E  has root: false
-2023-06-23 14:53:28.285 26901-26901 DEBUG                   com.zhanghuang                       E  build tags: release-keys
-2023-06-23 14:53:28.285 26901-26901 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-2023-06-23 14:53:28.286 26901-26901 DEBUG                   com.zhanghuang                       E  opened file count: 208, write limit: 900.
-2023-06-23 14:53:28.286 26901-26901 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-2023-06-23 14:53:28.286 26901-26901 DEBUG                   com.zhanghuang                       E  um_umid
-2023-06-23 14:53:28.286 26901-26901 DEBUG                   com.zhanghuang                       E  ai0c5fd84bc66881154f73679f7abb98ce
-2023-06-23 14:53:28.286 26901-26901 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-2023-06-23 14:53:28.286 26901-26901 DEBUG                   com.zhanghuang                       E  um_action_log
-2023-06-23 14:53:28.287 26901-26901 UMCrash                 com.zhanghuang                       I  page json is {"source":0,"action_name":"page_view","action_page_state":false,"action_parameter":[{"name":"com.zhanghuang.AddRecordActivityNew-1687503143879-onCreated"},{"name":"com.zhanghuang.AddRecordActivityNew-1687503143896-onStarted"},{"name":"com.zhanghuang.AddRecordActivityNew-1687503143897-onResumed"},{"name":"com.zhanghuang.DonateActivity-1687503144077-onStopped"},{"name":"com.zhanghuang.DonateActivity-1687503144078-onDestroyed"},{"name":"com.zhanghuang.AddRecordActivityNew-1687503145165-onPaused"},{"name":"com.zhanghuang.MainActivity-1687503145169-onStarted"},{"name":"com.zhanghuang.MainActivity-1687503145170-onResumed"},{"name":"com.zhanghuang.AddRecordActivityNew-1687503145370-onStopped"},{"name":"com.zhanghuang.AddRecordActivityNew-1687503145371-onDestroyed"},{"name":"com.zhanghuang.MainActivity-1687503167088-onPaused"},{"name":"com.zhanghuang.DonateActivity-1687503167097-onCreated"},{"name":"com.zhanghuang.DonateActivity-1687503167115-onStarted"},{"name":"com.zhanghuang.DonateActivity-1687503167115-onResumed"},{"name":"com.zhanghuang.MainActivity-1687503167296-onStopped"},{"name":"com.zhanghuang.DonateActivity-1687503175187-onPaused"},{"name":"com.qq.e.ads.PortraitADActivity-1687503175194-onCreated"},{"name":"com.qq.e.ads.PortraitADActivity-1687503175505-onStarted"},{"name":"com.qq.e.ads.PortraitADActivity-1687503175506-onResumed"},{"name":"com.zhanghuang.DonateActivity-1687503175818-onStopped"}]}
-2023-06-23 14:53:28.287 26901-26901 DEBUG                   com.zhanghuang                       E  {"source":0,"action_name":"page_view","action_page_state":false,"action_parameter":[{"name":"com.zhanghuang.AddRecordActivityNew-1687503143879-onCreated"},{"name":"com.zhanghuang.AddRecordActivityNew-1687503143896-onStarted"},{"name":"com.zhanghuang.AddRecordActivityNew-1687503143897-onResumed"},{"name":"com.zhanghuang.DonateActivity-1687503144077-onStopped"},{"name":"com.zhanghuang.DonateActivity-1687503144078-onDestroyed"},{"name":"com.zhanghuang.AddRecordActivityNew-1687503145165-onPaused"},{"name":"com.zhanghuang.MainActivity-1687503145169-onStarted"},{"name":"com.zhanghuang.MainActivity-1687503145170-onResumed"},{"name":"com.zhanghuang.AddRecordActivityNew-1687503145370-onStopped"},{"name":"com.zhanghuang.AddRecordActivityNew-1687503145371-onDestroyed"},{"name":"com.zhanghuang.MainActivity-1687503167088-onPaused"},{"name":"com.zhanghuang.DonateActivity-1687503167097-onCreated"},{"name":"com.zhanghuang.DonateActivity-1687503167115-onStarted"},{"name":"com.zhanghuang.DonateActivity-1687503167115-onResumed"},{"name":"com.zhanghuang.MainActivity-1687503167296-onStopped"},{"name":"com.zhanghuang.DonateActivity-1687503175187-onPaused"},{"name":"com.qq.e.ads.PortraitADActivity-1687503175194-onCreated"},{"name":"com.qq.e.ads.PortraitADActivity-1687503175505-onStarted"},{"name":"com.qq.e.ads.PortraitADActivity-1687503175506-onResumed"},{"name":"com.zhanghuang.DonateActivity-1687503175818-onStopped"}]}
-2023-06-23 14:53:28.287 26901-26901 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-2023-06-23 14:53:28.287 26901-26901 DEBUG                   com.zhanghuang                       E  um_session_id
-2023-06-23 14:53:28.288 26901-26901 DEBUG                   com.zhanghuang                       E  4F4A02775A4A030DEFE34B7F789E36CD
-2023-06-23 14:53:28.288 26901-26901 DEBUG                   com.zhanghuang                       E  --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-2023-06-23 14:53:28.288 26901-26901 DEBUG                   com.zhanghuang                       E  Full: 52186 bytes, write: 52186 bytes, limit: 1048576 bytes, reject: 0 bytes.
-2023-06-23 14:53:28.288 26901-26901 DEBUG                   com.zhanghuang                       E  log end: 20230623145328
-2023-06-23 14:53:28.290 26901-26901 DEBUG                   com.zhanghuang                       E  generate java report finished
-2023-06-23 14:53:28.290 26901-26949 crashsdk                com.zhanghuang                       I  crashsdk uploading logs
-2023-06-23 14:53:28.292 26901-26949 crashsdk                com.zhanghuang                       D  Uploading to https://errnewlog.umeng.com/upload
-2023-06-23 14:53:28.378 26901-26949 crashsdk                com.zhanghuang                       I  Response code: 200
-2023-06-23 14:53:28.378 26901-26949 crashsdk                com.zhanghuang                       I  Log upload response: ????????????????succeed??
-2023-06-23 14:53:28.378 26901-26949 crashsdk                com.zhanghuang                       E  Uploaded log: 58eb2d094544cb15d2001334_2.0.8_42c03024_HD1900_9_168750320823736011_20230623145328_fg_java.log.gz
-2023-06-23 14:53:28.381 26901-26901 crashsdk                com.zhanghuang                       I  Call java default handler: true
-2023-06-23 14:53:28.401 26901-26901 System.err              com.zhanghuang                       W  java.lang.Exception: call killProcess callstack! pid=26901
-2023-06-23 14:53:28.402 26901-26901 System.err              com.zhanghuang                       W  	at android.os.Process.killProcess(Process.java:915)
-2023-06-23 14:53:28.402 26901-26901 System.err              com.zhanghuang                       W  	at com.android.internal.os.RuntimeInit$KillApplicationHandler.uncaughtException(RuntimeInit.java:157)
-2023-06-23 14:53:28.402 26901-26901 System.err              com.zhanghuang                       W  	at com.umeng.analytics.pro.p.uncaughtException(CrashHandler.java:37)
-2023-06-23 14:53:28.402 26901-26901 System.err              com.zhanghuang                       W  	at com.uc.crashsdk.e.a(ProGuard:4008)
-2023-06-23 14:53:28.402 26901-26901 System.err              com.zhanghuang                       W  	at com.uc.crashsdk.e.uncaughtException(ProGuard:3822)
-2023-06-23 14:53:28.402 26901-26901 System.err              com.zhanghuang                       W  	at com.qq.e.comm.plugin.util.w$b.uncaughtException(A:3)
-2023-06-23 14:53:28.402 26901-26901 System.err              com.zhanghuang                       W  	at org.chromium.base.JavaExceptionReporter.uncaughtException(chromium-SystemWebView.apk-default-447211456:6)
-2023-06-23 14:53:28.402 26901-26901 System.err              com.zhanghuang                       W  	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:1068)
-2023-06-23 14:53:28.402 26901-26901 System.err              com.zhanghuang                       W  	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:1063)
-2023-06-23 14:53:28.402 26901-26901 System.err              com.zhanghuang                       W  	at java.lang.Thread.dispatchUncaughtException(Thread.java:1955)
-2023-06-23 14:53:28.402 26901-26901 Process                 com.zhanghuang                       I  Sending signal. PID: 26901 SIG: 9
----------------------------- PROCESS ENDED (26901) for package com.zhanghuang ----------------------------
----------------------------- PROCESS STARTED (29646) for package com.zhanghuang ----------------------------
-2023-06-23 14:53:28.569 29646-29646 com.zhanghuang          com.zhanghuang                       I  The ClassLoaderContext is a special shared library.
-2023-06-23 14:53:28.900 29646-29646 com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/content/ContextWrapper;->getDisplay()Landroid/view/Display; (light greylist, linking)
-2023-06-23 14:53:28.912 29646-29646 UMConfigure             com.zhanghuang                       I  common version is 9.6.1
-2023-06-23 14:53:28.912 29646-29646 UMConfigure             com.zhanghuang                       I  common type is 0
-2023-06-23 14:53:28.920 29646-29646 UMConfigure             com.zhanghuang                       I  current appkey is 58eb2d094544cb15d2001334, last appkey is 58eb2d094544cb15d2001334
-2023-06-23 14:53:28.920 29646-29646 UMConfigure             com.zhanghuang                       I  channel is Umeng
-2023-06-23 14:53:28.928 29646-29646 UMLog                   com.zhanghuang                       D  统计SDK常见问题索引贴 详见链接 http://developer.umeng.com/docs/66650/cate/66650
-2023-06-23 14:53:28.929 29646-29646 UMLog                   com.zhanghuang                       I  统计SDK初始化成功
-2023-06-23 14:53:28.943 29646-29646 priviteSocial           com.zhanghuang                       E  欢迎使用友盟社会化分享业务!
-2023-06-23 14:53:28.944 29646-29679 UMLog_Social            com.zhanghuang                       E  您使用的SDK版本为：7.3.2
-2023-06-23 14:53:28.946 29646-29646 UMLog                   com.zhanghuang                       I  Share AppKey设置成功
-2023-06-23 14:53:28.949 29646-29683 UMCrash                 com.zhanghuang                       I  get common. apm ctr flag is 0
-2023-06-23 14:53:28.952 29646-29646 UMCrash                 com.zhanghuang                       I  int apm. flag is 0
-2023-06-23 14:53:28.952 29646-29646 UMCrash                 com.zhanghuang                       I  int apm. hitWlState is 0
-2023-06-23 14:53:28.957 29646-29646 UMCrash                 com.zhanghuang                       I  enable : java is true, native is true, anr is true
-2023-06-23 14:53:28.957 29646-29646 UMCrash                 com.zhanghuang                       I  crash rate domain is https://errnewlog.umeng.com
-2023-06-23 14:53:28.959 29646-29646 com.zhanghuang          com.zhanghuang                       W  Accessing hidden field Landroid/content/pm/ApplicationInfo;->primaryCpuAbi:Ljava/lang/String; (light greylist, reflection)
-2023-06-23 14:53:28.990 29646-29692 crashsdk                com.zhanghuang                       I  version unique build id: 42c03024
-2023-06-23 14:53:28.990 29646-29646 System.err              com.zhanghuang                       W  java.lang.UnsatisfiedLinkError: dalvik.system.PathClassLoader[DexPathList[[zip file "/system/framework/org.apache.http.legacy.boot.jar", zip file "/data/app/com.zhanghuang-2ofjpL8Q2BSdbWkyIc7nEw==/base.apk"],nativeLibraryDirectories=[/data/app/com.zhanghuang-2ofjpL8Q2BSdbWkyIc7nEw==/lib/x86_64, /data/app/com.zhanghuang-2ofjpL8Q2BSdbWkyIc7nEw==/base.apk!/lib/x86_64, /system/lib64, /system/vendor/lib64]]] couldn't find "libcrashsdk.so"
-2023-06-23 14:53:28.990 29646-29646 System.err              com.zhanghuang                       W  	at java.lang.Runtime.loadLibrary0(Runtime.java:1028)
-2023-06-23 14:53:28.990 29646-29646 System.err              com.zhanghuang                       W  	at java.lang.System.loadLibrary(System.java:1675)
-2023-06-23 14:53:28.990 29646-29646 System.err              com.zhanghuang                       W  	at com.uc.crashsdk.e.e(ProGuard:4233)
-2023-06-23 14:53:28.990 29646-29646 System.err              com.zhanghuang                       W  	at com.uc.crashsdk.export.CrashApi.createInstanceEx(ProGuard:87)
-2023-06-23 14:53:28.990 29646-29646 System.err              com.zhanghuang                       W  	at com.umeng.umcrash.UMCrash.init(UMCrash.java:789)
-2023-06-23 14:53:28.990 29646-29646 System.err              com.zhanghuang                       W  	at java.lang.reflect.Method.invoke(Native Method)
-2023-06-23 14:53:28.990 29646-29646 System.err              com.zhanghuang                       W  	at com.umeng.commonsdk.UMConfigure.init(UMConfigure.java:763)
-2023-06-23 14:53:28.990 29646-29646 System.err              com.zhanghuang                       W  	at com.zhanghuang.UmInitConfig.UMinit(UmInitConfig.java:19)
-2023-06-23 14:53:28.990 29646-29646 System.err              com.zhanghuang                       W  	at com.zhanghuang.MainApplication.onCreate(MainApplication.java:86)
-2023-06-23 14:53:28.990 29646-29646 System.err              com.zhanghuang                       W  	at android.app.Instrumentation.callApplicationOnCreate(Instrumentation.java:1154)
-2023-06-23 14:53:28.990 29646-29646 System.err              com.zhanghuang                       W  	at android.app.ActivityThread.handleBindApplication(ActivityThread.java:6021)
-2023-06-23 14:53:28.990 29646-29646 System.err              com.zhanghuang                       W  	at android.app.ActivityThread.access$1100(ActivityThread.java:207)
-2023-06-23 14:53:28.990 29646-29646 System.err              com.zhanghuang                       W  	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1663)
-2023-06-23 14:53:28.990 29646-29646 System.err              com.zhanghuang                       W  	at android.os.Handler.dispatchMessage(Handler.java:106)
-2023-06-23 14:53:28.990 29646-29646 System.err              com.zhanghuang                       W  	at android.os.Looper.loop(Looper.java:193)
-2023-06-23 14:53:28.991 29646-29646 System.err              com.zhanghuang                       W  	at android.app.ActivityThread.main(ActivityThread.java:6825)
-2023-06-23 14:53:28.991 29646-29646 System.err              com.zhanghuang                       W  	at java.lang.reflect.Method.invoke(Native Method)
-2023-06-23 14:53:28.991 29646-29646 System.err              com.zhanghuang                       W  	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:493)
-2023-06-23 14:53:28.991 29646-29646 System.err              com.zhanghuang                       W  	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:860)
-2023-06-23 14:53:28.991 29646-29646 crashsdk                com.zhanghuang                       E  load libcrashsdk.so failed!
-2023-06-23 14:53:29.000 29646-29683 com.zhanghuang          com.zhanghuang                       E  Invalid ID 0x00000000.
-2023-06-23 14:53:29.000 29646-29694 com.zhanghuang          com.zhanghuang                       E  Invalid ID 0x00000000.
-2023-06-23 14:53:29.001 29646-29695 ballack                 com.zhanghuang                       E  initGlobalInfo called once.
-2023-06-23 14:53:29.004 29646-29646 UMCrash                 com.zhanghuang                       I  inner config : net rate is 0
-2023-06-23 14:53:29.004 29646-29646 UMCrash                 com.zhanghuang                       I  inner config : net close.
-2023-06-23 14:53:29.004 29646-29646 UMCrash                 com.zhanghuang                       I  inner config : nativeH5Rate is 0
-2023-06-23 14:53:29.004 29646-29646 UMCrash                 com.zhanghuang                       I  inner config : h5 close.
-2023-06-23 14:53:29.004 29646-29646 UMCrash                 com.zhanghuang                       I  inner config : page rate is -1
-2023-06-23 14:53:29.004 29646-29646 UMCrash                 com.zhanghuang                       I  inner config : power rate is -1
-2023-06-23 14:53:29.004 29646-29646 UMLog                   com.zhanghuang                       I  APM SDK初始化成功
-2023-06-23 14:53:29.005 29646-29683 WpkPaConfig             com.zhanghuang                       D  un repeat check in 24 hour!
-2023-06-23 14:53:29.006 29646-29683 Matrix.AnrTracer        com.zhanghuang                       I  anrTrace, final mAnrBeatTime:400, mAnrBeatRate:400
-2023-06-23 14:53:29.014 29646-29695 efs.send_log            com.zhanghuang                       W  tryFileLock start! 
-2023-06-23 14:53:29.016 29646-29696 LaunchConfigManager     com.zhanghuang                       D  un repeat check in 24 hour!
-2023-06-23 14:53:29.017 29646-29696 LaunchTrace             com.zhanghuang                       I  begin sendLaunchCache
-2023-06-23 14:53:29.017 29646-29695 efs.config              com.zhanghuang                       I  delete old config is false
-2023-06-23 14:53:29.018 29646-29706 efs.send_log            com.zhanghuang                       W  tryFileLock sendlock sucess! processname: com.zhanghuang
-2023-06-23 14:53:29.020 29646-29700 System.err              com.zhanghuang                       W  android.content.pm.PackageManager$NameNotFoundException: com.heytap.openid
-2023-06-23 14:53:29.022 29646-29700 System.err              com.zhanghuang                       W  	at android.app.ApplicationPackageManager.getPackageInfoAsUser(ApplicationPackageManager.java:181)
-2023-06-23 14:53:29.022 29646-29700 System.err              com.zhanghuang                       W  	at android.app.ApplicationPackageManager.getPackageInfo(ApplicationPackageManager.java:152)
-2023-06-23 14:53:29.022 29646-29700 System.err              com.zhanghuang                       W  	at org.repackage.a.a.a.a.c.a(OpenIDHelper.java:1)
-2023-06-23 14:53:29.022 29646-29700 System.err              com.zhanghuang                       W  	at org.repackage.com.heytap.openid.sdk.OpenIDSDK.a(OpenIDSDK.java:2)
-2023-06-23 14:53:29.022 29646-29700 System.err              com.zhanghuang                       W  	at com.umeng.analytics.pro.bb.a(OppoDeviceIdSupplier.java:26)
-2023-06-23 14:53:29.022 29646-29700 System.err              com.zhanghuang                       W  	at com.umeng.analytics.pro.au.a(OpenDeviceId.java:31)
-2023-06-23 14:53:29.022 29646-29700 System.err              com.zhanghuang                       W  	at com.umeng.commonsdk.internal.c$2.run(UMInternalDataProtocol.java:297)
-2023-06-23 14:53:29.022 29646-29700 System.err              com.zhanghuang                       W  	at java.lang.Thread.run(Thread.java:764)
-2023-06-23 14:53:29.023 29646-29700 UMLog                   com.zhanghuang                       I  当前设备不支持获取OAID
-2023-06-23 14:53:29.023 29646-29695 efs.config              com.zhanghuang                       I  current config version (-1) is older than another (1651209273)
-2023-06-23 14:53:29.023 29646-29699 UMLog                   com.zhanghuang                       I  当前设备不支持获取OAID
-2023-06-23 14:53:29.023 29646-29695 efs.config              com.zhanghuang                       I  load config from storage and notify observer
-2023-06-23 14:53:29.033 29646-29709 System.err              com.zhanghuang                       W  java.lang.UnsatisfiedLinkError: dalvik.system.PathClassLoader[DexPathList[[zip file "/system/framework/org.apache.http.legacy.boot.jar", zip file "/data/app/com.zhanghuang-2ofjpL8Q2BSdbWkyIc7nEw==/base.apk"],nativeLibraryDirectories=[/data/app/com.zhanghuang-2ofjpL8Q2BSdbWkyIc7nEw==/lib/x86_64, /data/app/com.zhanghuang-2ofjpL8Q2BSdbWkyIc7nEw==/base.apk!/lib/x86_64, /system/lib64, /system/vendor/lib64]]] couldn't find "libumeng-spy.so"
-2023-06-23 14:53:29.033 29646-29709 System.err              com.zhanghuang                       W  	at java.lang.Runtime.loadLibrary0(Runtime.java:1028)
-2023-06-23 14:53:29.033 29646-29709 System.err              com.zhanghuang                       W  	at java.lang.System.loadLibrary(System.java:1675)
-2023-06-23 14:53:29.033 29646-29709 System.err              com.zhanghuang                       W  	at com.umeng.umzid.Spy.<clinit>(Unknown Source:3)
-2023-06-23 14:53:29.034 29646-29709 System.err              com.zhanghuang                       W  	at com.umeng.umzid.Spy.getID(Unknown Source:0)
-2023-06-23 14:53:29.034 29646-29709 System.err              com.zhanghuang                       W  	at com.umeng.umzid.ZIDManager.b(:4)
-2023-06-23 14:53:29.034 29646-29709 System.err              com.zhanghuang                       W  	at com.umeng.umzid.ZIDManager$b.run(:1)
-2023-06-23 14:53:29.034 29646-29709 System.err              com.zhanghuang                       W  	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:458)
-2023-06-23 14:53:29.034 29646-29709 System.err              com.zhanghuang                       W  	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-2023-06-23 14:53:29.034 29646-29709 System.err              com.zhanghuang                       W  	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:301)
-2023-06-23 14:53:29.034 29646-29709 System.err              com.zhanghuang                       W  	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
-2023-06-23 14:53:29.034 29646-29709 System.err              com.zhanghuang                       W  	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
-2023-06-23 14:53:29.034 29646-29709 System.err              com.zhanghuang                       W  	at java.lang.Thread.run(Thread.java:764)
-2023-06-23 14:53:29.064 29646-29709 com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/os/Build;->getString(Ljava/lang/String;)Ljava/lang/String; (light greylist, reflection)
-2023-06-23 14:53:29.075 29646-29709 NetworkSecurityConfig   com.zhanghuang                       D  Using Network Security Config from resource network_security_config debugBuild: true
-2023-06-23 14:53:29.088 29646-29710 com.zhanghuang          com.zhanghuang                       I  The ClassLoaderContext is a special shared library.
-2023-06-23 14:53:29.097 29646-29680 UMLog                   com.zhanghuang                       I  基础组件库完整性自检通过。
-2023-06-23 14:53:29.103 29646-29646 com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/view/View;->computeFitSystemWindows(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z (light greylist, reflection)
-2023-06-23 14:53:29.104 29646-29646 com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (light greylist, reflection)
-2023-06-23 14:53:29.112 29646-29711 com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/app/ActivityThread;->currentActivityThread()Landroid/app/ActivityThread; (light greylist, reflection)
-2023-06-23 14:53:29.112 29646-29711 com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/app/ActivityThread;->getApplication()Landroid/app/Application; (light greylist, reflection)
-2023-06-23 14:53:29.112 29646-29711 com.zhanghuang          com.zhanghuang                       W  Accessing hidden field Ldalvik/system/BaseDexClassLoader;->pathList:Ldalvik/system/DexPathList; (light greylist, reflection)
-2023-06-23 14:53:29.112 29646-29711 com.zhanghuang          com.zhanghuang                       W  Accessing hidden field Ldalvik/system/DexPathList;->dexElements:[Ldalvik/system/DexPathList$Element; (light greylist, reflection)
-2023-06-23 14:53:29.123 29646-29711 com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Ljava/lang/Runtime;->nativeLoad(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/String; (light greylist, reflection)
-2023-06-23 14:53:29.134 29646-29711 nativebridge            com.zhanghuang                       W  call NativeBridgeIsSupported but don't call PreInitializeNativeBridge, libpath=/data/data/com.zhanghuang/app_e_qq_com_plugin_c4a3cb97806cecae65646808b7755026/libyaqpro.bcd860b4.so
-2023-06-23 14:53:29.134 29646-29711 nativebridge            com.zhanghuang                       W  Failed to bind-mount /system/lib64/arm64/cpuinfo as /proc/cpuinfo: Operation not permitted
-2023-06-23 14:53:29.140 29646-29711 libnb                   com.zhanghuang                       V  enter native_bridge2_initialize /data/user/0/com.zhanghuang/code_cache arm64
-2023-06-23 14:53:29.145 29646-29711 houdini                 com.zhanghuang                       D  [29711] Initialize library(version: 9.0.7a_z.38597 RELEASE)... successfully.
-2023-06-23 14:53:29.145 29646-29711 nativebridge            com.zhanghuang                       W  No JNIEnv* to set up app environment.
-2023-06-23 14:53:29.145 29646-29711 nativebridge            com.zhanghuang                       I  LdInitNativeBridgeDelay native-bridge delay initialize successful!
-2023-06-23 14:53:29.145 29646-29711 libnb                   com.zhanghuang                       V  enter native_bridge2_isCompatibleWith 4
-2023-06-23 14:53:29.145 29646-29711 libnb                   com.zhanghuang                       V  enter native_bridge2_isCompatibleWith 3
-2023-06-23 14:53:29.145 29646-29711 libnb                   com.zhanghuang                       V  enter native_bridge3_loadLibraryExt /data/data/com.zhanghuang/app_e_qq_com_plugin_c4a3cb97806cecae65646808b7755026/libyaqpro.bcd860b4.so, 2, 0x0
-2023-06-23 14:53:29.147 29646-29711 ziparchive              com.zhanghuang                       E  Zip: lseek on fd -2 failed: Bad file descriptor
-2023-06-23 14:53:29.151 29646-29646 UMLog                   com.zhanghuang                       I  请在Application.onCreate函数中使用UMConfigure.preInit函数初始化友盟sdk
-2023-06-23 14:53:29.153 29646-29646 crashsdk                com.zhanghuang                       I  Unexp log not enabled, skip update unexp info!
-2023-06-23 14:53:29.159 29646-29646 OpenGLRenderer          com.zhanghuang                       D  Skia GL Pipeline
-2023-06-23 14:53:29.181 29646-29646 com.zhanghuang          com.zhanghuang                       W  Accessing hidden field Landroid/app/Application;->mLoadedApk:Landroid/app/LoadedApk; (light greylist, reflection)
-2023-06-23 14:53:29.181 29646-29646 com.zhanghuang          com.zhanghuang                       W  Accessing hidden field Landroid/app/LoadedApk;->mActivityThread:Landroid/app/ActivityThread; (light greylist, reflection)
-2023-06-23 14:53:29.181 29646-29646 com.zhanghuang          com.zhanghuang                       W  Accessing hidden field Landroid/app/ActivityThread;->mActivities:Landroid/util/ArrayMap; (light greylist, reflection)
-2023-06-23 14:53:29.181 29646-29646 com.zhanghuang          com.zhanghuang                       W  Accessing hidden field Landroid/app/ActivityThread$ActivityClientRecord;->activity:Landroid/app/Activity; (light greylist, reflection)
-2023-06-23 14:53:29.181 29646-29646 com.zhanghuang          com.zhanghuang                       W  Accessing hidden field Landroid/app/ActivityThread$ActivityClientRecord;->paused:Z (light greylist, reflection)
-2023-06-23 14:53:29.181 29646-29646 com.zhanghuang          com.zhanghuang                       W  Accessing hidden field Landroid/app/ActivityThread$ActivityClientRecord;->stopped:Z (light greylist, reflection)
-2023-06-23 14:53:29.181 29646-29646 crashsdk                com.zhanghuang                       I  Unexp log not enabled, skip update unexp info!
-2023-06-23 14:53:29.181 29646-29646 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_patrace_switch_rate ## value is 5
-2023-06-23 14:53:29.182 29646-29646 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_net_state ## value is 0
-2023-06-23 14:53:29.182 29646-29646 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_native_h5_state ## value is 0
-2023-06-23 14:53:29.182 29646-29646 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_crash_user_max_count ## value is 20
-2023-06-23 14:53:29.182 29646-29646 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_crash_user_upload_type ## value is 1
-2023-06-23 14:53:29.182 29646-29646 efs.config              com.zhanghuang                       I  callback netRate is 0
-2023-06-23 14:53:29.182 29646-29646 efs.config              com.zhanghuang                       I  callback nativeH5Rate is 0
-2023-06-23 14:53:29.182 29646-29646 efs.config              com.zhanghuang                       I  callback crashMaxUserCount is 20
-2023-06-23 14:53:29.190 29646-29646 efs.config              com.zhanghuang                       I  callback uploadType is 1
-2023-06-23 14:53:29.191 29646-29646 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_memperf_sampling_rate ## value is 0
-2023-06-23 14:53:29.192 29646-29646 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_memperf_collect_interval ## value is 5
-2023-06-23 14:53:29.192 29646-29646 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_memperf_collect_max_period_sec ## value is 600
-2023-06-23 14:53:29.192 29646-29646 efs.config              com.zhanghuang                       I  --->>> configCallback key is apm_startperf_sampling_rate ## value is 5
-2023-06-23 14:53:29.193 29646-29694 efs.info.manager        com.zhanghuang                       W  network change: wifi
-2023-06-23 14:53:29.203 29646-29680 MobclickAgent           com.zhanghuang                       D  延续上一个会话: 4F4A02775A4A030DEFE34B7F789E36CD
-2023-06-23 14:53:29.208 29646-29680 UMLog                   com.zhanghuang                       D  当前发送策略为：启动时发送。详见链接 https://developer.umeng.com/docs/66632/detail/66976?um_channel=sdk
-2023-06-23 14:53:29.231 29646-29716 HostConnection          com.zhanghuang                       I  HostConnection::HostConnection: pid=29646, tid=29716, this=0x7fff6bc41320
-2023-06-23 14:53:29.233 29646-29716 <no-tag>                com.zhanghuang                       I  fastpipe: Connect success
-2023-06-23 14:53:29.233 29646-29716 HostConnection          com.zhanghuang                       D  HostRPC::connect sucess: app=com.zhanghuang, pid=29646, tid=29716, this=0x7fff57846740
-2023-06-23 14:53:29.233 29646-29716 HostConnection          com.zhanghuang                       D  queryAndSetGLESMaxVersion select gles-version: 3.1 hostGLVersion:46 process:com.zhanghuang
-2023-06-23 14:53:29.234 29646-29716 <no-tag>                com.zhanghuang                       I  fastpipe: Connect success
-2023-06-23 14:53:29.234 29646-29716 HostConnection          com.zhanghuang                       D  recv ProcessPuidReply name=com.zhanghuang puid=147 g_u64CapsFlag=1d
-2023-06-23 14:53:29.241 29646-29716 ConfigStore             com.zhanghuang                       I  android::hardware::configstore::V1_0::ISurfaceFlingerConfigs::hasWideColorDisplay retrieved: 0
-2023-06-23 14:53:29.242 29646-29716 ConfigStore             com.zhanghuang                       I  android::hardware::configstore::V1_0::ISurfaceFlingerConfigs::hasHDRDisplay retrieved: 0
-2023-06-23 14:53:29.242 29646-29716 OpenGLRenderer          com.zhanghuang                       I  Initialized EGL, version 1.4
-2023-06-23 14:53:29.242 29646-29716 OpenGLRenderer          com.zhanghuang                       D  Swap behavior 1
-2023-06-23 14:53:29.242 29646-29716 EGL_adreno              com.zhanghuang                       I  eglCreateContext request GLES major-version=2
-2023-06-23 14:53:29.246 29646-29711 libnb                   com.zhanghuang                       V  native_bridge3_loadLibraryExt: 0x7fff57a1fac0
-2023-06-23 14:53:29.248 29646-29711 libnb                   com.zhanghuang                       V  enter native_bridge2_getTrampoline JNI_OnLoad, trampoline_addr 0x7fff72a02000
-2023-06-23 14:53:29.248 29646-29716 EGL_adreno              com.zhanghuang                       D  eglCreateContext: 0x7fff6bc4e9c0: maj 3 min 1 rcv 4
-2023-06-23 14:53:29.252 29646-29711 libnb                   com.zhanghuang                       V  enter native_bridge2_isCompatibleWith 4
-2023-06-23 14:53:29.252 29646-29711 libnb                   com.zhanghuang                       V  enter native_bridge2_isCompatibleWith 3
-2023-06-23 14:53:29.252 29646-29711 libnb                   com.zhanghuang                       V  enter native_bridge3_loadLibraryExt /data/data/com.zhanghuang/app_e_qq_com_plugin_c4a3cb97806cecae65646808b7755026/libyaqbasic.bcd860b4.so, 2, 0x0
-2023-06-23 14:53:29.253 29646-29711 libnb                   com.zhanghuang                       V  native_bridge3_loadLibraryExt: 0x7fff57a22060
-2023-06-23 14:53:29.253 29646-29711 libnb                   com.zhanghuang                       V  enter native_bridge2_getTrampoline JNI_OnLoad, trampoline_addr 0x7fff72a02020
-2023-06-23 14:53:29.260 29646-29711 libnb                   com.zhanghuang                       V  enter native_bridge2_isCompatibleWith 4
-2023-06-23 14:53:29.260 29646-29711 libnb                   com.zhanghuang                       V  enter native_bridge2_isCompatibleWith 3
-2023-06-23 14:53:29.260 29646-29711 libnb                   com.zhanghuang                       V  enter native_bridge3_loadLibraryExt /data/data/com.zhanghuang/app_e_qq_com_plugin_c4a3cb97806cecae65646808b7755026/libMMANDKSignature.bcd860b4.so, 2, 0x0
-2023-06-23 14:53:29.260 29646-29711 libnb                   com.zhanghuang                       V  native_bridge3_loadLibraryExt: 0x7fff57a225c0
-2023-06-23 14:53:29.260 29646-29711 libnb                   com.zhanghuang                       V  enter native_bridge2_getTrampoline JNI_OnLoad, trampoline_addr 0x0
-2023-06-23 14:53:29.260 29646-29711 libnb                   com.zhanghuang                       V  enter native_bridge2_isCompatibleWith 4
-2023-06-23 14:53:29.260 29646-29711 libnb                   com.zhanghuang                       V  enter native_bridge2_isCompatibleWith 3
-2023-06-23 14:53:29.260 29646-29711 libnb                   com.zhanghuang                       V  enter native_bridge3_loadLibraryExt /data/data/com.zhanghuang/app_e_qq_com_plugin_c4a3cb97806cecae65646808b7755026/libturingau.bcd860b4.so, 2, 0x0
-2023-06-23 14:53:29.262 29646-29711 libnb                   com.zhanghuang                       V  native_bridge3_loadLibraryExt: 0x7fff57a22b20
-2023-06-23 14:53:29.263 29646-29711 libnb                   com.zhanghuang                       V  enter native_bridge2_getTrampoline JNI_OnLoad, trampoline_addr 0x7fff72a021e0
-2023-06-23 14:53:29.263 29646-29711 TuringFdNative          com.zhanghuang                       I  TuringFD v77 (8D2466BF3FB8AA9C, au, 150176e, rfr, compiled 2023_03_27_10_52_51) success 
-2023-06-23 14:53:29.274 29646-29716 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6bc4e9c0: ver 3 1 (tinfo 0x7fff6bdcf760)
-2023-06-23 14:53:29.278 29646-29716 HostConnection          com.zhanghuang                       D  ExtendedRCEncoderContext GL_VERSION return OpenGL ES 3.1
-2023-06-23 14:53:29.280 29646-29716 eglCodecCommon          com.zhanghuang                       E  glUtilsParamSize: unknow param 0x00008c29
-2023-06-23 14:53:29.280 29646-29716 GLESv2_enc              com.zhanghuang                       W  no support GL_NUM_PROGRAM_BINARY_FORMATS
-2023-06-23 14:53:29.288 29646-29716 vndksupport             com.zhanghuang                       D  Loading /vendor/lib64/hw/android.hardware.graphics.mapper@2.0-impl.so from current namespace instead of sphal namespace.
-2023-06-23 14:53:29.288 29646-29716 vndksupport             com.zhanghuang                       D  Loading /vendor/lib64/hw/gralloc.default.so from current namespace instead of sphal namespace.
-2023-06-23 14:53:29.294 29646-29716 EGL_adreno              com.zhanghuang                       E  tid 29716: eglSurfaceAttrib(1338): error 0x3009 (EGL_BAD_MATCH)
-2023-06-23 14:53:29.294 29646-29716 OpenGLRenderer          com.zhanghuang                       W  Failed to set EGL_SWAP_BEHAVIOR on surface 0x7fff6bcf2b80, error=EGL_BAD_MATCH
-2023-06-23 14:53:29.300 29646-29711 TuringFdJava            com.zhanghuang                       I  TuringFD v77 (8D2466BF3FB8AA9C, au, 150176e, rfr;rs, wup;105498, compiled 2023_03_27_10_52_51) [url(https://tdid.m.qq.com?mc=2);c(0)]
-2023-06-23 14:53:29.302 29646-29716 EGL_adreno              com.zhanghuang                       D  eglMakeCurrent: 0x7fff6bc4e9c0: ver 3 1 (tinfo 0x7fff6bdcf760)
-2023-06-23 14:53:29.346 29646-29729 com.zhanghuang          com.zhanghuang                       W  Accessing hidden method Landroid/webkit/WebViewFactory;->getWebViewContextAndSetProvider()Landroid/content/Context; (light greylist, reflection)
-2023-06-23 14:53:29.368 29646-29740 libnb                   com.zhanghuang                       V  enter native_bridge2_isCompatibleWith 4
-2023-06-23 14:53:29.368 29646-29740 libnb                   com.zhanghuang                       V  enter native_bridge2_isCompatibleWith 3
-2023-06-23 14:53:29.368 29646-29740 libnb                   com.zhanghuang                       V  enter native_bridge3_loadLibraryExt /data/user/0/com.zhanghuang/app_adnet/dynamic/libquickjs.so, 2, 0x0
-2023-06-23 14:53:29.376 29646-29740 libnb                   com.zhanghuang                       V  native_bridge3_loadLibraryExt: 0x7fff57a235e0
-2023-06-23 14:53:29.376 29646-29740 libnb                   com.zhanghuang                       V  enter native_bridge2_getTrampoline JNI_OnLoad, trampoline_addr 0x0
-2023-06-23 14:53:29.424 29646-29646 GDT_LOAD_AD_THR         com.zhanghuang                       I  type=1400 audit(0.0:12104): avc: denied { read } for name="virtio_net" dev="sysfs" ino=557 scontext=u:r:untrusted_app:s0:c51,c256,c512,c768 tcontext=u:object_r:sysfs:s0 tclass=dir permissive=1
-2023-06-23 14:53:34.021 29646-29680 UMLog                   com.zhanghuang                       I  当前设备不支持获取OAID
-2023-06-23 14:53:34.025 29646-29695 efs.config              com.zhanghuang                       D  app=58eb2d094544cb15d2001334&cver=1651209273&os=android&sd=sb4ZcFdtCqtMzoqz1BfLRw&sver=1651209273&tm=1687503214&um_sdk_ver=1.9.2&ver=2.0.8&wl_dd=2FpPPPSNmPui5vxS4v1UP7scA-oVWgkB9bn7AE0Dm-eEodAUlcGgJOC00Py_485u&sign=53cf9e25abbe8a2c963848006040391a
-2023-06-23 14:53:34.025 29646-29695 efs.px.api              com.zhanghuang                       I  get config from server, url is https://errnewlog.umeng.com/apm_cc
-2023-06-23 14:53:34.047 29646-29680 UMLog                   com.zhanghuang                       I  统计SDK版本号: 9.6.1
-2023-06-23 14:53:34.047 29646-29680 UMLog                   com.zhanghuang                       I  ZID SDK版本号: 1.8.0
-2023-06-23 14:53:34.049 29646-29680 UMLog                   com.zhanghuang                       I  APM SDK版本号: 1.9.2
-2023-06-23 14:53:34.049 29646-29680 MobclickAgent           com.zhanghuang                       I  module init:aszioc
-2023-06-23 14:53:34.056 29646-29680 com.zhanghuang          com.zhanghuang                       E  Invalid ID 0x00000000.
-2023-06-23 14:53:34.141 29646-29695 efs.config              com.zhanghuang                       I  config request succ, config is:
-                                                                                                     {"msg":"成功","code":0,"cip":"127.0.0.1","config":{"common":{"updateInteval":480,"gate_way_https":true},"app_configs":[{"conditions":[{"val":"0.0.0.0","opc":">=","fld":"ver"}],"actions":[{"opt":"apm_mem_state","set":0},{"opt":"apm_oom_state","set":0},{"opt":"apm_native_h5perf_sampling_rate","set":5},{"opt":"apm_memperf_collect_interval","set":5},{"opt":"apm_netperf_sampling_rate","set":5},{"opt":"apm_patrace_switch_rate","set":5},{"opt":"record_accumulation_time","set":60,"lt":"memperf"},{"opt":"apm_memperf_sampling_rate","set":0},{"opt":"apm_crash_user_upload_type","set":1},{"opt":"apm_memperf_collect_max_period_sec","set":600},{"opt":"apm_net_state","set":0},{"opt":"apm_startperf_sampling_rate","set":5},{"opt":"apm_crash_user_max_count","set":20},{"opt":"apm_oom_sampling_rate","set":5},{"opt":"apm_native_h5_state","set":0}]}]},"stm":1687503181,"cver":1651209273}
-2023-06-23 14:53:34.141 29646-29695 efs.config              com.zhanghuang                       I  from server. efs config is {"msg":"成功","code":0,"cip":"127.0.0.1","config":{"common":{"updateInteval":480,"gate_way_https":true},"app_configs":[{"conditions":[{"val":"0.0.0.0","opc":">=","fld":"ver"}],"actions":[{"opt":"apm_mem_state","set":0},{"opt":"apm_oom_state","set":0},{"opt":"apm_native_h5perf_sampling_rate","set":5},{"opt":"apm_memperf_collect_interval","set":5},{"opt":"apm_netperf_sampling_rate","set":5},{"opt":"apm_patrace_switch_rate","set":5},{"opt":"record_accumulation_time","set":60,"lt":"memperf"},{"opt":"apm_memperf_sampling_rate","set":0},{"opt":"apm_crash_user_upload_type","set":1},{"opt":"apm_memperf_collect_max_period_sec","set":600},{"opt":"apm_net_state","set":0},{"opt":"apm_startperf_sampling_rate","set":5},{"opt":"apm_crash_user_max_count","set":20},{"opt":"apm_oom_sampling_rate","set":5},{"opt":"apm_native_h5_state","set":0}]}]},"stm":1687503181,"cver":1651209273}
+                                                                                                    * Reference Key: 11357d94-9aa7-4081-8d29-7dc3888281df
+                                                                                                    * Device: OnePlus OnePlus HD1900 HD1900
+                                                                                                    * Android Version: 9 API: 28 LeakCanary: 1.5.1 1be44b3
+                                                                                                    * Durations: watch=5036ms, gc=119ms, heap dump=1065ms, analysis=0ms
+                                                                                                    * Excluded Refs:
+                                                                                                    | Field: android.view.textservice.SpellCheckerSession$1.this$0
+                                                                                                    | Field: android.view.Choreographer$FrameDisplayEventReceiver.mMessageQueue (always)
+                                                                                                    | Thread:FinalizerWatchdogDaemon (always)
+                                                                                                    | Thread:main (always)
+                                                                                                    | Thread:LeakCanary-Heap-Dump (always)
+                                                                                                    | Class:java.lang.ref.WeakReference (always)
+                                                                                                    | Class:java.lang.ref.SoftReference (always)
+                                                                                                    | Class:java.lang.ref.PhantomReference (always)
+                                                                                                    | Class:java.lang.ref.Finalizer (always)
+                                                                                                    | Class:java.lang.ref.FinalizerReference (always)
+2023-06-24 15:18:12.921 12806-12858 uang:leakcanar          com.zhanghuang                       W  Accessing hidden method Landroid/app/ActivityThread;->currentActivityThread()Landroid/app/ActivityThread; (light greylist, reflection)
+2023-06-24 15:18:12.921 12806-12858 uang:leakcanar          com.zhanghuang                       W  Accessing hidden method Landroid/app/ActivityThread;->getApplication()Landroid/app/Application; (light greylist, reflection)
+2023-06-24 15:18:12.921 12806-12858 uang:leakcanar          com.zhanghuang                       W  Accessing hidden field Ldalvik/system/BaseDexClassLoader;->pathList:Ldalvik/system/DexPathList; (light greylist, reflection)
+2023-06-24 15:18:12.921 12806-12858 uang:leakcanar          com.zhanghuang                       W  Accessing hidden field Ldalvik/system/DexPathList;->dexElements:[Ldalvik/system/DexPathList$Element; (light greylist, reflection)
+2023-06-24 15:18:12.931 12806-12858 uang:leakcanar          com.zhanghuang                       W  Accessing hidden method Ljava/lang/Runtime;->nativeLoad(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/String; (light greylist, reflection)
+2023-06-24 15:18:12.935 12806-12858 nativebridge            com.zhanghuang                       W  call NativeBridgeIsSupported but don't call PreInitializeNativeBridge, libpath=/data/data/com.zhanghuang/app_e_qq_com_plugin_8ed2af6c65f7082d2ae8af30a5fa7b9a/libyaqpro.bdba29e9.so
+2023-06-24 15:18:12.935 12806-12858 nativebridge            com.zhanghuang                       W  Failed to bind-mount /system/lib64/arm64/cpuinfo as /proc/cpuinfo: Operation not permitted
+2023-06-24 15:18:12.936 12806-12858 libnb                   com.zhanghuang                       V  enter native_bridge2_initialize /data/user/0/com.zhanghuang/code_cache arm64
+2023-06-24 15:18:12.939 12806-12858 houdini                 com.zhanghuang                       D  [12858] Initialize library(version: 9.0.7a_z.38597 RELEASE)... successfully.
+2023-06-24 15:18:12.939 12806-12858 nativebridge            com.zhanghuang                       W  No JNIEnv* to set up app environment.
+2023-06-24 15:18:12.939 12806-12858 nativebridge            com.zhanghuang                       I  LdInitNativeBridgeDelay native-bridge delay initialize successful!
+2023-06-24 15:18:12.939 12806-12858 libnb                   com.zhanghuang                       V  enter native_bridge2_isCompatibleWith 4
+2023-06-24 15:18:12.939 12806-12858 libnb                   com.zhanghuang                       V  enter native_bridge2_isCompatibleWith 3
+2023-06-24 15:18:12.939 12806-12858 libnb                   com.zhanghuang                       V  enter native_bridge3_loadLibraryExt /data/data/com.zhanghuang/app_e_qq_com_plugin_8ed2af6c65f7082d2ae8af30a5fa7b9a/libyaqpro.bdba29e9.so, 2, 0x0
+2023-06-24 15:18:12.941 12806-12858 ziparchive              com.zhanghuang                       E  Zip: lseek on fd -2 failed: Bad file descriptor
+2023-06-24 15:18:12.978 12806-12858 libnb                   com.zhanghuang                       V  native_bridge3_loadLibraryExt: 0x7fff55e5cac0
+2023-06-24 15:18:12.978 12806-12858 libnb                   com.zhanghuang                       V  enter native_bridge2_getTrampoline JNI_OnLoad, trampoline_addr 0x7fff6e778000
+2023-06-24 15:18:12.980 12806-12858 libnb                   com.zhanghuang                       V  enter native_bridge2_isCompatibleWith 4
+2023-06-24 15:18:12.980 12806-12858 libnb                   com.zhanghuang                       V  enter native_bridge2_isCompatibleWith 3
+2023-06-24 15:18:12.980 12806-12858 libnb                   com.zhanghuang                       V  enter native_bridge3_loadLibraryExt /data/data/com.zhanghuang/app_e_qq_com_plugin_8ed2af6c65f7082d2ae8af30a5fa7b9a/libyaqbasic.bdba29e9.so, 2, 0x0
+2023-06-24 15:18:12.980 12806-12858 libnb                   com.zhanghuang                       V  native_bridge3_loadLibraryExt: 0x7fff55e5f060
+2023-06-24 15:18:12.980 12806-12858 libnb                   com.zhanghuang                       V  enter native_bridge2_getTrampoline JNI_OnLoad, trampoline_addr 0x7fff6e778020
+2023-06-24 15:18:12.985 12806-12858 libnb                   com.zhanghuang                       V  enter native_bridge2_isCompatibleWith 4
+2023-06-24 15:18:12.985 12806-12858 libnb                   com.zhanghuang                       V  enter native_bridge2_isCompatibleWith 3
+2023-06-24 15:18:12.985 12806-12858 libnb                   com.zhanghuang                       V  enter native_bridge3_loadLibraryExt /data/data/com.zhanghuang/app_e_qq_com_plugin_8ed2af6c65f7082d2ae8af30a5fa7b9a/libMMANDKSignature.bdba29e9.so, 2, 0x0
+2023-06-24 15:18:12.985 12806-12858 libnb                   com.zhanghuang                       V  native_bridge3_loadLibraryExt: 0x7fff55e5f5c0
+2023-06-24 15:18:12.985 12806-12858 libnb                   com.zhanghuang                       V  enter native_bridge2_getTrampoline JNI_OnLoad, trampoline_addr 0x0
+2023-06-24 15:18:12.985 12806-12858 libnb                   com.zhanghuang                       V  enter native_bridge2_isCompatibleWith 4
+2023-06-24 15:18:12.985 12806-12858 libnb                   com.zhanghuang                       V  enter native_bridge2_isCompatibleWith 3
+2023-06-24 15:18:12.985 12806-12858 libnb                   com.zhanghuang                       V  enter native_bridge3_loadLibraryExt /data/data/com.zhanghuang/app_e_qq_com_plugin_8ed2af6c65f7082d2ae8af30a5fa7b9a/libturingau.bdba29e9.so, 2, 0x0
+2023-06-24 15:18:12.988 12806-12858 libnb                   com.zhanghuang                       V  native_bridge3_loadLibraryExt: 0x7fff55e5fb20
+2023-06-24 15:18:12.988 12806-12858 libnb                   com.zhanghuang                       V  enter native_bridge2_getTrampoline JNI_OnLoad, trampoline_addr 0x7fff6e7781e0
+2023-06-24 15:18:12.988 12806-12858 TuringFdNative          com.zhanghuang                       I  TuringFD v77 (8D2466BF3FB8AA9C, au, 150176e, rfr, compiled 2023_03_27_10_52_51) success 
+2023-06-24 15:18:13.018 12806-12858 TuringFdJava            com.zhanghuang                       I  TuringFD v77 (8D2466BF3FB8AA9C, au, 150176e, rfr;rs, wup;105498, compiled 2023_03_27_10_52_51) [url(https://tdid.m.qq.com?mc=2);c(0)]
+2023-06-24 15:18:13.061 12806-12872 NetworkSecurityConfig   com.zhanghuang                       D  Using Network Security Config from resource network_security_config debugBuild: true
+2023-06-24 15:18:13.080 12806-12878 uang:leakcanar          com.zhanghuang                       W  Accessing hidden method Landroid/webkit/WebViewFactory;->getWebViewContextAndSetProvider()Landroid/content/Context; (light greylist, reflection)
+2023-06-24 15:18:13.102 12806-12882 libnb                   com.zhanghuang                       V  enter native_bridge2_isCompatibleWith 4
+2023-06-24 15:18:13.102 12806-12882 libnb                   com.zhanghuang                       V  enter native_bridge2_isCompatibleWith 3
+2023-06-24 15:18:13.102 12806-12882 libnb                   com.zhanghuang                       V  enter native_bridge3_loadLibraryExt /data/user/0/com.zhanghuang/app_adnet/dynamic/libquickjs.so, 2, 0x0
+2023-06-24 15:18:13.107 12806-12882 libnb                   com.zhanghuang                       V  native_bridge3_loadLibraryExt: 0x7fff55e605e0
+2023-06-24 15:18:13.107 12806-12882 libnb                   com.zhanghuang                       V  enter native_bridge2_getTrampoline JNI_OnLoad, trampoline_addr 0x0
