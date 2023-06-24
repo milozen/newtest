@@ -2,6 +2,8 @@ package com.zhanghuang;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.CursorWindow;
+import android.os.BaseBundle;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +27,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Map;
 
 public class DonateActivity extends AppCompatActivity implements RewardVideoADListener {
@@ -56,6 +59,13 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
         mIsLoadSuccess = false;
         loadAd();  // 预先加载广告
 
+        String mobile = MainApplication._pref.getString(Constants.PREF_MOBILE,"");
+        String userId = MainApplication._pref.getString(Constants.PREF_USER_SHOWID,"");
+
+        // 打印用户的showId和手机号码
+        Log.i("INFO", "User showId: " + userId);
+        Log.i("INFO", "User mobile: " + mobile);
+
         btnSupportAuthorMembership.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,8 +82,6 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
             public void onClick(View v) {
                 // TODO: Play the ad
                 showAD();
-                // After the ad is played, increase the VIP by one day
-
             }
         });
 
@@ -106,6 +114,8 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
 
     protected RewardVideoAD getRewardVideoAD() {
         String editPosId = Constants.TAD_VIDEO;
+        // userid
+        String userId = MainApplication._pref.getString(Constants.PREF_USER_SHOWID,"");
         boolean volumeOn = false;
         RewardVideoAD rvad;
         if (mRewardVideoAD == null) {
@@ -113,7 +123,7 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
             //rvad.setNegativeFeedbackListener(() -> Log.i(TAG, "onComplainSuccess"));
             ServerSideVerificationOptions options = new ServerSideVerificationOptions.Builder()
                     .setCustomData("APP's custom data") // 设置激励视频服务端验证的自定义信息
-                    .setUserId("APP's user id for server verify") // 设置服务端验证的用户信息
+                    .setUserId(userId) // 设置服务端验证的用户信息
                     .build();
             rvad.setServerSideVerificationOptions(options);
             rvad.setLoadAdParams(ADUtil.getLoadAdParams("reward_video"));
@@ -165,27 +175,10 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
     @Override
     public void onReward(Map<String, Object> map) {
         // 视频播放完成，且达到奖励条件时的回调
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String vipExpireStr = MainApplication._pref.getString(Constants.PREF_ZZ_VIP_EXP_STR, "-");
-        Date vipExpireDate = null;
-        try {
-            vipExpireDate = sdf.parse(vipExpireStr);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        Calendar c = Calendar.getInstance();
-        // 如果VIP已经过期，从当前时间开始增加
-        if (vipExpireDate.before(new Date())) {
-            c.setTime(new Date());
-        } else {
-            c.setTime(vipExpireDate);
-        }
-        c.add(Calendar.DATE, 1);  // number of days to add
-        vipExpireDate = c.getTime();  // vipExpireDate is now +1 day
-        vipExpireStr = sdf.format(vipExpireDate);
-        MainApplication._pref.edit().putString(Constants.PREF_ZZ_VIP_EXP_STR, vipExpireStr).apply();
-
         // 发布UpdateUserEvent事件
+        // post 后端通知增加奖励
+        // 获取服务端验证的唯一 ID
+        Log.i("INFO", "onReward " + map.get(ServerSideVerificationOptions.TRANS_ID));
         EventBus.getDefault().post(new UpdateUserEvent());
     }
 
