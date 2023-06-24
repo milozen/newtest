@@ -497,3 +497,4 @@ public class UploadRecordActivity extends BaseBackActivity
     Log.i(TAG, "onError, adError=" + msg);
   }
 }
+ 
