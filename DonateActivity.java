@@ -103,9 +103,14 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
         super.onDestroy();
     }
 
-    // 添加处理 UpdateUserEvent 的方法
+    // 添加处理 UpdateUserEvent 的方法,充值成功或者失败
     @Subscribe
     public void onUpdateUserEvent(UpdateUserEvent event) {
+        //关闭充值窗口
+        if (productActivity != null) {
+            productActivity.dismiss();
+        }
+        //跳转站桩
         Intent in = new Intent(DonateActivity.this, AddRecordActivityNew.class);
         startActivity(in);
         finish();
@@ -176,7 +181,12 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
         // post 后端通知增加奖励
         // 获取服务端验证的唯一 ID
         Log.i("INFO", "onReward " + map.get(ServerSideVerificationOptions.TRANS_ID));
-        EventBus.getDefault().post(new UpdateUserEvent());
+        Log.i("INFO", "userid " + userId);
+        
+        Intent in = new Intent(DonateActivity.this, AddRecordActivityNew.class);
+        startActivity(in);
+        finish();
+        
     }
 
 
@@ -199,6 +209,10 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
     public void onError(AdError adError) {
         // 广告流程出错时的回调
         Log.e("ERROR", "广告加载失败: " + adError.getErrorCode() + ", " + adError.getErrorMsg());
+    }
+
+    public void closeActivity() {
+        this.finish();
     }
 
 }
