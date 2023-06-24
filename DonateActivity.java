@@ -15,6 +15,7 @@ import com.qq.e.ads.rewardvideo.RewardVideoAD;
 import com.qq.e.ads.rewardvideo.RewardVideoADListener;
 import com.qq.e.ads.rewardvideo.ServerSideVerificationOptions;
 import com.qq.e.comm.util.AdError;
+import com.squareup.leakcanary.RefWatcher;
 import com.zhanghuang.events.UpdateUserEvent;
 import com.zhanghuang.util.ADUtil;
 import com.zhanghuang.util.Constants;
@@ -100,7 +101,12 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        EventBus.getDefault().unregister(this);
+        RefWatcher refWatcher = MainApplication.getRefWatcher();
+        if (refWatcher != null) {
+            refWatcher.watch(this);
+        } else {
+            Log.e("DonateActivity", "RefWatcher is null in onDestroy()");
+        }
     }
 
     // 添加处理 UpdateUserEvent 的方法
