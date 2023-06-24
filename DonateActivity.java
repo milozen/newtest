@@ -15,7 +15,6 @@ import com.qq.e.ads.rewardvideo.RewardVideoAD;
 import com.qq.e.ads.rewardvideo.RewardVideoADListener;
 import com.qq.e.ads.rewardvideo.ServerSideVerificationOptions;
 import com.qq.e.comm.util.AdError;
-import com.squareup.leakcanary.RefWatcher;
 import com.zhanghuang.events.UpdateUserEvent;
 import com.zhanghuang.util.ADUtil;
 import com.zhanghuang.util.Constants;
@@ -43,7 +42,7 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
     private boolean autoShowAd = false;
 
     // 添加这一行来定义userId变量
-    private String userId = MainApplication._pref.getString(Constants.PREF_USER_SHOWID,"");;
+    private String userId = MainApplication._pref.getString(Constants.PREF_USER_SHOWID,"");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +62,8 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
         mIsLoadSuccess = false;
         loadAd();  // 预先加载广告
 
-        // 打印用户的showId
-        Log.i("INFO", "User showId: " + userId);
+        //打印下 userId
+        Log.i("INFO", "userId: " + userId);
 
         btnSupportAuthorMembership.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,13 +99,8 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
     // 在 onDestroy 方法中取消注册 EventBus
     @Override
     protected void onDestroy() {
+        EventBus.getDefault().unregister(this);
         super.onDestroy();
-        RefWatcher refWatcher = MainApplication.getRefWatcher();
-        if (refWatcher != null) {
-            refWatcher.watch(this);
-        } else {
-            Log.e("DonateActivity", "RefWatcher is null in onDestroy()");
-        }
     }
 
     // 添加处理 UpdateUserEvent 的方法
@@ -126,7 +120,7 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
             //rvad.setNegativeFeedbackListener(() -> Log.i(TAG, "onComplainSuccess"));
             ServerSideVerificationOptions options = new ServerSideVerificationOptions.Builder()
                     .setCustomData("APP's custom data") // 设置激励视频服务端验证的自定义信息
-                    .setUserId(userId) // 设置服务端验证的用户信息
+                    .setUserId(userId) // 设置服务端验证的用户信息 userId
                     .build();
             rvad.setServerSideVerificationOptions(options);
             rvad.setLoadAdParams(ADUtil.getLoadAdParams("reward_video"));
@@ -178,15 +172,11 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
     @Override
     public void onReward(Map<String, Object> map) {
         // 视频播放完成，且达到奖励条件时的回调
-        // post 后端通知增加奖励
-        // 获取服务端验证的唯一 ID userId
-        Log.i("INFO", "onReward " + map.get(ServerSideVerificationOptions.TRANS_ID));
         // 发布UpdateUserEvent事件
+        // post 后端通知增加奖励
+        // 获取服务端验证的唯一 ID
+        Log.i("INFO", "onReward " + map.get(ServerSideVerificationOptions.TRANS_ID));
         EventBus.getDefault().post(new UpdateUserEvent());
-        //
-        Intent in = new Intent(DonateActivity.this, AddRecordActivityNew.class);
-        startActivity(in);
-        finish();
     }
 
 
