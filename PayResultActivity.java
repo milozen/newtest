@@ -1,93 +1,157 @@
-package com.zhanghuang.wxapi;
+package com.zhanghuang;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
-import androidx.core.content.ContextCompat;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.ListView;
 
-import com.zhanghuang.R;
+import com.tencent.mm.opensdk.modelpay.PayReq;
+import com.tencent.mm.opensdk.openapi.IWXAPI;
+import com.tencent.mm.opensdk.openapi.WXAPIFactory;
+import com.zhanghuang.adapter.ProductFragAdapter;
 import com.zhanghuang.dialog.BaseDialog;
+import com.zhanghuang.events.PayResultEvent;
+import com.zhanghuang.events.UpdateUserEvent;
 import com.zhanghuang.modes.PayResultMode;
+import com.zhanghuang.modes.PreOrderMode;
+import com.zhanghuang.modes.Product;
+import com.zhanghuang.modes.ProductMode;
 import com.zhanghuang.net.RequestData;
+import com.zhanghuang.util.Constants;
+import com.zhanghuang.wxapi.PayResultActivity;
 
-public class PayResultActivity extends BaseDialog {
-  private static final String TAG = PayResultActivity.class.getSimpleName();
-  private RequestData requestData;
-  ImageView resultIcon;
-  TextView resultTipText;
-  TextView moneyText;
-  TextView productName;
-  TextView tidText;
-  TextView timeText;
-  LinearLayout contentLayout;
-  Button existBtn;
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
-  private final Context baseContent;
-  private PayResultMode data;
-  private boolean success;
+import java.util.ArrayList;
+import java.util.List;
 
+public class ProductActivity extends BaseDialog {
+    ListView listview;
+    List<Product> list = new ArrayList<>();
+    public final static String TAG = "ProductActivity";
+    private RequestData requestData;
+    private IWXAPI api;
+    private final Context baseContent;
+    private ProgressDialog progress;
+    private String currentTid;
+    private PayResultActivity payResultActivity;
 
-  public PayResultActivity(Context context) {
-    super(context);
-    baseContent = context;
-    requestData = new RequestData(getContext());
-  }
-
-  @Override
-  public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.wx_pay_result);
-    contentLayout = findViewById(R.id.pay_result_content_view);
-    resultIcon = findViewById(R.id.pay_result_icon);
-    resultTipText = findViewById(R.id.pay_result_tip);
-    moneyText = findViewById(R.id.pay_result_money);
-    productName = findViewById(R.id.pay_result_name);
-    tidText = findViewById(R.id.pay_result_tid);
-    timeText = findViewById(R.id.pay_result_time);
-    existBtn = findViewById(R.id.pay_result_exit_text);
-
-    existBtn.setOnClickListener((View view)-> {
-      this.hide();
-    });
-  }
-
-  @Override
-  public void show() {
-    super.show();
-    contentLayout.setVisibility(View.GONE);
-    showResult(this.success, this.data);
-  }
-
-  public void updateData(boolean success, PayResultMode data) {
-    this.success = success;
-    this.data = data;
-  }
-
-
-  public void showResult(boolean success, PayResultMode data) {
-    if (success) {
-      Log.i(TAG, "pay success");
-      resultIcon.setImageResource(R.drawable.result_success);
-      resultTipText.setText("支付成功");
-      resultTipText.setTextColor(ContextCompat.getColor(baseContent, R.color.result_success));
-    } else {
-      resultIcon.setImageResource(R.drawable.result_error);
-      resultTipText.setText("支付失败");
-      resultTipText.setTextColor(ContextCompat.getColor(baseContent, R.color.result_error));
+    public ProductActivity(Context context) {
+        super(context);
+        baseContent = context;
     }
-    if (data != null) {
-      contentLayout.setVisibility(View.VISIBLE);
-      moneyText.setText(data.priceShow());
-      productName.setText(data.getProduct_name());
-      tidText.setText(data.getTid());
-      timeText.setText(data.getTrade_time());
-    } else {
-      contentLayout.setVisibility(View.GONE);
+
+
+    private void initData() {
+        requestData.productList((success, result, message, err) -> {
+            ProductMode data = (ProductMode) result;
+            list = data.getList();
+            listview.setAdapter(new ProductFragAdapter(getContext(), list));
+        });
     }
-  }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.product_view);
+
+        requestData = new RequestData(getContext());
+        api = WXAPIFactory.createWXAPI(baseContent, Constants.APP_ID, false);
+
+        listview = findViewById(R.id.product_list_view);
+
+        listview.setOnItemClickListener((adapter, view, position, id) -> {
+            Log.i(TAG, "onItemClick:: id: " + id);
+            Log.i(TAG, "onItemClick:: position: " + position);
+            showLoading();
+            Product product = list.get(position);
+            requestData.preOrder(product.getId(), (success, result, message, err) -> {
+                if (success) {
+                    PreOrderMode data = (PreOrderMode) result;
+                    Log.i(TAG, data.toString());
+                    beginPay(data);
+                } else {
+                    Log.i(TAG, "pre order error: " + err);
+                    hideLoading();
+                }
+            });
+        });
+        initData();
+        EventBus.getDefault().register(this);
+    }
+
+
+    public void beginPay(PreOrderMode data) {
+        currentTid = data.getTid();
+        PayReq request = new PayReq();
+        request.appId = data.getAppId();
+        request.partnerId = data.getPartnerId();
+        request.prepayId= data.getPrepayId();
+        request.packageValue = "Sign=WXPay";
+        request.nonceStr= data.getNonceStr();
+        request.timeStamp= data.getTimeStamp();
+        request.sign= data.getSign();
+        api.sendReq(request);
+    }
+
+    @Subscribe
+    public void onPayResult(PayResultEvent event){
+        Log.i(TAG, "pay result: " + event.isSuccess());
+        if (event.isSuccess() && currentTid != null) {
+            requestData.queryOrder(currentTid, (success, result, message, err) -> {
+                hideLoading();
+                if (success) {
+//                    Log.i(TAG, "支付成功");
+//                    this.hide();
+//                    showPayResult(success, (PayResultMode)result);
+//                    UpdateUserEvent e = new UpdateUserEvent();
+//                    EventBus.getDefault().post(e);
+                    Log.i(TAG, "支付成功");
+                    this.hide();
+                    showPayResult(success, (PayResultMode)result);
+                    UpdateUserEvent e = new UpdateUserEvent();
+                    EventBus.getDefault().post(e);  // 发送 UpdateUserEvent 事件
+                } else {
+                    Log.i(TAG, "支付失败");
+                    showPayResult(false, null);
+                }
+            });
+        } else {
+            hideLoading();
+            showPayResult(false, null);
+        }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
+    }
+
+    private void showLoading() {
+        if (progress == null) {
+            progress = new ProgressDialog(baseContent);
+        }
+        progress.setTitle("支付中");
+        progress.setMessage("等待支付完成...");
+        progress.setCancelable(false);
+        progress.show();
+    }
+
+    private void hideLoading() {
+        progress.dismiss();
+    }
+
+    private void showPayResult(boolean success, PayResultMode data) {
+        if (payResultActivity == null) {
+            payResultActivity = new PayResultActivity(baseContent);
+        }
+        if (data != null) {
+            Log.i(TAG, data.getProduct_name() +" :: "+ data.getTid());
+        }
+        payResultActivity.updateData(success, data);
+        payResultActivity.show();
+    }
 }
