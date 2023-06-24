@@ -41,6 +41,9 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
     private boolean mIsLoadSuccess = false;
     private boolean autoShowAd = false;
 
+    // 添加这一行来定义userId变量
+    private String userId = MainApplication._pref.getString(Constants.PREF_USER_SHOWID,"");;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -59,12 +62,8 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
         mIsLoadSuccess = false;
         loadAd();  // 预先加载广告
 
-        String mobile = MainApplication._pref.getString(Constants.PREF_MOBILE,"");
-        String userId = MainApplication._pref.getString(Constants.PREF_USER_SHOWID,"");
-
-        // 打印用户的showId和手机号码
+        // 打印用户的showId
         Log.i("INFO", "User showId: " + userId);
-        Log.i("INFO", "User mobile: " + mobile);
 
         btnSupportAuthorMembership.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,8 +113,6 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
 
     protected RewardVideoAD getRewardVideoAD() {
         String editPosId = Constants.TAD_VIDEO;
-        // userid
-        String userId = MainApplication._pref.getString(Constants.PREF_USER_SHOWID,"");
         boolean volumeOn = false;
         RewardVideoAD rvad;
         if (mRewardVideoAD == null) {
@@ -175,11 +172,15 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
     @Override
     public void onReward(Map<String, Object> map) {
         // 视频播放完成，且达到奖励条件时的回调
-        // 发布UpdateUserEvent事件
         // post 后端通知增加奖励
-        // 获取服务端验证的唯一 ID
+        // 获取服务端验证的唯一 ID userId
         Log.i("INFO", "onReward " + map.get(ServerSideVerificationOptions.TRANS_ID));
+        // 发布UpdateUserEvent事件
         EventBus.getDefault().post(new UpdateUserEvent());
+        //
+        Intent in = new Intent(DonateActivity.this, AddRecordActivityNew.class);
+        startActivity(in);
+        finish();
     }
 
 
