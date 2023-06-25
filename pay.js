@@ -247,3 +247,5 @@ router.get('/pay/android/list', async function(req, res, next){
   let records = PRODUCT_LIST_ANDROID
   res.json({success: true, records})
 })
+
+//增加用户看广告后，赠送1天VIP时间
