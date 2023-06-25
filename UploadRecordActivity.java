@@ -80,6 +80,18 @@ public class UploadRecordActivity extends BaseBackActivity {
   private ProductActivity productActivity;
 
   @Override
+  protected void onStart() {
+    super.onStart();
+    EventBus.getDefault().register(this);
+  }
+
+  @Override
+  public void onStop() {
+    super.onStop();
+    EventBus.getDefault().unregister(this);
+  }
+  
+  @Override
   protected void init(Bundle savedInstanceState) {
     getWindow().setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(this, R.color.bg_dark_gray)));
     initData();
@@ -134,6 +146,7 @@ public class UploadRecordActivity extends BaseBackActivity {
   @Subscribe
   public void onUpdateUserEvent(UpdateUserEvent event) {
     //关闭充值窗口
+    Log.i("INFO","记录页面充值成功");
     if (productActivity != null) {
       productActivity.dismiss();
     }
