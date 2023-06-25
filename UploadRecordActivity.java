@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import androidx.core.content.ContextCompat;
-import androidx.appcompat.app.AlertDialog;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MenuItem;
@@ -17,10 +15,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.qq.e.ads.rewardvideo.RewardVideoAD;
-import com.qq.e.ads.rewardvideo.RewardVideoADListener;
-import com.qq.e.ads.rewardvideo.ServerSideVerificationOptions;
-import com.qq.e.comm.util.AdError;
+import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.ContextCompat;
+
 import com.zhanghuang.base.BaseBackActivity;
 import com.zhanghuang.bean.RecordBean;
 import com.zhanghuang.db.DaoManager;
@@ -28,32 +25,32 @@ import com.zhanghuang.entity.RecordBeanDao;
 import com.zhanghuang.events.AddRecordEvent;
 import com.zhanghuang.events.UpdateUserEvent;
 import com.zhanghuang.modes.BaseMode;
+import com.zhanghuang.modes.User;
 import com.zhanghuang.net.RequestData;
 import com.zhanghuang.netinterface.BaseInterface;
-import com.zhanghuang.util.ADUtil;
 import com.zhanghuang.util.AndroidUtil;
 import com.zhanghuang.util.Constants;
 import com.zhanghuang.util.TimeUtil;
-import com.zhanghuang.util.ToastUtil;
+import com.zhanghuang.net.RequestData;
 
 import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
-import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 /**
  * Created by yuanlei on 2017/3/28.
  */
 
-public class UploadRecordActivity extends BaseBackActivity 
-  implements RewardVideoADListener{
+public class UploadRecordActivity extends BaseBackActivity {
 
   @BindView(R.id.upload_record_view_start_time_text)
   TextView startText;
@@ -65,15 +62,11 @@ public class UploadRecordActivity extends BaseBackActivity
   EditText introEdit;
   @BindView(R.id.upload_record_view_progress)
   ProgressBar progressBar;
-  @BindView(R.id.upload_record_view_commit_button)
-  Button saveBtn;
+
   @BindView(R.id.upload_record_view_buy_vip_button)
   Button buyVipBtn;
   @BindView(R.id.upload_record_vip_tip_container)
   LinearLayout buyVipTipContainer;
-  @BindView(R.id.upload_record_vip_tip)
-  TextView buyVipTip;
-
 
   private SimpleDateFormat simpleDateFormat;
   private String startTimes;
@@ -83,29 +76,13 @@ public class UploadRecordActivity extends BaseBackActivity
   private String duration;
 
   private RequestData rd;
-  private static final String TAG = UploadRecordActivity.class.getSimpleName();
-  private RewardVideoAD mRewardVideoAD;
-  private boolean mIsLoadSuccess = false;
-  private boolean autoShowAd = false;
+
   private ProductActivity productActivity;
 
   @Override
   protected void init(Bundle savedInstanceState) {
-    getWindow().setBackgroundDrawable(
-        new ColorDrawable(ContextCompat.getColor(this, R.color.bg_dark_gray)));
+    getWindow().setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(this, R.color.bg_dark_gray)));
     initData();
-  }
-
-  @Override
-  public void onStart() {
-    super.onStart();
-    EventBus.getDefault().register(this);
-  }
-
-  @Override
-  public void onStop() {
-    super.onStop();
-    EventBus.getDefault().unregister(this);
   }
 
   @Override
@@ -116,6 +93,7 @@ public class UploadRecordActivity extends BaseBackActivity
   private void initData() {
     rd = new RequestData(this);
 
+    simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
     simpleDateFormat = Constants.DEFAULT_DATETIME_FORMAT();
     Intent in = getIntent();
     long startTime = in.getLongExtra(Constants.STARTTIME, 0);
@@ -128,37 +106,55 @@ public class UploadRecordActivity extends BaseBackActivity
     endTimes = simpleDateFormat.format(new Date(endTime));
     startText.setText(startTimes);
     endText.setText(endTimes);
-    // check vip
-    updateVipInfo();
-
-
 
     longText.setText(TimeUtil.dateDiffSingle(t));
     if (MainApplication._pref.getBoolean(Constants.PREF_SOUND_ON, true)) {
       int[] times = TimeUtil.getSoundTime(t * 1000);
       setMediaSound(times[0], times[1], times[2]);
     }
+
+    // check vip
+    updateVipInfo();
   }
 
   private void updateVipInfo() {
-    if (!MainApplication.isVip() && !MainApplication.isInReview()) {
+    //更新下用户信息
+    rd.getUserInfo(getUserInfoIf);
+    Log.i("INFO","USER IS "+ MainApplication.isVip());
+    if (!MainApplication.isVip() ) {
       buyVipTipContainer.setVisibility(View.VISIBLE);
       buyVipBtn.setVisibility(View.VISIBLE);
-      int totalCount = MainApplication._pref.getInt(Constants.PREF_SAVE_AD_COUNT, 1);
-      buyVipTip.setText("VIP或者每天"+totalCount+"次后可直接保存.\nVIP可自动将记录保存至服务器.");
     } else {
       buyVipTipContainer.setVisibility(View.GONE);
       buyVipBtn.setVisibility(View.GONE);
     }
-    if (MainApplication.isVip()) {
-      saveBtn.setText("保存并上传");
-    } else if (MainApplication.showVideoAd()) {
-      loadAd();
-      saveBtn.setText("观看视频并保存");
-    } else {
-      saveBtn.setText("保存");
-    }
   }
+
+  // 添加处理 UpdateUserEvent 的方法,充值成功或者失败
+  @Subscribe
+  public void onUpdateUserEvent(UpdateUserEvent event) {
+    //关闭充值窗口
+    if (productActivity != null) {
+      productActivity.dismiss();
+    }
+    //更新界面
+    updateVipInfo();
+  }
+
+  private final BaseInterface getUserInfoIf = new BaseInterface() {
+    @Override
+    public void response(boolean success, BaseMode result, String message, String err) {
+      if (success) {
+        Log.i("INFO","USERINFO success");
+        if (MainApplication.isVip()) {
+          Log.i("INFO","IS VIP");
+        } else {
+          Log.i("INFO","NO VIP");
+        }
+      }
+    }
+  };
+
 
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
@@ -178,37 +174,6 @@ public class UploadRecordActivity extends BaseBackActivity
 
   @OnClick(R.id.upload_record_view_commit_button)
   public void commit() {
-    if (MainApplication.showVideoAd()) {
-      showAD();
-    } else {
-      saveOrUploadRecord();
-    }
-  }
-
-  @OnClick(R.id.upload_record_view_buy_vip_button)
-  public void buyVip() {
-    showProductList();
-  }
-
-  @Subscribe
-  public void onUpdateUser(UpdateUserEvent e) {
-    Log.i(TAG, "receive UpdateUserEvent");
-    rd.getUserInfo(((success, result, message, err) -> {
-      if (success) {
-        updateVipInfo();
-      }
-    }));
-  }
-
-  public void showProductList() {
-    if (productActivity == null) {
-      productActivity = new ProductActivity(this);
-    }
-    productActivity.show();
-  }
-
-  private void saveOrUploadRecord() {
-    boolean upload = MainApplication.isVip();
     String title = simpleDateFormat.format(new Date(System.currentTimeMillis()));
     intro = introEdit.getText().toString();
     if (intro == null || intro.equals("")) {
@@ -216,10 +181,6 @@ public class UploadRecordActivity extends BaseBackActivity
     }
     if (recordId == null || recordId.equals("")) {
       recordId = null;
-    }
-    if (!upload) {
-      saveRecord(title);
-      return;
     }
     if (!AndroidUtil.checkNet(this)) {
       saveRecord(title);
@@ -236,20 +197,14 @@ public class UploadRecordActivity extends BaseBackActivity
     progressBar.setVisibility(View.VISIBLE);
   }
 
-  private void updateVideoCount() {
-    int todayCount = MainApplication._pref.getInt(Constants.PREF_SAVE_VIDEO_COUNT, 0);
-    Date d1 = new Date(System.currentTimeMillis());
-    String day = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(d1);
-    String dayStore = MainApplication._pref.getString(Constants.PREF_SAVE_VIDEO_DAY,"");
-    if (!day.equals(dayStore)) {
-      todayCount = 0;
+  @OnClick(R.id.upload_record_view_buy_vip_button)
+  public void buy_vip() {
+    if (productActivity == null) {
+      productActivity = new ProductActivity(UploadRecordActivity.this);
     }
-    todayCount += 1;
-    MainApplication._pref.edit()
-        .putString(Constants.PREF_SAVE_VIDEO_DAY, day)
-        .putInt(Constants.PREF_SAVE_VIDEO_COUNT, todayCount)
-        .apply();
+    productActivity.show();
   }
+
 
   @Override
   public String getPageName() {
@@ -262,8 +217,7 @@ public class UploadRecordActivity extends BaseBackActivity
     c.setTime(new Date());
     int month = c.get(Calendar.MONTH);
     int year = c.get(Calendar.YEAR);
-    RecordBeanDao recordBeanDao = 
-      DaoManager.getInstance().getDaoSession().getRecordBeanDao();
+    RecordBeanDao recordBeanDao = DaoManager.getInstance().getDaoSession().getRecordBeanDao();
 
     RecordBean rb = new RecordBean();
     rb.setTitle(title);
@@ -278,15 +232,14 @@ public class UploadRecordActivity extends BaseBackActivity
     EventBus.getDefault().post(new AddRecordEvent());
   }
 
-  private final BaseInterface saveZzIf = 
-    (boolean success, BaseMode result, String message, String err) -> {
+  private final BaseInterface saveZzIf = (boolean success, BaseMode result, String message, String err) -> {
     progressBar.setVisibility(View.GONE);
     if (success) {
-        Toast.makeText(UploadRecordActivity.this, "保存成功！", Toast.LENGTH_SHORT).show();
-        finish();
-        EventBus.getDefault().post(new AddRecordEvent());
+      Toast.makeText(UploadRecordActivity.this, "保存成功！", Toast.LENGTH_SHORT).show();
+      finish();
+      EventBus.getDefault().post(new AddRecordEvent());
     } else {
-        Toast.makeText(UploadRecordActivity.this, err, Toast.LENGTH_SHORT).show();
+      Toast.makeText(UploadRecordActivity.this, err, Toast.LENGTH_SHORT).show();
     }
   };
 
@@ -316,15 +269,6 @@ public class UploadRecordActivity extends BaseBackActivity
     final MediaPlayer minuteMp1 = MediaPlayer.create(this, R.raw.w_minute);
     final MediaPlayer secondMp1 = MediaPlayer.create(this, R.raw.w_second);
 
-    MediaPlayer.OnCompletionListener listener = mp -> {
-      mp1.release();
-      hourMp.release();
-      hourMp1.release();
-      minuteMp.release();
-      minuteMp1.release();
-      secondMp.release();
-      secondMp1.release();
-    };
     if (hour > 0) {
       mp1.setNextMediaPlayer(hourMp);
       hourMp.setNextMediaPlayer(hourMp1);
@@ -334,17 +278,49 @@ public class UploadRecordActivity extends BaseBackActivity
         if (second > 0) {
           minuteMp1.setNextMediaPlayer(secondMp);
           secondMp.setNextMediaPlayer(secondMp1);
-          secondMp1.setOnCompletionListener(listener);
+          secondMp1.setOnCompletionListener(mp -> {
+            mp1.release();
+            hourMp.release();
+            hourMp1.release();
+            minuteMp.release();
+            minuteMp1.release();
+            secondMp.release();
+            secondMp1.release();
+          });
         } else {
-          minuteMp1.setOnCompletionListener(listener);
+          minuteMp1.setOnCompletionListener(mp -> {
+            mp1.release();
+            hourMp.release();
+            hourMp1.release();
+            minuteMp.release();
+            minuteMp1.release();
+            secondMp.release();
+            secondMp1.release();
+          });
         }
       } else {
         if (second > 0) {
           hourMp1.setNextMediaPlayer(secondMp);
           secondMp.setNextMediaPlayer(secondMp1);
-          secondMp1.setOnCompletionListener(listener);
+          secondMp1.setOnCompletionListener(mp -> {
+            mp1.release();
+            hourMp.release();
+            hourMp1.release();
+            minuteMp.release();
+            minuteMp1.release();
+            secondMp.release();
+            secondMp1.release();
+          });
         } else {
-          hourMp1.setOnCompletionListener(listener);
+          hourMp1.setOnCompletionListener(mp -> {
+            mp1.release();
+            hourMp.release();
+            hourMp1.release();
+            minuteMp.release();
+            minuteMp1.release();
+            secondMp.release();
+            secondMp1.release();
+          });
         }
       }
     } else {
@@ -354,14 +330,38 @@ public class UploadRecordActivity extends BaseBackActivity
         if (second > 0) {
           minuteMp1.setNextMediaPlayer(secondMp);
           secondMp.setNextMediaPlayer(secondMp1);
-          secondMp1.setOnCompletionListener(listener);
+          secondMp1.setOnCompletionListener(mp -> {
+            mp1.release();
+            hourMp.release();
+            hourMp1.release();
+            minuteMp.release();
+            minuteMp1.release();
+            secondMp.release();
+            secondMp1.release();
+          });
         } else {
-          minuteMp1.setOnCompletionListener(listener);
+          minuteMp1.setOnCompletionListener(mp -> {
+            mp1.release();
+            hourMp.release();
+            hourMp1.release();
+            minuteMp.release();
+            minuteMp1.release();
+            secondMp.release();
+            secondMp1.release();
+          });
         }
       } else {
         mp1.setNextMediaPlayer(secondMp);
         secondMp.setNextMediaPlayer(secondMp1);
-        secondMp1.setOnCompletionListener(listener);
+        secondMp1.setOnCompletionListener(mp -> {
+          mp1.release();
+          hourMp.release();
+          hourMp1.release();
+          minuteMp.release();
+          minuteMp1.release();
+          secondMp.release();
+          secondMp1.release();
+        });
 
       }
     }
@@ -386,115 +386,5 @@ public class UploadRecordActivity extends BaseBackActivity
 //    });
     mp1.start();
   }
-  // begin of Tencent AD
-
-  private void showAD() {
-    if (ADUtil.isAdValid(mIsLoadSuccess, mRewardVideoAD != null 
-          && mRewardVideoAD.isValid(), true)) {
-      mRewardVideoAD.showAD();
-    } else {
-      autoShowAd = true;
-      loadAd();
-    }
-  }
-
-  protected RewardVideoAD getRewardVideoAD() {
-    String editPosId = Constants.TAD_VIDEO;
-    boolean volumeOn = false;
-    RewardVideoAD rvad;
-    if (mRewardVideoAD == null) {
-      rvad = new RewardVideoAD(this, editPosId, this, volumeOn);
-      rvad.setNegativeFeedbackListener(() -> Log.i(TAG, "onComplainSuccess"));
-      ServerSideVerificationOptions options = new ServerSideVerificationOptions.Builder()
-          .setCustomData("APP's custom data") // 设置激励视频服务端验证的自定义信息
-          .setUserId("APP's user id for server verify") // 设置服务端验证的用户信息
-          .build();
-      rvad.setServerSideVerificationOptions(options);
-      rvad.setLoadAdParams(ADUtil.getLoadAdParams("reward_video"));
-    } else {
-      rvad = this.mRewardVideoAD;
-    }
-    return rvad;
-  }
-  // 显示激励视频 调用
-  // mRewardVideoAD.showAD();
-  // mRewardVideoAD.showAD(UploadRecordActivity.this);
-  protected void loadAd(){
-    // 1. 初始化激励视频广告
-    mRewardVideoAD = getRewardVideoAD();
-    mIsLoadSuccess = false;
-    // 2. 加载激励视频广告
-    mRewardVideoAD.loadAD();
-  }
-
-  @Override
-  public void onADLoad() {
-    ToastUtil.l("广告加载成功 ！ ");
-    if (mRewardVideoAD.getRewardAdType() == RewardVideoAD.REWARD_TYPE_VIDEO) {
-      Log.d(TAG, "eCPMLevel = " + mRewardVideoAD.getECPMLevel() + ", ECPM: " + mRewardVideoAD.getECPM()
-          + " ,video duration = " + mRewardVideoAD.getVideoDuration()
-          + ", testExtraInfo:" + mRewardVideoAD.getExtraInfo().get("mp")
-          + ", request_id:" + mRewardVideoAD.getExtraInfo().get("request_id"));
-    } else if (mRewardVideoAD.getRewardAdType() == RewardVideoAD.REWARD_TYPE_PAGE) {
-      Log.d(TAG, "eCPMLevel = " + mRewardVideoAD.getECPMLevel()
-          + ", ECPM: " + mRewardVideoAD.getECPM()
-          + ", testExtraInfo:" + mRewardVideoAD.getExtraInfo().get("mp")
-          + ", request_id:" + mRewardVideoAD.getExtraInfo().get("request_id"));
-    }
-
-    mIsLoadSuccess = true;
-    if (ADUtil.isAdValid(autoShowAd, mRewardVideoAD != null && mRewardVideoAD.isValid(), true)) {
-      autoShowAd = false;
-      mRewardVideoAD.showAD();
-    }
-  }
-
-  @Override
-  public void onVideoCached() {
-    Log.i(TAG, "onVideoCached");
-  }
-
-  @Override
-  public void onADShow() {
-    Log.i(TAG, "onADShow");
-  }
-
-  @Override
-  public void onADExpose() {
-    Log.i(TAG, "onADExpose");
-  }
-
-  // 激励视频广告激励发放，若选择了服务端验证，可以通过 ServerSideVerificationOptions#TRANS_ID 键从 map 中获取此次交易的 id；若未选择服务端验证，则不需关注 map 参数
-  @Override
-  public void onReward(Map<String, Object> map) {
-    Log.i(TAG, "onReward " + map.get(ServerSideVerificationOptions.TRANS_ID));  // 获取服务端验证的唯一 ID
-    mIsLoadSuccess = false;
-    autoShowAd = false;
-    updateVideoCount();
-    saveOrUploadRecord();
-  }
-
-  @Override
-  public void onADClick() {
-    Log.i(TAG, "onADClick");
-  }
-
-  @Override
-  public void onVideoComplete() {
-    Log.i(TAG, "onVideoComplete");
-  }
-
-  @Override
-  public void onADClose() {
-    Log.i(TAG, "onADClose");
-  }
-
-  @Override
-  public void onError(AdError adError) {
-    String msg = String.format(Locale.getDefault(), "onError, error code: %d, error msg: %s",
-        adError.getErrorCode(), adError.getErrorMsg());
-    ToastUtil.s(msg);
-    Log.i(TAG, "onError, adError=" + msg);
-  }
 }
- 
+
