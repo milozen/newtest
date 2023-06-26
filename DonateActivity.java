@@ -286,3 +286,4 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
     };
 
 }
+ 
