@@ -16,6 +16,9 @@ import com.qq.e.ads.rewardvideo.RewardVideoADListener;
 import com.qq.e.ads.rewardvideo.ServerSideVerificationOptions;
 import com.qq.e.comm.util.AdError;
 import com.zhanghuang.events.UpdateUserEvent;
+import com.zhanghuang.modes.BaseMode;
+import com.zhanghuang.net.RequestData;
+import com.zhanghuang.netinterface.BaseInterface;
 import com.zhanghuang.util.ADUtil;
 import com.zhanghuang.util.Constants;
 import com.zhanghuang.util.DLog;
@@ -40,6 +43,8 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
     private RewardVideoAD mRewardVideoAD;
     private boolean mIsLoadSuccess = false;
     private boolean autoShowAd = false;
+
+    private RequestData rd;
 
     // 添加这一行来定义userId变量
     private String userId = MainApplication._pref.getString(Constants.PREF_USER_SHOWID,"");
@@ -124,7 +129,7 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
             rvad = new RewardVideoAD(this, editPosId, this, volumeOn);
             //rvad.setNegativeFeedbackListener(() -> Log.i(TAG, "onComplainSuccess"));
             ServerSideVerificationOptions options = new ServerSideVerificationOptions.Builder()
-                    .setCustomData("APP's custom data") // 设置激励视频服务端验证的自定义信息
+                    //.setCustomData("APP's custom data") // 设置激励视频服务端验证的自定义信息
                     .setUserId(userId) // 设置服务端验证的用户信息 userId
                     .build();
             rvad.setServerSideVerificationOptions(options);
@@ -182,11 +187,7 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
         // 获取服务端验证的唯一 ID
         Log.i("INFO", "onReward " + map.get(ServerSideVerificationOptions.TRANS_ID));
         Log.i("INFO", "userid " + userId);
-        
-        Intent in = new Intent(DonateActivity.this, AddRecordActivityNew.class);
-        startActivity(in);
-        finish();
-        
+
     }
 
 
@@ -203,6 +204,9 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
     @Override
     public void onADClose() {
         // 广告页面关闭的回调
+        Intent in = new Intent(DonateActivity.this, AddRecordActivityNew.class);
+        startActivity(in);
+        finish();
     }
 
     @Override
@@ -214,5 +218,19 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
     public void closeActivity() {
         this.finish();
     }
+
+    private final BaseInterface getUserInfoIf = new BaseInterface() {
+        @Override
+        public void response(boolean success, BaseMode result, String message, String err) {
+            if (success) {
+                Log.i("INFO","USERINFO success");
+                if (MainApplication.isVip()) {
+                    Log.i("INFO","USER IS VIP");
+                } else {
+                    Log.i("INFO","USER NO VIP");
+                }
+            }
+        }
+    };
 
 }
