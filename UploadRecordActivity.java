@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MenuItem;
@@ -90,7 +91,7 @@ public class UploadRecordActivity extends BaseBackActivity {
     super.onStop();
     EventBus.getDefault().unregister(this);
   }
-  
+
   @Override
   protected void init(Bundle savedInstanceState) {
     getWindow().setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(this, R.color.bg_dark_gray)));
@@ -132,7 +133,7 @@ public class UploadRecordActivity extends BaseBackActivity {
   private void updateVipInfo() {
     //更新下用户信息
     rd.getUserInfo(getUserInfoIf);
-    Log.i("INFO","USER IS "+ MainApplication.isVip());
+    Log.i("INFO","USER VIP IS "+ MainApplication.isVip());
     if (!MainApplication.isVip() ) {
       buyVipTipContainer.setVisibility(View.VISIBLE);
       buyVipBtn.setVisibility(View.VISIBLE);
@@ -151,7 +152,8 @@ public class UploadRecordActivity extends BaseBackActivity {
       productActivity.dismiss();
     }
     //更新界面
-    updateVipInfo();
+    buyVipTipContainer.setVisibility(View.GONE);
+    buyVipBtn.setVisibility(View.GONE);
   }
 
   private final BaseInterface getUserInfoIf = new BaseInterface() {
@@ -160,13 +162,14 @@ public class UploadRecordActivity extends BaseBackActivity {
       if (success) {
         Log.i("INFO","USERINFO success");
         if (MainApplication.isVip()) {
-          Log.i("INFO","IS VIP");
+          Log.i("INFO","USER IS VIP");
         } else {
-          Log.i("INFO","NO VIP");
+          Log.i("INFO","USER NO VIP");
         }
       }
     }
   };
+
 
 
   @Override
@@ -249,7 +252,11 @@ public class UploadRecordActivity extends BaseBackActivity {
     progressBar.setVisibility(View.GONE);
     if (success) {
       Toast.makeText(UploadRecordActivity.this, "保存成功！", Toast.LENGTH_SHORT).show();
+      //进入首页
+      Intent in = new Intent(UploadRecordActivity.this, MainActivity.class);
+      startActivity(in);
       finish();
+
       EventBus.getDefault().post(new AddRecordEvent());
     } else {
       Toast.makeText(UploadRecordActivity.this, err, Toast.LENGTH_SHORT).show();
@@ -400,4 +407,3 @@ public class UploadRecordActivity extends BaseBackActivity {
     mp1.start();
   }
 }
-
