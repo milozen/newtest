@@ -206,8 +206,12 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
         // 广告页面关闭的回调
         Intent in = new Intent(DonateActivity.this, AddRecordActivityNew.class);
         startActivity(in);
+        // 销毁广告实例
+        // 将广告实例设置为 null，以便垃圾回收
+        mRewardVideoAD = null;
         finish();
     }
+
 
     @Override
     public void onError(AdError adError) {
