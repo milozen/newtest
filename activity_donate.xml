@@ -65,6 +65,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="-10dp"
             android:src="@mipmap/icon_yun" />
+
     </androidx.cardview.widget.CardView>
 
     <View
@@ -97,5 +98,25 @@
             android:layout_marginTop="-10dp"
             android:src="@mipmap/icon_yun" />
     </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="观看一次广告，赠送24小时会员资格，会员无广告哦~"
+        android:textColor="@color/price_red"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_marginTop="20dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp">
+    </View>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/begging"
+        android:scaleType="centerInside"/>
 
 </LinearLayout>
