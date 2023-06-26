@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhanghuang.view.MainHeadUint xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/main_head_unit_user_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/bg_head_hehua"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="30dp"
+        >
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/main_head_unit_avatar"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            app:placeholderImage="@mipmap/icon_unlogin_avator"
+            app:roundAsCircle="true" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/main_head_vip_icon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginEnd="-40dp"
+            android:layout_marginTop="-120dp"
+            app:placeholderImage="@mipmap/icon_vip" />
+
+        <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:layout_marginTop="12dp"-->
+        <!--android:src="@mipmap/icon_home_avator" />-->
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/location"
+            style="@style/LittleTextGray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="55dp"
+            android:drawableStart="@mipmap/icon_location"
+            android:drawablePadding="7dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/main_head_unit_zz_record_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingBottom="15dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="16dp">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="6dp"
+            android:src="@mipmap/icon_last_time" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/LittleTextGray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上次站桩时间"
+                android:textColor="@color/tipTextColor" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                 <com.zhanghuang.view.DetailTimeView
+                     android:id="@+id/last_time"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            style="@style/LineVertical"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="6dp"
+            android:src="@mipmap/icon_times" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/LittleTextGray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="累计次数"
+                android:textColor="@color/tipTextColor" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/main_head_unit_zz_times_text"
+                    style="@style/BigTextBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="43" />
+
+                <TextView
+                    style="@style/NormalTextBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="次" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            style="@style/LineVertical"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="6dp"
+            android:src="@mipmap/icon_clock" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/LittleTextGray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="累计时间"
+                android:textColor="@color/tipTextColor" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.zhanghuang.view.DetailTimeView
+                    android:id="@+id/total_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="2dp">
+
+        <FrameLayout
+            android:id="@+id/main_head_unit_ad_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/main_head_unit_ad"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:src="@drawable/head1"/>
+
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+
+</com.zhanghuang.view.MainHeadUint>
