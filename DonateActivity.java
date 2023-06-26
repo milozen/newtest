@@ -11,8 +11,6 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.qq.e.ads.banner2.UnifiedBannerADListener;
-import com.qq.e.ads.banner2.UnifiedBannerView;
 import com.qq.e.ads.rewardvideo.RewardVideoAD;
 import com.qq.e.ads.rewardvideo.RewardVideoADListener;
 import com.qq.e.ads.rewardvideo.ServerSideVerificationOptions;
@@ -50,10 +48,6 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
 
     // 添加这一行来定义userId变量
     private String userId = MainApplication._pref.getString(Constants.PREF_USER_SHOWID,"");
-
-    //横幅广告
-    private UnifiedBannerView bannerView;
-    private String bannerPosId = Constants.TAD_BANNER_3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,56 +99,16 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
                 finish();
             }
         });
-
-        // 初始化 UnifiedBannerView
-        bannerView = findViewById(R.id.bannerView);
-        bannerView.setRefresh(30); // 设置刷新频率，单位为 s，0 表示不自动轮播，默认 30s
-
-        bannerView.setADListener(new UnifiedBannerADListener() {
-            @Override
-            public void onNoAD(AdError adError) {
-                // 广告加载或展示过程中出错
-            }
-
-            @Override
-            public void onADReceive() {
-                // 广告加载成功回调
-            }
-
-            @Override
-            public void onADExposure() {
-                // 广告曝光回调
-            }
-
-            @Override
-            public void onADClosed() {
-                // 广告关闭回调
-            }
-
-            @Override
-            public void onADClicked() {
-                // 广告点击回调
-            }
-
-            @Override
-            public void onADLeftApplication() {
-                // 广告点击离开 APP 回调
-            }
-        });
-        bannerView.loadAD();
     }
 
     // 在 onDestroy 方法中取消注册 EventBus
     @Override
     protected void onDestroy() {
-        super.onDestroy();
-        if (bannerView != null) {
-            bannerView.destroy();
-        }
         // 销毁广告实例
         // 将广告实例设置为 null，以便垃圾回收
         mRewardVideoAD = null;
         EventBus.getDefault().unregister(this);
+        super.onDestroy();
     }
 
     // 添加处理 UpdateUserEvent 的方法,充值成功或者失败
@@ -252,7 +206,6 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
 
     @Override
     public void onADClose() {
-        // 广告页面关闭的回调
         // 将广告实例设置为 null，以便垃圾回收
         mRewardVideoAD = null;
         Intent in = new Intent(DonateActivity.this, AddRecordActivityNew.class);
@@ -286,4 +239,3 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
     };
 
 }
- 
