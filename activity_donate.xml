@@ -5,9 +5,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <FrameLayout
+        android:id="@+id/banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal" />
+
     <View
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="10dp">
     </View>
 
     <androidx.cardview.widget.CardView
