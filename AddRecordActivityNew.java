@@ -303,6 +303,12 @@ public class AddRecordActivityNew extends BaseActivity {
     @OnClick(R.id.add_record_view_cancel_container)
     public void cancelClick() {
         outPage();
+
+        // 启动主界面的Activity
+//        Intent in = new Intent(AddRecordActivityNew.this, MainActivity.class);
+//        in.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+//        startActivity(in);
+
         finish();
     }
 
@@ -329,6 +335,12 @@ public class AddRecordActivityNew extends BaseActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         outPage();
+
+                        // 启动主界面的Activity
+                        Intent in = new Intent(AddRecordActivityNew.this, MainActivity.class);
+                        in.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                        startActivity(in);
+
                         finish();
                     }
                 });
@@ -427,4 +439,3 @@ public class AddRecordActivityNew extends BaseActivity {
 
 
 }
- 
