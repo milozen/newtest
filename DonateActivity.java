@@ -1,9 +1,6 @@
 package com.zhanghuang;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.database.CursorWindow;
-import android.os.BaseBundle;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,15 +22,11 @@ import com.zhanghuang.netinterface.BaseInterface;
 import com.zhanghuang.util.ADUtil;
 import com.zhanghuang.util.Constants;
 import com.zhanghuang.util.DLog;
+import com.zhanghuang.util.DeviceUtil;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
 import java.util.Map;
 
 public class DonateActivity extends AppCompatActivity implements RewardVideoADListener {
@@ -49,8 +42,10 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
 
     private RequestData rd;
 
+    private String oaid;
+
     // 添加这一行来定义userId变量
-    private String userId = MainApplication._pref.getString(Constants.PREF_USER_SHOWID,"");
+    private String userId = MainApplication._pref.getString(Constants.PREF_USER_SHOWID, "");
 
     private BannerAdFragment mBannerAdFragment;
 
@@ -109,6 +104,14 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
                 Intent in = new Intent(DonateActivity.this, AddRecordActivityNew.class);
                 startActivity(in);
                 finish();
+            }
+        });
+
+        //打印下设备信息
+        DeviceUtil.getOaid(this, new DeviceUtil.OaidCallback() {
+            @Override
+            public void onOaidReceived(String oaid) {
+                Log.i("INFO", "oaid: " + oaid);
             }
         });
     }
@@ -239,11 +242,11 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
         @Override
         public void response(boolean success, BaseMode result, String message, String err) {
             if (success) {
-                Log.i("INFO","USERINFO success");
+                Log.i("INFO", "USERINFO success");
                 if (MainApplication.isVip()) {
-                    Log.i("INFO","USER IS VIP");
+                    Log.i("INFO", "USER IS VIP");
                 } else {
-                    Log.i("INFO","USER NO VIP");
+                    Log.i("INFO", "USER NO VIP");
                 }
             }
         }
