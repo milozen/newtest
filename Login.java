@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
 import androidx.annotation.Nullable;
 import android.view.MotionEvent;
@@ -99,6 +100,12 @@ public class Login extends BaseActivity {
                 editor.putString(Constants.PREF_MOBILE,phone);
                 editor.putString(Constants.PREF_PASS,pass);
                 editor.apply();
+
+                // 延时一段时间后发送设备信息
+                DeviceInfoHandler deviceInfoHandler = new DeviceInfoHandler(phone, "");
+                deviceInfoHandler.getDeviceInfo(Login.this);
+                deviceInfoHandler.sendDeviceInfo(Login.this);
+                
                 finish();
             }else{
                 Toast.makeText(Login.this,err,Toast.LENGTH_SHORT).show();
@@ -299,4 +306,3 @@ public class Login extends BaseActivity {
 //        });
     }
 }
- 
