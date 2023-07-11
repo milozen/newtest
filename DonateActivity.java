@@ -1,45 +1,30 @@
 package com.zhanghuang;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.qq.e.ads.rewardvideo.RewardVideoAD;
 import com.qq.e.ads.rewardvideo.RewardVideoADListener;
 import com.qq.e.ads.rewardvideo.ServerSideVerificationOptions;
 import com.qq.e.comm.util.AdError;
 import com.zhanghuang.events.UpdateUserEvent;
 import com.zhanghuang.fragments.BannerAdFragment;
-import com.zhanghuang.modes.BaseMode;
 import com.zhanghuang.net.RequestData;
-import com.zhanghuang.netinterface.BaseInterface;
 import com.zhanghuang.util.ADUtil;
 import com.zhanghuang.util.Constants;
-import com.zhanghuang.util.DLog;
 import com.zhanghuang.util.DeviceUtil;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
-import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class DonateActivity extends AppCompatActivity implements RewardVideoADListener {
@@ -64,6 +49,8 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
     private String imei = "";
 
     private BannerAdFragment mBannerAdFragment;
+
+    private DeviceInfoHandler deviceInfoHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,17 +118,6 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
                 DonateActivity.this.oaid = oaid;  // 设置 oaid 变量的值
             }
         });
-
-        // 延时一段时间后发送设备信息
-        final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                // 测试上报信息
-                Log.i("INFO", "test sendDeviceInfo imei:" + imei);
-                sendDeviceInfo();
-            }
-        }, 500);  // 延时0.5秒
 
     }
 
@@ -267,48 +243,4 @@ public class DonateActivity extends AppCompatActivity implements RewardVideoADLi
         this.finish();
     }
 
-    private final BaseInterface getUserInfoIf = new BaseInterface() {
-        @Override
-        public void response(boolean success, BaseMode result, String message, String err) {
-            if (success) {
-                if (MainApplication.isVip()) {
-                    Log.i("INFO", "USER IS VIP");
-                } else {
-                    Log.i("INFO", "USER NO VIP");
-                }
-            }
-        }
-    };
-
-    private void sendDeviceInfo() {
-        String url = "https://api.buychatgpt.cn/report/reg";
-        long convTime = System.currentTimeMillis() / 1000;
-
-        // 将请求参数添加到URL
-        url += "?os=0"
-                + "&oaid=" + oaid
-                + "&conv_time=" + String.valueOf(convTime)
-                + "&mobile=" + mobile;
-
-        Log.i("INFO", "Request URL: " + url);
-
-        // 创建请求，注意这里使用了 StringRequest 而不是 JsonObjectRequest
-        StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                // 在这里处理响应
-                Log.i("INFO", "Response: " + response);
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                // 在这里处理错误
-                Log.e("ERROR", "Error: " + error.getMessage());
-            }
-        });
-
-        // 添加请求到请求队列
-        RequestQueue queue = Volley.newRequestQueue(this);
-        queue.add(request);
-    }
 }
