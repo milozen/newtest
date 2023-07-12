@@ -204,14 +204,20 @@ extension MemberViewController {
         }
     }
     @objc func toClearCache() {
-        let alertController = UIAlertController(title: "确定清除缓存?", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: "确定注销账号吗?",
+                message: "按照有关法律条文规定，您的账号资料将被保存六个月，六个月内登录账号即可恢复登录；六个月后，您的资料将被永久删除！",
+                preferredStyle: UIAlertControllerStyle.alert)
         let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
         alertController.addAction(cancelAction)
-        let okAction = UIAlertAction(title: "确认", style: UIAlertAction.Style.default) {
+        let okAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.default) {
             (action: UIAlertAction) -> Void in
-            SDImageCache.shared.clearDisk {
-                self.cacheSizeAtPath()
-            }
+            ZManager.instance.isLogin=false
+            ZManager.instance.userId=""
+            ZManager.instance.userToken=""
+            ZManager.instance.saveDate()
+            NetworkManager.instance.setDefaultManage()
+            self.initData()
+            self.toLogin() // 跳转到登录页面
         }
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
@@ -235,6 +241,7 @@ extension MemberViewController {
                 ZManager.instance.saveDate()
                 NetworkManager.instance.setDefaultManage()
                 self.initData()
+                self.toLogin() // 跳转到登录页面
             }
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
