@@ -118,7 +118,7 @@ extension MemberViewController {
         
         let data5:MemberCellItem = MemberCellItem()
         data5.cellType = .general
-        data5.title = "清除缓存"
+        data5.title = "注销账号"
         data5.subTitle = "共0.0M"
         data5.target = self
         data5.selector = #selector(toClearCache)
@@ -207,9 +207,9 @@ extension MemberViewController {
         let alertController = UIAlertController(title: "确定清除缓存?", message: "", preferredStyle: UIAlertControllerStyle.alert)
         let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
         alertController.addAction(cancelAction)
-        let okAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.default) {
+        let okAction = UIAlertAction(title: "确认", style: UIAlertAction.Style.default) {
             (action: UIAlertAction) -> Void in
-            SDImageCache.shared().clearDisk {
+            SDImageCache.shared.clearDisk {
                 self.cacheSizeAtPath()
             }
         }
@@ -219,7 +219,7 @@ extension MemberViewController {
     }
     @objc func toAppRecommend() {
         let url = viphelp_url
-        self.toWebPage(url, title: "VIP帮助")
+        self.toWebPage(url, title: "联系客服")
     }
     //登出
     @objc func toLoginOut(){
@@ -253,10 +253,15 @@ extension MemberViewController {
         }
         return size / 1024 / 1024
     }
-    func cacheSizeAtPath(){
-        self.cacheSize = Float(SDImageCache.shared().getSize())  / (1024.0 * 1024.0)
-        self.tableView.reloadData()
+    func cacheSizeAtPath() {
+        SDImageCache.shared.calculateSize { (fileCount, totalSize) in
+            self.cacheSize = Float(Double(totalSize) / (1024.0 * 1024.0))
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
+
 }
 
 
