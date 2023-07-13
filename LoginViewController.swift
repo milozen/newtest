@@ -15,13 +15,15 @@ class LoginViewController: BaseViewController {
     var user: User = User()
     var loginType = "weixin"
     var privacyAggred = false
-    var mustLogin = false
+
+    //去除必须登陆
+    //var mustLogin = false
     
-    let mustLoginLabel = UILabel().then{
-        $0.text = "您必须登录以后才可以使用本APP"
-        $0.font = LIST_SUMMARY_FONT
-        $0.textColor = LIGHT_TXT_COLOR
-    }
+//    let mustLoginLabel = UILabel().then{
+//        $0.text = "您必须登录以后才可以使用本APP"
+//        $0.font = LIST_SUMMARY_FONT
+//        $0.textColor = LIGHT_TXT_COLOR
+//    }
     
     let backView = UIImageView().then{
         $0.image = UIImage(named: "view_back")
@@ -168,15 +170,17 @@ class LoginViewController: BaseViewController {
         }
         
         phone.addTarget(self, action: #selector(checkPhoneField(sender:)), for: UIControlEvents.editingChanged)
-        if self.mustLogin {
-            self.baseView.addSubview(mustLoginLabel)
-            mustLoginLabel.snp.makeConstraints{
-                $0.top.equalTo(10  * ASPECT_RATIO + topMargin)
-                $0.width.equalTo(phoneView)
-                $0.height.equalTo(30)
-                $0.centerX.equalTo(phoneView)
-            }
-        }
+
+        //去除必须登陆
+//        if self.mustLogin {
+//            self.baseView.addSubview(mustLoginLabel)
+//            mustLoginLabel.snp.makeConstraints{
+//                $0.top.equalTo(10  * ASPECT_RATIO + topMargin)
+//                $0.width.equalTo(phoneView)
+//                $0.height.equalTo(30)
+//                $0.centerX.equalTo(phoneView)
+//            }
+//        }
         baseView.layer.addSublayer(passwordLayer)
         baseView.addSubview(passwordView)
         passwordView.snp.makeConstraints{
@@ -243,9 +247,10 @@ class LoginViewController: BaseViewController {
             $0.top.equalTo(registBtn.snp.bottom).offset(55 * ASPECT_RATIO)
             $0.bottom.equalTo(baseView.snp.bottom).offset(-20)
         }
-        if GlobalCfg.shared.review {
-            authView.isHidden = true
-        }
+        //不隐藏 authView
+//        if GlobalCfg.shared.review {
+//            authView.isHidden = true
+//        }
         
         
         let tapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(keyboardHide(tap:)))
