@@ -285,6 +285,7 @@ class LoginViewController: BaseViewController {
 extension LoginViewController {
     /**
      登陆成功后，返回前界面
+     改为返回主界面。
      */
     func successToSource() {
         if self.presentLogined {
