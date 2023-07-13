@@ -31,18 +31,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, DYFStoreAppStorePaymentDe
         }
         /**end of generate deviceID **/
         /**begin of 检查数据库**/
-        do {
-            try Dao().checkDbExist()
-            try ImageDao().createTable()
-            try ActivityDao().createTable()
-            try ListContentDao().createTable()
-            try CategoryDao().createTable()
-            try CacheDao().createTable()
-            try ActivityPlanDao().createTable()
-            vlog("成功初始化数据库")
-        } catch {
-            vlog(error)
-            vlog("初始化数据库失败")
+
+        DispatchQueue.global().async {
+            do {
+                try Dao().checkDbExist()
+                try ImageDao().createTable()
+                try ActivityDao().createTable()
+                try ListContentDao().createTable()
+                try CategoryDao().createTable()
+                try CacheDao().createTable()
+                try ActivityPlanDao().createTable()
+                DispatchQueue.main.async {
+                    vlog("成功初始化数据库")
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    vlog(error)
+                    vlog("初始化数据库失败")
+                }
+            }
         }
         
         CacheManager.🐄.initData()
