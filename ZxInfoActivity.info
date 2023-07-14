@@ -1,0 +1,240 @@
+package com.zhanghuang;
+
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.webkit.WebChromeClient;
+import android.webkit.WebResourceResponse;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Toast;
+
+import com.umeng.socialize.ShareAction;
+import com.umeng.socialize.UMShareAPI;
+import com.umeng.socialize.UMShareListener;
+import com.umeng.socialize.bean.SHARE_MEDIA;
+import com.umeng.socialize.media.UMImage;
+import com.umeng.socialize.media.UMWeb;
+import com.zhanghuang.base.BaseBackActivity;
+import com.zhanghuang.net.RequestData;
+import com.zhanghuang.netinterface.BaseInterface;
+import com.zhanghuang.util.Constants;
+
+import butterknife.BindView;
+
+/**
+ * Created by yuanlei on 2017/3/27.
+ * 资讯详情页面
+ */
+
+public class ZxInfoActivity extends BaseBackActivity {
+    private final UMShareListener shareListener = new UMShareListener() {
+        @Override
+        public void onStart(SHARE_MEDIA share_media) {
+
+        }
+
+        @Override
+        public void onResult(SHARE_MEDIA share_media) {
+            Toast.makeText(ZxInfoActivity.this, "分享成功！", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onError(SHARE_MEDIA share_media, Throwable throwable) {
+            Toast.makeText(ZxInfoActivity.this, "分享失败！", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onCancel(SHARE_MEDIA share_media) {
+            Toast.makeText(ZxInfoActivity.this, "分享取消了！", Toast.LENGTH_SHORT).show();
+        }
+    };
+    @BindView(R.id.zx_info_view_webview)
+    WebView webView;
+    private String id;
+    private String src;
+    private boolean hasCollect = false;
+    private final BaseInterface checkFavIf = (success, result, message, err) -> {
+        if (success) {
+            hasCollect = result.isStatus();
+        } else {
+            Toast.makeText(ZxInfoActivity.this, err, Toast.LENGTH_SHORT).show();
+        }
+    };
+    private final BaseInterface addFavIf = (success, result, message, err) -> {
+        if (success) {
+            hasCollect = true;
+            Toast.makeText(ZxInfoActivity.this, "收藏成功", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(ZxInfoActivity.this, err, Toast.LENGTH_SHORT).show();
+        }
+    };
+    private final BaseInterface delFav = (success, result, message, err) -> {
+        if (success) {
+            hasCollect = false;
+            Toast.makeText(ZxInfoActivity.this, "已取消收藏", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(ZxInfoActivity.this, err, Toast.LENGTH_SHORT).show();
+        }
+    };
+    private String image;
+    private String desc;
+    private String title;
+    private RequestData rd;
+    private String js;
+
+    @Override
+    protected void init(Bundle savedInstanceState) {
+        initView();
+        initData();
+
+
+        initJs();
+    }
+
+    private void initJs() {
+
+        js = "(function(){var imgs = document.getElementsByTagName(\"img\");" +
+                "for(var i=0;i<imgs.length;i++){imgs[i].onclick = function(){ native.startPhotoActivity(this.src); }}})()";
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.zx_info_view;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        MenuItem item = menu.findItem(R.id.zx_info_menu_collect);
+        item.setTitle(hasCollect ? R.string.uncollect : R.string.collect);
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.zx_info_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @SuppressLint("SetJavaScriptEnabled")
+    private void initView() {
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setAllowContentAccess(true);
+        //webSettings.setAppCacheEnabled(false);
+        webSettings.setBuiltInZoomControls(false);
+        webSettings.setUseWideViewPort(true);
+        webSettings.setLoadWithOverviewMode(true);
+        //解决文字无法正常显示
+        webSettings.setDomStorageEnabled(true);
+        webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+        webView.setWebChromeClient(new WebChromeClient() {
+
+        });
+        webView.addJavascriptInterface(new JavascriptInterface(), "native");
+        webView.setWebViewClient(new WebViewClient() {
+            @Override
+            public void onLoadResource(WebView view, String url) {
+                super.onLoadResource(view, url);
+                if (BuildConfig.DEBUG) {
+                    Log.i("WebViewURL", url);
+                }
+            }
+
+            @Override
+            public WebResourceResponse shouldInterceptRequest(WebView view, String url) {
+                return super.shouldInterceptRequest(view, url);
+            }
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                view.loadUrl("javascript:" + js);
+            }
+        });
+    }
+
+    private void initData() {
+        rd = new RequestData(this);
+        Intent in = getIntent();
+        title = in.getStringExtra(Constants.ZXTITLE);
+        image = in.getStringExtra(Constants.ZXIMG);
+        desc = in.getStringExtra(Constants.ZXDESC);
+        setTitle(title);
+        id = in.getStringExtra(Constants.ZXID);
+        src = in.getStringExtra(Constants.ZXSRC);
+        if (src != null && !src.equals("")) {
+            webView.loadUrl(src);
+        } else {
+            Toast.makeText(ZxInfoActivity.this, "链接无效", Toast.LENGTH_SHORT).show();
+        }
+        if (MainApplication._pref.getBoolean(Constants.PREF_ISLOGIN, false)) {
+            rd.checkFav(id, checkFavIf);
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+        switch (item.getItemId()) {
+            case R.id.zx_info_menu_collect:
+                if (MainApplication._pref.getBoolean(Constants.PREF_ISLOGIN, false)) {
+                    if (hasCollect) {
+                        rd.delFav(id, delFav);
+                    } else {
+                        rd.addFav(id, addFavIf);
+                    }
+                } else {
+                    Intent in = new Intent(ZxInfoActivity.this, Login.class);
+                    startActivity(in);
+                }
+                break;
+            case R.id.zx_info_menu_share:
+                UMImage umImage;
+                if (image == null || image.equals("")) {
+                    umImage = new UMImage(ZxInfoActivity.this, "http://jk.zhanzhuang.com.cn/img/app-share.png");
+                } else {
+                    umImage = new UMImage(this, image);
+                }
+
+                UMWeb web = new UMWeb(src);
+                web.setTitle(title);
+                web.setThumb(umImage);
+                web.setDescription(desc);
+                new ShareAction(this).withMedia(web)
+                        .setDisplayList(SHARE_MEDIA.WEIXIN, SHARE_MEDIA.WEIXIN_CIRCLE, SHARE_MEDIA.SINA, SHARE_MEDIA.QQ)
+                        .setCallback(shareListener)
+                        .open();
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public String getPageName() {
+        return "资讯详情";
+    }
+
+    public class JavascriptInterface {
+        @android.webkit.JavascriptInterface
+        public void startPhotoActivity(String imageUrl) {
+            Intent intent = new Intent(ZxInfoActivity.this, ViewPicActivity.class);
+            intent.putExtra("image_url", imageUrl);
+            startActivity(intent);
+        }
+    }
+}
